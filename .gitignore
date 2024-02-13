@@ -36,7 +36,6 @@ private/*
 tmp/*
 
 *.pem
-/autoload.php
 *.zip
 *.ini
 *.sql
