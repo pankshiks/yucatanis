@@ -1,0 +1,32 @@
+<section class="last-minute-booking-block ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-9">
+        <div class="text-with-image">
+         <h1> {{ paragraph.field_lmtitle.value|raw}}</h1>
+          {{ paragraph.field_lmsubtitle.value|raw}}
+        </div>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="text-with-image">
+              {{ paragraph.field_button_description.value|raw}}
+          <a href="" class="btn btn-tertiary"><img src="{{file_url(paragraph.field_svg_img.entity.fileuri)}}" />
+           {{paragraph.field_cl_button.title}}</a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="text-with-image">
+          {{ paragraph.field_lmdescription.value|raw}}
+        </div>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="booking-form-wrapper  best-seller-booking-card ">
+           {{ drupal_entity('webform','last_min_bookings') }}
+        </div>
+      </div>
+      <div class="col-12 col-lg-12">
+        {{ paragraph.field_sub_description.value|raw}}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,162 @@
+{#
+/**
+ * @file
+ * Default order total summary template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - order_entity: The order entity.
+ * - totals: An array of order totals values with the following keys:
+ *   - subtotal: The order subtotal price.
+ *   - adjustments: The adjustments:
+ *     - type: The adjustment type.
+ *     - label: The adjustment label.
+ *     - amount: The adjustment amount.
+ *     - percentage: The decimal adjustment percentage, when available. For example, "0.2" for a 20% adjustment.
+ *   - total: The order total price.
+ *
+ * @ingroup themeable
+ */
+#}
+    {# {{dump(order_entity)}} #}
+{{ attach_library('commerce_order/total_summary') }}
+
+  {% if totals.subtotal %}
+    {# <div class="order-total-line order-total-line__subtotal">
+      <span class="order-total-line-label">{{ 'Subtotal'|t }} </span><span class="order-total-line-value">{{ totals.subtotal|commerce_price_format }}</span>
+    </div> #}
+    {# <div class="full-width-line"></div>
+    <div class="order-subtotal">
+      <h5 class="Subtotal green-color"><span class="order-total-line-label">{{ 'Subtotal'|t }} </span></h5>
+      <div>
+        <h4 class="green-color fw-bold m-0"><span class="order-total-line-value">{{ totals.subtotal|commerce_price_format }}</span></h4>
+      </div>
+     <div class="order-total-line order-total-line__subtotal">
+     </div>
+   </div> #}
+  {% endif %}
+  {% for adjustment in totals.adjustments %}
+    <div class="order-total-line order-total-line__adjustment order-total-line__adjustment--{{ adjustment.type|clean_class }}">
+      <span class="order-total-line-label">{{ adjustment.label }} </span><span class="order-total-line-value">{{ adjustment.amount|commerce_price_format }}</span>
+    </div>
+  {% endfor %}
+  {% if totals.total %}
+  {# css class #}
+{# <div class="rating-block">
+  <div class="star-icon">
+    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.3332 8.55845C18.2806 8.40603 18.1849 8.27214 18.0577 8.17304C17.9305 8.07393 17.7772 8.01387 17.6166 8.00012L12.8749 7.30845L10.7499 3.00012C10.6817 2.85923 10.5751 2.74041 10.4425 2.65727C10.3098 2.57413 10.1564 2.53003 9.9999 2.53003C9.84335 2.53003 9.68997 2.57413 9.55733 2.65727C9.42468 2.74041 9.31814 2.85923 9.2499 3.00012L7.1249 7.30012L2.38323 8.00012C2.229 8.02204 2.084 8.08676 1.96469 8.18692C1.84538 8.28708 1.75653 8.41868 1.70823 8.56679C1.66402 8.71152 1.66005 8.86555 1.69676 9.01236C1.73346 9.15918 1.80945 9.29322 1.91657 9.40012L5.35823 12.7335L4.5249 17.4668C4.49515 17.623 4.51073 17.7845 4.56979 17.9322C4.62886 18.0798 4.72894 18.2075 4.85823 18.3001C4.98425 18.3902 5.13288 18.4434 5.28744 18.4537C5.442 18.464 5.59638 18.431 5.73323 18.3585L9.9999 16.1335L14.2499 18.3668C14.3669 18.4328 14.4989 18.4672 14.6332 18.4668C14.8098 18.4674 14.9819 18.412 15.1249 18.3085C15.2542 18.2158 15.3543 18.0882 15.4133 17.9405C15.4724 17.7928 15.488 17.6314 15.4582 17.4751L14.6249 12.7418L18.0666 9.40845C18.1869 9.30652 18.2758 9.17254 18.323 9.02208C18.3702 8.87162 18.3738 8.71085 18.3332 8.55845Z" fill="#FFCC01"></path>
+    </svg>
+    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.3332 8.55845C18.2806 8.40603 18.1849 8.27214 18.0577 8.17304C17.9305 8.07393 17.7772 8.01387 17.6166 8.00012L12.8749 7.30845L10.7499 3.00012C10.6817 2.85923 10.5751 2.74041 10.4425 2.65727C10.3098 2.57413 10.1564 2.53003 9.9999 2.53003C9.84335 2.53003 9.68997 2.57413 9.55733 2.65727C9.42468 2.74041 9.31814 2.85923 9.2499 3.00012L7.1249 7.30012L2.38323 8.00012C2.229 8.02204 2.084 8.08676 1.96469 8.18692C1.84538 8.28708 1.75653 8.41868 1.70823 8.56679C1.66402 8.71152 1.66005 8.86555 1.69676 9.01236C1.73346 9.15918 1.80945 9.29322 1.91657 9.40012L5.35823 12.7335L4.5249 17.4668C4.49515 17.623 4.51073 17.7845 4.56979 17.9322C4.62886 18.0798 4.72894 18.2075 4.85823 18.3001C4.98425 18.3902 5.13288 18.4434 5.28744 18.4537C5.442 18.464 5.59638 18.431 5.73323 18.3585L9.9999 16.1335L14.2499 18.3668C14.3669 18.4328 14.4989 18.4672 14.6332 18.4668C14.8098 18.4674 14.9819 18.412 15.1249 18.3085C15.2542 18.2158 15.3543 18.0882 15.4133 17.9405C15.4724 17.7928 15.488 17.6314 15.4582 17.4751L14.6249 12.7418L18.0666 9.40845C18.1869 9.30652 18.2758 9.17254 18.323 9.02208C18.3702 8.87162 18.3738 8.71085 18.3332 8.55845Z" fill="#FFCC01"></path>
+    </svg>
+    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.3332 8.55845C18.2806 8.40603 18.1849 8.27214 18.0577 8.17304C17.9305 8.07393 17.7772 8.01387 17.6166 8.00012L12.8749 7.30845L10.7499 3.00012C10.6817 2.85923 10.5751 2.74041 10.4425 2.65727C10.3098 2.57413 10.1564 2.53003 9.9999 2.53003C9.84335 2.53003 9.68997 2.57413 9.55733 2.65727C9.42468 2.74041 9.31814 2.85923 9.2499 3.00012L7.1249 7.30012L2.38323 8.00012C2.229 8.02204 2.084 8.08676 1.96469 8.18692C1.84538 8.28708 1.75653 8.41868 1.70823 8.56679C1.66402 8.71152 1.66005 8.86555 1.69676 9.01236C1.73346 9.15918 1.80945 9.29322 1.91657 9.40012L5.35823 12.7335L4.5249 17.4668C4.49515 17.623 4.51073 17.7845 4.56979 17.9322C4.62886 18.0798 4.72894 18.2075 4.85823 18.3001C4.98425 18.3902 5.13288 18.4434 5.28744 18.4537C5.442 18.464 5.59638 18.431 5.73323 18.3585L9.9999 16.1335L14.2499 18.3668C14.3669 18.4328 14.4989 18.4672 14.6332 18.4668C14.8098 18.4674 14.9819 18.412 15.1249 18.3085C15.2542 18.2158 15.3543 18.0882 15.4133 17.9405C15.4724 17.7928 15.488 17.6314 15.4582 17.4751L14.6249 12.7418L18.0666 9.40845C18.1869 9.30652 18.2758 9.17254 18.323 9.02208C18.3702 8.87162 18.3738 8.71085 18.3332 8.55845Z" fill="#FFCC01"></path>
+    </svg>
+    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.3332 8.55845C18.2806 8.40603 18.1849 8.27214 18.0577 8.17304C17.9305 8.07393 17.7772 8.01387 17.6166 8.00012L12.8749 7.30845L10.7499 3.00012C10.6817 2.85923 10.5751 2.74041 10.4425 2.65727C10.3098 2.57413 10.1564 2.53003 9.9999 2.53003C9.84335 2.53003 9.68997 2.57413 9.55733 2.65727C9.42468 2.74041 9.31814 2.85923 9.2499 3.00012L7.1249 7.30012L2.38323 8.00012C2.229 8.02204 2.084 8.08676 1.96469 8.18692C1.84538 8.28708 1.75653 8.41868 1.70823 8.56679C1.66402 8.71152 1.66005 8.86555 1.69676 9.01236C1.73346 9.15918 1.80945 9.29322 1.91657 9.40012L5.35823 12.7335L4.5249 17.4668C4.49515 17.623 4.51073 17.7845 4.56979 17.9322C4.62886 18.0798 4.72894 18.2075 4.85823 18.3001C4.98425 18.3902 5.13288 18.4434 5.28744 18.4537C5.442 18.464 5.59638 18.431 5.73323 18.3585L9.9999 16.1335L14.2499 18.3668C14.3669 18.4328 14.4989 18.4672 14.6332 18.4668C14.8098 18.4674 14.9819 18.412 15.1249 18.3085C15.2542 18.2158 15.3543 18.0882 15.4133 17.9405C15.4724 17.7928 15.488 17.6314 15.4582 17.4751L14.6249 12.7418L18.0666 9.40845C18.1869 9.30652 18.2758 9.17254 18.323 9.02208C18.3702 8.87162 18.3738 8.71085 18.3332 8.55845Z" fill="#FFCC01"></path>
+    </svg>
+    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.3332 8.55845C18.2806 8.40603 18.1849 8.27214 18.0577 8.17304C17.9305 8.07393 17.7772 8.01387 17.6166 8.00012L12.8749 7.30845L10.7499 3.00012C10.6817 2.85923 10.5751 2.74041 10.4425 2.65727C10.3098 2.57413 10.1564 2.53003 9.9999 2.53003C9.84335 2.53003 9.68997 2.57413 9.55733 2.65727C9.42468 2.74041 9.31814 2.85923 9.2499 3.00012L7.1249 7.30012L2.38323 8.00012C2.229 8.02204 2.084 8.08676 1.96469 8.18692C1.84538 8.28708 1.75653 8.41868 1.70823 8.56679C1.66402 8.71152 1.66005 8.86555 1.69676 9.01236C1.73346 9.15918 1.80945 9.29322 1.91657 9.40012L5.35823 12.7335L4.5249 17.4668C4.49126 17.6238 4.50369 17.7872 4.56072 17.9373C4.61775 18.0874 4.71693 18.2179 4.84634 18.313C4.97575 18.408 5.12988 18.4637 5.29017 18.4732C5.45047 18.4828 5.61012 18.4458 5.7499 18.3668L9.9999 16.1418L14.2499 18.3668C14.3669 18.4328 14.4989 18.4672 14.6332 18.4668C14.8098 18.4674 14.9819 18.412 15.1249 18.3085C15.2542 18.2158 15.3543 18.0882 15.4133 17.9405C15.4724 17.7928 15.488 17.6314 15.4582 17.4751L14.6249 12.7418L18.0666 9.40845C18.1869 9.30652 18.2758 9.17254 18.323 9.02208C18.3702 8.87162 18.3738 8.71085 18.3332 8.55845ZM13.1666 11.8501C13.0701 11.9438 12.9978 12.0594 12.9557 12.1871C12.9136 12.3148 12.903 12.4508 12.9249 12.5835L13.5249 16.0835L10.8332 14.6668V6.94179L11.5666 8.43345C11.6266 8.55582 11.7157 8.66159 11.8262 8.7415C11.9366 8.8214 12.0649 8.87301 12.1999 8.89179L15.7082 9.40012L13.1666 11.8501Z" fill="#FFCC01"></path>
+    </svg>
+  </div>
+  <div class="rating-content">
+    <p class="m-0 fw-bold">4.5/5</p>
+    <span class="font16">83 Ratings</span>
+  </div>
+
+</div> #}
+
+      
+        
+         
+       
+          
+  <div class="full-width-line"></div>
+  <div class="d-flex flex-column gap-2 order-details-wrapper">
+            <h6>Order details:</h6>
+                 {% if order_entity.field_booking_time.value  is not empty %}
+            <div class="package-detail-items">
+              <img src="/sites/default/files/ion_time-outline.svg">
+           
+         
+
+              <strong>{{(order_entity.field_booking_time.value|date('D, F j, Y'))}}</strong>
+
+     
+            </div>
+                     {% endif %}
+                         {% if order_entity.field_time_frame.value is not empty %}
+            <div class="package-detail-items">
+              <img src="/sites/default/files/ion_time-outline.svg">
+             <p> Time Frame: <strong>{{(order_entity.field_time_frame.value)}} hours</strong></p>
+          
+            </div>     {% endif %}
+                        {% if order_entity.field_hotel_name.value is not empty %}
+            <div class="package-detail-items">
+              <img src="/sites/default/files/ion_time-outline.svg">
+              <p>Pick up place: <strong>{{order_entity.field_hotel_name.value}}</strong></p>
+            </div>
+                     {% endif %}
+            {% if order_entity.field_pick_up_time is not empty %}
+         
+            <div class="package-detail-items">
+              <img src="/sites/default/files/ion_time-outline.svg">
+                {# {{dump('test')}} #}
+             <p> Approximate Pick Up Time*: <strong>{{order_entity.field_pick_up_time.value}}</strong></p>
+            </div>
+
+             {% endif %}
+            {% if order_entity.field_tour_start_time.value is not empty %}
+              <div class="package-detail-items">
+              <img src="/sites/default/files/ion_time-outline.svg">
+                   {# {{dump(order_entity)}} #}
+             <p> Tour Start Time*: <strong>{{order_entity.field_tour_start_time.value}}</strong></p>
+            </div>
+            {% endif %}
+                  {% if order_entity.field_adults_no.value is not empty %}
+            <div class="package-detail-items">
+              <img src="/sites/default/files/ion_time-outline.svg">
+             <p> {{order_entity.field_adults_no.value}} Adults (Age 12+)</p>
+            </div>
+              {% endif %}
+                      {% if order_entity.field_kids_no.value is not empty %}
+            <div class="package-detail-items">
+              <img src="/sites/default/files/ion_time-outline.svg">
+               <p>{{order_entity.field_kids_no.value}} Kids (Ages 5 to 11)</p>
+                  {% endif %}
+            </div>
+                       {% if order_entity.field_infants_no.value is not empty %}
+            <div class="package-detail-items">
+              <img src="/sites/default/files/ion_person-outline.png">
+               <p>{{order_entity.field_infants_no.value}} Infants (Ages 0 to 4)</p>
+            </div>
+             {% endif %}
+          </div>
+          {# </div> #}
+         
+    <div class="order-subtotal">
+      {# <h6 class="Subtotal green-color">Total</h6> #}
+      {# <div>
+        <h4 class="green-color fw-bold m-0">
+          $2,789.00
+        </h4>
+        <span>All taxes and fees included</span>
+      </div> #}
+      <div class="order-total-wrap">
+        <span class="order-total-line-label"><h6 class="Subtotal green-color">{{ 'Total'|t }}</h6></span>
+        <span class="order-total-line-value"><div><h4 class="green-color fw-bold m-0">{{ totals.total|commerce_price_format }}</h4></div></span>
+        </div>
+        {# <div class="order-total-line order-total-line__total"></div> #}
+        <div class="terms-conditions">
+            <p>*Every hotel has slight differences when measuring distance and obviously pick up times. The exact pick
+              up for your booking will be confirmed on your mobile or email until we get a response from you.</p>
+            <p>Reminder: Dock fee is 15.00 usd per person and is to payed at boarding time..</p>
+          </div>
+    </div>
+{# css class end #}
+    {# <div class="order-total-line order-total-line__total">
+      <span class="order-total-line-label">{{ 'Total'|t }} </span><span class="order-total-line-value">{{ totals.total|commerce_price_format }}</span>
+    </div> #}
+  {% endif %}
+

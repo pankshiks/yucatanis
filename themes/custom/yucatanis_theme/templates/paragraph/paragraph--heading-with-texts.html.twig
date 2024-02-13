@@ -1,0 +1,75 @@
+{% if paragraph.field_text_classes.value=='large' %}
+<section class="detail-information bg-beige">
+  <div class="container ptb-200">
+    <div class="paragragh-block">
+      <h3 class="text-center"> {{ paragraph.field_heading_texts.value|raw }}</h3>
+        {{ paragraph.field_sub_heading_text.value|raw }} 
+
+    </div>
+</div></section>
+
+{% elseif paragraph.field_text_classes.value=='Join team text block' %}
+<section class="text-block ptb-100-90">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h6 class="font20">{{ paragraph.field_heading_texts.value|raw }}</h6>
+
+        <h6 class="font20">{{ paragraph.field_sub_heading_text.value|raw }} </h6>
+
+        {{ paragraph.field_text_de.value|raw }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_text_classes.value=='kudos block' %}
+<section class="kudos-block ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="blocks-wrapper">
+          <div class="left-block">
+            <h3>
+             {{ paragraph.field_heading_texts.value|raw }}
+            </h3>
+            <h4>{{ paragraph.field_sub_heading_text.value|raw }}</h4>
+            <p>{{ paragraph.field_text_de.value|raw }}</p>
+
+          </div>
+          <div class="right-block">
+            <div class="best-seller-booking-card secondary">
+              {{ drupal_entity('webform', 'kudos') }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_text_classes.value=='enquiry' %}
+  <section class="enquiry-heading ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-with-detail">
+          <h3>  {{ paragraph.field_heading_texts.value|raw }}</h3>
+          <h6 class="font20 fw-normal">{{ paragraph.field_sub_heading_text.value|raw }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% else %}
+
+{# {% if paragraph.field_text_classes.value=='small' %} #}
+<section class="detail-information bg-beige">
+  <div class="container ptb-200">
+    <div class="paragragh-block">
+      {{ paragraph.field_heading_texts.value|raw }}
+    </div>
+  </div>
+</section>
+
+{%endif%}

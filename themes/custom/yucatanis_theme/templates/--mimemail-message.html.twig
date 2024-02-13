@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * Default template to format a HTML email using the Mime Mail module.
+ *
+ * Copy this file in your default theme folder to create a custom themed email.
+ * If you modify this template you MUST be sure to keep the html, body, and
+ * header tags. This template should produce a fully-formed HTML document.
+ * Failure to include these will result in a malformed email and possibly
+ * errors shown to the user when sending email.
+ *
+ * To override this template for all emails sent by a given module,
+ * rename this template to mimemail-messages--[module].html.twig.
+ *
+ * To override this template for a specific email sent by a given module,
+ * rename this template to mimemail-messages--[module]--[key].html.twig.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the body element of the message.
+ * - key: The message identifier.
+ * - module: The machine name of the sending module.
+ * - css: Internal style sheets.
+ * - recipient: The recipient of the message.
+ * - subject: The message subject.
+ * - body: The message body.
+ *
+ * @see template_preprocess_mimemail_message()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = module ? (key ? module ~ '-' ~ key) %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Mime Mail message template</title>
+{% if css %}
+    <style type="text/css">
+      <!-- {{ css }} -->
+    </style>
+{% endif %}
+  </head>
+  <body id="mimemail-body"{{ attributes.addClass(classes) }}>
+  <div style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; height: 100%; background-color: #35363A;">
+    <div id="center">
+      <div id="main">
+      <table border="0" cellspacing="0" width="100%" style="max-width:600px; margin:30px auto; width:100%; border-collapse: collapse; table-layout: fixed; border-spacing: 0;">
+      <tbody>
+      <tr>
+        <td valign="center" style="text-align:center; padding:0px 10px; box-sizing: border-box;">
+          <a href="#" title="" class="" target="_blank" style="">
+          <img alt="logo" src="http://112.196.0.228:3011/sites/default/files/2023-07/main-logo.png" width="258" style="margin-top:20px">
+          </a>
+        </td>
+      </tr>
+      </tbody>
+      </table>
+      <table border="0" cellspacing="0" width="100%" style="max-width:600px; margin:30px auto; width:100%; background-color:#fff; padding: 0px 10px 50px 10px; box-sizing: border-box; border-collapse: collapse; display: block; border-spacing: 0;">
+        
+        {{ body|raw }}
+      </table>
+
+      <table border="0" cellspacing="0" style="max-width:600px; width:100%; border-collapse: collapse; table-layout: fixed; text-align: center; margin:20px auto 0 auto; border-spacing: 0;">
+    <tbody>
+      <tr>
+        <td class="w-100" valign="top" style=" margin-bottom: 15px; padding:0px 10px; box-sizing: border-box;">
+          <span style="display: block; padding:0 !important; padding: 18px; color: #fff; font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: normal;">
+            <strong>Yucatanis Copyright © 2024</strong>
+          </span>
+          <p style="color:#e6e6e6; margin:5px 0px 20px 0; font-family: 'Open Sans', sans-serif; letter-spacing: 0.02em; line-height: 18px; font-size: 12px; font-weight: normal; ">SM500 M9 L24 Granadillo Benito Juarez Quintana Roo 77533 Cancun Mexico</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

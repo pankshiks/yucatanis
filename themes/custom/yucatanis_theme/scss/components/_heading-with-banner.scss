@@ -1,0 +1,39 @@
+.banner-block {
+  padding-bottom: 100px;
+
+  @include for-phone-only {
+    padding-bottom: 50px;
+  }
+
+  .row {
+    gap: 64px;
+
+    @include for-phone-only {
+      gap: 32px;
+    }
+  }
+}
+
+.text-with-image {
+  h2 {
+    text-align: left;
+  }
+
+  .banner {
+    padding-top: 64px;
+    padding-bottom: 40px;
+  }
+
+  p {
+    font-weight: 400;
+    text-transform: math-auto;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

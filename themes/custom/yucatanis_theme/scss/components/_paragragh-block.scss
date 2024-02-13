@@ -1,0 +1,25 @@
+.paragragh-block {
+  display: grid;
+  gap: 40px;
+  text-align: center;
+
+  @include for-phone-only {
+    gap: 20px;
+  }
+
+  h3 {
+    font-family: 'GT Super Display';
+    font-size: 59px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    @include for-phone-only {
+      font-size: 34px;
+    }
+  }
+
+  span {
+    text-align: center;
+  }
+}

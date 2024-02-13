@@ -1,0 +1,57 @@
+{% if paragraph.field_section_type.value == 'Join Team banner' %}
+
+  <section class="join-team-banner ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="banner-content-block ">
+        <div>
+          <h1>{{ paragraph.field_heading_.value|raw }}</h1>
+          <h4 class="text-center">{{ paragraph.field_title_.value|raw }}
+          </h4>
+          </div>
+          {% for item in paragraph.field_button %}
+            <a href="{{ item.url }}" class="btn btn-secondary">{{item.title}}</a>
+            {% endfor %}
+          {% set css_text = ['first','second','third','fourth'] %}
+           {% for key,item in paragraph.field_media_with_title %}
+           
+            <div class="img-block {{css_text[key]}}">
+
+               <img  src="{{file_url(item.entity.field_image_logo.0.entity.field_media_image.entity.fileuri)}}" alt="{{item.entity.field_image_logo.0.entity.field_media_image.alt }}">
+            </div>
+  
+           {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% else %}
+
+<section class="travel-plans-by-mood">
+  <div class="container ptb-200">
+    <div class="wrapper">
+      <h2>{{ paragraph.field_heading_.value|raw }}</h2>
+      <span>{{ paragraph.field_title_.value|raw }}</span>
+       <div class="select-mood-wrapper">
+        {% for item in paragraph.field_media_with_title %}
+      
+          <div class="select-mood-box">
+          <a href="javascript:void(0)">
+            <img class="img-fluid" src="{{ file_url(item.entity.field_image_logo.entity.field_media_image.entity.fileuri)}}" alt="{{item.entity.field_image_logo.0.entity.field_media_image.alt}}">
+            <p>{{item.entity.field_title_.value }}</p>
+          </a>
+        </div>
+       
+          {% endfor %}
+         </div>
+        {% for item in paragraph.field_button %}
+          <a href="{{ item.url }}" class="btn btn-secondary">{{ item.title }}</a>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endif %}

@@ -1,0 +1,5 @@
+name: 'Hotel Import'
+type: module
+description: 'Import hotels from CSV file'
+package: Custom
+core_version_requirement: ^8 || ^9 || ^10

@@ -1,0 +1,48 @@
+<div class="right-block">
+            <div class="best-seller-booking-card">
+              <form{{ attributes.addClass('booking-details') }}>
+                <h6 class="fw-bold">
+                  Are you looking for a group rate?
+                  <span>(14 people or above)</span>
+                </h6>
+                <div class="select-items">
+                   {{ element.elements.select_options }}
+                </div>
+                <div class="select-items">
+                   {{ element.elements.your_name }}
+                </div>
+                <div class="select-items">
+                  {{ element.elements.your_email }}
+                </div>
+                <div class="select-items">
+                   {{ element.elements.mobile_number }}
+                </div>
+
+                <div class="select-items">
+                   {{ element.elements.select_guests }}
+                </div>
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <div class="select-items ">
+                      {{ element.elements.you_prefer }}
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="select-items ">
+                       {{ element.elements.range }}
+                    </div>
+                  </div>
+                </div>
+                <div class="checkbox-wrapper">
+
+                  <div class="checkbox-block">
+                    {{ element.elements.agreement }}
+                  </div>
+                  {{ element.elements.actions }}
+                </div>
+                  {{ element.form_token }}
+                  {{ element.form_build_id }}
+                  {{ element.form_id }}
+              </form>
+            </div>
+          </div>

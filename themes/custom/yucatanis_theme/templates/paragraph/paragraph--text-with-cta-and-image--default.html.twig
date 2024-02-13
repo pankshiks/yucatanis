@@ -1,0 +1,240 @@
+{% if paragraph.field_bg_class.value=='Gray' %}
+<section class="hiring ptb-200">
+  <div class="container ">
+    <div class="row align-items-center">
+      <div class="col-md-8 col-sm-12">
+        {{ paragraph.field_heading.value|raw}}
+        {{paragraph.field_description.value|raw}}
+      </div>
+      <div class="col-md-4 col-sm-12">
+         <img class="img-fluid" src="{{ file_url(content.field_image.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_image.alt}}">
+      </div>
+      <div class="title-with-details">
+        <div>
+           {{ paragraph.field_sub_headings.value|raw}}
+        </div>
+        <div>
+          <ul class="detail-list">
+          {% for item in paragraph.field_description_list %}
+            <li>{{ item.value }}</li>
+          {% endfor %}
+          </ul>
+          <p class="small-text">  {{ paragraph.field_bottom_description.value|raw}}</p>
+        </div>
+        <div>
+        {% for item in paragraph.field_button %}
+          <a href="{{ item.url }}" class="btn btn-secondary">{{ item.title }}</a>
+        {% endfor %}
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_bg_class.value=='White' %}
+<section class="right-img-with-description">
+  <div class="container ptb-200">
+    <div class="blocks-wrapper">
+      <div class="left-block">
+       {{ paragraph.field_heading.value|raw}}
+        <ul class="descripton-list">
+          {% for item in paragraph.field_description_list %}
+            <li>{{ item.value }}</li>
+          {% endfor %}
+        </ul>
+        {% for item in paragraph.field_button %}
+          <a href="{{ item.url }}" class="btn btn-secondary">{{ item.title }}</a>
+          {% endfor %}
+      </div>
+      <div class="right-block">
+        <img class="img-fluid" src="{{ file_url(content.field_image.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_image.alt}}">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_bg_class.value=='Founder block' %}
+<section class="img-desc-block ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="blocks-wrapper">
+          <div class="content-block">
+             {{ paragraph.field_heading.value|raw}}
+             {{ paragraph.field_sub_headings.value|raw}}
+             {{ paragraph.field_description.value|raw}}
+            <div>
+              {% for item in paragraph.field_button %}
+                <a href="{{ item.url }}" class="btn show-more-btn secondary">{{ item.title }}</a>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="image-block">
+            <img class="img-fluid " src="{{ file_url(content.field_image.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_image.alt}}">
+            <div class="name">
+              <h6>{{ paragraph.field_bottom_description.value|raw}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_bg_class.value=='Img with text' %}
+<section class="title-with-block ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-with-details">
+          {{ paragraph.field_heading.value|raw}}
+          <div class="img-with-text">
+            <div class="left-block">
+              <img src="{{ file_url(content.field_image.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_image.alt}}">
+            </div>
+            <div class="right-block">
+              {{ paragraph.field_sub_headings.value|raw}}
+              {{ paragraph.field_description.value|raw}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_bg_class.value=='Nightview banner' %}
+
+<section class="cta-banner nightview-banner">
+  <img class="cta-banner-img " src="{{ file_url(content.field_image.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_image.alt}}">
+  <div class="container ptb-200">
+    <div class="cta-wrapper">
+       {{ paragraph.field_heading.value|raw}}
+       {{ paragraph.field_description.value|raw}}
+       {{ paragraph.field_sub_headings.value|raw}}
+      <p>
+        {{ paragraph.field_bottom_description.value|raw}}
+      </p>
+      <div class="list-wrapper">
+        <h6 class="font20 white-color">
+        {{ paragraph.field_list_title.value|raw}}
+        </h6>
+        <ul class="primary-list two-col">
+          {% for item in paragraph.field_description_list %}
+            <li>{{ item.value }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_bg_class.value=='Img description block' %}
+  <section class="img-desc-block ptb-132">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="blocks-wrapper">
+          <div class="image-block">
+            <img class="img-fluid" src="{{ file_url(content.field_image.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_image.alt}}">
+            <div class="name">
+              {{ paragraph.field_description.value|raw}}
+            </div>
+          </div>
+          <div class="content-block">
+            <h2> {{ paragraph.field_heading.value|raw}}</h2>
+            <p> {{ paragraph.field_bottom_description.value|raw}}</p>
+            <div class="content-with-left-border">
+              <h6 class="font20">
+                {{ paragraph.field_sub_headings.value|raw}}
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% elseif paragraph.field_bg_class.value=='Enquire Details' %}
+
+<section class="ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-with-details">
+          {{ paragraph.field_heading.value|raw}}
+          <div class="img-with-text">
+             {{ drupal_entity('webform', 'enquire_hotel') }}
+
+            <div class="right-block vertical-align">
+              <h2 class="orange-color"> {{ paragraph.field_sub_headings.value|raw}}</h2>
+              <p>{{ paragraph.field_description.value|raw}}</p>
+              <div>
+                {% for item in paragraph.field_button %}
+                  <a href="{{ item.url }}" class="btn btn-secondary">{{ item.title }}</a>
+                {% endfor %}
+              </div>
+
+            </div>
+          </div>
+          <div>
+            <h6 class="font17"> {{ paragraph.field_bottom_description.value|raw}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_bg_class.value=='Cta img speciality block' %}
+<section class="ptb-132 img-desc-block speciality-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-lg-flex g-5 align-items-center">
+          <div class="content-block">
+            {{ paragraph.field_heading.value|raw}}
+            {{paragraph.field_description.value|raw}}
+            <ul class="overview-detail-list">
+              {% for item in paragraph.field_description_list %}
+            
+                <li>{{ item.value }}</li>
+              {% endfor %}
+            </ul>
+            {% for item in paragraph.field_button %}
+              <a href="{{ item.url }}" class="btn show-more-btn secondary">{{ item.title }}</a>
+            {% endfor %}
+           </div>
+          <div class="image-block speciality-img">
+            <img class="img-fluid " src="{{ file_url(content.field_image.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_image.alt}}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% else %}
+
+<section class="right-img-with-description">
+  <div class="container ptb-200">
+    <div class="blocks-wrapper">
+      <div class="left-block">
+       {{ paragraph.field_heading.value|raw}}
+        <ul class="descripton-list">
+          {% for item in paragraph.field_description_list %}
+            <li>{{ item.value }}</li>
+          {% endfor %}
+        </ul>
+        {% for item in paragraph.field_button %}
+          <a href="{{ item.url }}" class="btn btn-secondary">{{ item.title }}</a>
+          {% endfor %}
+      </div>
+      <div class="right-block">
+        <img class="img-fluid" src="{{ file_url(content.field_image.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_image.alt}}">
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

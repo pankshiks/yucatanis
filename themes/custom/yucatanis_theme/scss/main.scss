@@ -1,0 +1,75 @@
+//  import
+@import 'modules/variables';
+@import 'modules/media';
+@import 'modules/mixins';
+@import 'modules/typography';
+
+
+
+/*partials*/
+@import 'partials/header';
+@import 'partials/footer';
+
+/*Components*/
+@import 'components/colors';
+@import 'components/buttons';
+@import 'components/banner';
+@import 'components/social-icons';
+@import 'components/masonary';
+@import 'components/slick';
+@import 'components/tabs';
+@import 'components/categories-card';
+@import 'components/deatiled-card';
+@import 'components/slider-button';
+@import 'components/testiminial-card';
+@import 'components/feature-block';
+@import 'components/book-grid-cards';
+@import 'components/comparision-block';
+@import 'components/paragragh-block';
+@import 'components/cta-banner';
+@import 'components/greeting-text';
+@import 'components/select-mood-box';
+@import 'components/cta-text-button';
+@import 'components/blog-post-card';
+@import 'components/right-img-description';
+@import 'components/select-boxes';
+@import 'components/full-width-tab-banner';
+@import 'components/half-width-tab-banner';
+@import 'components/quarter-width-tab-banner';
+@import 'components/comparisation-tabs-slider-block';
+@import 'components/email-us';
+@import 'components/footer-social-links';
+@import 'components/travel-search-nav';
+@import 'components/sidebar';
+@import 'components/listing-card';
+@import 'components/checkbox';
+@import 'components/price-range-slider';
+@import 'components/breadcrumb';
+@import 'components/images-grid';
+@import 'components/ratings';
+@import 'components/best-seller-booking-card';
+@import 'components/grid-block';
+@import 'components/overview-list';
+@import 'components/free-quote-card';
+@import 'components/share-media-icons';
+@import 'components/image-banner-with-text';
+@import 'components/title-with-detail';
+@import 'components/blog-filters';
+@import 'components/order-summary';
+@import 'components/payment-block';
+@import 'components/video-with-subtitle';
+@import 'components/three-col-cards';
+@import 'components/list-style';
+@import 'components/accordion';
+@import 'components/_right-functional-btn';
+@import 'components/floating-input';
+@import 'components/heading-with-banner';
+@import 'components/title-with-block';
+@import 'components/payment-option';
+@import 'components/comparision-card';
+@import 'components/form';
+@import 'components/table';
+
+/* pages */
+@import 'pages/disablitites-block';
+@import 'pages/listing';

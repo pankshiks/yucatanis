@@ -1,0 +1,6 @@
+customautocomplete.autocomplete:
+  path: '/customautocomplete/autocomplete/{field_hotel_info_target_id}'
+  defaults:
+    _controller: '\Drupal\customautocomplete\Controller\CustomAutoCompleteController::autocompleteCallback'
+  requirements:
+    _permission: 'access content'

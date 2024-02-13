@@ -1,0 +1,30 @@
+<section class="video-with-subtitle">
+  <div class="container">
+    <div class="row gap64">
+      <div class="col-12 video-wrapper">
+        <div class="video-block">
+          <div class="triangle"></div>
+          <video id="video" src="{{ file_url(paragraph.field_video.entity.field_media_video_file.entity.uri.value) }}" controls playsinline muted></video>
+
+        </div>
+        <p>{{paragraph.field_subtitle.value|raw}}</p>
+      </div>
+      <div class="col-12">
+        <div class="title-with-details">
+          <h3>{{paragraph.field_headline.value|raw}}</h3>
+          <p>{{paragraph.field_text_descr.value|raw}}</p>
+          <ul class="detail-list">
+            {% for item in paragraph.field_detail_list %}
+                <li>{{ item.value }}</li>
+            {% endfor %}
+          </ul>
+          {{paragraph.field_detail_description.value|raw}}
+        </div>
+        <div class="title-with-details">
+          {{paragraph.field_title_with_detail_descript.value|raw}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

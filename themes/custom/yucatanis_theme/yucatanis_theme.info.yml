@@ -1,0 +1,29 @@
+name: Yucatanis theme
+description: Custom Theme for my site
+type: theme
+core_version_requirement: ^9 || ^10
+base theme: false
+
+regions:
+  header_top: Header top
+  main_navigations: Main Navigations
+  header_bottom: Header Bottom
+  bottom_sidebar: Header sidebar
+  toggle_menu: Toggle menu
+  content: content
+  footer_first: Footer First
+  footer_second: Footer Second
+  footer_third: Footer Third
+  footer_fourth: Footer Fourth
+  footer_fifth: Footer Fifth
+  footer_sixth: Footer Sixth
+  footer_seven: Footer Seven
+  footer_eight: Footer Eight
+  
+libraries:
+  - yucatanis_theme/global-styles
+  
+
+
+  
+

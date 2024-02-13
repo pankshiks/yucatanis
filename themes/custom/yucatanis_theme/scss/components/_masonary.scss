@@ -1,0 +1,139 @@
+.hero-banner-parallex {
+    overflow: hidden;
+    height: auto;
+
+
+    @include for-phone-only {
+        height: 100vh;
+    }
+}
+
+.parallax-gallry {
+    display: grid;
+    grid-gap: 6px 10px;
+    max-width: 1920px;
+    margin: 0 auto;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    @include for-desktop-up {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @include for-tablet {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @include for-phone-only {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* parallax css */
+.item a img,
+.item a {
+    display: block;
+    float: left;
+}
+
+.item a img {
+    max-width: 100%;
+}
+
+.parallax-gallry .item {
+    position: relative;
+}
+
+.parallax-gallry .item:nth-child(7n+1) {
+    transform: translate(0, 130px);
+}
+
+.parallax-gallry .item:nth-child(7n+2) {
+    transform: translate(0, 50px);
+}
+
+.parallax-gallry .item:nth-child(7n+3) {
+    transform: translate(0, 110px);
+}
+
+.parallax-gallry .item:nth-child(7n+4) {
+    transform: translate(0, 140px);
+}
+
+.parallax-gallry .item:nth-child(7n+5) {
+    transform: translate(0, 120px);
+}
+
+.parallax-gallry .item:nth-child(7n+6) {
+    transform: translate(0, -20px);
+}
+
+.parallax-gallry .item:nth-child(7n+7) {
+    transform: translate(0, 130px);
+}
+
+@include for-desktop-up {
+    .parallax-gallry .item:nth-child(5n+1) {
+        transform: translate(0, 175px);
+    }
+
+    .parallax-gallry .item:nth-child(5n+2) {
+        transform: translate(0, 140px);
+    }
+
+    .parallax-gallry .item:nth-child(5n+3) {
+        transform: translate(0, 183px);
+    }
+
+    .parallax-gallry .item:nth-child(5n+4) {
+        transform: translate(0, 150px);
+    }
+
+    .parallax-gallry .item:nth-child(5n+5) {
+        transform: translate(0, 190px);
+    }
+
+    .parallax-gallry .item:nth-child(5n+6) {
+        transform: translate(0, -20px);
+        display: none;
+    }
+
+    .parallax-gallry .item:nth-child(5n+7) {
+        transform: translate(0, 180px);
+        display: none;
+    }
+}
+
+@include for-tablet {
+    .parallax-gallry .item:nth-child(4n+1) {
+        transform: translate(0, 180px);
+    }
+
+    .parallax-gallry .item:nth-child(4n+2) {
+        transform: translate(0, 162px);
+    }
+
+    .parallax-gallry .item:nth-child(4n+3) {
+        transform: translate(0, 190px);
+    }
+
+    .parallax-gallry .item:nth-child(4n+4) {
+        transform: translate(0, 166px);
+    }
+
+    .parallax-gallry .item:nth-child(4n+5) {
+        transform: translate(0, 185px);
+
+    }
+
+    .parallax-gallry .item:nth-child(4n+6) {
+        transform: translate(0, 184px);
+        display: none;
+    }
+
+    .parallax-gallry .item:nth-child(4n+7) {
+        transform: translate(0, 180px);
+
+    }
+}

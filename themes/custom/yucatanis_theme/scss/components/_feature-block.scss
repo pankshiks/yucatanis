@@ -1,0 +1,56 @@
+.key-features {
+    padding-top: 200px;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+    position: relative;
+
+    @include for-phone-only {
+        padding-top: 100px;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+    }
+
+    .row {
+        row-gap: 50px;
+        padding-bottom: 100px;
+
+        @include for-phone-only {
+            padding-bottom: 50px;
+        }
+    }
+
+    &::after {
+        content: '';
+        background-image: url("../images/Features.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 225px;
+        position: absolute;
+        // bottom: 0;
+        background-position: center;
+        bottom: -112px;
+
+        @include for-phone-only {
+            // height: 100px;
+        }
+    }
+}
+
+
+
+.feature-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 22px;
+
+    img {
+        max-width: 100px;
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+    }
+}

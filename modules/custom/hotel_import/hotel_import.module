@@ -1,0 +1,55 @@
+<?php
+use Drupal\paragraphs\Entity\Paragraph;
+
+function Upload_time($firstValue,$rows,$key) {
+  // if(!empty($value)){
+    // Iterate through each row in the spreadsheet.
+    unset($fieldHotelInformation);
+    foreach ($rows as $row) {
+      $time = $row[$key];
+      $hotel_name = $row[0];
+
+      if ($time && $hotel_name) {
+  
+        $Total_hours =((float)($time))*24 ;
+        $Hours = (int)( $Total_hours) ;
+        $Total_Minutes = ($Total_hours - 7) * 60 ;
+        $Rounded_Minutes =ROUND(5);
+        $formattedTime = sprintf('%02d:%02d',$Hours,$Rounded_Minutes);
+       
+
+        // Query for the hotel node ID based on the title.
+        $query = \Drupal::entityQuery('node')
+          ->condition('type', 'hotel_information')
+          ->condition('title', $hotel_name)
+          ->accessCheck(FALSE);
+
+        $entity_ids = $query->execute();
+
+        // If a hotel node is found, create a new paragraph entity.
+        if (!empty($entity_ids)) {
+          $node_id = reset($entity_ids);
+          $paragraph = Paragraph::create([
+            'type' => 'hotel_information',
+          ]);
+          $paragraph->set('field_hotel_info', $node_id);
+          $paragraph->set('field_pick_up_time', $formattedTime);
+          $paragraph->save();
+          $target_id = $paragraph->id();
+          $revision_id = $paragraph->get('revision_id')->getValue();
+          $newValues = [
+            'target_id' => $target_id,
+            'target_revision_id' => $revision_id[0]['value'],
+          ];
+          $fieldHotelInformation[] = $newValues;
+        }
+      }
+    }
+    \Drupal::logger('hoteltimearray')->notice('<pre>'.print_r($fieldHotelInformation,true).'</pre>');
+    // Update the commerce product with the new values.
+    if (!empty($firstValue)) {
+      $product = \Drupal\commerce_product\Entity\Product::load((int)$firstValue);
+      $product->set('field_hotel_information',$fieldHotelInformation);
+      $product->save();
+    }
+  }

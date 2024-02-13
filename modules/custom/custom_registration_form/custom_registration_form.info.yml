@@ -1,0 +1,7 @@
+name: 'Custom Registration'
+type: module
+description: 'Custom registration form with multiple steps.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:user

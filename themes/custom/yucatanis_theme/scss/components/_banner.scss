@@ -1,0 +1,332 @@
+.hero-banner {
+  background-color: $YUSatinLinen;
+}
+
+.free-quote-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  p {
+    color: #4A403A;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    max-width: 100% !important;
+    text-transform: inherit;
+
+    @include for-phone-only {
+      font-size: 14px;
+      margin-bottom: 10px !important;
+    }
+
+    span {
+      display: block;
+      font-weight: 500;
+    }
+  }
+
+  h1 {
+    color: #332E31;
+    text-align: center;
+    font-family: 'GT Ultra Fine';
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+
+    @include for-phone-only {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    span {
+      text-decoration: underline;
+    }
+
+    .orange-color {
+      text-decoration: none;
+    }
+  }
+
+  h4 {
+    display: inline-flex;
+    justify-content: left;
+    font-family: 'montserrat';
+    font-weight: 600;
+    margin-bottom: 40px;
+    font-size: 40px;
+    flex-wrap: wrap;
+
+    @include for-phone-only {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    span {
+      color: #ff563c;
+      display: inline;
+      margin: 0 8px 0 0;
+    }
+
+
+
+  }
+
+  .typewriter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include for-tablet {
+      flex-direction: column;
+    }
+
+    #typewriter1 {
+      margin-bottom: 40px;
+      font-size: 40px;
+      font-weight: 400;
+      width: auto;
+      height: 68px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #4A403A;
+
+      @include for-phone-only {
+        font-size: 20px;
+        margin-bottom: 20px;
+        height: auto;
+      }
+
+      // animation: typing1 3.5s steps(100, end) alternate infinite, blink-caret1 0.5s step-end infinite;
+    }
+  }
+
+  h1 {
+    margin-top: 101px;
+    margin-bottom: 40px;
+
+    @include for-phone-only {
+      margin-top: 60px;
+    }
+  }
+
+  p {
+    color: #423B30;
+    display: inline-block;
+    max-width: 780px;
+    margin-bottom: 55px;
+  }
+
+  a {
+    &.btn {
+      margin-top: 38.5px;
+      font-size: 18px;
+      text-transform: uppercase;
+      z-index: 1;
+
+      @include for-phone-only {
+        margin-top: 22px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+
+
+.inner-banner {
+  height: 898px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.79) 0%, rgba(255, 255, 255, 0.61) 75%, rgba(255, 255, 255, 0.00) 100%);
+
+  @include for-tablet {
+    height: auto;
+  }
+
+  @include for-phone-only {
+    height: 550px;
+  }
+
+  .container {
+    position: relative;
+    height: 100%;
+
+    .banner-title {
+      max-width: 1155px;
+      width: 100%;
+      padding: 150px 0;
+
+      @include for-phone-only {
+        padding: 50px 0;
+      }
+
+      h2 {
+        font-family: ' GT Super Display';
+        font-size: 58px;
+        font-weight: 500;
+        line-height: 67px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $YUDarkerBrown;
+
+        @include for-phone-only {
+          font-size: 32px;
+          line-height: normal;
+          text-align: center;
+        }
+      }
+    }
+
+  }
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.join-team-banner {
+  background-color: $YUNGYellow50;
+  position: relative;
+  overflow: hidden;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-image: url('../images/Yucatanis-flame.png');
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 300px;
+    left: 0;
+    bottom: 0;
+
+    @include for-phone-only {
+      left: -200px;
+
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url('../images/Yucatanis-flame.png');
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 300px;
+    right: 0;
+    top: 0;
+    transform: rotate(180deg);
+
+    @include for-phone-only {
+      right: -200px;
+    }
+  }
+
+  .banner-content-block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 956px;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      color: #000;
+    }
+
+    .img-block {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.4);
+      left: -53px;
+      top: -136px;
+
+      @include for-phone-only {
+        top: -118px;
+        left: -20px;
+        transform: scale(0.6);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 134px;
+        height: 134px;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        left: 8px;
+        top: 8px;
+      }
+
+      &.second {
+        right: 54px;
+        top: -108px;
+        transform: scale(0.5);
+        left: auto;
+      }
+
+      &.third {
+        top: auto;
+        bottom: 0;
+        transform: scale(0.5);
+        left: -10px;
+      }
+
+      &.fourth {
+        top: auto;
+        bottom: -81px;
+        right: -126px;
+        left: auto;
+
+        @include for-tablet {
+          right: -10px;
+          transform: scale(0.7);
+        }
+      }
+
+      img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 1;
+
+      }
+    }
+  }
+}
+
+#block-mexico {
+  p {
+    font-weight: 400;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid $white;
+    animation: typing 3.5s steps(100, end) alternate infinite,
+      blink-caret 0.5s step-end infinite;
+  }
+}

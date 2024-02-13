@@ -1,0 +1,12 @@
+name: 'Custom Order Event'
+type: module
+description: 'Sets webform submission status to complete on order completion.'
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:commerce_order
+  - drupal:webform
+version: VERSION
+
+event_subscriber:
+  - 'custom_order_event.event_subscriber'

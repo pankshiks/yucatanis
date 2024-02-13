@@ -1,0 +1,194 @@
+.best-seller-booking-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+  gap: 24px;
+  border: 1px solid $LightGrey;
+  border-radius: 8px;
+  background-color: $white;
+
+  h5 {
+    span {
+
+      font-size: 22px;
+      color: $YUDarkerBrown !important;
+      opacity: 0.6;
+      font-weight: 400;
+    }
+  }
+
+  h6 {
+    font-family: 'Montserrat';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+
+    span {
+      font-family: 'Montserrat';
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%;
+      color: rgba(21, 16, 9, 0.60);
+    }
+  }
+
+  .btn-secondary {
+    padding: 16px 32px;
+    width: 100%;
+  }
+
+  &.secondary {
+    background-color: rgba(255, 205, 0, 0.05);
+    border: none;
+  }
+}
+
+.info-tag {
+  background: $YUNGYellow;
+  border-radius: 4px;
+  padding: 8px;
+
+  p {
+    margin: 0;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+  }
+}
+
+.booking-details {
+  width: 100%;
+  display: grid;
+  gap: 16px;
+
+  p {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+  }
+
+  .info {
+    p {
+      font-family: 'Montserrat';
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      color: rgba(21, 16, 9, 0.60);
+    }
+  }
+
+}
+
+.select-items {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+
+  label {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+    color: #15100999;
+  }
+
+  select {
+    width: 100%;
+    color: #4A403A;
+    border: 0;
+    border-bottom: 1px solid $Grey;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    padding: 16px 0;
+    outline: none;
+    background-size: 16px;
+  }
+
+
+
+
+  input[type=date] {
+    position: relative;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid $Grey;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    padding: 16px 0;
+
+  }
+
+  input[type=date]:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: url('../images/ion_chevron-forward.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    right: 0;
+    pointer-events: none;
+  }
+
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+}
+
+.checkbox-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+
+  &.terms-conditions {
+    .checkbox-block {
+      label {
+        font-family: 'Montserrat';
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        color: #332E31;
+        width: 100%;
+      }
+    }
+  }
+
+  .checkbox-block {
+    display: flex;
+
+    gap: 8px;
+
+    label {
+      font-family: 'Montserrat';
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      color: rgba(21, 16, 9, 0.60);
+      width: 100%;
+    }
+  }
+}

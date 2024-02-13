@@ -1,0 +1,230 @@
+           {{ element.elements.markup }}
+  <div class="container">
+    <div class="personal-details-wrapper">
+      <div class="personal-details-block">
+           {{ element.elements.form_heading }}
+          <form{{ attributes.addClass('booking-details needs-validation') }}>
+             
+             <div class="form-fields">
+                <div class="select-items floating-input">
+                  {{ element.elements.passenger_name }}
+                  {# {{element.elements.lead_passender_name_}} #}
+                  <label for="phone" class="">{{element.elements.passenger_name['#title']}}</label>
+                </div>
+                 <div class="select-items floating-input">
+                    {{ element.elements.command_name }}
+                    <label class="" for="Name">{{element.elements.command_name['#title']}}</label>
+                  </div>
+                {# {{dd(element.elements.address)}} #}
+                   {# <div class="select-items floating-input">
+                  {{element.elements.container["last_name"] }}
+               </div>#}
+                  <div class="select-items floating-input">
+                  {{ element.elements.address["company"] }}
+                  <label class="" for="Name1">{{ element.elements.address["company"]['#title'] }}</label>
+               </div> 
+                  <div class="select-items floating-input">
+                  {{ element.elements.address["address_line_1"] }}
+                   <label class="" for="Name2">{{ element.elements.address["address_line_1"]['#title'] }}</label>
+               </div>
+                <div class="select-items floating-input">
+                  {{ element.elements.address["address_line_2"] }}
+                  <label class="" for="Name3">{{ element.elements.address["address_line_2"]['#title'] }}</label>
+               </div>
+                <div class="select-items floating-input">
+                  {{element.elements.address["postal_code"] }}
+                  <label class="" for="Name4">{{ element.elements.address["postal_code"]['#title'] }}</label>
+               </div>
+                {# <div class="select-items floating-input">
+                  {{ element.elements.address["sorting_code"] }}
+               </div> #}
+                {# <div class="select-items floating-input">
+                  {{ element.elements.address["dependent_locality_e_g_neighbourhood_"] }}
+               </div> #}
+               <div class="select-items floating-input">
+                  {{ element.elements.address["locality_e_g_city_"] }}
+                  <label class="" for="Name5">{{ element.elements.address["locality_e_g_city_"]['#title'] }}</label>
+               </div>
+               {# <div class="select-items floating-input">
+                  {{ element.elements.address["administrative_area_e_g_state_or_province_"] }}
+               </div>  #}
+              
+               {# <div class="select-items floating-input">
+                  {{ element.elements.address["address"]}}
+               </div> #}
+               {# <div class="select-items floating-input">
+                  {{ element.elements.passenger_name }}
+               </div> #}
+            
+            <div class="select-items floating-input">
+              {# <input type="email" id="floating-input" value="" required="required">
+              <label class="" for="Email">Favorite Email*</label> #}
+              {{ element.elements.email }}
+              <label class="" for="Email"> {{ element.elements.email['#title'] }}</label>
+            </div>
+            <div class="select-items floating-input">
+              {{ element.elements.phone_number }}
+              <label for="phone" class="">{{ element.elements.phone_number['#title'] }}</label>
+            </div>
+            <div class="select-items floating-input">
+             
+                     {{ element.elements.country }}
+                    <label class="" for="Country of Origin">{{ element.elements.country['#title'] }}</label>
+            </div>
+
+            <div class="select-items floating-input">
+            
+                     {{ element.elements.hotel_s_name_for_pick_up }}
+                     <label class="" for=""> If Your Beach Hotel is Not Listed</label> 
+                   
+            </div>
+
+            <div class="select-items floating-input">
+                        
+                        {{ element.elements.hotel_information }}
+                         <label class="" for="text">{{ element.elements.hotel_s_name_for_pick_up['#title']  }}</label>
+                          {# <label class="" for=""> {{ element.elements.hotel_information['#title'] }}</label>  #}
+            </div>
+                  <div class="select-items floating-input">
+                     <label class="" for="text">Approximate Pick Up Time</label>
+                        {{ element.elements.output }}
+            </div>
+            <div class="mb-2">
+              <h6 class="footnote">Write the Complete Accurate Name avoiding spelling mistakes, some hotel names are
+                very alike. For
+                logistics and insurance policies we only serve nautical resorts. Pick up and drop off must be at the
+                same
+                hotel’s lobby. If by some reason you don’t want the transport back to the hotel let us know in the note
+                below to find out.
+              </h6>
+            </div>
+            <div class="select-items floating-input">
+           
+                 {{ element.elements.room_number }}
+                 <label class="" for="text">{{ element.elements.room_number['#title'] }}
+                <span class="footnote">They ask the driver at your hotel’s front
+                  gate at the time we pick you up (for safety).</span>
+              </label>
+            </div>
+            <div class="select-items floating-input">
+            
+                    {{ element.elements.note }}
+                    <label class="" for="text">{{ element.elements.note['#title'] }}
+                <span class="footnote">Anything We Should Know</span></label>
+            </div>
+          </div>
+
+          <div class="checkbox-wrapper terms-conditions">
+            <div class="checkbox-block ">
+             
+               {{ element.elements.checkbox_1 }}
+            </div>
+            <div class="checkbox-block">
+             
+                  {{ element.elements.checkbox_2 }}
+            </div>
+            <div class="checkbox-block">
+              
+                      {{ element.elements.checkbox_3 }}
+            </div>
+            <div class="checkbox-block">
+             
+                     {{ element.elements.checkbox_4 }}
+            </div>
+          </div>
+          <div>
+              {{ element.elements.actions }}
+                     {{ element.form_token }}
+                     {{ element.form_build_id }}
+                    {{ element.form_id }}
+          </div>
+        </form>
+      </div>
+       
+
+
+      <div class="order-summary-block">
+        <h5>Order Summary</h5>
+        <div class="order-summary ">
+          <div class="order-title">
+          {# {{dump(element.elements)}} #}
+            <p>{{ element.elements.order_summary.product_title['#default_value']}}</p>
+            <h5>Fontaine - Pajot <span>59ft</span></h5>
+          </div>
+          <div class="order-summary-item w-100">
+            <div class="rating-block">
+              <div class="star-icon">
+              {{(element.elements.product.star_count)}}
+              </div>
+              {% if element.elements.product.rating is not empty %}
+              <div class="rating-content">
+                 
+                <p class="m-0 fw-bold">{{element.elements.product.rating['#default_value']}}/5</p>
+                <span class="font16">{{element.elements.product.total_votes['#default_value']}} Ratings</span>
+              </div>
+               {% endif %}
+            </div>
+
+          </div>
+          <div class="full-width-line"></div>
+          <div class="d-flex flex-column gap-2 order-details-wrapper">
+            <h6>Order details:</h6>
+            <div class="package-detail-items">
+            <img src="/sites/default/files/ion_time-outline.svg">
+              <p><strong>{{element.elements.order_details['#default_value'].field_booking_time.value|date('D, F j, Y')}}</strong></p>
+            </div>
+            <div class="package-detail-items">
+                <img src="/sites/default/files/ion_time-outline.svg">
+                {% if element.elements.order_summary.timeframe['#default_value'] is not empty %}
+                  <p>Time Frame: <strong>{{element.elements.order_summary.timeframe['#default_value']}} hours</strong></p>
+               {% endif %}
+            </div>
+                     {% if element.elements.order_summary.hotel_name is not empty %}
+            <div class="package-detail-items">
+                        <img src="/sites/default/files/ion_time-outline.svg">
+                       
+              <p>Pick up place: <strong>{{element.elements.order_summary.hotel_name['#default_value']}}</strong></p>
+
+            </div>
+            {% endif %}
+            <div class="package-detail-items">
+                         <img src="/sites/default/files/ion_time-outline.svg">
+              <p>Approximate Pick Up Time*: <strong>{{element.elements.order_summary.hotel_time['#default_value']}}HRS</strong></p>
+            </div>
+            <div class="package-detail-items">
+             <img src="/sites/default/files/ion_time-outline.svg">
+              <p>{{element.elements.order_details['#default_value'].field_adults_no.value}} Adults (Age 12+)</p>
+            </div>
+            <div class="package-detail-items">
+                        <img src="/sites/default/files/ion_time-outline.svg">
+              <p>{{element.elements.order_details['#default_value'].field_kids_no.value}} kids (Ages 5 to 11)</p>
+            </div>
+            <div class="package-detail-items">
+            <img src="/sites/default/files/ion_person-outline.png">
+              <p>{{element.elements.order_details['#default_value'].field_infants_no.value}} Infants (Ages 0 to 4)</p>
+            </div>
+          </div>
+
+          <div class="order-subtotal">
+            <h6 class="Subtotal green-color">Total</h6>
+            <div>
+              <h4 class="green-color fw-bold m-0">
+                ${{element.elements.order_details['#default_value'].total_price.number|format('%.2f')|replace({'0$': ''})|number_format(2, '.', '')}}
+              </h4>
+              <span>All taxes and fees included</span>
+            </div>
+
+
+          </div>
+          <div class="terms-conditions">
+            <p>*Every hotel has slight differences when measuring distance and obviously pick up times. The exact pick
+              up for your booking will be confirmed on your mobile or email until we get a response from you.</p>
+            <p><span class="orange-color"><b>Reminder:</b></span> <span class="green-color fw-bold m-0"> Dock fee is 15.00 usd per person </span>and is to payed at boarding time..</p>
+          </div>
+        </div>
+      
+
+      </div>
+
+    </div>
+  </div>

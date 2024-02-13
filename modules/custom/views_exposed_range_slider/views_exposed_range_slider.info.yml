@@ -1,0 +1,6 @@
+name: 'View range slider'
+type: module
+description: 'A custom Drupal module for demonstration purposes.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+version: 1.0

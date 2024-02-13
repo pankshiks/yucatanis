@@ -1,0 +1,210 @@
+.listing-wrapper {
+  display: grid;
+  gap: 40px;
+  padding-left: 22px;
+
+  @include for-phone-only {
+    gap: 20px;
+    padding-left: 0;
+    margin-left: 0px;
+  }
+}
+
+.listing-card {
+  display: flex;
+
+  .card {
+    flex-direction: row;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+
+    @include for-tablet {
+      flex-direction: column;
+    }
+
+    img {
+      max-width: 255px;
+      object-fit: cover;
+      height: 100%;
+      border-radius: 8px;
+      width: 100%;
+
+      @include for-tablet {
+        width: 100%;
+        max-height: 250px;
+        height: 100%;
+        max-width: 100%;
+      }
+
+
+    }
+
+    .card-body {
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px 24px;
+
+      @include for-phone-only {
+        padding: 10px;
+      }
+
+      p {
+        font-family: 'Montserrat';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+        text-transform: capitalize;
+        color: $YUDarkerBrown;
+        opacity: 0.6;
+        margin: 0;
+
+        @include for-phone-only {
+          font-size: 12px;
+        }
+      }
+    }
+
+    // .package-detail {
+    //   display: flex;
+    //   justify-content: space-between;
+
+
+
+    // }
+
+    .card-footer {
+      display: flex;
+      background-color: none;
+      align-items: center;
+      justify-content: space-between;
+      background-color: transparent;
+      padding: 16px 0 0;
+      gap: 20px;
+
+      @include for-phone-only {
+        padding: 6px 0 0;
+      }
+
+      h5.green {
+        font-family: 'Gantari';
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+        color: $priceGreen;
+        opacity: 1;
+        margin: 0;
+
+        @include for-phone-only {
+          font-size: 24px;
+        }
+      }
+
+      @include for-phone-only {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .ratings-bookbtn {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+
+        @include for-phone-only {
+          gap: 10px
+        }
+
+
+
+        p {
+          font-family: 'Gantari';
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 130%;
+          color: $YUDarkerBrown;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          opacity: 1;
+
+          img {
+            width: auto;
+          }
+
+          span {
+            opacity: 0.6;
+          }
+        }
+      }
+
+      a {
+        font-family: 'Encode Sans Expanded';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%;
+        letter-spacing: 0.56px;
+        text-transform: uppercase;
+        padding: 16px 24px;
+        max-width: 210px;
+        width: 100%;
+
+        @include for-phone-only {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.package-detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+
+  @include for-tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .package-detail-items {
+    img {
+      width: 25px;
+      height: 25px;
+    }
+
+    @include for-phone-only {
+      font-size: 12px;
+    }
+  }
+}
+
+
+.filter-listing {
+  @include for-tablet {
+    display: block;
+  }
+}
+
+.filter-btn {
+  display: none;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+
+  @include for-tablet {
+    display: block;
+  }
+
+}

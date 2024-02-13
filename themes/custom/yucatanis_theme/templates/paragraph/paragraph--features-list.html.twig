@@ -1,0 +1,114 @@
+{% if paragraph.field_type_.value == 'Support Page' %}
+
+<section class="bg-satinlinean support-text-field">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="blocks-wrapper">
+          <div class="left-block">
+            <h2>
+              {{paragraph.field_heading_text.value|raw}}
+            </h2>
+            {{paragraph.field_subtitles.value|raw}}
+            <div class="quard-btn-wrapper">
+            {% for item in paragraph.field_features %}
+            
+                <a href="" class="btn btn-tertiary" href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
+                 {{ item.entity.field_features_link.0.value['title']}}</a>
+          
+            {% endfor %}
+            </div>
+          </div>
+               {{ drupal_entity('webform', 'support_') }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_type_.value == 'Contact us page' %}
+
+  <section class="bg-satinlinean contact-us-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="blocks-wrapper">
+          <div class="left-block">
+            <h3>
+             {{paragraph.field_heading_text.value|raw}}
+            </h3>
+              {{paragraph.field_subtitles.value|raw}}
+            <div class="quard-btn-wrapper">
+              {% for item in paragraph.field_features %}
+                
+                  {# {{dd(item.entity.field_features_link)}} #}
+                  <a href="" class="btn btn-tertiary" href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
+                  {{ item.entity.field_features_link.0.value['title']}}</a>    
+              {% endfor %}
+            </div>
+          </div>
+          {{ drupal_entity('webform', 'contact_page') }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% elseif paragraph.field_type_.value == 'three_col_cards' %}
+<section class="contact-block ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-with-details">
+          <h2>{{paragraph.field_heading_text.value|raw}}</h2>
+          <div class="three-col-cards">
+            {% for item in paragraph.field_features %} 
+              <div class="features-cards">
+                <div class="icon-with-title">
+                 <img src="{{ file_url(item.entity.field_features_logo.entity.field_media_image.entity.fileuri)}}" alt="{{item.entity.field_features_logo.alt}}">
+                </div>
+                <div class="content">
+                  <h6 class="font20">{{item.entity.field_label_text.value}}</h6>
+                    <a href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
+                  {{ item.entity.field_features_link.0.value['title']}}</a>  
+                     <a href={{item.entity.field_features_link.1.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
+                  {{ item.entity.field_features_link.1.value['title']}}</a>  
+                  {# <a href="mailto:aid_support@yucatanis.com">aid_support@yucatanis.com</a>
+                  <a href="mailto:just_ask@yucatanis.com">just_ask@yucatanis.com</a> #}
+                </div>
+               
+            </div>
+            {% endfor %}
+          </div>
+          <div class="postal-address-block">
+           {{paragraph.field_subtitles.value|raw}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="key-features bg-satinlinean">
+  <div class=" container">
+    <div class="row">
+      {% for item in paragraph.field_features %} 
+        <div class="col-md-3">
+          <div class="feature-block">
+              <img src="{{ file_url(item.entity.field_features_logo.entity.field_media_image.entity.fileuri)}}" alt="{{item.entity.field_features_logo.alt}}">
+                 <p class="font20 m-0 fw-bold">{{item.entity.field_label_text.value}}</p>
+            {% set url = item.entity.field_features_link.0.value['uri']|replace({'internal:': ''}) %}
+            <a class="btn arrow-btn" href="{{ url }}">
+            {# <a class="btn arrow-btn" href="{{item.entity.field_features_link.0.value['uri']}}"> #}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.5625 5.25L19.3125 12L12.5625 18.75M18.375 12H4.6875" stroke="#FF563C" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>{{ item.entity.field_features_link.0.value['title']}}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endif %}
+

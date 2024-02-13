@@ -1,0 +1,37 @@
+{% if paragraph.field_wave_class.value=='Red' %}
+<section class="ptb-50">
+  <div class="container">
+    <div class="greeting-text">
+      <div class="paragraph-wrapper">
+        {{paragraph.field_greeting_text.value|raw}}
+        <img class="img-fluid orange-vector" src="{{ file_url(content.field_photo.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_photo.alt}}">
+        </div>
+      <div class="founder-name pt-2 pb-2">
+        {{paragraph.field_greeting_description.value|raw}}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_wave_class.value=='Yellow' %}
+<section class="greeting-text">
+  <div class="container">
+    <div class="paragraph-wrapper">
+      {{paragraph.field_greeting_text.value|raw}}
+      <img class="img-fluid" src="{{ file_url(content.field_photo.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_photo.alt}}">
+    </div>
+  </div>
+</section>
+
+{% else %}
+<section class="pb-200">
+  <div class="container">
+    <div class="greeting-text">
+      <div class="paragraph-wrapper">
+        {{paragraph.field_greeting_text.value|raw}}
+         <img class="img-fluid" src="{{ file_url(content.field_photo.0['#item'].entity.uri.value) }}" alt="{{paragraph.field_photo.alt}}">
+      </div>
+    </div>
+  </div>
+</section>
+{%endif%}

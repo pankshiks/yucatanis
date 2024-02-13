@@ -1,0 +1,203 @@
+{
+    "name": "drupal/recommended-project",
+    "description": "Project template for Drupal 9 projects with a relocated document root",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/admin_toolbar": "^3.4",
+        "drupal/apple_pay_verification": "^1.0",
+        "drupal/better_exposed_filters": "^6.0",
+        "drupal/block_class": "^2.0",
+        "drupal/block_field": "^1.0@RC",
+        "drupal/bootstrap_barrio": "^5.5",
+        "drupal/ckeditor": "1.0",
+        "drupal/color_field": "^3.0",
+        "drupal/commerce": "^2.35",
+        "drupal/commerce_authnet": "^1.8",
+        "drupal/commerce_pricelist": "^2.10",
+        "drupal/commerce_stripe": "^1.0",
+        "drupal/core-composer-scaffold": "^10.0.11",
+        "drupal/core-project-message": "^10.0.11",
+        "drupal/core-recommended": "^10.0.11",
+        "drupal/country": "^1.1",
+        "drupal/critique_and_review": "1.0.0-beta1",
+        "drupal/email_verification": "^1.2",
+        "drupal/entity_comparison": "^4.0",
+        "drupal/estimated_read_time": "^1.0",
+        "drupal/excel_importer": "^1.1",
+        "drupal/extra_image_field_classes": "^1.2",
+        "drupal/facets_range_input": "^2.0@alpha",
+        "drupal/field_time": "^1.0@beta",
+        "drupal/fivestar": "dev-1.x",
+        "drupal/form_options_attributes": "^2.0",
+        "drupal/gin": "^3.0@RC",
+        "drupal/gin_toolbar": "^1.0@RC",
+        "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/mail_login": "^2.7",
+        "drupal/mailing_subscriber": "^2.0@alpha",
+        "drupal/mailsystem": "^4.4",
+        "drupal/menu_item_extras": "^3.0",
+        "drupal/menu_link_attributes": "^1.3",
+        "drupal/menus_attribute": "^1.3",
+        "drupal/mimemail": "^1.0@alpha",
+        "drupal/newsletter_signup_block": "^1.0",
+        "drupal/newslettersignup": "^3.2",
+        "drupal/node_read_time": "^1.11",
+        "drupal/paragraphs": "^1.15",
+        "drupal/password_field": "^2.0",
+        "drupal/pathauto": "^1.11",
+        "drupal/phone_international": "^3.3",
+        "drupal/phone_number": "^2.0@alpha",
+        "drupal/phpspreadsheet": "^2.0",
+        "drupal/range_filter_ranges": "^1.0",
+        "drupal/range_slider": "^2.0",
+        "drupal/rate": "^3.0",
+        "drupal/rdf": "^2.1",
+        "drupal/reroute_email": "^2.2",
+        "drupal/search_api": "^1.31",
+        "drupal/search_autocomplete": "^3.0",
+        "drupal/select2": "^1.15",
+        "drupal/select2_all": "^1.3",
+        "drupal/seven": "^1.0",
+        "drupal/simple_multistep": "^2.0",
+        "drupal/simple_pass_reset": "1.x-dev@dev",
+        "drupal/simple_time_field": "^1.1",
+        "drupal/simplenews": "^4.0@beta",
+        "drupal/sitemap": "^2.0@beta",
+        "drupal/smtp": "^1.2",
+        "drupal/starrating": "^4.1@alpha",
+        "drupal/svg_image_field": "^2.2",
+        "drupal/switch_page_theme": "^4.0",
+        "drupal/telephone_validation": "^2.4",
+        "drupal/themable_forms": "^1.0",
+        "drupal/time_field": "^2.1",
+        "drupal/twig_tweak": "^3.2",
+        "drupal/ultimate_cron": "^2.0@alpha",
+        "drupal/upgrade_status": "4.0",
+        "drupal/user_email_verification": "^1.2",
+        "drupal/views_autocomplete_filters": "^2.0",
+        "drupal/views_infinite_scroll": "^2.0",
+        "drupal/viewsreference": "^2.0@beta",
+        "drupal/votingapi": "dev-3.x",
+        "drupal/webform": "^6.2",
+        "drupal/webform_attachment_gated_download": "^1.4",
+        "drush/drush": "^11.5",
+        "mglaman/composer-drupal-lenient": "^1.0",
+        "phpoffice/phpspreadsheet": "^1.29"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "cweagans/composer-patches": true,
+            "mglaman/composer-drupal-lenient": true
+        }
+    },
+    "extra": {
+        "patches": {
+            "drupal/smtp": {
+                "contrib_module": "https://www.drupal.org/files/issues/2023-03-16/error-sending-email-16.patch"
+            },
+            "drupal/core": {
+                "sucess message": "https://www.drupal.org/files/issues/2023-02-23/database-escapeLike.patch" ,
+                "sucessjsons": "https://www.drupal.org/files/issues/2020-05-13/2915792-47.patch"
+            },
+            "drupal/field_time": {
+                "sucess time": "https://www.drupal.org/files/issues/2023-06-15/field_time-time_element.patch"     
+                
+            },
+            "drupal/contextual_range_filter": {
+                "sucess time": "https://www.drupal.org/files/issues/2022-07-18/contextual_range_filter.1.x-dev.rector.patch"     
+                
+            },
+            "drupal/mobile": {
+                "mobile number": "https://www.drupal.org/files/issues/2023-11-08/mobile_number-3288679-0.patch"     
+                
+            },
+            "drupal/webform_attachment_gated_download": {
+                "Drupal 10 compatibility fixes": "patches/webform_attachment_gated_download.patch"     
+            }
+        },
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "/"
+            }
+          
+        },
+       
+        
+        "installer-paths": {
+            "core": [
+                "type:drupal-core"
+            ],
+            "libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
+        },
+        "drupal-core-project-message": {
+            "include-keys": [
+                "homepage",
+                "support"
+            ],
+            "post-create-project-cmd-message": [
+                "<bg=blue;fg=white>                                                         </>",
+                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
+                "<bg=blue;fg=white>                                                         </>",
+                "",
+                "<bg=yellow;fg=black>Next steps</>:",
+                "  * Install the site: https://www.drupal.org/docs/8/install",
+                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
+                "  * Get support: https://www.drupal.org/support",
+                "  * Get involved with the Drupal community:",
+                "      https://www.drupal.org/getting-involved",
+                "  * Remove the plugin that prints this message:",
+                "      composer remove drupal/core-project-message"
+            ]
+        },
+        "drupal-lenient": {
+            "allowed-list": ["drupal/webform_attachment_gated_download"]
+        }
+    }
+}

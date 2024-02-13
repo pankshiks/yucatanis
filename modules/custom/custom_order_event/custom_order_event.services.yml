@@ -1,0 +1,6 @@
+services:
+  custom_order_event.event_subscriber:
+    class: Drupal\custom_order_event\EventSubscriber\CustomOrderEventSubscriber
+    tags:
+      - { name: event_subscriber }
+

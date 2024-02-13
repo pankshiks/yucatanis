@@ -1,0 +1,142 @@
+.title-with-detail-wrapper {
+  display: grid;
+  gap: 64px;
+}
+
+.title-with-detail {
+  display: grid;
+  gap: 24px;
+
+  .subheading {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  span {
+    text-align: center;
+
+  }
+
+  h6.font20 {
+    text-align: center;
+    margin-bottom: 40px;
+
+    @include for-phone-only {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.title-with-details {
+  p {
+    margin-bottom: 32px;
+  }
+
+  span {
+    color: $YUcanatisOrange;
+  }
+
+
+}
+
+.detail-list {
+  padding-left: 25px;
+
+  li {
+
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    color: $black;
+
+    &::marker {
+      font-size: 7px;
+
+    }
+  }
+
+}
+
+.hiring {
+  .title-with-details {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    h4 {
+      font-family: 'GT Super Display';
+    }
+
+
+    .small-text {
+      font-family: 'Montserrat';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%;
+      text-transform: capitalize;
+    }
+
+  }
+}
+
+.tageline-block {
+  .title-with-detail {
+    text-align: center;
+    gap: 1px;
+    padding-bottom: 100px;
+
+    p {
+      color: #000;
+      text-align: center;
+      font-family: 'Montserrat';
+      font-size: 27px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      margin: 0;
+
+      @include for-phone-only {
+        font-size: 18px;
+      }
+
+    }
+
+    h2 {
+      font-size: 72px;
+      font-weight: 900;
+      font-family: 'GT Ultra Fine';
+
+      @include for-phone-only {
+        font-size: 48px;
+      }
+    }
+
+    h6 {
+      color: $black;
+      text-align: center;
+      font-family: 'Montserrat';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: 8.48px;
+    }
+
+    @include for-phone-only {
+      gap: 5px;
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.call-us {
+  .title-with-detail-wrapper {
+    .btn-secondary {
+      max-width: 352px;
+      width: 100%;
+    }
+  }
+}

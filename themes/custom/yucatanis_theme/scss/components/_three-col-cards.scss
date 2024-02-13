@@ -1,0 +1,51 @@
+.three-col-cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 64px;
+
+  @include for-tablet {
+
+    gap: 20px;
+  }
+
+  @include for-phone-only {
+    flex-direction: column;
+  }
+
+  .features-cards {
+    display: grid;
+    gap: 16px;
+    width: 33.33%;
+
+    @include for-phone-only {
+      width: 100%;
+    }
+
+    .icon-with-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      @include for-tablet {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      h5 {
+        color: $PrimaryBrownple;
+
+        @include for-tablet {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .content {
+      @include for-phone-only {
+        text-align: center;
+      }
+    }
+  }
+}

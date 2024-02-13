@@ -1,0 +1,388 @@
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 16px;
+  transform: scale(0.8);
+  transition: 0.5s;
+
+  label {
+    display: block;
+    margin: 0 0 3px 0;
+    font-family: 'Encode Sans Expanded' !important;
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 100% !important;
+    opacity: 0.7 !important;
+    color: $YUPrimary !important;
+  }
+
+  input[type=text],
+  input[type=number] {
+    width: 100%;
+    padding-bottom: 12px;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  ::placeholder {
+    font-family: 'Encode Sans Expanded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: $YUPrimary;
+    opacity: 0.5;
+  }
+}
+
+input[type=radio] {
+  &:checked~.reveal-if-active {
+    opacity: 1;
+    max-height: 100%;
+
+    padding: 12px;
+    transform: scale(1);
+    overflow: visible;
+    display: grid;
+    gap: 16px;
+  }
+}
+
+input[type=checkbox] {
+  &:checked~.reveal-if-active {
+    opacity: 1;
+    max-height: 100%;
+
+    padding: 12px;
+    transform: scale(1);
+    overflow: visible;
+    display: grid;
+    gap: 16px;
+  }
+}
+
+.payments-block-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+
+  >div {
+    margin: 0 0 20px 0;
+    display: grid;
+    gap: 32px;
+    width: 100%;
+
+    >div {
+      padding: 32px;
+      border: 1px solid $YUcanatisOrange;
+      border-radius: 16px;
+    }
+  }
+
+  div {
+    >label {
+      font-family: 'Encode Sans Expanded';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
+}
+
+.term-condition-pay-block {
+  p {
+    font-family: 'Encode Sans Expanded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    opacity: 0.8;
+    color: $YUPrimary;
+    width: 79%;
+
+    @include for-phone-only {
+      width: 100%;
+    }
+  }
+}
+
+#select-payment-method {
+  position: absolute;
+}
+
+.payment-option {
+  position: relative;
+  margin-left: 30px;
+  width: calc(100% - 30px);
+
+  svg {
+    float: right;
+  }
+}
+
+.card-number {
+  width: 100%;
+  position: relative;
+
+  input {
+    position: relative;
+  }
+
+  svg {
+    position: absolute;
+    right: 0px;
+  }
+}
+
+#edit-payment-information {
+  >.fieldset-wrapper {
+    padding: 32px;
+    border: 1px solid #FF563C;
+    border-radius: 16px;
+  }
+}
+
+.layout-checkout-form {
+  .personal-details-block.payments-block {
+    width: 100%;
+
+    #edit-payment-information {
+      legend {
+        .fieldset-legend {
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 130%;
+          color: #332D17;
+        }
+      }
+
+      .fieldgroup {
+        .fieldset-wrapper {
+          padding-top: 20px;
+        }
+
+        .js-form-item {
+          font-family: "Encode Sans Expanded";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 130%;
+          margin-bottom: 30px;
+        }
+      }
+
+      #edit-payment-information-add-payment-method {
+        .stripe-form {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 3px;
+
+          .js-form-item {
+            width: 33%;
+
+            .form-text {
+              width: 100%;
+              height: 30px;
+            }
+          }
+        }
+      }
+
+
+    }
+
+    #edit-payment-information-billing-information {
+      .js-form-item {
+        padding: 10px 0;
+
+        label {
+          display: block;
+          margin: 0 0 3px 0;
+          font-family: "Encode Sans Expanded";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 100%;
+          opacity: 0.7;
+          color: #423B30;
+        }
+
+        .form-select {
+          border: none;
+          border-radius: 0;
+          border-bottom: 1px solid rgba(49, 49, 49, 0.2);
+          padding-left: 0;
+          padding-top: 3px;
+        }
+
+        input {
+          font-family: "Montserrat";
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 100%;
+          color: #332D17;
+
+        }
+      }
+
+      .address-container-inline {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+
+        .js-form-item {
+          width: calc(33% - 1px);
+          margin: 0;
+
+
+        }
+
+        &:nth-child(1) {
+          &.js-form-type-textfield {
+            width: 49%;
+          }
+        }
+
+
+      }
+    }
+
+    #edit-payment-information-add-payment-method-billing-information {
+      .js-form-item {
+        padding: 10px 0;
+
+        label {
+          display: block;
+          margin: 0 0 3px 0;
+          font-family: "Encode Sans Expanded";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 100%;
+          opacity: 0.7;
+          color: #423B30;
+        }
+
+        .form-select {
+          border: none;
+          border-radius: 0;
+          border-bottom: 1px solid rgba(49, 49, 49, 0.2);
+          padding-left: 0;
+          padding-top: 3px;
+        }
+
+        input {
+          font-family: "Montserrat";
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 100%;
+          color: #332D17;
+
+        }
+      }
+
+      .address-container-inline {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+
+        .js-form-item {
+          width: calc(33% - 1px);
+          margin: 0;
+
+
+        }
+
+        &:nth-child(1) {
+          &.js-form-type-textfield {
+            width: 49%;
+          }
+        }
+
+
+      }
+    }
+
+    .address-book-edit-button {
+      background: #FF563C;
+      border-radius: 16px;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 110%;
+      text-align: center;
+      color: #fff;
+      padding: 20px 40px;
+      border: 0;
+      position: relative;
+
+      &:hover {
+        background: #84755D;
+      }
+    }
+
+    .layout-region-checkout-footer {
+      margin-top: 30px;
+
+      .form-submit {
+        background: #FF563C;
+        border-radius: 16px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 110%;
+        text-align: center;
+        color: #fff;
+        padding: 20px 40px;
+        border: 0;
+        position: relative;
+
+        &:hover {
+          background: #84755D;
+        }
+      }
+
+      #edit-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .link--previous {
+          background: #FF563C;
+          border-radius: 16px;
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 110%;
+          text-align: center;
+          color: #fff;
+          padding: 20px 40px;
+          border: 0;
+          position: relative;
+          text-decoration: none;
+
+          &:hover {
+            background: #84755D;
+          }
+        }
+
+
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{% if paragraph.field_heading_type.value=="yucatanis's_core_principle" %}
+<section class="ptb-100-90">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 title-with-detail">
+        <div class="title-with-detail">
+         {{paragraph.field_main_heading.value|raw}}
+          </h3>
+          <p class="font20 fw-normal text-center"> {{paragraph.field_short_de.value|raw}}</p>
+        </div>
+        <div class="listing">
+          <h6 class="font20">{{paragraph.field_list_heading.value|raw}}</h6>
+          <ul class="primary-list">
+            {% for item in paragraph.field_list_ %}
+                <li>{{item.value}} </li>
+            {% endfor %}
+          </ul>
+          {{paragraph.field_description_.value|raw}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_heading_type.value=="booking_page" %}
+<section class="booking-page ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-with-detail">
+          {{paragraph.field_main_heading.value|raw}}
+           {{paragraph.field_description_.value|raw}}
+          <ul>
+          {% for item in paragraph.field_list_ %}
+                <li>{{item.value}} </li>
+            {% endfor %}  
+          </ul>
+          <p></p>
+          <p>To stop receiving emails, simply click on the SafeUnsubscribe® link located at the bottom of every email.
+            Yucatan’s east-coast will stop being in the palm of your hand but we value your privacy, you can withdraw
+            your consent at any time.</p>
+          <p>Your data will not be shared with anyone according to our<a href=""> Privacy Policy.</a></p>
+          <p>If users need a second tour be so kind to places the following box as a courtesy to save them some time…
+          </p>
+          <p>Below is a check box stating:</p>
+          <ul>
+            <li>[ ] I would like to purchase a second item using the same form.</li>
+          </ul>
+          <p>If the check box is ticked the following form appears:</p>
+          <p>Select the next Rental or Product (tour) Name</p>
+          <p>They could type or select from a dropdown list displayed automatically taken from the helicopter view
+            (Master Inventory on the backend)</p>
+          <ul>
+             {% for item in paragraph.field_detail %}
+                <li>{{item.value}} </li>
+            {% endfor %}
+
+          </ul>
+            <p>{{paragraph.field_title_in_detail.value|raw}}</p>
+            {{paragraph.field_list_heading.value|raw}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% else %}
+<section class="ptb-100-90 pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-with-detail">
+            {{paragraph.field_main_heading.value|raw}}
+          <h6 class="font20">{{paragraph.field_short_de.value|raw}}</h6>
+        </div>
+        <ul class="secondary-list">
+         {% for item in paragraph.field_list_ %}
+                <li>{{item.value}} </li>
+            {% endfor %}
+        </ul>
+      </div>
+      <div class="col-12">
+        <div class="title-with-detail">
+          <h3>{{paragraph.field_description_.value|raw}}</h3>
+        </div>
+        <ul class="detail-list">
+          {% for item in paragraph.field_detail %}
+                <li>{{item.value}} </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

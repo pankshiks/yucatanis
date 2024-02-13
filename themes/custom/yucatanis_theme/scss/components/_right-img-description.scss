@@ -1,0 +1,221 @@
+.blocks-wrapper {
+  display: flex;
+  gap: 114px;
+
+  @include for-tablet {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .left-block {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+
+    @include for-tablet {
+      width: 100%;
+    }
+
+    h2 {
+      text-align: left;
+    }
+
+    .btn {
+      text-transform: uppercase;
+    }
+  }
+
+  .right-block {
+    width: 50%;
+
+    @include for-tablet {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+
+  }
+
+  .descripton-list {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    li {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 160%;
+      text-transform: capitalize;
+      color: $YUDarkerBrown;
+      padding-bottom: 24px;
+      list-style: none;
+      position: relative;
+    }
+
+    li::before {
+      position: absolute;
+      content: '';
+      background-color: $priceGreen;
+      width: 16px;
+      height: 16px;
+      border-radius: 50px;
+      top: 7px;
+      left: -28px;
+
+    }
+  }
+}
+
+.img-desc-block {
+  .blocks-wrapper {
+    gap: 128px;
+    justify-content: space-between;
+    align-items: center;
+
+    @include for-phone-only {
+      gap: 40px;
+    }
+
+    .content-block {
+      width: 100%;
+      max-width: 645px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      justify-content: center;
+
+      @include for-phone-only {
+        order: 2;
+      }
+
+      h2 {
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      h6 {
+        margin: 0;
+
+      }
+
+      .show-more-btn.secondary::after {
+        filter: invert(21%) sepia(18%) saturate(23%) hue-rotate(359deg) brightness(19%) contrast(125%);
+      }
+
+      .content-with-left-border {
+        border-left: 1px solid #FF563C;
+        padding: 10px 16px;
+        max-width: 435px;
+        width: 100%;
+        margin-top: 40px;
+
+        @include for-phone-only {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .image-block {
+      width: 100%;
+      max-width: 478px;
+      position: relative;
+
+      @include for-phone-only {
+        order: 1;
+      }
+
+      .name {
+        position: absolute;
+        bottom: 0;
+        padding: 33px 38px;
+
+        h6 {
+          color: $white;
+          font-weight: 400;
+          margin: 0;
+        }
+
+        p {
+          color: $white;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &.relevant-block {
+    .blocks-wrapper {
+      .content-block {
+        max-width: 396px;
+        width: 100%;
+
+        @include for-tablet {
+          max-width: 100%;
+          order: 1;
+        }
+      }
+
+      .image-block {
+        max-width: calc(700px - -16px);
+        width: 100%;
+
+        @include for-tablet {
+          order: 2;
+        }
+      }
+    }
+  }
+}
+
+.speciality-block {
+  .content-block {
+    max-width: 507px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include for-phone-only {
+      gap: 20px;
+    }
+  }
+
+  .speciality-img {
+    position: relative;
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../images/Yucatanis.vector.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      bottom: -30px;
+      left: 110px;
+      z-index: 0;
+      max-width: 1007px;
+      width: 100%;
+
+      height: 380px;
+
+      @include for-phone-only {
+        height: 280px;
+        left: 0px;
+      }
+
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+      max-width: 745px;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.filter-listing {
+  form {
+    .fieldgroup {
+      background: $YUTertiary15;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    // #edit-price-number-wrapper {
+    //   background: $YUTertiary15;
+    //   border-radius: 8px;
+    //   padding: 24px;
+    //   margin-bottom: 24px;
+
+    //   input {
+    //     border: none;
+    //   }
+    // }
+
+
+  }
+
+
+  legend {
+    .fieldset-legend {
+      font-weight: 700;
+      font-family: 'Montserrat';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+      color: $YUDarkerBrown;
+    }
+
+  }
+}
+
+.checkbox-field {
+  display: flex;
+  padding: 16px 0px;
+  gap: 8px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(49, 49, 49, 0.2);
+  }
+
+  label {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    opacity: 0.7;
+    cursor: pointer;
+    width: calc(100% - 28px);
+  }
+
+  input[type=checkbox]:checked+label {
+    opacity: 1;
+  }
+}

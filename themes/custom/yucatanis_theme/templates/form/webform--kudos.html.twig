@@ -1,0 +1,25 @@
+<form{{ attributes.addClass('booking-details') }}>
+    <div class="select-items">
+         {{ element.elements.name }}
+    </div>
+    <div class="select-items">
+        {{ element.elements.booking_number }}
+    </div>
+    <div class="select-items">
+         {{ element.elements.email }}
+    </div>
+    <div class="select-items">
+        {{ element.elements.special_note }}
+
+    </div>
+
+    <div class="checkbox-wrapper">
+        <div class="checkbox-block">
+         {{ element.elements.agreement }}
+        </div>
+        {{ element.elements.actions }}
+    </div>
+            {{ element.form_token }}
+            {{ element.form_build_id }}
+            {{ element.form_id }}
+</form>

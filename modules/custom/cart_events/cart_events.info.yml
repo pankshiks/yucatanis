@@ -1,0 +1,5 @@
+name: Cart Events
+type: module
+description: Example module for Event handling in Drupal 9.
+core_version_requirement: ^8 || ^9 || ^10
+package: Example

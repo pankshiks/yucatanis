@@ -1,0 +1,27 @@
+.payment-method-block {
+  text-align: center;
+
+  small {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+  }
+
+  .footnote {
+    color: $black;
+    opacity: 1;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .img-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+}

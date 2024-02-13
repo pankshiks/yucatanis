@@ -1,0 +1,35 @@
+<section class="hero-banner hero-banner-parallex">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="free-quote-content">
+        
+          {{ paragraph.field_banner_heading.value|raw }}
+          <div class="typewriter-wrapper">
+          <h4>  {{ paragraph.field_banner_sub_heading.value|raw }}
+            <div id="typewriter1">
+             {{ paragraph.field_banner_title.value }}
+              </div>
+          </h4>
+          </div>
+          {{ paragraph.field_description.value|raw }}
+          <div class="clearfix"></div>
+          
+          {% for item in paragraph.field_button %}
+          <a href="{{ item.url }}" class="btn btn-secondary">{{ item.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax-gallry">
+    {% for key,items in paragraph.field_images %} 
+      <div class="item" style="top: -100px;">
+        <a href=""> <img src="{{file_url(items.entity.field_media_image.entity.fileuri)}}" alt="{{items.entity.field_media_image.alt}}" /></a>
+      </div>
+    {% endfor %}
+  </div> 
+  
+</section>

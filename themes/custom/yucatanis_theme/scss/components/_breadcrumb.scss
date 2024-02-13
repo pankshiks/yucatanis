@@ -1,0 +1,55 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include for-phone-only {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $YUDarkerBrown;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .separator {
+    margin: 0 10px;
+  }
+
+  .current-page {
+    font-weight: bold;
+  }
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  content: '>';
+  font-family: monospace;
+  font-size: 20px;
+  float: none;
+  color: #332E31;
+
+}
+
+.breadcrumb-item.active {
+  color: #332E31;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+}

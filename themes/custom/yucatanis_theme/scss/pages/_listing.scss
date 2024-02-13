@@ -1,0 +1,53 @@
+.listing-banner {
+  padding-top: 136px;
+  padding-bottom: 110px;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+}
+
+.banner {
+  .bg {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 56px;
+    text-align: center;
+  }
+}
+
+.listing-block {
+  h2 {
+    width: 80%;
+    margin: auto;
+
+    @include for-phone-only {
+      width: 100%;
+    }
+  }
+}

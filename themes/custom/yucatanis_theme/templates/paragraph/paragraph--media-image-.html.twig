@@ -1,0 +1,28 @@
+<section class="image-slider">
+<div class="carousel-Ticker-wrraper">
+<div class="carouselTicker-img">
+
+    <ul class="carouselTicker__list">
+      {% for key,items in paragraph.field_image_slides %} 
+        <li class="carouselTicker__item">
+          <div class="carousel-image">
+            <img src="{{file_url(items.entity.field_media_image.entity.fileuri)}}" alt="{{items.entity.field_media_image.alt}}" />
+          </div>
+        </li> 
+      {% endfor %}
+    </ul>
+</div>
+
+  <div class="carouselTicker-img-1">
+    <ul class="carouselTicker__list">
+      {% for key,items in paragraph.field_image_slides_1 %} 
+      <li class="carouselTicker__item">
+        <div class="carousel-image">
+         <img src="{{file_url(items.entity.field_media_image.entity.fileuri)}}" alt="{{items.entity.field_media_image.alt}}" />
+        </div>
+      </li> 
+      {% endfor %}    
+    </ul>
+  </div>
+</div>
+</section>

@@ -1,0 +1,41 @@
+.images-banner-with-text {
+  display: grid;
+  gap: 40px;
+
+  img {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  p {
+
+    color: $YUPrimary;
+  }
+
+  .image-banner-subtitle {
+    display: grid;
+    gap: 40px;
+
+    h6 {
+      font-weight: 400;
+      color: $YUSeconday;
+      text-align: center;
+    }
+  }
+
+  .content-with-left-border {
+    h4 {
+      color: $YUPrimary;
+    }
+  }
+
+  .first-letter {
+    padding-top: 72px;
+    padding-bottom: 60px;
+
+    @include for-phone-only {
+      padding-bottom: 30px;
+      padding-top: 36px;
+    }
+  }
+}

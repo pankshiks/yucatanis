@@ -1,0 +1,27 @@
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+
+  @include for-phone-only {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .items {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    p {
+      margin: 0;
+      font-family: 'Montserrat';
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      color: $PrimaryBrownple;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+ <form>
+            <div class="distance-field">
+              <div class="d-grid">
+               {{ form.field_location_target_id }}
+              </div>
+              <div class="border-right"></div>
+              <!-- <img src="images/uil_exchange.png" class="img-fluid exchange-icon" alt="exchange  "> -->
+              <div class="d-grid">
+                {{ form.field_im_target_id }}
+              </div>
+              <div class="border-right"></div>
+            </div>
+            <div class="slect-items-wrapper">
+              <div class="select-items">
+                {# <label class="" for="Date Range">possible Dates</label> #}
+                {# <input name="datepicker">   #}
+                {# {{dd(form.created)}} #}
+                {# <div class="daterange"></div> #}
+               
+                   {{ form.created }}
+
+
+              </div>
+              <div class="border-right"></div>
+              <div class="select-items">
+                <label class="" for="Traveller(s)">adults & kids</label>
+                <select class="options" name="traveller">
+                  <option value="0" selected="">Choose</option>
+                  <option value="0">4 </option>
+                  <option value="1">6 </option>
+                  <option value="2">8 </option>
+                </select>
+              </div>
+            </div>
+            
+             {{form.actions}}
+            {# <input type="submit" class="btn btn-secondary" value="Explore Now"> #}
+          </form>

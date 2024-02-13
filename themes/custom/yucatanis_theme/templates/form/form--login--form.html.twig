@@ -1,0 +1,36 @@
+  <section class="login ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+            <h2>Sign in</h2>
+            <p>Sign in so we can create your profile according to any hotel/resort located around Cancun or the Mayan
+              Riviera.</p>
+            <div class="login-form">
+              <form{{ attributes }}>
+          
+                <div id="error_messages"></div>
+                {{ element.messages }}
+                {{ messages }}
+                <div class="form-group">
+                {{ element.name }} {# username element #}
+                    </div>
+                      <div class="form-group">
+                {{ element.pass }} {# password element #}
+                  </div>
+              
+                {{ element.form_build_id }} {# required #}
+                {{ element.form_id }} {# required #}
+            
+                    {{ element.actions.submit }}
+              
+
+              </form>
+
+              <div class="create-account">
+                <p>Don't have an account? <a href="register">Register</a> to create one.</p>
+              </div>
+            </div>
+        </div>
+ </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+.half-width-tab-banner {
+  grid-column: 1/2;
+  grid-row: 1/span 2;
+  position: relative;
+
+  .half-width-tab-banner-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    min-height: 748px;
+    position: relative;
+
+    @include for-phone-only {
+      min-height: 100%;
+    }
+  }
+
+  .tab-content-wrapper {
+    position: absolute;
+    padding: 60px;
+    top: 0;
+
+    @include for-phone-only {
+      padding: 15px;
+    }
+
+    .btn-secondary {
+      z-index: 1;
+    }
+  }
+}
+
+
+
+@include for-phone-only {
+  .tab-content-title {
+    padding: 15px;
+  }
+}

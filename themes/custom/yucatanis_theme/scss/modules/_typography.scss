@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@100;200;300;400;500;600;700;900&display=swap');
+
+
+@font-face {
+    font-family: 'Gill Sans';
+    src: url('../fonts/GillSans-Light.eot');
+    src: url('../fonts/GillSans-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GillSans-Light.woff2') format('woff2'),
+        url('../fonts/GillSans-Light.woff') format('woff'),
+        url('../fonts/GillSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gill Sans';
+    src: url('../fonts/GillSans-Bold.eot');
+    src: url('../fonts/GillSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GillSans-Bold.woff2') format('woff2'),
+        url('../fonts/GillSans-Bold.woff') format('woff'),
+        url('../fonts/GillSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gill Sans';
+    src: url('../fonts/GillSans.eot');
+    src: url('../fonts/GillSans.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GillSans.woff2') format('woff2'),
+        url('../fonts/GillSans.woff') format('woff'),
+        url('../fonts/GillSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gill Sans';
+    src: url('../fonts/GillSans-UltraBold.eot');
+    src: url('../fonts/GillSans-UltraBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GillSans-UltraBold.woff2') format('woff2'),
+        url('../fonts/GillSans-UltraBold.woff') format('woff'),
+        url('../fonts/GillSans-UltraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gill Sans';
+    src: url('../fonts/GillSans-SemiBold.eot');
+    src: url('../fonts/GillSans-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GillSans-SemiBold.woff2') format('woff2'),
+        url('../fonts/GillSans-SemiBold.woff') format('woff'),
+        url('../fonts/GillSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Super Display';
+    src: url('../fonts/GTSuperDisplay-Regular.woff2') format('woff2'),
+        url('../fonts/GTSuperDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Ultra Fine';
+    src: url('../fonts/GTUltraFine-Black.eot');
+    src: url('../fonts/GTUltraFine-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GTUltraFine-Black.woff2') format('woff2'),
+        url('../fonts/GTUltraFine-Black.woff') format('woff'),
+        url('../fonts/GTUltraFine-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1 {
+    font-family: 'GT Super Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 76px;
+    line-height: 88px;
+    color: $YUDarkBrown;
+
+    @include for-big-desktop-up {
+        font-size: 64px;
+        line-height: normal;
+    }
+
+    @include for-phone-only {
+        font-size: 46px;
+        line-height: 56px;
+    }
+}
+
+h2 {
+    font-family: 'GT Super Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 69px;
+    line-height: 80px;
+    text-align: center;
+
+    @include for-big-desktop-up {
+        font-size: 54px;
+        line-height: normal;
+    }
+
+    @include for-phone-only {
+        font-size: 42px;
+        line-height: 55px;
+    }
+}
+
+h3 {
+    font-family: 'GT Super Display';
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    @include for-phone-only {
+        font-size: 32px;
+        line-height: 116%;
+    }
+
+    &.secondary {
+        font-family: 'Montserrat';
+        font-size: 55px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 56px;
+        color: $YUDarkBrown;
+    }
+}
+
+h4 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 49px;
+
+    @include for-tablet {
+        font-size: 30px;
+        line-height: 116%;
+    }
+
+    @include for-phone-only {
+        font-size: 28px;
+        line-height: 116%;
+    }
+}
+
+h5 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    color: $YUDarkerBrown;
+
+    @include for-phone-only {
+        font-size: 20px;
+        line-height: normal;
+    }
+}
+
+h6 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    color: $YUDarkBrown;
+
+    @include for-phone-only {
+        font-size: 18px;
+        line-height: 116%;
+    }
+}
+
+p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    text-transform: math-auto;
+    color: $black;
+}

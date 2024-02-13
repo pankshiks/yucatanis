@@ -1,0 +1,145 @@
+<?php
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
+use Drupal\commerce_price\Price;
+use Drupal\webform\Entity\Webform;
+use Drupal\webform\Entity\WebformSubmission;
+use Drupal\Core\Link ;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\RedirectCommand;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_webform_handler_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    
+  if( $form_id=='commerce_product_default_edit_form'){
+  // dd($form['field_hotel_information']['widget']['0']['subform']);
+  }
+  if( $form_id=='	user_login_form'){
+    $response = new RedirectResponse('/');
+    $response->send();
+  }
+if(!empty(\Drupal::routeMatch()->getParameter('commerce_product'))){
+  $product_id = \Drupal::routeMatch()->getParameter('commerce_product')->id();
+
+  if ($form_id == 'webform_submission_booking_commerce_product_'.$product_id.'_add_form') {
+
+    $product_id = \Drupal::routeMatch()->getParameter('commerce_product')->id();
+    
+    $form['elements']['actions_01'] = [
+        '#type' => 'submit',
+        "#webform_id" => "booking--actions_01",
+        "#webform_key" => "actions_01",
+        '#value' => t('Get a quote as private TOUR'),
+        '#attributes' => array('class' => array('btn btn-primary')), 
+        '#submit' => ['custom_webform_handler_custom_submit'],
+      ];
+
+
+  
+      $form['custom_variable'] = [
+        '#type' => 'hidden',
+        '#default_value' =>$product_id , // Replace with the actual variable value you want to send.
+      ];
+   
+  
+  }
+}
+
+}
+
+
+function custom_webform_handler_custom_submit($form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $custom_variable = $form_state->getValue('custom_variable');
+  $product = \Drupal\commerce_product\Entity\Product::load((int) $custom_variable);
+
+      $current_path = \Drupal::service('path.current')->getPath();
+      $url_object = \Drupal::service('path.validator')->getUrlIfValid($current_path);
+      $route_parameters = $url_object->getrouteParameters();
+
+      $result = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+      $url = \Drupal\Core\Url::fromRoute(
+        \Drupal::routeMatch()->getRouteName(),
+        array(
+          'query' => array("commerce_product" =>$custom_variable
+,"type"=>"Private"),
+          'absolute' => TRUE,
+        )
+   );
+   $link = Link::createFromRoute('View Details', 'entity.commerce_product.canonical', ['commerce_product' =>$custom_variable,'type'=>'private'])->toRenderable();
+
+      $response = new RedirectResponse($link['#url']->toString());
+      $response->send();
+  }
+
+
+
+  function custom_webform_handler_commerce_order_update($order) {
+    // Check if the order status is "completed."
+    // dd($order);
+    if ($order->getState()->value === 'completed') {
+   
+
+      $response = new RedirectResponse("/success-message");
+      $response->send();
+    }
+  }
+ // commerce product default product type.
+  function custom_webform_handler_entity_bundle_info_alter(array &$bundles) {
+    if (isset($bundles['commerce_product']['default'])) {
+      // \Drupal::messenger()->addMessage('enter successfully');
+      unset($bundles['commerce_product']['default']);
+    }
+  }
+
+  //
+  function custom_webform_handler_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+    if ($view->id() == 'search_services_by_hotel') {
+      foreach ($query->where as &$condition_group) {
+        foreach ($condition_group['conditions'] as &$condition) {
+              if ($condition['field'] == 'paragraphs_item_field_data_commerce_product__field_hotel_information__paragraph__field_hotel_info.field_hotel_info_target_id') {
+            
+            $title = trim($condition['value']);
+         
+            $query = \Drupal::database()->select('node_field_data', 'n');
+            $query->fields('n', ['nid']);
+            $query->fields('n', ['title']);
+            $query->condition('n.type', 'hotel_information', '=');
+           // $query->condition('n.title', 'Majestic Resorts', 'LIKE');
+            $query->condition('n.title', '%' . $title . '%', 'LIKE');
+            //$query->condition('title', $condition['value'] . '%', 'LIKE');
+            //$query->condition('n.title', $title, 'LIKE');
+           $result = $query->execute();
+        
+           $hotel = $result->fetchAll();
+           $nids = [];
+          foreach ($hotel as $result) {
+          $nids[] = $result->nid;
+
+          }
+
+      
+            if($hotel){
+              $condition['value'] = $nids; 
+            }
+          }
+       
+        
+        }
+      }
+    }
+  }
+  
+
+   
+  
+
+

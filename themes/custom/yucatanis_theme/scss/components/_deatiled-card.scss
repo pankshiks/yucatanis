@@ -1,0 +1,130 @@
+.top-rated-experiences {
+  padding: 75px 0;
+
+  @include for-phone-only {
+    padding-bottom: 60px;
+  }
+
+  h3 {
+    padding-bottom: 80px;
+    text-align: center;
+    margin: auto;
+    font-weight: 800;
+
+    @include for-phone-only {
+      padding-bottom: 40px;
+      text-align: center;
+      margin: auto;
+      max-width: 100%;
+    }
+  }
+
+  .main-title {
+    padding: 274px 0 254px;
+    margin: 0;
+
+    @include for-phone-only {
+      padding: 50px 0;
+    }
+  }
+}
+
+
+.detailed-cards {
+  border: 0;
+  width: 286px;
+  padding: 0 12px;
+
+  a {
+    text-decoration: none;
+  }
+
+  .card-img-top {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .card-body {
+    padding: 20px 10px 20px 0;
+
+    .card-title {
+      margin-bottom: 16px;
+
+      h4 {
+        font-size: 25px;
+        font-weight: 700;
+        margin-bottom: 0;
+        line-height: 1.4;
+
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    h6 {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 123%;
+      text-transform: capitalize;
+    }
+
+    .ratings {
+      span {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+#cultural-experiences {
+  .detailed-cards {
+    .card-img-top {
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card-body {
+
+
+      .card-title {
+        margin-bottom: 16px;
+
+        h4 {
+          font-size: 25px;
+          font-weight: 700;
+          margin-bottom: 0;
+          line-height: 1.4;
+
+          span {
+            font-weight: 600;
+          }
+        }
+      }
+
+      h6 {
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      p {
+        font-weight: 600;
+      }
+    }
+
+    .ratings {
+      span {
+        opacity: 0.6;
+      }
+    }
+  }
+
+}

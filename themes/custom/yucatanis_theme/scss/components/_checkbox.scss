@@ -1,0 +1,11 @@
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  background: $YUDarkBrown;
+
+}
+
+input[type=checkbox]:checked {
+  accent-color: $YUcanatisOrange;
+
+}

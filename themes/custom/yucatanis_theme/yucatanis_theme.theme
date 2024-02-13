@@ -1,0 +1,1087 @@
+<?php
+
+use Drupal\Core\Template\Attribute;
+use Drupal\commerce_product\Entity\Product;
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+use Drupal\user\Entity\User;
+use Drupal\profile\Entity\Profile;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+use Drupal\commerce_price\Price;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+function yucatanis_theme_preprocess_page(&$variables) {
+  $site_config = \Drupal::config('system.site');
+  $variables['site_name'] = $site_config->get('name');
+  $variables['site_slogan'] = $site_config->get('slogan');
+  $variables['logopath']= \Drupal::service('file_url_generator')->generateString(theme_get_setting('logo.url'));
+  
+$login_form = FALSE;
+if (\Drupal::currentUser()->isAnonymous()) {
+  $login_form = \Drupal::formBuilder()->getForm(Drupal\user\Form\UserLoginForm::class);
+}
+$variables['login_form'] = $login_form;
+$registrationform = FALSE;
+//
+
+  $current_path = \Drupal::service('path.current')->getPath();
+
+  if ($current_path == '/cart') {
+    // Get the current user.
+    $current_user = \Drupal::currentUser();
+    if ($current_user->isAnonymous() || $current_user->isAuthenticated()) {
+    \Drupal::messenger()->addMessage(t('You are not authorized to access the cart page.'));
+      $url = Url::fromRoute('<front>');  
+      $response = new RedirectResponse($url->toString());
+      $response->send();
+      return;
+      
+    }
+  }
+}
+
+function yucatanis_theme_preprocess_node(&$variables) {
+  $datetimeFormat = 'd';
+  $date = new \DateTime();
+
+  $datetimeFormat1 = 'M, Y';
+  $monyear = new \DateTime();
+  $date->setTimestamp($variables['node']->created->value);
+  $variables['day'] = $date->format($datetimeFormat);
+  $variables['monyear'] = $date->format($datetimeFormat1);
+  }
+
+  function yucatanis_theme_preprocess_commerce_order_receipt(&$variables) {
+    $givenName = $variables['billing_information']['#profile']->get('address')[0]->given_name;
+    $variables['given_name'] = $givenName;
+    $order = \Drupal::routeMatch()->getParameter('commerce_order');
+    $pick_up_time_field = $order->get('field_pick_up_time')->getValue();
+    $field_kids_no = $order->get('field_kids_no')->getValue();
+    $field_adults_no = $order->get('field_adults_no')->getValue();
+    $field_infants_no = $order->get('field_infants_no')->getValue();
+    $field_booking_time = $order->get('field_booking_time')->getValue();
+    $field_hotel_name =  $order->get('field_hotel_name')->getValue();
+
+    $field_kids_no  = $field_kids_no[0]['value'];
+    $pick_up_time = $pick_up_time_field[0]['value'];
+    $field_adults_no = $field_adults_no[0]['value'];
+    $field_infants_no = $field_infants_no[0]['value'];
+    $field_booking_time = $field_booking_time[0]['value'];
+    $field_hotel_name = trim($field_hotel_name[0]['value']);
+  
+    $variables['field_kids_no'] = $field_kids_no;
+    $variables['pick_up_time'] = $pick_up_time;
+    $variables['field_adults_no'] = $field_adults_no;
+    $variables['field_infants_no'] = $field_infants_no;
+    $variables['field_booking_time'] = $field_booking_time;
+    $variables['field_hotel_name'] = $field_hotel_name;
+    $order_items = $order->getItems();
+    $product_ids = [];
+    foreach ($order_items as $order_item) {
+     $purchased_entity = $order_item->getPurchasedEntity();
+      // if ($purchased_entity instanceof \Drupal\commerce_product\Entity\ProductVariationInterface) {
+        $product_id = $purchased_entity->getProduct()->id();
+        $product = \Drupal\commerce_product\Entity\Product::load($product_id);
+        $image_field = $product->get('field_product_image')->getValue();
+        $image_target_id = $image_field[0]['target_id'];
+        $media = Media::load($image_target_id);
+        $fid = $media->field_media_image->target_id;
+        $file = File::load($fid);
+        $image_url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+        $variables['image_url'] = $image_url;
+        $products_info[] = [
+          'id' => $product->id(),
+          'title' => $product->label(),
+          'image_target_id' => $image_target_id,
+        ];
+      
+      // }
+    }
+        // $variables['module_path'] = $path;
+         $variables['http_host'] = $_SERVER['HTTP_HOST'];
+
+       $variables['base_path'] = base_path();
+       $variables['products_info'] = $products_info;
+
+  }
+function yucatanis_theme_page_attachments(array &$attachments) {
+    global $base_url;
+    $attachments['#attached']['library'][] = 'core/jquery.form';
+    $attachments['#attached']['library'][] = 'core/drupal.ajax';
+}
+
+function yucatanis_theme_theme($existing, $type, $theme, $path) {
+
+    return [
+      'views-exposed-form-blogcategory-block-1' => [
+      'render element' => 'form',
+    ],
+  ];
+}
+
+function yucatanis_theme_preprocess_form_element(&$variables) {
+  
+  foreach ($variables['element'] as $key => $value) {
+    if ($variables['element']['#type'] === 'checkbox') {
+        $variables['attributes']['class'][] = 'checkbox-field';
+    }
+  }
+}
+
+function yucatanis_theme_preprocess_breadcrumb(&$variables) {
+if ($variables['breadcrumb']) {
+	  $request = \Drupal::request();
+	  $route_match = \Drupal::routeMatch();
+	  $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+	
+	  if (!empty($page_title)) {
+		$variables['breadcrumb'][] = [
+		  'text' => $page_title,
+		  'attributes' => new Attribute(['class' => ['active']])
+		];
+
+	  }
+    // drupal_flush_all_caches();
+	}
+
+
+}
+
+
+function yucatanis_theme_theme_suggestions_table_alter(array &$suggestions, array $variables, $hook) {
+
+
+  $suggestions[0] = $hook . '__' .'compare__experiences';
+  
+  }
+
+
+  function yucatanis_theme_theme_suggestions_form_alter(array &$suggestions, array $variables,$hook) {
+ 
+    if ($variables['element']['#id'] == 'user-login-form--2' ) {
+   
+    $suggestions[] = 'form__' .'login__form';
+
+    }
+   
+    if (strpos($variables['element']['#id'],'simplenews-subscriptions-block-') === 0) {
+     
+        $suggestions[] = 'form__' .'simplenews_subscriptions__form';
+    
+      }
+    
+    if ($variables['element']['#id'] == 'custom-registration-form' ) {
+   
+      $suggestions[] = 'form__' .'registration__form';
+
+      }
+      if ($variables['element']['#id'] == 'user-form' ) {
+   
+        $suggestions[] = 'form__' .'user_pass_form';
+  
+        }
+    
+    
+    }
+
+
+    function yucatanis_theme_theme_suggestions_form_element_alter(array &$suggestions, array $variables, $hook) {
+      if (isset($variables['element']['#id'])) {
+    
+        $suggestions[] = $hook . '__' . str_replace('-','_', $variables['element']['#id']);
+    
+      }
+    }
+    
+  function yucatanis_theme_form_alter(&$form, &$form_state, &$form_id)
+  {
+      
+    // 
+    if ($form_id == 'commerce_checkout_flow_multistep_default'){
+      
+      if($form['#step_id']=='order_information') {
+        $profiles = $form_state->getFormObject()->getOrder()->collectProfiles();
+
+        $order = \Drupal::routeMatch()->getParameter('commerce_order');
+
+        foreach ($order->getItems() as $order_item) {
+
+          $product_variation = $order_item->getPurchasedEntity();
+          $product_id = $product_variation->product_id->getString();
+          $product = \Drupal\commerce_product\Entity\Product::load($product_id);$hotel_value = $product->get('field_hotel_information')->getValue();
+
+          foreach($hotel_value as  $key=>$val){
+
+            $p = \Drupal\paragraphs\Entity\Paragraph::load($val['target_id']);
+
+            $hotel_id =$p->get('field_hotel_info')->target_id;
+            
+            $node = \Drupal\node\Entity\Node::load($hotel_id);
+            if(!empty($node)){
+            $array[$node->id()]= $node->getTitle();
+            }
+
+            $multivalue_time = ($p->get('field_pick_up_time')->getValue());
+
+            foreach($multivalue_time as $key=>$value_time){
+
+              $string = $value_time['value'];
+
+              $string = str_replace("_", " ", $string); 
+              $string = strtoupper($string);
+
+              $array_time[$value_time['value']]=$string;
+            }
+
+          }
+
+        }
+        $selected_value = $form_state->getValue('hotel_information', 'default_value');
+        // $form["payment_information"]["add_payment_method"]["billing_information"]["field_hotel_s_name"]["widget"]["#options"] = $array;
+        // $form["payment_information"]["add_payment_method"]["billing_information"]["field_hotel_s_name"]["widget"]["#default_value"]=$selected_value;
+        // $form["payment_information"]["add_payment_method"]["billing_information"]["field_hotel_time"]["widget"]["#options"] = $array_time ;
+        // $form["payment_information"]["add_payment_method"]["billing_information"]["field_hotel_time"]["widget"]["#default_value"] = $array_time ;
+        // $form['hotel_information'] = [
+        //   '#type' => 'select',
+        //   '#title' => t('Hotel Info'),
+        //   '#default_value' => $selected_value,
+        //   '#options' => $array,
+        //   '#ajax' => [
+        //     'callback' => 'AjaxCallback', 
+        //     'event' => 'change',
+        //     'wrapper' => 'edit-output', 
+        //   ]
+
+        // ];
+
+        //   $form['output'] = [
+        //   '#type' => 'select',
+        //   '#title' =>t('Hotel Time'),
+        //   '#default_value' =>$form_state->getValue('output', 'default_value'),
+        //   '#options' => $array_time,  
+        //   '#prefix' => '<div id="edit-output">',
+        //   '#suffix' => '</div>',
+        // ];
+
+
+        $form['actions']['next']['#submit'][] = 'custom_checkout_form_submit';
+      }
+      // 
+      if($form['#step_id']=='order_information'){
+       $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+       
+      if ($user->isAuthenticated()) {
+    
+        if ($user->hasField('customer_profiles') && !$user->customer_profiles->isEmpty()) {
+          $customer_profiles = $user->get('customer_profiles')->getValue();
+
+          //12-jan
+            $profile_id = isset($customer_profiles[1]['target_id']) ? $customer_profiles[1]['target_id'] : (isset($customer_profiles[0]['target_id']) ? $customer_profiles[0]['target_id'] : null);
+              
+              $profile_entity = \Drupal::entityTypeManager()->getStorage('profile')->load($profile_id);
+              if ($profile_entity) {
+               
+              $profile_type = $profile_entity->bundle(); // Get profile type.
+              $given_name =$profile_entity->get("address")->getValue()[0]['given_name'];
+              $additional_name =$profile_entity->get("address")->getValue()[0]['additional_name'];
+              $organization =$profile_entity->get("address")->getValue()[0]['organization'];
+              $family_name =$profile_entity->get("address")->getValue()[0]['family_name'];
+              $address_line1 =$profile_entity->get("address")->getValue()[0]['address_line1'];
+              $address_line2 =$profile_entity->get("address")->getValue()[0]['address_line2'];
+              $sorting_code =$profile_entity->get("address")->getValue()[0]['sorting_code'];
+              $postal_code =$profile_entity->get("address")->getValue()[0]['postal_code'];
+              $city = $profile_entity->get("address")->getValue()[0]['locality'];
+              $country = $profile_entity->get("address")->getValue()[0]['country_code'];
+            
+              $field_your_special_note =$profile_entity->get("field_your_special_note")->getValue()[0]['value'];
+              $field_we_totally_get_how_annoyin= $profile_entity->get("field_we_totally_get_how_annoyin")->getValue()[0]['value'];
+              $field_room_number_ = $profile_entity->get("field_room_number_")->getValue()[0]['value'];
+              $field_phone_number =  $profile_entity->get("field_phone_number")->getValue()[0]['value'];
+              $field_if_your_beach_hotel_is_not = $profile_entity->get("field_if_your_beach_hotel_is_not")->getValue()[0]['value'];
+              $field_hotel_information = $profile_entity->get("field_hotel_information")->getValue()[0]['value'];
+              $field_checkbox_label = $profile_entity->get("field_checkbox_label")->getValue()[0]['value'];
+              $field_checkbox_label2 =$profile_entity->get("field_checkbox_label2")->getValue()[0]['value'];
+              $field_checkbox_label4 =$profile_entity->get("field_checkbox_label4")->getValue()[0]['value'];
+              $field_favourite_email = $profile_entity->get("field_favourite_email")->getValue()[0]['value'];
+              
+              $last_profile_id =$customer_profiles[1]['target_id'];
+             //credit-card
+            //  $form['payment_information']["add_payment_method"]['billing_information']['select_address']['#default_value'] =  $last_profile_id;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['given_name'] =$given_name;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['additional_name'] =$additional_name;
+             
+            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['organization'] =$organization;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['family_name'] =$family_name;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['address_line1'] =$address_line1;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['address_line2'] =$address_line2;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['postal_code'] =  $postal_code;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['locality']= $city;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['country_code']=$country ;
+ 
+            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['sorting_code'] =$sorting_code;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['field_your_special_note']['widget'][0]['value']['#default_value'] = $field_your_special_note;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['field_we_totally_get_how_annoyin']['widget']['value']['#default_value']= $field_we_totally_get_how_annoyin;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['field_room_number_']['widget'][0]['value']['#default_value'] = $field_room_number_;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['field_phone_number']['widget'][0]['value']['#default_value'] = $field_phone_number;
+            //  $form['payment_information']["add_payment_method"]['billing_information']['field_if_your_beach_hotel_is_not']['widget']['#default_value'] = $field_if_your_beach_hotel_is_not;
+             // dd($form["payment_information"]["add_payment_method"]["billing_information"]);
+ 
+             //credit-card end 
+
+              }
+            // }
+             
+            // $form['payment_information']['billing_information']['select_address']['#default_value'] =  $last_profile_id;
+            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['given_name'] =$given_name;
+            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['additional_name'] =$additional_name;
+            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['organization'] =$organization;
+            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['family_name'] =$family_name;
+            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['address_line1'] =$address_line1;
+            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['address_line2'] =$address_line2;
+            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['postal_code'] =  $postal_code;
+            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['locality']= $city;
+            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['country_code']=$country ;
+
+            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['sorting_code'] =$sorting_code;
+            // $form['payment_information']['billing_information']['field_your_special_note']['widget'][0]['value']['#default_value'] = $field_your_special_note;
+            // $form['payment_information']['billing_information']['field_we_totally_get_how_annoyin']['widget']['value']['#default_value']= $field_we_totally_get_how_annoyin;
+            // $form['payment_information']['billing_information']['field_room_number_']['widget'][0]['value']['#default_value'] = $field_room_number_;
+            // $form['payment_information']['billing_information']['field_phone_number']['widget'][0]['value']['#default_value'] = $field_phone_number;
+            // $form['payment_information']['billing_information']['field_if_your_beach_hotel_is_not']['widget']['#default_value'] = $field_if_your_beach_hotel_is_not;
+            // $form['payment_information']['billing_information']['field_checkbox_label']['widget']['value']['#default_value']= $field_checkbox_label;
+            // $form['payment_information']['billing_information']['field_checkbox_label2']['widget']['value']['#default_value'] =$field_checkbox_label2;
+            // $form['payment_information']['billing_information']['field_checkbox_label']['widget']['value']['#default_value'] = $field_checkbox_label4;
+         
+            // $form['payment_information']['billing_information']['field_favourite_email']['widget'][0]['value']['#default_value'] = $field_favourite_email;
+       
+        }
+      //
+    }
+
+      }
+    }
+    // 
+
+    if (strpos($form_id, 'webform_submission_personal_details_add_form') === 0) {
+      $paramValue =\Drupal::request()->query->get('order_id');
+      if(!empty($paramValue)){
+      $order = \Drupal::entityTypeManager()->getStorage('commerce_order')->load($paramValue);
+      $timeframe = $order->field_time_frame->getValue()[0]["value"];
+        $form['elements']['order_summary']['timeframe'] = [
+          '#default_value' => $timeframe,
+        ];
+      $product_entity = $order->getItems()[0];
+      $my_purchased_product =$product_entity->getPurchasedEntity();
+        $form['elements']['passenger_name']['#attributes']['id'][] = 'floating-input';
+        $form['elements']['command_name']['#attributes']['id'][] = 'floating-input';
+        $form['elements']['email']['#attributes']['id'][] = 'floating-input';
+        $form['elements']['phone_number']['#attributes']['id'][] = 'floating-input';
+        $form['elements']['country']['#attributes']['id'][] = 'floating-input';
+        $form['elements']['passenger_name']['#attributes']['id'][] = 'floating-input';
+
+
+        $purchased_product = $my_purchased_product;
+        $entity_manager = \Drupal::entityTypeManager();
+
+        if(!empty($purchased_product )){
+          $product_variation = $entity_manager->getStorage('commerce_product_variation')->load((int)$purchased_product->get('variation_id')->value);
+
+          $product_id = $product_variation->product_id->getString();
+          $product = \Drupal\commerce_product\Entity\Product::load($product_id);$hotel_value = $product->get('field_hotel_information')->getValue();
+
+          foreach($hotel_value as  $key=>$val){
+
+            $p = \Drupal\paragraphs\Entity\Paragraph::load($val['target_id']);
+
+            $hotel_id =$p->get('field_hotel_info')->target_id;
+          
+            $node = \Drupal\node\Entity\Node::load($hotel_id);
+            if(!empty($node)){
+            $array[$node->id()]= $node->getTitle();
+
+            // $form['elements']['order_summary']['hotel_name'] =$node->getTitle();
+              $form['elements']['order_summary']['hotel_name'] = [
+                '#default_value' => $node->getTitle(),
+              ];
+            }
+
+            $multivalue_time = ($p->get('field_pick_up_time')->getValue());
+
+            foreach($multivalue_time as $key=>$value_time){
+
+              $string = $value_time['value'];
+
+              // $form['elements']['order_summary']['hotel_time'] =$string;
+              $form['elements']['order_summary']['hotel_time'] = [
+                '#default_value' => $string,
+              ];
+              
+
+              $string = str_replace("_", " ", $string); 
+              $string = strtoupper($string);
+
+              $array_time[$value_time['value']]=$string;
+            }
+
+          }
+
+        }
+      
+      
+      
+      $selected_value = $form_state->getValue('hotel_information', 'default_value');
+ 
+
+      $form['elements']['hotel_information'] = [
+          '#type' => 'select',
+          '#default_value' => $selected_value,
+          '#options' => $array,
+          '#attributes' => array(
+            'id' => 'floating-input',
+          ),
+          // '#title' => t('IF YOUR BEACH HOTEL IS NOT LISTEDS'),
+          '#ajax' => [
+            'callback' => 'AjaxCallback', 
+            'event' => 'change',
+            'wrapper' => 'edit-output', 
+          ]
+        
+        ];
+
+
+        $form['elements']['output'] = [
+          '#type' => 'select',
+          // '#title' =>t('Hotel Time'),
+          '#default_value' =>$form_state->getValue('output', 'default_value'),
+          '#options' => $array_time,  
+          '#prefix' => '<div id="edit-output">',
+          '#suffix' => '</div>',
+        ];
+    
+ 
+        // $form['elements']['order_summary']['product_title']= $purchased_product->title->value;
+        $form['elements']['order_summary']['product_title'] = [
+          // '#type' => 'textfield',
+          // '#title' => t('Product Title'),
+          '#default_value' => $purchased_product->getTitle(),
+        ];
+
+        // $form['elements']['order_details']=$order;
+        $form['elements']['order_details'] = [
+          '#default_value' => $order, 
+          ];
+
+        $form['actions']['submit']['#attributes']['class'][] = 'btn-secondary';
+        $form['actions']['submit']['#submit'][] = 'custom_checkout_form_submit';
+
+   
+        $purchased_product = $my_purchased_product ;
+        $entity_manager = \Drupal::entityTypeManager();
+        
+        if(!empty($purchased_product )){
+        $product_variation = $entity_manager->getStorage('commerce_product_variation')->load((int)$purchased_product->get('variation_id')->value);
+        
+        if($product_variation->hasfield('field_ratings')){
+        $starvalue = $product_variation->get('field_ratings')->getValue();
+        
+        if($starvalue[0]!=NULL &&  !empty($starvalue)){
+        $sum=0;
+        $val =  $starvalue[0]['rating']/20;
+        $element=[];
+        for ($i = 1; $i <=$val; $i++) {
+      
+          $stars_output = '<div class="star-icon"><img style="width:70px" src="\sites\default\files\star.png" \></div>';
+          $element[] = array('#markup' => $stars_output);
+          $sum +=$i; 
+        }
+      
+        $form['elements']['product']['star_count']=$element;
+        if($sum||$val!= NULL){
+          $rating= $sum/$val;
+         }
+        }else{
+          $sum=0;
+          for ($i = 1; $i <=5; $i++) {
+            $stars_output = '<div class="star-icon"><img style="width:70px" src="\sites\default\files\star.png" \></div>';
+            // $stars_output = '<div class="star-icon"><img style="width:70px" src="\sites\default\files\grey-star.png" \></div>';
+            $element[] = array('#markup' => $stars_output);
+            $sum +=$i; 
+          }
+          $form['elements']['product']['star_count']=$element;
+        }
+       
+       $sums=0;
+       $query = \Drupal::database()->select('votingapi_vote', 'vapi');
+       $query->fields('vapi', ['user_id', 'value', 'entity_id']);
+       $query->condition('vapi.entity_id', $purchased_product->get('variation_id')->value);
+       $result = $query->execute()->fetchAll();
+       $total_votes = count($result);
+
+      //  $form['elements']['product']['total_votes']= $total_votes;
+      //01-02-2024
+       $form['elements']['product']['total_votes'] = [
+        // '#type' => 'textfield',
+        // '#title' => t('Total Votes'),
+        '#default_value' => $total_votes,
+      ];
+      
+       foreach($result as $key=>$value){
+        $sums +=$value->value/20;
+      }
+      
+      if(($total_votes&&$sum) != NUll ){
+      $average = $sums/$total_votes ;
+      $roundedAverage = round($average, 1);
+
+      // $form['elements']['product']['rating']=$roundedAverage;
+      $form['elements']['product']['rating'] = [
+        // '#type' => 'textfield',
+        // '#title' => t('Rating'),
+        '#default_value' => $roundedAverage,
+      ];
+      
+      // $form['elements']['product']['average_votes']=$total_votes;
+      //
+      $form['elements']['product']['average_votes'] = [
+        // '#type' => 'textfield',
+        // '#title' => t('Average Votes'),
+        '#default_value' => $total_votes,
+      ];
+      //dd($form['elements']['product']['average_votes'] );
+      //
+      }
+        }
+      }
+    }
+        //
+    }
+
+
+  
+    if (strpos($form_id, 'simplenews_subscriptions_block') === 0) {
+
+
+      $form['mail']['widget']['0']['value']['#id'] = 'cta_newsletter_email';
+      $form['mail']['widget']['0']['value']['#title'] = '';
+      $form['mail']['widget']['0']['value']['#description'] = '';
+      $form['subscriptions']['#access']= FALSE;
+      $form['subscriptions']['widget']['#title']='';
+      $form['subscriptions']['widget']['#description']='';
+
+
+      if(is_string( $form['message']['#markup'])){
+
+        $form['actions']['submit']['#attributes']['class'][] = 'btn email-btn';
+        $form['actions']['submit']['#value']='';
+    
+      }
+    }
+    if ($form_id == 'simplenews_subscriber_validate') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+    }
+    if ($form_id == 'simplenews_confirm_multi'||'simplenews-confirm-removal') {
+      // $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+      }
+  
+    if (strpos($form_id, 'user_form') === 0) {
+      unset($form['field_city']);
+      unset($form['field_country']);
+      unset($form['field_date_of_birth']);
+      unset($form['field_first_name']);
+      unset($form['field_hotel']);
+      unset($form['field_hotel_information']);
+      unset($form['field_last_name']);
+      unset($form['field_phone_number']);
+      unset($form['field_state']);
+      unset($form['user_picture']);
+      unset($form['account']['mail']);
+      unset($form['account']['name']);
+
+
+      $form['actions']['submit']['#value'] = t('Reset Password');
+      $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary w-100';
+
+
+    }
+    if (strpos($form_id, 'user_pass') === 0) {
+      
+      $form['actions']['submit']['#value'] = t('Submit Email');
+      $form['actions']['submit']['#attributes']['class'][] = 'btn-secondary';
+    }
+    if (strpos($form_id, 'commerce_order_item_add_to_cart_form') === 0) {
+      // Add attributes to the "Add to Cart" button.
+      $form['actions']['submit']['#attributes']['class'][] = 'btn-secondary w-100';
+      $form['actions']['submit']['#value'] = t('Book Now');
+    }
+
+
+       
+    if ($form_id == 'user_login_form'){
+      unset($form['name']['#description']);
+      unset($form['pass']['#description']);
+      $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary w-100';
+      $form['name']['#attributes']['class'][] = 'form-group';
+      $form['pass']['#attributes']['class'][] = 'form-group';
+      $form['actions']['submit']['#attributes']['value'][] = t('SIGN IN');
+    
+    }
+
+    if ($form_id == 'custom_registration_form'){
+      
+      $form['name']['#prefix']=' <div class="checkbox-wrapper"><div class="checkbox-block">';
+      $form['name']['#suffix']='</div></div>';
+      unset($form['name']['#description']);
+      unset($form['pass']['#description']);
+      $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary w-100';
+      $form['actions']['next']['#attributes']['class'][] = 'btn btn-secondary w-100';
+      $form['actions']['finish']['#attributes']['class'][] = 'btn btn-secondary w-100';
+      
+    }
+    if ($form_id == 'custom_registration_form'){
+      $form['#submit'][] = 'yucatanis_theme_user_register_form_submit';
+   } 
+   if ($form_id == 'user_pass') {
+     $form['#submit'][] = 'yucatanis_theme_user_pass_form_submit';
+    }
+   
+  }
+  
+  function AjaxCallback(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+    
+
+
+    $nid = $form_state->getValue('hotel_information');
+    $node = \Drupal\node\Entity\Node::load($nid);
+    $order = \Drupal::routeMatch()->getParameter('commerce_order');
+    
+          
+    foreach ($order->getItems() as $order_item) {
+   
+      $product_variation = $order_item->getPurchasedEntity();
+      $product_id = $product_variation->product_id->getString();
+      $product = \Drupal\commerce_product\Entity\Product::load($product_id);
+ 
+ 
+      $hotel_value = $product->get('field_hotel_information')->getValue();
+      
+      foreach($hotel_value as  $key=>$val){
+  
+        $p = \Drupal\paragraphs\Entity\Paragraph::load($val['target_id']);
+
+        $hotel_id =$p->get('field_hotel_info')->target_id;
+        if($hotel_id==$nid){
+          $node = \Drupal\node\Entity\Node::load($hotel_id);
+
+       
+        $node = \Drupal\node\Entity\Node::load($hotel_id);
+   
+        $array[$node->id()]= $node->getTitle();
+
+      $multivalue_time = ($p->get('field_pick_up_time')->getValue());
+
+        foreach($multivalue_time as $key=>$value_time){
+
+          $string = $value_time['value'];
+
+          $string = str_replace("_", " ", $string); 
+          $string = strtoupper($string);
+
+          $array_time[$value_time['value']]=$string;
+        }
+      }
+      }
+
+    }
+
+    $form['output']['#options'] = $array_time;
+    
+    $response = new AjaxResponse();
+    $response->addCommand(new ReplaceCommand('#edit-output', $form['output']));
+    
+    return $response;
+    }
+  
+
+  function  yucatanis_theme_preprocess_views_view_field(&$variables)
+  {
+
+
+  if ($variables['view']->id() == 'categories_product_listing' && $variables['field']->field == 'field_product_image') {
+    
+    $markup = (string) $variables['output'];
+    $markup = str_replace('<img', '<img class="img-fluid"', $markup);
+    $variables['output'] = \Drupal\Core\Render\Markup::create($markup);
+  }
+}
+
+
+function  yucatanis_theme_preprocess_commerce_product(array &$variables) {
+  $type =\Drupal::request()->query->get('type');
+ if(\Drupal::request()->query->get('type')=='private'){
+    $variables['type'] = 'private';
+  }elseif($type=='four'){
+    $variables['type'] = 'four';
+  }
+  elseif($type=='six'){
+    $variables['type'] = 'six';
+  }
+  elseif($type=='eight'){
+    $variables['type'] = 'eight';
+  }
+  else{
+  }
+}
+
+
+function yucatanis_theme_theme_suggestions_input_alter(array &$suggestions, array &$variables, $hook)
+{
+ 
+    if (isset($variables['element']['#id'])) {
+        $id = str_replace("-", "_", $variables['element']['#id']);
+        $suggestions[] = $hook . '__' . $id;
+    }
+}
+
+
+function yucatanis_theme_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'user_login_form') {
+
+    $form['#submit'][] = 'yucatanis_theme_user_login_redirect';
+  }
+}
+
+
+function yucatanis_theme_user_login_redirect(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+
+
+  $form_state->setRedirect('<front>');
+}
+
+
+
+function custom_checkout_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+
+// dd($form_state);
+$node = \Drupal\node\Entity\Node::load($form_state->getValue('hotel_information'));
+if(!empty($node)){
+$hotel_name = $node->title->value;
+
+$key = $form_state->getValue('output');
+
+$hotel_time = $form['output']['#options'][$key];
+
+$order = \Drupal::routeMatch()->getParameter('commerce_order');
+if (!empty($order)) {
+$order->set('field_hotel_name',$hotel_name);
+$order->set('field_pick_up_time',$hotel_time);
+\Drupal::logger('testorder')->notice('<pre>'.print_r('testorder',true).'</pre>');
+$order->save();
+}
+
+}
+
+}
+
+
+function yucatanis_theme_preprocess_commerce_checkout_order_summary(&$variables) {
+  
+  $order=\Drupal\commerce_order\Entity\Order::load($variables['order_entity']->id());
+  $product_entity = $order->getItems()[0];
+  $purchased_product = $product_entity->getPurchasedEntity();
+  $entity_manager = \Drupal::entityTypeManager();
+
+  $product_variation = $entity_manager->getStorage('commerce_product_variation')->load((int)$purchased_product->get('variation_id')->value);
+  if($product_variation->hasfield('field_ratings')){
+  $starvalue = $product_variation->get('field_ratings')->getValue();
+if($starvalue[0]!=NULL &&  !empty($starvalue)){
+  $sum=0;
+  $val =  $starvalue[0]['rating']/20;
+  $element=[];
+  for ($i = 1; $i <=$val; $i++) {
+
+    $stars_output = '<div class="star-icon"><img style="width:70px" src="\sites\default\files\star.png" \></div>';
+    $element[] = array('#markup' => $stars_output);
+    $sum +=$i; 
+  }
+
+  $variables['product']['star_count']=$element;
+  if($sum||$val!= NULL){
+    $rating= $sum/$val;
+   }
+  }else{
+    $sum=0;
+    for ($i = 1; $i <=5; $i++) {
+      $stars_output = '<div class="star-icon"><img style="width:70px" src="\sites\default\files\star.png" \></div>';
+      // $stars_output = '<div class="star-icon"><img style="width:70px" src="\sites\default\files\grey-star.png" \></div>';
+      $element[] = array('#markup' => $stars_output);
+      $sum +=$i; 
+    }
+    $variables['product']['star_count']=$element;
+  }
+ 
+ $sums=0;
+ $query = \Drupal::database()->select('votingapi_vote', 'vapi');
+ $query->fields('vapi', ['user_id', 'value', 'entity_id']);
+ $query->condition('vapi.entity_id', $purchased_product->get('variation_id')->value);
+ $result = $query->execute()->fetchAll();
+ $total_votes = count($result);
+ $variables['product']['total_votes']= $total_votes;
+
+ foreach($result as $key=>$value){
+  $sums +=$value->value/20;
+}
+
+if(($total_votes&&$sum) != NUll ){
+$average = $sums/$total_votes ;
+$roundedAverage = round($average, 1);
+$variables['product']['rating']=$roundedAverage;
+$variables['product']['average_votes']=$total_votes;
+}
+  }
+
+}
+
+function yucatanis_theme_form_views_exposed_form_alter(&$form, FormStateInterface $form_state) {
+  if ($form['#id'] == 'views-exposed-form-categories-product-listing-page-2') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+  }
+  if ($form['#id'] == 'views-exposed-form-services-listing-page-1') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+  }
+  if ($form['#id'] == 'views-exposed-form-services-listing-page-2') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+  }
+  if ($form['#id'] == 'views-exposed-form-services-listing-page-3') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+  }
+  if ($form['#id'] == 'views-exposed-form-services-listing-page-4') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+  }
+  if ($form['#id'] == 'views-exposed-form-product-enquiry-listing--page-3') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+  }
+  if ($form['#id'] == 'views-exposed-form-product-enquiry-listing--page-2') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+  }
+  if ($form['#id'] == 'views-exposed-form-product-enquiry-listing--page-1') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+  }
+  if ($form['#id'] == 'views-exposed-form-boat-rental-page-1') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+  }
+
+  if ($form['#id'] == 'views-exposed-form-search-services-by-hotel-page-1') {
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
+  }
+  // 
+  // if ($form['#id'] == 'views-exposed-form-categories-product-listing-page-1') {
+  //   if (isset($form['price__number_wrapper']['price__number_wrapper']['price__number']['min'])) {
+  //     // dd($form['price__number_wrapper']['price__number_wrapper']['price__number']['min']);
+  //     // $form['price__number_wrapper']['price__number']['min']['#prefix'] = '$';
+  //     // $form['price__number_wrapper']['price__number_wrapper']['price__number']['min']['#default_value'] = '$' . $form['price__number_wrapper']['price__number']['min']['#default_value'];
+  //     $form['price__number_wrapper']['price__number_wrapper']['price__number']['min']['#default_value'] = '$' . $form['price__number_wrapper']['price__number']['min']['#default_value'];
+  //     }
+  // }
+  
+  //
+}
+
+
+
+function yucatanis_theme_preprocess_table(&$variables) {
+ 
+  $product_data='';
+  if ($variables['attributes']['class'][0] === 'responsive-enabled') {
+ 
+    foreach($variables['header'] as $key=>$value){
+    
+       if(is_array($value['content'])){
+      if(!empty($value['content']['#url'])){
+    
+      $product_id =($value['content']['#url']->getRouteParameters())['commerce_product'];
+
+      $product = Product::load($product_id);
+      $product_url=($product->get('path')->getValue())['0']['alias'];
+      $title = $product->title->value;
+      $body = $product->get('body')->value;
+    
+      $term_name='';
+      if($product->hasField('field_sub_type')){
+      $cat_id = $product->get('field_sub_type')->target_id;
+      $term_name = \Drupal\taxonomy\Entity\Term::load($cat_id)->get('name')->value;
+      }
+   
+  
+      $image_id = $product->get('field_product_image')->target_id;
+      $media= Media::load($image_id);
+      $fid = $media->field_media_image->target_id;
+      $file = File::load($fid);
+      $url = $file->getFileUri();
+       if($product->hasField('field_inclusions_list')){
+      $optical_inclusions_value = $product->get('field_inclusions_list');
+      unset($optical_inclusions);
+      foreach($optical_inclusions_value as $value){
+      $optical_inclusions[] = $value->value;
+    }
+
+  }
+
+    unset($uniqueness);
+
+    if($product->hasField('field_mandatorys')){
+    $optical_uniqueness_value = $product->get('field_mandatorys')->target_id;
+    $mandatory = \Drupal\taxonomy\Entity\Term::load( $optical_uniqueness_value)->get('name')->value;
+    }else{
+      $optical_inclus = $product->get('field_optional_inclusions')->getValue();
+  
+      foreach($optical_inclus as $key=>$value){
+        $mandatory[$key] = $value['value'];
+
+      }
+  
+     
+    }
+ 
+    $im_title='';
+    $uri_icon='';
+    if($product->hasField('field_mood')){
+    $im = $product->get('field_mood')->entity;
+    $im_img_target_id=$im->field_moods_icon->target_id;
+    if(!empty($im_img_target_id)){
+    $fil = File::load($im_img_target_id);
+    $uri_icon =  $fil->getFileUri();
+    }
+    $im_title = $im->name->value;
+  }
+
+    $product_data=['title'=>$title,'body'=>$body,'term'=>$term_name,'path'=>$url,'optical_inclusions'=>$optical_inclusions,'uniqueness'=>$mandatory ,'icon_path'=> $uri_icon,'icon_title'=>$im_title,'product_id'=>$product_url];
+  
+  }
+        
+     $content[] = $product_data;
+  //   
+  $variables['rows']=$content;
+  }
+}
+}
+}
+
+function yucatanis_theme_user_register_form_submit(&$form, FormStateInterface $form_state) {
+  // Redirect the user to the login page after successful registration.
+  $form_state->setRedirect('user.login');
+}
+function yucatanis_theme_user_pass_form_submit(&$form, FormStateInterface $form_state) {
+  // Redirect the user to the login page after successful password reset.
+  $form_state->setRedirect('user.login');
+}
+
+function yucatanis_theme_preprocess_views_view(&$variables) {
+  if ($variables['id'] == 'categories_product_listing' || $variables['id'] == 'services_listing'|| $variables['id'] == 'product_enquiry_listing_'|| $variables['id'] == 'boat_rental') {
+  if(is_array($variables) && !empty($variables)){
+  if (isset($variables['rows']['0']['#rows']) && is_array($variables['rows']['0']['#rows'])) {
+    foreach($variables['rows']['0']['#rows'] as $key=>$value){
+    $product_id =$value['#row']->_entity->product_id->value;
+    $product = \Drupal\commerce_product\Entity\Product::load((int)$product_id);
+    $entity_manager = \Drupal::entityTypeManager();
+    $product_variation = $entity_manager->getStorage('commerce_product_variation')->load((int)$product->getVariationIds()[0]);
+    $query = \Drupal::database()->select('votingapi_vote', 'vapi');
+    $query->fields('vapi', ['user_id', 'value', 'entity_id']);
+    $query->condition('vapi.entity_id',$product->getVariationIds()[0]);
+    $result = $query->execute()->fetchAll();
+
+    if(!empty($result[0]->value)){
+        $starvalue=$result[0]->value;
+      if($product_variation->hasfield('field_ratings')){
+  
+      $sum=0;
+      $val =$starvalue/20;
+    unset($element);
+    for ($i = 1; $i <=$val; $i++) {
+  
+      $stars_output = '<img style="width:70px" src="\sites\default\files\star.png" \>';
+      $element[] = array('#markup' => $stars_output);
+      $sum +=$i; 
+    }
+
+    $value['#row']->star_count=$element;
+
+    if($sum||$val!= NULL){
+      $rating= $sum/$val;
+     }
+  
+   $query = \Drupal::database()->select('votingapi_vote', 'vapi');
+   $query->fields('vapi', ['user_id', 'value', 'entity_id']);
+   $query->condition('vapi.entity_id',$product_variation->get('variation_id')->value);
+   $result = $query->execute()->fetchAll();
+   $total_votes = count($result);
+   $value['#row']->total_votes= $total_votes;
+   $sums=0;
+   foreach($result as $key=>$vals){
+    $sums +=$vals->value/20;
+  
+  }
+  
+  if(($total_votes&&$sum) != NUll ){
+  $average = $sums/$total_votes ;
+  $roundedAverage = round($average, 1);
+  $value['#row']->rating =$roundedAverage;
+  $value['#row']->average_votes=$total_votes;
+  }
+ 
+  }
+}else{
+  $starvalue=100;
+  
+  if($product_variation->hasfield('field_ratings')){
+  
+    $sum=0;
+    $val =$starvalue/20;
+    unset($element);
+    for ($i = 1; $i <=$val; $i++) {
+  
+      $stars_output = '<img style="width:70px" src="\sites\default\files\grey-star.png" \>';
+      $element[] = array('#markup' => $stars_output);
+      $sum +=$i; 
+    }
+
+    $value['#row']->star_count=$element;
+    
+    if($sum||$val!= NULL){
+      $rating= $sum/$val;
+     }
+  
+   $query = \Drupal::database()->select('votingapi_vote', 'vapi');
+   $query->fields('vapi', ['user_id', 'value', 'entity_id']);
+   $query->condition('vapi.entity_id',$product_variation->get('variation_id')->value);
+   $result = $query->execute()->fetchAll();
+   $total_votes = count($result);
+   $sums=0;
+   $value['#row']->total_votes= $total_votes;
+   foreach($result as $key=>$vals){
+    $sums +=$vals->value/20;
+  
+  }
+  
+  if(($total_votes&&$sum) != NUll ){
+  $average = $sums/$total_votes ;
+  $roundedAverage = round($average, 1);
+
+  $value['#row']->rating =$roundedAverage;
+  $value['#row']->average_votes = $total_votes;
+  }
+ }
+
+}
+}
+  }
+//
+}
+  }
+ }
+?>

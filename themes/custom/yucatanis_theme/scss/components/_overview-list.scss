@@ -1,0 +1,141 @@
+.overview-detail-wrapper {
+  display: grid;
+  gap: 48px;
+
+  @include for-phone-only {
+    gap: 20px;
+
+  }
+
+  .overview-detail {
+    .overview-detail {
+      gap: 8px;
+      display: flex;
+    }
+  }
+}
+
+.overview-detail-list {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  opacity: 1 !important;
+
+
+  li {
+    padding-bottom: 16px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    color: $YUDarkerBrown;
+    opacity: 1 !important;
+    letter-spacing: normal !important;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: url('../images/ion_chevron-forward.svg');
+      width: 24px;
+      height: 24px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      left: 0;
+    }
+  }
+
+
+}
+
+.overview-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  h4 {
+    font-weight: 700;
+  }
+
+  h5 {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    text-transform: capitalize;
+    color: $YUDarkerBrown;
+    margin-bottom: 16px;
+    margin: 0;
+  }
+
+  p {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    color: $YUDarkerBrown;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  ul {
+    opacity: 0.8;
+
+    li {
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.booking-btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+
+  @include for-phone-only {
+    flex-wrap: wrap;
+  }
+
+  .btn-secondary {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+}
+
+.overview-detail-list {
+  li {
+    display: none;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:nth-child(-n+3) {
+      display: list-item;
+    }
+  }
+}
+
+.overview-detail.active {
+  li {
+    display: block;
+  }
+}
+
+.overview-detail {
+  >div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+  }
+
+  &.active {
+    div {
+      display: block;
+    }
+  }
+}

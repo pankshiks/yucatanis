@@ -1,0 +1,519 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @ingroup themeable
+ */
+#}
+  <article{{ attributes }}>
+  <section class="rental-detail detail-block-banner">
+  <div class="container">
+     
+      <h3>{{product.title}}</h3>
+        {# {{ product.variations }} #}
+        {{(product.link_for_entity_comparison_add_product_comparison_boat_rentals)}}
+      <div class="row">
+        <div class="col-12">
+          <div class="rating-with-resourses-wrapper ptb-40">
+            <div class="rating-block">
+              <div class="star-icon">
+              {{product.variation_field_ratings}}
+              </div>
+            </div>
+       
+          </div>
+        </div>
+      </div>
+
+       <div class="images-grid-wrapper">
+         <div class="left-side-block">
+
+        {% if product.field_product_image.0 is not empty %}
+        
+        <img class="img-fluid" src="{{ file_url(product.field_product_image.0['#item'].entity.uri.value) }}" class="img-fluid" alt="Best Snorkeling" style="width:100%" onclick="openModal();currentSlide(4)">     
+        {% endif %}      
+        </div>
+        
+             {% if product.field_product_image.1 is not empty %}
+          
+        <div class="right-side-block">
+            {% if product.field_product_image.1 is not empty %}
+            <Button  class="btn view-btn" onclick="openModal();currentSlide(1)">View all images</button>
+            <img class="img1" src= "{{ file_url(product.field_product_image.1['#item'].entity.uri.value) }}" class="img-fluid" alt="Best Snorkeling" style="width:100%" onclick="openModal();currentSlide(1)">
+            {% endif %}  
+            {% if product.field_product_image.2 is not empty %}
+            <img class="img2" src="{{ file_url(product.field_product_image.2['#item'].entity.uri.value) }}" class="img-fluid" alt="Best Snorkeling" style="width:100%" onclick="openModal();currentSlide(2)">
+            {% endif %}  
+            {% if product.field_product_image.3 is not empty %}
+            <img class="img3" src="{{ file_url(product.field_product_image.3['#item'].entity.uri.value) }}" alt="Best Snorkeling" style="width:100%" onclick="openModal();currentSlide(2)"> 
+            {% endif %}
+
+        </div>
+           {% endif %}   
+    </div>
+    
+
+  <div id="myModal" class="modal gallarymod" >
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+
+      {% for i,items in product.field_product_image %} 
+      
+      {% if  items is iterable and   items['#item'] in  items %}
+    {% set imageItem = attribute(product.field_product_image, i)['#item'].entity.uri.value %}
+    {% if imageItem is not null %}
+        <div class="mySlides">
+            <div class="numbertext">{{ i+1 }} / 4</div>
+            <img src="{{ file_url(imageItem) }}" style="width:100%">
+        </div>
+    {% endif %}
+      {% endif %}
+{% endfor %}
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+        <div class="lightbox-wrapper">
+        {% for i in 0..3 %}
+    {% set imageItem = attribute(product.field_product_image, i)['#item'].entity.uri.value %}
+    {% if imageItem is not null %}
+        <div class="column">
+            <img class="demo cursor" src="{{ file_url(imageItem) }}" style="width:100%" onclick="currentSlide({{ i+1 }})" alt="Image {{ i+1 }}">
+        </div>
+    {% endif %}
+{% endfor %}
+      </div>
+    </div>
+      {# {{}} #}
+    </div>
+    </div>
+  </section>
+  <section>
+    <div class="container product-overview-wrapper">
+     <div class="row justify-content-between">
+      <div class="col-12 col-lg-7 ooue">
+        <div class ="overview-detail-wrapper">
+        <div class="overview-detail">
+        <h3>{{product.title}}</h3>
+          <section>
+
+            
+                  {# {% if product.field_loa_ft.0 is not empty %}
+                   <div class="overview-detail">
+                      <h4>Overview</h4> 
+                      
+                     
+                    </div>
+                  {% endif %}  #}
+
+              {# 23-01-2024 #}
+                  <div class="overview-detail">
+                    <h4>Overview</h4> 
+                  </div>
+                  {% if product.field_boat_category.0 is not empty %}
+                  <div class="overview-detail">
+                      <h5>Boat Category</h5>
+                      <ul class="overview-detail-list"> 
+                          {% for key,item in product.field_boat_category %}
+                              {% if key matches '/[0-9]/' %}
+                                  {# <li> #}
+                                        {{item['#title']}}
+                                  {# </li> #}
+                              {% endif %}   
+                            {% endfor %}
+                      </ul>
+                      {% if product.field_boat_category.2 is not empty %}
+                        <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                      {% endif %} 
+                  </div>
+                {% endif %} 
+
+                {% if product.field_id.0 is not empty %}
+                  <div class="overview-detail">
+                  <h5>Watercraft ID</h5>
+                    <ul class="overview-detail-list"> 
+                        {% for key,item in product.field_id %}
+                            {% if key matches '/[0-9]/' %}
+                                {# <li> #}
+                                    {{item['#context']['value']}}
+                                {# </li> #}
+                            {% endif %}   
+                          {% endfor %}
+                    </ul>
+                  {% if product.field_id.2 is not empty %}
+                    <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                  {% endif %}  
+                  </div>
+                {% endif %}  
+                {% if product.field_make_.0 is not empty %}
+                  <div class="overview-detail">
+                    <h5>Make</h5>
+                    <ul class="overview-detail-list">
+                        {% for key,item in product.field_make_ %}
+                            {% if key matches '/[0-9]/' %}
+                              
+                                    <div style="font-size: 28px; font-family: Montserrat; font-style: italic;"> {{item['#title']}}</div>
+                                
+                            {% endif %}   
+                          {% endfor %}
+                    </ul>
+                    {% if product.field_make.2 is not empty %}
+                      <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                    {% endif %} 
+                  </div>
+                {% endif %}  
+
+                {% if product.field_loa_ft.0 is not empty %}
+                  <div class="overview-detail">
+                    <p><strong>LOA (length in ft):</strong>{{product.field_loa_ft}}</p>
+                  </div>
+                {% endif %} 
+
+                 {% if product.field_max_passenger_capacity.0 is not empty %}
+                  <div class="overview-detail">
+                    <h6 style="color:#ff563c; font-size:33px;">Maximum Passenger Capacity: {{product.field_max_passenger_capacity}} </h6>
+                 </div>
+                {% endif %}  
+
+                {%  if product.body is not empty %}         
+                  <div class="overview-detail boat-description">
+                   {{product.body|raw}}
+                    <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                  </div>
+                {% endif %}
+
+                {% if product.field_available_for_sale.0 is not empty %}
+                <div class="overview-detail">
+                    <p><strong>Available for Sale:</strong> <strong>{{product.field_available_for_sale}}</strong></p>
+                {% endif %} 
+                {% if product.field_available_for_sale.1 is not empty %}
+                  <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                {% endif %} 
+                </div>
+
+                {% if product.field_available_for_rent.0 is not empty %}
+                  <div class="overview-detail">
+                    <h5>Available For Rent</h5>
+                    <ul class="overview-detail-list">
+                        {% for key,item in product.field_available_for_rent %}
+                            {% if key matches '/[0-9]/' %}
+                                <li>
+                                    {{item['#markup']}}
+                                </li>
+                            {% endif %}   
+                          {% endfor %}
+                    </ul>
+                      {% if product.field_available_for_rent.2 is not empty %}
+                        <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                      {% endif %} 
+                  </div>
+                {% endif %} 
+
+                {% if product.variation_price.0 is not empty %}
+                  <div class="overview-detail-class">
+                    <h5>Vessel Price:</h5>
+                    <ul class="overview-detail-list">
+                      <li>{{product.variation_price}}</li>
+                    <a href="" class="btn show-more-btn vesseltext">Show Price</a>
+                    
+                    </ul>
+                
+                  </div>
+                {% endif %} 
+          </section>
+
+              {% if product.field_location.0 is not empty %}
+              <div class="overview-detail">
+                <h5>Vessel Location</h5>
+                <ul class="overview-detail-list">
+                    {% for key,item in product.field_location %}
+                        {% if key matches '/[0-9]/' %}
+                            <li>
+                                  {{item['#title']}}
+                            </li>
+                        {% endif %}   
+                      {% endfor %}
+                </ul>
+                {# {% if product.field_location.2 is not empty %}
+                  <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                {% endif %} #}
+              </div>
+              {% endif %}
+
+              {% if product.field_included.0 is not empty %}
+                <div class="overview-detail two-col">
+                <h5>Included</h5>
+                <ul class="overview-detail-list">
+                {% for key,item in product.field_included %}
+                
+                    {% if key matches '/[0-9]/' %}
+                    <li>
+                    
+                    {{item['#title']}}
+                    </li>
+                    {% endif %}   
+                {% endfor %}
+                </ul>
+                {% if product.field_inclusions_list.0 is not empty %}
+                  <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                {% endif %}
+                </div>
+              {% endif %}
+
+              {% if product.field_not_included.0 is not empty %}
+                <div class="overview-detail">
+                  <h5>Not Included</h5>
+                  <ul class="overview-detail-list">
+                      {% for key,item in product.field_not_included %}
+                          {% if key matches '/[0-9]/' %}
+                              <li>
+                                  {{item['#title']}}
+                              </li>
+                          {% endif %}   
+                        {% endfor %}
+                  </ul>
+                  {% if product.field_not_included.2 is not empty %}
+                    <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                  {% endif %}  
+                </div>
+              {% endif %}  
+
+              {% if product.field_optiona.0 is not empty %}
+                <div class="overview-detail">
+                <h5>Optional Inclusions</h5>
+                <ul class="overview-detail-list">
+                  {% for key,item in product.field_optiona %}
+                      {% if key matches '/[0-9]/' %}
+                      <li>
+                      {{item['#title']}}
+                      </li>
+                      {% endif %}   
+                  {% endfor %}
+                </ul>
+                  {% if product.field_optiona.2 is not empty %}
+                    <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {% if product.field_restrictionss.0 is not empty %}
+                <div class="overview-detail">
+                <h5>Restrictions </h5>
+                <ul class="overview-detail-list">
+                {% for key,item in product.field_restrictionss %}
+                    {% if key matches '/[0-9]/' %}
+                    <li>
+                    {{item['#title']}}
+                    </li>
+                    {% endif %}   
+                {% endfor %}
+                </ul>
+                  {% if product.field_restrictionss.2 is not empty %}
+                  <a href="" class="btn show-more-btn overviewtext">Show More</a>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {# 23-01-2024 #}
+           
+            {# <div class="overview-detail">
+              <div class="table-blocks">
+                <table> #}
+                  {# <thead>
+                    <tr class="hidden" style="display: table-row;">
+                      <th>Category:</th>
+                      <td>
+                        <div>
+                          {{product.field_boat_category|raw}}
+                        </div>
+                      </td>
+                    </tr>
+                  </thead> #}
+                  {# <tbody> #}
+                    {# <tr class="hidden" style="display: table-row;">
+                      <th>Make:</th>
+                      <td>
+                        <div>{{product.field_make|raw}}</div>
+                      </td>
+
+                    </tr> #}
+                    {# <tr class="hidden" style="display: table-row;">
+                      <th class="price">Vessel Price:</th>
+                      <td class="price" style="font-size:17px;">{{ product.variation_price }}</td>
+
+                    </tr> #}
+                    
+                    {# <tr class="hidden" style="display: table-row;">
+                      <th>LOA (length in ft):</th>
+                      <td>
+                        <div>{{product.field_loa_ft}}</div>
+                      </td>
+
+                    </tr>
+                    
+                    <tr class="hidden" style="display: table-row;">
+                      <th>Max Draft (depth):</th>
+                      <td>content</td>
+
+                    </tr>
+                    <tr class="hidden" style="display: table-row;">
+                      <th>Boat Name:</th>
+                      <td>
+
+                        <div><i>{{product.title}}</i></div>
+
+                      </td>
+
+                    </tr> #}
+                  {# </tbody>
+                </table> #}
+                {# <table>
+                  <thead>
+                    <tr class="hidden" style="display: table-row;">
+                      <th>Fuel Capacity(litres):</th>
+                      <td>
+                        <div>--</div>
+                      </td>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                   
+                    <tr class="hidden" style="display: table-row;">
+
+                      <th>Fresh Water Capacity(liters):</th>
+                      <td>--</td>
+                    </tr>
+                    <tr class="hidden" style="display: table-row;">
+
+                      <th>Max Speed:</th>
+                      <td>--</td>
+                    </tr>
+                   
+                    <tr class="hidden" style="display: table-row;">
+
+                      <th>Make:</th>
+                      <td>{{product.field_make|raw}}</td>
+                    </tr>
+                  
+                  </tbody>
+                </table>
+              </div>
+              <a href="#" class="load_more btn show-more-btn">Show Less</a> #}
+            {# </div> #}
+          
+          {# {% if product.field_beam_ft.0 is not empty %}
+          <div class="overview-detail">
+              <h5>Beam ft</h5>
+              <ul class="overview-detail-list">
+                  {% for key,item in product.field_beam_ft %}
+                      {% if key matches '/[0-9]/' %}
+                          <li>
+                                {{item['#markup']}}
+                          </li>
+                      {% endif %}   
+                    {% endfor %}
+              </ul>
+              {% if product.field_beam_ft.2 is not empty %}
+                <a href="" class="btn show-more-btn overviewtext">Show More</a>
+              {% endif %} 
+          </div>
+          {% endif %}  #}
+               
+
+         
+
+         
+    </div>
+    </div>
+     {# <a href="" class="btn show-more-btn rental">Show More</a> #}
+    </div>
+    {#  #}
+     <div class="col-12 col-lg-4 card-gap">
+            <div class="best-seller-booking-card">
+              <div class="info-tag">
+                <p>One of Kind Vessel</p>
+              </div>
+       
+            <div>
+            {% if  product.variation_field_4hrs_rental is not empty %}
+              <span id="divOption1" class="hidden">
+
+              <h5 class="green-color">{{product.variation_field_4hrs_rental}}<span>/4 hrs rental</span></h5>
+            
+              </span>
+            {% endif %}
+               {% if  product.variation_field_6hrs_rental is not empty %}
+               <span id="divOption2" class="hidden">
+              <h5 class="green-color">{{product.variation_field_6hrs_rental}}<span>/6 hrs rental</span></h5>
+          
+                </span>
+              {% endif %}
+                {% if product.variation_field_8hrs_rental is not empty %}
+          <span id="divOption3" class="hidden">
+              <h5 class="green-color">{{product.variation_field_8hrs_rental}}<span>/8 hrs rental</span></h5>
+       
+            </span>
+             {% endif %}
+                       {% if product.variation_field_extra_hour is not empty %}
+         <div class="extra"><h6 class="green-color" id="extar_hour">{{product.variation_field_extra_hour}}</h6>
+            <span>optional additional hour Price</span>
+            </div>
+             
+            <h6 class="hidden" >{{product.variation_field_extra_hour}}</h6>
+                  {% endif %}
+            <span class="hidden" id="product_id">{{product_entity.id}}</span>
+
+          <div class="extra">
+          <h6 class="green-color" id="total_hour">0</h6>
+                  <span>Total price</span>
+                  </div>
+           {# <span >Total Time:</span><span id="result">0</span> #}
+        
+          </div>
+              {{ drupal_entity('webform', 'booking_rental') }}
+            </div>
+          
+         <div class="share-media-icons">
+              <div>
+                <p class="m-0">Share Us:</p>
+              </div>
+           {{ drupal_entity('block_content', '21') }}
+
+        </div>
+    {#  #}
+    </div>
+    </div>
+    </section>
+
+   <section class="tageline-block">
+    <div class="container">
+      <div class="title-with-detail">
+      <h6>{{ product_entity.field_tagline_block.entity.field_tagline_text.value }} </h6>
+      </div>
+    </div>
+  </section>
+
+</article>

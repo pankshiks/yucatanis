@@ -1,0 +1,13 @@
+<?php
+use Drupal\Core\Form\FormStateInterface;
+
+  function customautocomplete_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    if ($form_id == 'views_exposed_form' && isset($form['#id']) && strpos($form['#id'], 'views-exposed-form-search-services-by-hotel-page-1') === 0) {
+
+      if (isset($form['field_hotel_info_target_id'])) {
+      
+        $form['field_hotel_info_target_id']['#autocomplete_route_name'] = 'customautocomplete.autocomplete';
+        $form['field_hotel_info_target_id']['#autocomplete_route_parameters'] = ['field_hotel_info_target_id' => 'field_hotel_info_target_id'];
+      }
+    }  
+  }

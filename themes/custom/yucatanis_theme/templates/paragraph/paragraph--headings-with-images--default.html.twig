@@ -1,0 +1,52 @@
+<section class="comparision">
+  <div class="container ptb-200">
+    <div class="row">
+      <div class="col-12">
+        <h2>{{ paragraph.field_heading_list.value }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 comparision-wrapper">
+        {% for item in paragraph.field_images_with_list %}      
+         {% if item.entity.field_bg_class_list.value == 'Orange' %}
+          <div class="comparision-block bg-orange">
+            <img class="logo" src="{{ file_url(item.entity.field_logo.entity.field_media_image.entity.fileuri)}}" alt="">
+             {% for list in item.entity.field_list %}
+              <ul class="comparision-list white-color">
+              {% for val in list %}
+                <li>{{ val.value}}</li>
+              {% endfor %}
+             </ul>
+            {% endfor %}
+          </div>
+          {% endif %}
+          {% if item.entity.field_bg_class_list.value == 'Grey' %}
+          <div class="comparision-middle-block">          
+            <h3>{{ item.entity.field_sub_heading_list.value }}</h3>
+          </div>
+          {% endif %}
+          {% if item.entity.field_bg_class_list.value == 'Yellow' %}
+           {# {% if item.entity.field_bg_class_list.value == 'yellow' %} #}
+          <div class="comparision-block bg-yellow">
+            <img class="logo" src="{{ file_url(item.entity.field_logo.entity.field_media_image.entity.fileuri)}}" alt="">
+            {% for list in item.entity.field_list %}
+              <ul class="comparision-list white-color">
+                {% for val in list %}
+                  <li>{{ val.value}}</li>
+                {% endfor %}
+             </ul>
+            {% endfor %}
+          </div>
+          {% endif %}
+        {% endfor %}
+        
+      </div>
+      <div class="col-12 text-center compare-btn-wrap">
+        {% for item in paragraph.field_compare_button %}
+          <a href="{{ item.url }}" class="btn btn-secondary">{{ item.title }}</a>
+        {% endfor %}
+         
+      </div>
+    </div>
+  </div>
+</section>

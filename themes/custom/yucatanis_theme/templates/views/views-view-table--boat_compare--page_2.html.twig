@@ -1,0 +1,57 @@
+{%
+  set classes = [
+    'table',
+    'table-unique',
+    hover ? 'table-hover',
+    table_class,
+    'views-table',
+    'views-view-table',
+    'cols-' ~ header|length,
+    responsive ? 'responsive-enabled',
+    sticky ? 'sticky-enabled',
+    'vertical-header-table'
+  ]
+%}
+<section class="groups-wedding-page ptbunique ptb-50">
+  <div class="container-fluid table-block">
+    <div class="row">
+      <div class="col-12">
+        <div class="table-wrapper">
+          <table class="{{ classes|join(' ') }}">
+
+            <tbody>
+              {% for key, column in header %}
+                <tr{{ column.attributes.id == 'view-field-distinction-table-column' ? ' class="table-distinctions"' : ''  ~ column.attributes.id == 'view-field-convenience-table-column' ? ' class="table-convenience"' : '' }}>
+                  <th{{ column.attributes.addClass(['vertical-header']) }}>
+                          {% if key == 'title' %}
+                     
+                  {{ column.content }}
+            
+                    {% else %}
+                    
+                      {{ column.content }}
+                    {% endif %}
+                    </th>
+                  {% for  row in rows %}
+                         {% if key == 'title' %}
+                       
+                    <td{{ row.columns[key].attributes.addClass(['vertical-data']) }}>
+                   <div class="info">
+                      {{ row.columns[key].content|raw }}
+                      </div>
+                    </td>
+                    {% else %}
+                 <td{{ row.columns[key].attributes.addClass(['vertical-data']) }}>
+                      {{ row.columns[key].content|raw }}
+                    </td>
+                  {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

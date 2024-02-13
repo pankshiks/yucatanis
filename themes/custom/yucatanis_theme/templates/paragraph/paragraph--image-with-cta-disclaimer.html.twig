@@ -1,0 +1,72 @@
+{% if paragraph.field_type.value=='Inner Banner' %}
+  <section class="inner-banner">
+  <img class="img-fluid" src="{{ file_url(content.field_image.0['#item'].entity.uri.value)}}" alt="{{paragraph.field_image.alt}}" >   
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="banner-title">
+             {{ paragraph.field_title.value|raw}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% elseif paragraph.field_type.value=='CTA Booking block' %}
+  <section class="booking-block ptb-200">
+    <div class="container">
+      <div class="img-with-text align-items-center">
+        <div class="left-block">
+          <img class="img-fluid" src="{{ file_url(content.field_image.0['#item'].entity.uri.value)}}" alt="{{paragraph.field_image.alt}}" >   
+         
+        </div>
+        <div class="right-block d-flex flex-column gap32">
+          <h1>{{ paragraph.field_title.value|raw}}</h1>
+          <h6 class="font20">{{ paragraph.field_disclaimer.value|raw}}</h6>
+          <div>
+            {% for item in paragraph.field_button %}
+              <a href="{{ item.url }}" class="btn btn-secondary">{{ item.title }}</a>
+            {% endfor %} 
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% elseif paragraph.field_type.value=='Useful Data of Cancun' %}
+<section class="useful-data-of-cancun ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title-with-detail">
+          {{ paragraph.field_title.value|raw}}
+         {{ paragraph.field_disclaimer.value|raw}}
+        </div>
+        <div class="btn-wrap">
+          {% for item in paragraph.field_button %}
+              <a href="{{ item.url }}" class="btn btn-secondary">{{ item.title }}</a>
+          {% endfor %}           
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% else %}
+  <section class="booking-steps-block bg-dbrown ">
+    <div class="container ptb-200">
+      <div>
+        {{ paragraph.field_title.value|raw}}
+        <div class="booking-steps">
+          <img class="img-fluid" src="{{ file_url(content.field_image.0['#item'].entity.uri.value)}}" alt="{{paragraph.field_image.alt}}" >        
+        </div>
+        <div class="booking-btn-wrapper">
+          {% for item in paragraph.field_button %}
+              <a href="{{ item.url }}" class="btn btn-secondary">{{ item.title }}</a>
+          {% endfor %}  
+        </div>
+        {{ paragraph.field_disclaimer.value|raw}}
+      </div>
+    </div>
+  </section>
+{% endif%}

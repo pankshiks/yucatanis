@@ -1,0 +1,27 @@
+  <section class="login ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+            <h2>Reset Password</h2>
+          <div class="login-form">
+              <form{{ attributes }}>
+              <div id="error_messages"></div>
+                {{ element.messages }}
+                {{ messages }}
+              <div class="form-group">
+                {{ element.account.current_pass['#markup'] }}
+              </div>
+              <div class="form-group">
+              {{ element.account.pass['#markup'] }}
+              </div>
+              {{ element.form_build_id }} {# required #}
+              {{ element.form_id }} {# required #}
+              {{ element.form_token }}
+              {{ element.actions.submit }}
+              
+              </form>
+            </div>
+        </div>
+ </div>
+  </div>
+</section>

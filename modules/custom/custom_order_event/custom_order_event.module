@@ -1,0 +1,43 @@
+<?php
+
+use Drupal\Core\DependencyInjection\ContainerBuilder;
+use Drupal\Core\DependencyInjection\ServiceProviderBase;
+use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\DependencyInjection\Definition;
+use Drupal\user\Entity\User;
+
+
+
+//working
+function custom_order_event_cron() {
+    	
+  $current_time = \Drupal::time()->getRequestTime();
+  $start_time = $current_time - (15 * 60);
+  $end_time = $current_time + (15 * 60);
+  $query = \Drupal::database()->select('webform_submission', 'w');
+  $query->leftjoin('webform_submission_data', 'cname', 'w.sid = cname.sid');
+  $query->fields('w',['sid']);
+  $query->fields('cname',['value']);
+  $query->condition('cname.value', 'in progress', '=');
+  $query->condition('w.created', $start_time, '>=');
+  //$query->condition('w.created', 'w.created+ (15 * 60)', '=');
+  //  $query->condition('w.created', $end_time, '<=');
+  // $query->condition('w.created', $current_time, '>=');
+  //  $query->condition('w.created', $end_time, '>');
+  // $query->condition('w.created', $current_time, '<');
+  //  $results = $query->execute()->fetchAll();
+  //   //dd($results);
+  // \Drupal::logger('results')->notice('<pre>'.print_r($results,true).'</pre>');
+
+  //START
+  $submissions_to_remove = $query->execute()->fetchCol();
+  // \Drupal::logger('submissions_to_remove')->notice('<pre>'.print_r($submissions_to_remove,true).'</pre>');
+  // Remove webform submissions.
+  foreach ($submissions_to_remove as $submission_id) {
+  $webform_submission_entity = \Drupal\webform\Entity\WebformSubmission::load($submission_id);
+  if ($webform_submission_entity) {
+  $webform_submission_entity->delete();
+  }
+  }
+  
+}

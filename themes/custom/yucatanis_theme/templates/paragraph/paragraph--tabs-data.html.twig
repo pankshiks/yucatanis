@@ -1,0 +1,90 @@
+<section class="tab-slider">
+  <div class="container ptb-200">
+    <div class="row">
+      <div class="col-12 text-center">
+        <!-- <img src="images/angle-down.svg" alt="angle-down"> -->
+        <h2>{{paragraph.field_heading.value|raw}}</h2>
+      </div>
+      <div class="col-12">
+        <ul class="tabs">
+          <div class="slick-slider">
+          {% for items in paragraph.field_tab %}
+           {% for link in items.entity.field_tab_link  %}
+             {% set url = link.entity.field_tab_link.0.value['uri']|replace({'internal:': ''}) %}
+             {# {{dd(url)}} #}
+            <li class="element element-1" rel="{{items.entity.field_tab_id.value}}">
+              <a href="{{url}}"><img src="{{file_url(items.entity.field_tab_svg_img.entity.uri.value)}}" alt="{{items.entity.field_tab_svg_img.alt}}" /></a>
+            {{items.entity.field_tab_heading.value}}
+             {% endfor %}
+            </li>
+            {% endfor %}
+          </div>
+        </ul>
+
+        <div class="tab_container">
+          {% for item in paragraph.field_tab_data %} 
+            <h3 class="d_active tab_drawer_heading" rel="{{item.entity.field_tab_id.value}}">{{item.entity.field_tab_titles.value}}</h3>              
+            <div id="{{item.entity.field_tab_id.value}}" class="tab_content">                     
+                <div class="full-width-banner">
+                  <img class="full-width-banner-img" src="{{ file_url(item.entity.field_images.entity.field_media_image.entity.fileuri) }}" alt="Scuba Diving">
+                  <div class="tab-content-wrapper">
+                    <div class="tab-content-title">
+                      <h3 class="white-color">{{item.entity.field_price.value}}</h3>
+                      <h3 class="white-color">{{item.entity.field_heading.value}}</h3>
+                    </div>
+                    <div class="tab-subtitle-list">
+                      {{item.entity.field_description.value|raw}}
+                    </div>
+                    <a class="btn btn-secondary">{{item.entity.field_link.title}}</a>
+                  </div>      
+
+                  <a href="#" class="tab-block-link"></a>
+                </div>            
+                      
+              <div class="one-by-two-image-grid">  
+
+                {% for data in item.entity.field_image_heading_with_button %}    
+                {# {{ dump(data.entity.field_link.title) }} #}
+                {% if data.entity.field_tab_classes.value == 'Half-width' %}     
+              
+                  <div class="half-width-tab-banner">
+                    <img class="half-width-tab-banner-img" src="{{ file_url(data.entity.field_images.entity.field_media_image.entity.fileuri) }}"  alt="Parashuting">
+                    <div class="tab-content-wrapper">
+                      <div class="tab-content-title">
+                        <h3 class="white-color">{{data.entity.field_price.value}}</h3>
+                        <h3 class="white-color">{{data.entity.field_heading.value|raw}}</h3>
+                      </div>
+                      <a href="#" class="btn btn-secondary">{{data.entity.field_link.title}}</a>
+                    </div>
+                    <a href="#" class="tab-block-link"></a>
+                  </div>
+
+                  {% elseif data.entity.field_tab_classes.value == 'Quarter-width' %}           
+                
+                
+                  <div class="quarter-width-tab-banner">
+                    <img class="quarter-width-tab-banner-img" src="{{ file_url(data.entity.field_images.entity.field_media_image.entity.fileuri) }}"  alt="Chilling out">
+                    <div class="tab-content-wrapper">
+                      <div class="tab-content-title">
+                        <h3 class="white-color">{{data.entity.field_price.value}}</h3>
+                        <h4 class="white-color">{{data.entity.field_heading.value|raw}}</h4>
+                      </div>
+                      <a href="#" class="btn btn-secondary">{{data.entity.field_link.title}}</a>
+                    </div>
+                    <a href="#" class="tab-block-link"></a>
+                  </div>  
+
+                  {% endif %}
+                  {% endfor %}                         
+              
+              </div>         
+          
+            </div>
+          {% endfor %}
+        </div>
+        <!-- .tab_container -->
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

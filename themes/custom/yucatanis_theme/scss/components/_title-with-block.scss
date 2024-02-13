@@ -1,0 +1,165 @@
+.title-with-block {
+  .title-with-details {
+    display: grid;
+    gap: 64px;
+
+
+    h4 {
+      font-family: 'GT Super Display';
+      line-height: normal;
+      padding-right: 15px;
+
+      @include for-phone-only {
+        padding-right: 0;
+      }
+    }
+
+    .img-with-text {
+      display: flex;
+      gap: 64px;
+
+      @include for-phone-only {
+        flex-direction: column;
+      }
+
+      .left-block {
+        width: 50%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .right-block {
+        width: 50%;
+
+        p:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.title-with-details {
+  display: grid;
+  gap: 64px;
+
+  h4 {
+    font-family: 'GT Super Display';
+    line-height: normal;
+    padding-right: 15px;
+
+    @include for-phone-only {
+      padding-right: 0;
+    }
+  }
+
+  .img-with-text {
+    display: flex;
+    gap: 64px;
+
+
+
+    .left-block {
+      width: 50%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .right-block {
+      width: 50%;
+
+
+      h2 {
+        text-align: left;
+      }
+
+      p:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* Title with details */
+.img-with-text {
+  display: flex;
+  gap: 64px;
+
+  @include for-phone-only {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .left-block {
+    width: 50%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include for-phone-only {
+      width: 100% !important;
+    }
+  }
+
+  .right-block {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+
+    @include for-phone-only {
+      width: 100% !important;
+      gap: 16px;
+      align-items: center;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .img-block-wrapper {
+      max-width: 500px;
+      height: 500px;
+      width: 100%;
+      border-radius: 50%;
+      background-color: $YUNGYellow;
+      overflow: hidden;
+      position: relative;
+
+      @include for-tablet {
+        height: 400px;
+        width: 350px;
+      }
+
+      @include for-phone-only {
+        height: 250px;
+        max-width: 250px;
+        width: 100%;
+
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.video-with-subtitle {
+  .title-with-details {
+    gap: 0px;
+  }
+}

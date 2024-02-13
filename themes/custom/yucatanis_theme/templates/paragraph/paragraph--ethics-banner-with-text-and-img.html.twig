@@ -1,0 +1,119 @@
+{% if paragraph.field_page_type.value=='code_of_ethics' %}
+<section class="banner-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-with-image">
+          {{paragraph.field_headings.value|raw}}
+            {% for key,items in paragraph.field_banner_image %} 
+                <img src="{{file_url(items.entity.field_media_image.entity.fileuri)}}" class="img-fluid banner" alt="{{items.entity.field_media_image.alt}}" />
+            {% endfor %}
+            {{paragraph.field_long_description.value|raw}}
+        </div>
+      </div>
+      <div class="col-12 col-lg-10">
+        <div class="content-with-left-border">
+          <h5 class="fw-normal">{{paragraph.field_content_with_left_border.value|raw}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+{% elseif paragraph.field_page_type.value=='relative_info' %}
+<section class="ptb-200 relative-info-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12 col-lg-5">
+            <div class="content-block">
+           {{paragraph.field_headings.value|raw}}
+              </h2>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-7 d-grid gap32">
+            <div class="content-with-left-border small-border">
+              <p>
+               {{ paragraph.field_subheading.value|raw}}
+              </p>
+            </div>
+            <div class="content-with-left-border small-border">
+              <h4 class="orange-content">
+                {{ paragraph.field_content_with_left_border.value|raw}}
+              </h4>
+            </div>
+            <div class="content-with-left-border small-border">
+              <p>
+               {{ paragraph.field_long_description.value|raw}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% elseif paragraph.field_page_type.value=='why_us' %}
+
+<section class="ptb-200 why-us-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="content-block">
+          <h2> {{ paragraph.field_headings.value|raw}}</h2>
+          <div class="content-with-left-border small-border">
+            <p>
+              {{paragraph.field_subheading.value|raw}}
+            </p>
+          </div>
+          <div class="content-with-left-border small-border">
+            <p>
+             {{ paragraph.field_content_with_left_border.value|raw}}
+            </p>
+          </div>
+          {% for item in paragraph.field_eth_button %}
+            <a href="{{ item.url }}" class="btn show-more-btn tritory ">{{ item.title }}</a>
+          {% endfor %}
+          
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="image-block">
+        {% for item in paragraph.field_banner_image %}
+
+          <img src="{{ file_url(item.entity.field_media_image.entity.uri.value) }}" alt="">
+        {% endfor %}
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% else %}
+
+<section class="banner-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-9">
+        <div class="text-with-image">
+         {{paragraph.field_headings.value|raw}}
+          <h6 class="font20">{{paragraph.field_subheading.value|raw}}</h6>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="content-with-left-border">
+          <h4 class="fw-normal">{{paragraph.field_content_with_left_border.value|raw}}</h4>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9">
+         {{paragraph.field_long_description.value|raw}}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

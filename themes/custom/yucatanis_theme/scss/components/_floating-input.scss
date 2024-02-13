@@ -1,0 +1,71 @@
+.booking-details {
+  .floating-input {
+    position: relative;
+    padding: 12px 0;
+  }
+
+  .floating-input {
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px 0;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid rgba(49, 49, 49, 0.20);
+      outline: none;
+      transition: border-color 0.3s;
+      font-family: 'Montserrat';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+
+      @include for-phone-only {
+        font-size: 14px;
+        line-height: normal;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 18px;
+      left: 0;
+      pointer-events: none;
+      transition: top 0.3s, font-size 0.3s;
+      font-size: 20px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      color: #423B30;
+      opacity: 0.5;
+      line-height: 1;
+
+      @include for-phone-only {
+        font-size: 14px;
+        line-height: normal;
+      }
+
+      span {
+        letter-spacing: 0;
+        display: block;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .floating-input input:focus,
+  .floating-input select:focus {
+    border-color: #555;
+  }
+
+  .floating-input input:valid~label,
+  .floating-input input:focus~label,
+  .floating-input select:valid~label,
+  .floating-input select:focus~label {
+    top: -5px;
+    font-size: 14px;
+    opacity: 1;
+  }
+}

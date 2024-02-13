@@ -1,0 +1,60 @@
+.blog-post {
+  background: $Lotion;
+
+  h2 {
+    font-weight: 900;
+  }
+
+  .sub-title {
+    padding-top: 32px;
+    margin: auto;
+    width: 75%;
+    font-weight: 400;
+    text-align: center;
+
+    @include for-phone-only {
+      width: 100%;
+    }
+  }
+}
+
+.blogs-card {
+  border: 0;
+  background-color: transparent;
+
+  a {
+    text-decoration: none;
+
+    img {
+      width: 100%;
+    }
+
+  }
+
+  .card-body {
+    padding-left: 0;
+    padding-right: 0;
+
+    span {
+      font-family: 'Montserrat';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 130%;
+      letter-spacing: 0.56px;
+      text-transform: uppercase;
+    }
+
+    h6 {
+      text-align: left;
+      font-weight: 700;
+    }
+
+    p {
+      opacity: 0.8;
+      text-transform: uppercase;
+      color: $YUPrimary;
+
+    }
+  }
+}

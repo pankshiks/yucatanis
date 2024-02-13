@@ -1,0 +1,100 @@
+<section class="contact-form ptb-200">
+  <div class="container">
+    <div class="row wrapper">
+      <div class="col-12">
+        <div class="form-heading">
+         {{ element.elements.markup }}
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="contact-form-wrapper best-seller-booking-card ">
+           <form{{ attributes }}>
+            <div class="row">
+
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                  {{ element.elements.first_name }}
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                   {{ element.elements.last_name }}
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                  {{ element.elements.email }}
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                  {{ element.elements.mobile_number }}
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="select-items">
+                  {{ element.elements.select_options }}
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                   {{ element.elements.select_countries }}
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                   {{ element.elements.hotel_name }}
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                   {{ element.elements.from }}
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                   {{ element.elements.hotel_name2 }}
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="select-items">
+                   {{ element.elements.guests_ }}
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="select-items">
+                   {{ element.elements.your_note }}
+                </div>
+              </div>
+              <div class="col-12">
+
+                {{ element.elements.actions }}
+
+              </div>
+            {{ element.form_token }}
+            {{ element.form_build_id }}
+            {{ element.form_id }}
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <div class="col-12">
+        {# <div class="payment-method-block">
+          <small>Payment Options</small>
+          <h6 class="footnote">In addition to tourism assistance, we also offer wire transfer payment options
+            in USD and crypto currencies for added convenience.</h6>
+          <div class="img-wrapper">
+            <img src="./images/PayPal.png" alt="paypal">
+            <img src="./images/Stripe.png" alt="stripe">
+            <img src="./images/Mastercard.png" alt="mastercard">
+            <img src="./images/Visa.png" alt="visa">
+          </div>
+        </div> #}
+        {{ element.elements.processed_text }}
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+  <div class="free-quote-card">
+          <div>
+            <p class="font24 fw-bold text-start">Get a Free Quote</p>
+          </div>
+          
+          <form{{ attributes.addClass('booking-details') }}>
+            <div class="select-items two-parts">
+              <div>
+                {{ element.elements.you_prefer }}
+              </div>
+              <div>
+                 {{ element.elements.range }}
+              </div>
+            </div>
+            <div class="select-items">
+               {{ element.elements.your_name }}
+            </div>
+            <div class="select-items">
+               {{ element.elements.i_want_an }}
+            </div>
+            <div class="select-items">
+              {{ element.elements.guests }}
+            </div>
+            <div class="checkbox-wrapper">
+              <div class="checkbox-block">
+                {{ element.elements.agreement }}
+              </div>
+              {{ element.elements.actions }}
+            </div>
+            {{ element.form_token }}
+            {{ element.form_build_id }}
+            {{ element.form_id }}
+
+          </form>
+        </div>

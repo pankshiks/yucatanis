@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ *
+ * @ingroup themeable
+ */
+#}
+{# <article{{ attributes }}>  #}
+<article{{ attributes.addClass('profile') }}>
+
+    {# <h1>{{ user.displayName }}</h1>
+    <p>Email: {{ user.mail.value }}</p>
+    <p>Username: {{ user.name.value }}</p> #}
+    {% if content %}
+        {# {{- content -}} #}
+        <section class="ptb-50">
+          <div class="container">
+            <div class="col-12 mt-2">
+                <h4>Basic Details</h4>
+            </div>
+                <div class="col-md-12">
+                <div class="card mb-3">
+                <div class="card-body">
+                <div class="row">
+                <div class="col-sm-3">
+                <h6 class="mb-0">Name</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    {{ user.displayName }}
+                </div>
+                </div>
+                <hr>
+                <div class="row">
+                <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    {{ user.mail.value }}
+                </div>
+                </div>   
+                </div>
+                </div>
+
+            </div>
+         </section>
+    {% endif %}
+    </div>
+   
+</article>

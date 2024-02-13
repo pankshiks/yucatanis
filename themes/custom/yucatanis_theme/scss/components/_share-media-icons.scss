@@ -1,0 +1,72 @@
+.share-media-icons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  .share-icon-wrap {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .share-btn {
+    text-decoration: none;
+    display: flex;
+    width: 56px;
+    height: 56px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    transition: 0.3s ease-in-out;
+
+    &.whatsapp {
+      background: $green;
+    }
+
+    &.message {
+      background: $YUNGYellow;
+
+      &.brown {
+        background: #423B30;
+      }
+    }
+
+    &.share {
+      background: #24ABEB;
+    }
+
+    &.share-link {
+      background: rgba(0, 71, 252, 0.80);
+    }
+
+    &.facebook {
+      background: #1877F2;
+    }
+
+    &.instagram {
+      background: linear-gradient(134deg, #810DFD 0%, #FFCB00 47.40%, #FE0A71 100%);
+    }
+
+  }
+
+  .btn-secondary {
+    padding: 16px 11px 16px 16px;
+    font-size: 12px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+  }
+
+  .btn-primary {
+    padding: 16px 11px 16px 16px;
+    font-size: 12px;
+    height: auto;
+    font-weight: 400;
+  }
+
+}

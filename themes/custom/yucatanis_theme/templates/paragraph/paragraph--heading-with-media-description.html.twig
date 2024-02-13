@@ -1,0 +1,60 @@
+  {% if paragraph.field_section_class.value == 'Book with us' %}
+
+  <section class="book-with-us">
+    <div class="container ptb-200">
+      <h2>When You<span class="orange-color">{{paragraph.field_heading_list.value }}</span></h2>
+      {% for key,item in paragraph.field_media_description %}
+      {% if key == 0 %}  
+      <div class="one-by-two-image-grid">
+        <div class="full-card bg-beige">
+          <img class="img-fluid" src="{{ file_url(item.entity.field_image_logo.entity.field_media_image.entity.fileuri)}}" alt="">
+          <h3>{{item.entity.field_title_.value }}</h3>
+          <p>{{item.entity.field_descriptions.value }}</p>
+        </div>
+      {% endif %}
+        {% if key == 1 %}  
+    <div class="half-card-1 ">
+          <img class="img-fluid" src="{{ file_url(item.entity.field_image_logo.entity.field_media_image.entity.fileuri)}}" alt="">
+          <h4>{{item.entity.field_title_.value }}</h4>
+          <p>{{item.entity.field_descriptions.value}}</p>
+        </div>
+      {% endif %}  
+          {% if key == 2 %}  
+    <div class="half-card-2 ">
+          <img class="img-fluid" src="{{ file_url(item.entity.field_image_logo.entity.field_media_image.entity.fileuri)}}" alt="">
+          <h4>{{item.entity.field_title_.value }}</h4>
+          <p>{{item.entity.field_descriptions.value}}</p>
+        </div
+      {% endif %}  
+      {% endfor %}
+      </div>
+    </div>
+</section>
+
+{% else %}
+<section class="three-col-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="three-col-cards">
+          {% for key,item in paragraph.field_media_description %}
+          <div class="features-cards">
+            <div class="icon-with-title">
+              <img src="{{ file_url(item.entity.field_image_logo.entity.field_media_image.entity.fileuri)}}" alt="">
+        
+              <h5 class="font20">{{item.entity.field_title_.value }}</h5>
+            </div>
+            <div class="content">
+              <p>{{item.entity.field_descriptions.value}}</p>
+            </div>
+          </div>
+          
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+ 
+

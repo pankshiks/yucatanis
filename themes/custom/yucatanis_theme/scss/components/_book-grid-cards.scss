@@ -1,0 +1,193 @@
+.booking-steps-block {
+  position: relative;
+
+  p {
+    font-family: 'Encode Sans Expanded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: $white;
+    text-transform: math-auto;
+  }
+
+  a {
+    &:hover {
+      color: #FFCC01;
+    }
+  }
+}
+
+.booking-btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 32px;
+}
+
+.one-by-two-image-grid {
+  padding-top: 64px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 2fr 1fr;
+
+
+  @include for-phone-only {
+    grid-template-columns: 1fr !important;
+  }
+
+  .full-card {
+    padding: 56px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    border-radius: 16px;
+
+    &.bg-beige {
+      background-color: rgba(237, 234, 218, 0.80);
+    }
+
+    h3 {
+      font-family: 'GT Super Display';
+    }
+
+    p {
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-family: 'Montserrat';
+      font-size: 20px;
+      font-style: normal;
+      line-height: 150%;
+    }
+
+    @include for-tablet {
+      padding: 25px;
+    }
+  }
+
+  .half-card-1 {
+    background-color: rgba(255, 205, 0, 0.50);
+    padding: 56px 40px;
+    border-radius: 16px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    h4 {
+      font-family: 'GT Super Display';
+    }
+
+    p {
+      text-transform: math-auto;
+      letter-spacing: 1px;
+    }
+
+    @include for-phone-only {
+      padding: 50px 25px;
+    }
+  }
+
+  .half-card-2 {
+    background-color: rgba(255, 86, 60, 0.50);
+    padding: 56px 40px;
+    border-radius: 16px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    h4 {
+      font-family: 'GT Super Display';
+    }
+
+    p {
+      text-transform: math-auto;
+      letter-spacing: 1px;
+    }
+
+    @include for-phone-only {
+      padding: 50px 25px;
+    }
+  }
+}
+
+.full-card {
+  grid-column: 1/2;
+  grid-row: 1/span 2;
+}
+
+.half-card-1 {
+  grid-column: 2/3;
+  grid-row: 1;
+  background-color: $YUNGYellow20;
+}
+
+.half-card-2 {
+  grid-column: 2/3;
+  grid-row: 2;
+  background-color: $YUcanatisOrange50;
+}
+
+
+@media (max-width: 900px) {
+  .one-by-two-image-grid {
+    grid-template-columns: 1fr;
+
+    .full-card {
+      grid-column: 1/2;
+      grid-row: 1/span 2;
+    }
+
+    .half-card-1 {
+      grid-column: 2/3;
+      grid-row: 1;
+      background-color: $YUNGYellow20;
+    }
+
+    .half-card-2 {
+      grid-column: 2/3;
+      grid-row: 2;
+      background-color: $YUcanatisOrange50;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .one-by-two-image-grid {
+    grid-template-columns: 1fr;
+
+    .full-card {
+      grid-column: 1/-1;
+      grid-row: 1;
+    }
+  }
+}
+
+@media(max-width:767px) {
+  .one-by-two-image-grid {
+    .full-card {
+      padding: 50px 25px;
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width:991px) {
+  .book-with-us {
+    .one-by-two-image-grid {
+      display: flex;
+      flex-direction: column;
+
+    }
+  }
+}

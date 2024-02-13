@@ -1,0 +1,16 @@
+hotel_import.form_submit:
+  title: 'Hotel import'  
+  route_name: hotel_import.form_submit  
+  description: 'Welcome hotel import admin'  
+  parent: system.admin_config_system  
+  weight: 99  
+
+
+hotel_import_time.form_submit:
+  title: 'Hotel import time'  
+  route_name: hotel_import_time.form_submit  
+  description: 'Welcome hotel import admin'  
+  parent: system.admin_config_system  
+  weight: 100  
+
+

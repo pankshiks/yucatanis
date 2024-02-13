@@ -1,0 +1,29 @@
+.quarter-width-tab-banner {
+  position: relative;
+
+  .quarter-width-tab-banner-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    position: relative;
+
+    @include for-phone-only {
+      min-height: 100%;
+    }
+  }
+
+  .tab-content-wrapper {
+    position: absolute;
+    padding: 40px;
+    top: 0;
+
+    @include for-phone-only {
+      padding: 15px;
+      height: 100%;
+    }
+
+    a.btn-secondary {
+      z-index: 1;
+    }
+  }
+}

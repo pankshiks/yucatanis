@@ -1,0 +1,104 @@
+.categories-card {
+	padding-top: 200px;
+	padding-bottom: 200px;
+
+	@include for-phone-only {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.title-wrap {
+		h4 {
+			text-align: center;
+			font-weight: 800;
+			color: #FF563C;
+			font-size: 55px;
+
+			@include for-phone-only {
+				font-size: 28px;
+			}
+
+			span {
+				display: block;
+				font-weight: 800;
+				color: #332E31;
+				font-size: 40px;
+				margin-bottom: 10px;
+
+				@include for-phone-only {
+					font-size: 24px;
+				}
+			}
+		}
+
+		h2 {
+			padding-bottom: 80px;
+
+
+			@include for-phone-only {
+				padding-bottom: 40px;
+
+			}
+		}
+	}
+
+
+}
+
+.categorey-card {
+	position: relative;
+	padding: 0 12px;
+
+	.card {
+		overflow: hidden;
+		border-radius: 10px;
+		border: none;
+		max-height: 350px;
+		height: 100%;
+
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+
+		.categorey-card-img {
+			height: 100%;
+		}
+	}
+
+	.card-front {
+		position: absolute;
+		color: $white;
+		border-radius: 10px;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+		opacity: 0.8;
+	}
+
+	.card-title {
+		position: absolute;
+		font-weight: 600;
+		font-size: 28px;
+		line-height: 110%;
+		bottom: 30px;
+		color: $white;
+		margin: 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	.card-subtitle {
+		position: absolute;
+		color: $white;
+	}
+}
+
+.catergory-slider {
+	display: flex;
+
+	.slick-list {
+		border-radius: 16px;
+	}
+}

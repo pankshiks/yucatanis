@@ -1,0 +1,182 @@
+.banner {
+  form {
+    background-color: $white;
+    border: 1px solid rgba(49, 49, 49, 0.2);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 8px 8px 24px;
+    position: relative;
+
+    @include for-tablet {
+      flex-direction: column;
+      gap: 16px;
+      padding: 8px;
+    }
+
+    #edit-field-adults-kids-value {
+      padding: 0;
+      height: 30px;
+      border-bottom: none !important;
+      color: #423B30;
+      font-size: 16px;
+      font-family: 'Encode Sans Expanded';
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+    }
+
+    input {
+      border-bottom: 0;
+
+    }
+
+    input[type=text] {
+      color: #423B30;
+      font-family: 'Encode Sans Expanded';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+    }
+
+    .select-items {
+      input[type=text] {
+        border-bottom: 0;
+        position: relative;
+        padding-bottom: 0;
+
+      }
+    }
+  }
+
+  .border-right {
+    width: 1px;
+    height: 58px;
+    opacity: 0.2;
+    background: $YUPrimary;
+
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  .distance-field {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+
+
+    .d-grid {
+      padding: 16px 8px;
+      gap: 5px;
+
+      @include for-phone-only {
+        width: 50%;
+      }
+    }
+
+
+
+    .exchange-icon {
+      position: absolute;
+      left: calc(50% - 32px);
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .slect-items-wrapper {
+    .select-items {
+      border: 0;
+
+
+    }
+
+
+  }
+
+  label {
+    font-family: 'Encode Sans Expanded';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    color: $YUPrimary;
+    opacity: 0.5;
+    text-transform: uppercase;
+
+    @include for-phone-only {
+      font-size: 12px;
+    }
+
+  }
+
+  input[type=search] {
+    border: 0;
+    font-family: 'Encode Sans Expanded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: $YUPrimary;
+    width: 100%;
+    padding: 3px;
+  }
+
+  .slect-items-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .select-items {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 8px 16px;
+      gap: 4px;
+      width: 100%;
+
+      .js-form-item {
+        width: 100%;
+      }
+
+
+      label {
+        font-family: 'Encode Sans Expanded';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        color: $YUPrimary;
+        opacity: 0.5;
+        text-transform: uppercase;
+
+        @include for-phone-only {
+          font-size: 12px;
+        }
+      }
+
+
+      .options {
+        border: 0;
+        width: 100%;
+        padding: 3px;
+        font-family: 'Encode Sans Expanded';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+
+        @include for-phone-only {
+          border-bottom: 1px solid #D9D9D9;
+        }
+      }
+    }
+  }
+}

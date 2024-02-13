@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+{% for row in rows %}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+  %}
+  
+   {# {{dump(row.content['#row']._entity)}} #}
+    {{- row.content -}}
+    {# {{row.content['#row']._entity.product_id.value}}
+    {{row.content['#row']._entity.field_available_for_rent.value}}
+    {{row.content['#row']._entity.ield_available_for_sale.value}}
+    {{row.content['#row']._entity.field_beam_ft.value}}
+    {{row.content['#row']._entity.field_blackout_dates.value}}
+    {{row.content['#row']._entity.field_boat_category.value}}
+    {{row.content['#row']._entity.field_inclusions_list.value}}
+    {{row.content['#row']._entity.field_loa_ft.value}}
+     {{row.content['#row']._entity.field_location.value}}
+      {{row.content['#row']._entity.field_make.value}}
+       {{row.content['#row']._entity.field_max_passenger_capacity.value}}
+        {{row.content['#row']._entity.field_optional_inclusions.value}}
+            {{row.content['#row']._entity.field_restrictionss.value}}
+                {{row.content['#row']._entity.field_suggested_departure.value}} #}
+
+{% endfor %}

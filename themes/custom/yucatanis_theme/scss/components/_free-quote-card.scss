@@ -1,0 +1,38 @@
+.free-quote-card {
+  border: 1px solid $LightGrey;
+  border-radius: 8px;
+  padding: 32px;
+
+  p.font24 {
+    padding-bottom: $space_xl;
+    margin-bottom: 0;
+  }
+
+  .booking-details {
+    .two-parts {
+      display: flex;
+      flex-direction: row;
+
+    }
+
+    .select-items {
+      border: 0;
+    }
+  }
+}
+
+.select-items {
+
+  input[type=text],
+  input[type=email],
+  input[type=tel],
+  input[type=number],
+  input[type=password],
+  textarea {
+    border: 0;
+    border-bottom: 1px solid $Grey;
+    width: 100%;
+    background: transparent;
+    outline: none;
+  }
+}

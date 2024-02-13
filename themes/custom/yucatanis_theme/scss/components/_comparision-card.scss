@@ -1,0 +1,100 @@
+.compaision-card-wrapper {
+  display: grid;
+  @media(min-width: 768px){    
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media(max-width: 767px) and (min-width: 576px){
+    grid-template-columns: 1fr 1fr;
+  }
+  @media(max-width: 575px){    
+    grid-template-columns: 1fr;
+  }
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  @include for-phone-only {
+    flex-direction: column;
+  }
+}
+
+.compaision-card {
+  @media(min-width: 576px){
+    max-width: 380px;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .card-img {
+    img {
+      width: 100%;
+      height: 253px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+
+  .card-content {
+    .card-body {
+      padding: 0 !important;
+
+      .card-title {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+      }
+
+      h6 {
+        margin: 0;
+        &.green-color{
+          + {
+            h6 {
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              min-height: 63px;
+              @media(max-width: 767px){
+                min-height: 42px;
+              }
+              @media(max-width: 575px){
+                min-height: auto;
+              }
+            }
+          }
+        }
+      }
+
+      small {
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+        text-transform: capitalize;
+        opacity: 0.7;
+        overflow: hidden;
+        color: #332D17;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .card-btn-wrap {
+    .btn {
+      border-radius: 16px;
+      padding: 16px 24px;
+      font-family: 'Encode Sans Expanded';
+      font-size: 14px;
+      letter-spacing: 0.56px;
+      text-transform: uppercase;
+    }
+  }
+}

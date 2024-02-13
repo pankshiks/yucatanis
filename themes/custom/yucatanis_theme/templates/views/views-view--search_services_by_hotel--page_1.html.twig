@@ -1,0 +1,143 @@
+
+{# 
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#} 
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+{# <section class="comparision-details-block ptb-200">
+  <div class="container"> #}
+    <div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
+  {% endif %}
+    <section class="listing-banner banner">
+  <img class="bg-img" src="/sites/default/files/listning-banner.png" alt="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="banner">
+          <div class="bg">
+            <div class="content">
+              <h1 class="white-color"><span class="orange-color">Explore</span> Experiences</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="banner">
+            {% if exposed %}
+            <div class="col-12 col-md-12">
+              <div class="filter-listing">
+                <div class="view-filters">
+                 {{ exposed }}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+ 
+        {% if attachment_before %}
+    <div class="attachment attachment-before">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
+  {% if rows %}
+  {# <div class="ptb-80"> #}
+  <section class="comparision-details-block ptb-200">
+  <div class="container">
+      <div class="row">   
+        <div class="col-12">
+          <div class="compaision-card-wrapper">
+            {# <div class="listing-wrapper"> #}
+                {{rows}}            
+                  {% elseif empty %}
+                    <div class="view-empty">
+                      <div class="container mt-4 mb-4">
+                        <div class="row">
+                          <div class="col">
+                            <h4> {{ empty }}</h4>
+                          </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+                  {% endif %}
+                 
+                  {% if attachment_after %}
+                    <div class="attachment attachment-after">
+                      {{ attachment_after }}
+                    </div>
+                  {% endif %}
+                  {% if more %}
+                    {{ more }}
+                  {% endif %}
+                  {% if footer %}
+                    <div class="view-footer">
+                      {{ footer }}
+                    </div>
+                  {% endif %}
+                  {% if feed_icons %}
+                    <div class="feed-icons">
+                      {{ feed_icons }}
+                    </div>
+                  {% endif %}
+            {# </div> #}
+          </div>
+            {% if pager %}
+             {{ pager }}
+            {% endif %}
+        </div>
+
+      </div>
+    {# </div> #}
+  </div>
+</section>

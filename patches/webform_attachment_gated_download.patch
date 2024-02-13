@@ -1,0 +1,26 @@
+diff --git a/src/QueryParser.php b/src/QueryParser.php
+index 4e40552..f3a897c 100644
+--- a/src/QueryParser.php
++++ b/src/QueryParser.php
+@@ -24,7 +24,7 @@ class QueryParser {
+   public static function getFidFromUrlParameters() {
+     $fid = &drupal_static('webform_attachment_gated_download_fid');
+     if (empty($fid)) {
+-      $param = Xss::filter(\Drupal::request()->query->get('gated_fid'));
++      $param = !empty(\Drupal::request()->query->get('gated_fid')) ? Xss::filter(\Drupal::request()->query->get('gated_fid')) : '';
+       if (empty($param)) {
+         return NULL;
+       }
+diff --git a/webform_attachment_gated_download.info.yml b/webform_attachment_gated_download.info.yml
+index 5f4039c..779cfb9 100644
+--- a/webform_attachment_gated_download.info.yml
++++ b/webform_attachment_gated_download.info.yml
+@@ -2,7 +2,7 @@ name: 'Webform Attachment Gated Download'
+ type: module
+ description: 'Provide a formatter linking to a gated webform, attaching the file via the webform email handler'
+ core: 8.x
+-core_version_requirement: ^8 || ^9
++core_version_requirement: ^8 || ^9 || ^10
+ package: 'Webform'
+ dependencies:
+   - webform:webform

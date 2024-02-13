@@ -1,0 +1,103 @@
+<div class="col-12">
+    <div class="compaision-card-wrapper">
+        {% for key, row in rows %}
+            {% if row != Null %}
+                <div class="compaision-card">
+                    {% if row.path is not empty %}
+                        <div class="card-img">
+                            <img src="{{ file_url(row.path) }}" class="" alt="">
+                        </div>
+                    {% endif %}
+                    {% if row.title is not empty %}
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="card-title ">
+                                    <h6 class="green-color">$1500.00</h6>
+                                    <h6>{{ row.title }}</h6>
+                                    {{ row.data.body }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if row.title is not empty %}
+                        <div class="card-btn-wrap">
+                            <a href="{{ row.product_id }}" class="btn btn-secondary">
+                                Book Now
+                            </a>
+                            <a href="{{ row.product_id }}" class="btn learn-btn">Learn More</a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="overview-detail">
+        {% if rows.0 is not empty %}
+            <div class="heading-wrapper">
+                <h6>Moods</h6>
+            </div>
+        {% endif %}
+        <ul class="three-col-list p-0">
+            {% for key, row in rows %}
+                {% if row != Null %}
+                    {% if row.icon_title is not empty %}
+                        <li class="package-detail-items">
+                            <img src="{{ file_url(row.icon_path) }}">
+                            {{ row.icon_title }}
+                        </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="overview-detail">
+   
+               {% if rows.0 is not empty %}
+                <div class="heading-wrapper">
+                    <h6>Uniqueness</h6>
+                </div>
+            {% endif %}
+            <ul class="detail-list three-col-list">
+        
+     
+        {% for key, row in rows %}
+                
+                <li>{{ row.uniqueness }}</li>
+      
+        {% endfor %}
+
+
+
+
+        
+            </ul>
+ 
+    </div>
+</div>
+
+<div class="col-12">
+<div class="compaision-card-wrapper">
+ 
+        <div class="overview-detail">
+             {% if rows.0 is not empty %}
+                <div class="heading-wrapper">
+                    <h6>Optional Inclusions</h6>
+                </div>
+            {% endif %}
+            <ul class="primary-list">
+         
+            
+        {% for key, row in rows %}
+   <li>{{ row.optical_inclusions.0 }}</li>
+        {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</div>

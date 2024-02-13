@@ -1,0 +1,194 @@
+.enquire-by-option {
+  h3 {
+    width: 63%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 80px;
+
+    @include for-phone-only {
+      width: 100% !important;
+      padding-bottom: 40px;
+      font-size: 28px;
+    }
+  }
+
+  .select-boxes-wrapper {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(min(calc(100vw - 50px * 3), 23rem), 1fr));
+
+
+    @include for-phone-only {
+      flex-direction: column;
+      gap: 16px;
+
+    }
+
+    .select-boxes {
+      background-color: $white;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      border-radius: 16px;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+
+      @include for-tablet {
+        width: 100%;
+      }
+
+      @include for-phone-only {
+        width: 100%;
+      }
+
+      label {
+        text-transform: uppercase;
+        color: $YUOddGreenLigher;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+
+      h5 {
+        text-align: left;
+        font-weight: 700;
+        min-height: 56px;
+      }
+
+      .options-block {
+        border-bottom: 0;
+
+        form {
+          display: flex;
+          flex-direction: column;
+          border-bottom: none;
+          gap: 32px;
+
+          .js-form-item {
+            padding: 12px 0;
+          }
+
+          select {
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid $Grey;
+            font-family: 'Montserrat';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+            padding-left: 0;
+          }
+        }
+      }
+
+      .duration-option {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 160%;
+        text-transform: capitalize;
+        color: $YUDarkerBrown;
+        width: 100%;
+        border: 0;
+        background: transparent;
+      }
+
+      .form-actions .btn-secondary {
+        width: 100%;
+      }
+
+    }
+
+
+  }
+}
+
+.select-boxes {
+  background-color: $white;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 16px;
+  justify-content: flex-start;
+  width: 100%;
+
+  @include for-tablet {
+    width: 47%;
+  }
+
+  @include for-phone-only {
+    width: 100%;
+  }
+
+  label {
+    text-transform: uppercase;
+    color: $YUOddGreenLigher;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  h5 {
+    text-align: left;
+    font-weight: 700;
+  }
+
+  .options-block {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $Grey;
+    padding: 12px 0px;
+    gap: 8px;
+  }
+
+  .duration-option {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    text-transform: capitalize;
+    color: $white;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    outline: none;
+  }
+
+  &.dark {
+    background-color: $PrimaryBrownple;
+    height: 100%;
+    padding: 64px;
+    color: $white;
+
+    @include for-phone-only {
+      padding: 32px;
+    }
+
+
+    label {
+      color: $white;
+    }
+
+    .duration-option {
+      color: $white;
+      font-family: 'Montserrat';
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      outline: none;
+    }
+  }
+}

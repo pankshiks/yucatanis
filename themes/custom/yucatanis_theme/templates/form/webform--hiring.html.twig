@@ -1,0 +1,84 @@
+<section class="hiring-form-block">
+  <div class="container">
+    <div class="row wrapper">
+      <div class="col-12">
+        <div class="form-heading">
+          <h2>Our Code for Hiring</h2>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="hiring-form-wrapper best-seller-booking-card">
+         <form{{ attributes }}>
+            <div class="row">
+
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                   {{ element.elements.first_name }}
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                  {{ element.elements.last_name }}
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12">
+                <div class="select-items">
+                 {{ element.elements.address }}
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="select-items">
+                  {{ element.elements.nationality }}
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                   {{ element.elements.email }}
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="select-items">
+                  {{ element.elements.mobile_number	 }}
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="select-items">
+                 {{ element.elements.select_values }}
+                </div>
+              </div>
+              <div class="col-12 col-md-12">
+                <div class="select-items">
+                  {{ element.elements.select_special_comments }}
+                </div>
+              </div>
+
+
+
+              <div class="col-12">
+                <div class="checkbox-wrapper">
+                  <div class="checkbox-block">
+                     {{ element.elements.agreement }}
+                  </div>
+
+
+
+                 {{ element.elements.actions }}
+
+                  {{ element.form_token }}
+                {{ element.form_build_id }}
+                {{ element.form_id }}
+                </div>
+              </div>
+            </div>
+        </div>
+        </form>
+        <div class="terms w-100 text-center mt-2">
+          {{ element.elements.markup}}
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

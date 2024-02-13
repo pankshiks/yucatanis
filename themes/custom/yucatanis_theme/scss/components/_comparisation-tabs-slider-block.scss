@@ -1,0 +1,66 @@
+ .carousal-slider {
+   padding-top: 80px;
+   padding-bottom: 80px;
+   max-width: 1920px;
+   margin: auto;
+
+   //  .carouselTicker__list {
+   //    padding: 12px 0;
+   //  }
+ }
+
+ .carouselTicker__item {
+   border: 0;
+   height: auto;
+   max-width: fit-content;
+   width: 100%;
+   display: flex;
+   margin-left: 12px;
+   margin-right: 12px;
+
+   a {
+     text-decoration: none;
+   }
+ }
+
+ .carousel-tabs-pills {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 24px;
+   font-family: 'Montserrat';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 22px;
+   line-height: 150%;
+   text-transform: capitalize;
+   color: $YUDarkBrown;
+   padding: 38px 24px;
+   border-radius: 16px;
+
+   @include for-phone-only {
+     padding: 18px;
+     font-size: 16px;
+     max-width: 250px;
+     height: 66px;
+     line-height: 19px;
+   }
+
+   img {
+     width: 60px;
+     height: 60px;
+     object-fit: contain;
+
+     @include for-phone-only {
+       width: 30px;
+       height: 30px;
+     }
+   }
+ }
+
+ @media(max-width:767px) {
+   .carousal-slider {
+     padding-top: 40px;
+     padding-bottom: 40px;
+   }
+ }

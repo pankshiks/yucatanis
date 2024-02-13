@@ -1,0 +1,142 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{# {{ attach_library('bootstrap_barrio/form') }} #}
+{# <form{{ attributes }}> #}
+  {# {{ children }} #}
+{# </form> #}
+        {% if element.email != NULL %}
+       <div class="slide-block">
+              <div class="row">
+                <div class="col-12">
+                  <h2>Create an account</h2>
+                  <p>Register to create your profile according to the hotel’s location of your current vacation plan-</p>
+                  <div class="login-form">
+          
+                  <form{{ attributes }}>
+                    {# {{dd(element)}} #}
+                
+                     {# {{ form.form_token }} #}
+              
+                      <div class="form-group">
+          
+                       {{element.email }}
+                      </div>
+                      <div class="form-group">
+          
+                       {{element.username }}
+                      </div>
+                      <div class="form-group">
+                      {{element.password}}
+                      </div>
+                      <div class="form-group">
+                          {{element.retype_password}}
+                      </div>
+                     <div class="checkbox-wrapper">
+                        <div class="checkbox-block">
+                       {{element.terms_agreement}}
+                        </div>
+                      </div>
+                      
+                    {{ element.form_build_id }} {# required #}
+                    {{ element.form_id }} {# required #}
+                    {{ element.actions.submit }}
+                    
+          
+                    </form>
+             
+                    <div class="create-account">
+                      <p>Already have an account? <a href="/user/login">sign-in</a> to complete your profile.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      {% endif %}
+     {# {{dd(element.first_name)}} #}
+               {% if element.first_name != NULL %}
+            <div class="slide-block">
+              <div class="row">
+                <div class="col-12">
+                  <h2>About you</h2>
+                  <p>You'll need a payment card and drivers licence, so make sure you've got them on hand before you start!</p>
+                  <div class="login-form">
+
+          
+                    <form {{ attributes }}>
+                     
+                      <div class="form-group">
+                    {{ element.first_name }}
+                      </div>
+                      <div class="form-group">
+                       {{ element.last_name }}
+                      </div>
+                      <div class="form-group">
+                      {{ element.date_of_birth }}
+                      </div>
+                      <div class="form-group">
+                    {{ element.phone_number }}
+                      </div>
+                         
+                    {{ element.form_build_id }} {# required #}
+                    {{ element.form_id }} {# required #}
+                        {{ element.submit }}
+               
+          
+                    </form>
+                
+                  </div>
+                </div>
+              </div>
+            </div>
+             {% endif %}
+           {% if element.country != NULL %}
+            <div class="slide-block">
+              <div class="row">
+                <div class="col-12">
+                  <h2>Where do you live</h2>
+                  <p>You'll need a payment card and drivers licence, so make sure you've got them on hand before you start!</p>
+                  <div class="login-form">
+             
+                    <form {{ attributes }}>
+               
+                      <div class="select-items">
+                       {{ element.country }}
+                      </div>
+                      <div class="select-items">
+                         {{ element.state }}
+                      </div>
+                       <div class="select-items">
+                         {{ element.city }}
+                      </div>
+                      {# <div class="form-group">
+                        <label>California</label>
+                        <input type="text" value=""> #}
+                      {# </div> #}
+                      <div class="select-items">
+                          {{ element.hotel }}
+                        
+                          
+                      </div>
+                        {{ element.form_build_id }} {# required #}
+                    {{ element.form_id }} {# required #}
+                      {{ element.submit }}
+           
+          
+                    </form>        
+               
+                  </div>
+                </div>
+              </div>
+            </div>       
+            
+            {% endif %}

@@ -1,0 +1,52 @@
+<section class="protocol-block ptb-200">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-with-detail ">
+         {{paragraph.field_headingss.value|raw}}
+        </div>
+      </div>
+      <div class="col-12">
+              {% for item in paragraph.field_title_with_list	 %}
+
+              {% if item.entity.field_class.value == 'first' %}
+                  {{ item.entity.field_listheading.value|raw }} 
+                <ul class="detail-list">
+                  {% for list in item.entity.field_lists %}
+
+                      <li>{{list.value}} </li>
+                  {% endfor %}
+              {% endif %}
+              {% if item.entity.field_class.value == 'Second' %}
+                  <div class="col-12">
+                      {{ item.entity.field_listheading.value|raw }} 
+                      <h6 class="font20">{{ item.entity.field_list_text.value|raw }}</h6>
+                      <ul class="detail-list">
+                          {% for list in item.entity.field_lists %}
+
+                              <li>{{list.value}} </li>
+
+                          {% endfor %}
+              {% endif %}
+                      
+                      </ul>
+                  </div>
+              {% endfor %}
+          <div class="col-12 link-line">
+  
+            <p>
+            {{paragraph.field_bottom_text.value|raw}} 
+            {% for item in paragraph.field_lnk %}
+            <b><a href="{{ item.url }}">{{ item.title }}</a></b>
+            {% endfor %}
+            </p>
+           
+
+            <h4>{{paragraph.field_label.value|raw}} </h4>
+          </div>
+         {# {% endfor %} #}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

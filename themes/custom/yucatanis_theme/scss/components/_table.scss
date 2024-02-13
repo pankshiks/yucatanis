@@ -1,0 +1,466 @@
+.table-wrapper {
+
+  position: relative;
+  overflow: auto;
+  height: 100vh;
+
+  @include for-tablet {
+    overflow-x: auto;
+  }
+
+  table {
+    text-align: left;
+
+    border: 1px solid whitesmoke;
+    border-collapse: collapse;
+
+
+    @include for-phone-only {
+      width: 800px;
+    }
+  }
+
+  tbody {
+    transition: box-shadow 0.2s;
+
+    .tr>div {
+
+      padding: 0;
+      background: #423B30;
+      color: $white;
+      text-align: center;
+      font-size: 16px;
+      font-family: "Montserrat";
+      font-style: normal;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+
+      @include for-phone-only {
+        width: 150px;
+      }
+
+    }
+  }
+}
+
+.table-wrapper {
+  table {
+    font-family: "Montserrat";
+
+    width: 100%;
+
+    border: 1px solid whitesmoke;
+
+    thead {
+      border-bottom: 1px solid whitesmoke;
+
+      th {
+        padding: 10px;
+      }
+    }
+
+    tbody {
+      tr {
+        th {
+          text-align: left;
+          padding: 10px;
+          font-size: 14px;
+          font-family: "Montserrat";
+          font-style: normal;
+        }
+
+        border-bottom: 1px solid whitesmoke;
+      }
+    }
+
+    th {
+
+
+      .heading {
+        padding: 14px 0;
+        color: #fff;
+        background: $YUPrimary;
+      }
+
+
+
+      .info {
+        position: relative;
+        padding: 1.5rem 0;
+        border-left: 1px solid whitesmoke;
+
+
+        a {
+          padding: 8px 18px;
+          font-size: 14px;
+          text-decoration: none;
+          font-family: "Montserrat";
+          font-style: normal;
+        }
+      }
+    }
+
+    td {
+      padding: 10px;
+
+      &:not(:first-child) {
+        border-left: 1px solid whitesmoke;
+        font-size: 14px;
+        font-family: "Montserrat";
+        font-style: normal;
+        padding: 20px 15px;
+      }
+
+      &:first-child {
+        font-size: 14px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.table-blocks {
+  table {
+    font-family: "Montserrat";
+
+    width: 100%;
+
+    border: 1px solid whitesmoke;
+
+    thead {
+      border-bottom: 1px solid whitesmoke;
+
+      th {
+        padding: 10px;
+      }
+    }
+
+    tbody {
+      tr {
+        th {
+          text-align: left;
+          padding: 10px;
+          font-size: 14px;
+          font-family: "Montserrat";
+          font-style: normal;
+        }
+
+        border-bottom: 1px solid whitesmoke;
+      }
+    }
+
+    th {
+
+
+      .heading {
+        padding: 14px 0;
+        color: #fff;
+        background: $YUPrimary;
+      }
+
+
+
+      .info {
+        position: relative;
+        padding: 1.5rem 0;
+        border-left: 1px solid whitesmoke;
+
+        a {
+          padding: 8px 18px;
+          font-size: 14px;
+          text-decoration: none;
+          font-family: "Montserrat";
+          font-style: normal;
+        }
+      }
+    }
+
+    td {
+      padding: 10px;
+
+      &:not(:first-child) {
+        border-left: 1px solid whitesmoke;
+        font-size: 14px;
+        font-family: "Montserrat";
+        font-style: normal;
+        padding: 20px 15px;
+      }
+
+      &:first-child {
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+.table-wrapper::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  scrollbar-width: thin;
+  margin-left: 5px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  scrollbar-width: thin;
+  /* Reduce the width to make the scrollbar thinner */
+  background-color: #F5F5F5;
+  width: 5px;
+  height: 5px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: $PrimaryBrownple;
+  border-radius: 8px;
+  scrollbar-width: thin;
+}
+
+.table-blocks {
+  display: flex !important;
+  justify-content: space-between;
+  gap: 50px;
+
+  table {
+    thead {
+      th:first-child {
+        width: 40%;
+      }
+    }
+
+    .imp {
+      color: $attentionRed;
+    }
+
+    .price {
+      color: $priceGreen;
+    }
+
+    td {
+      font-weight: 600;
+    }
+  }
+}
+
+
+
+.table-wrapper {
+  table {
+    tbody {
+      >tr {
+        &:first-child {
+          padding: 0;
+          background: #423B30;
+          color: $white;
+          text-align: center;
+          font-size: 16px;
+          font-family: "Montserrat";
+          font-style: normal;
+          position: sticky;
+          top: 0;
+          z-index: 1;
+
+          td {
+            font-size: 16px;
+            min-width: 350px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 350px;
+            vertical-align: middle;
+            text-align: center;
+
+            .heading {
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 130%;
+            }
+
+            @include for-phone-only {
+              min-width: 200px;
+              max-width: 200px;
+            }
+          }
+
+          th {
+            font-size: 22px;
+            min-width: 270px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 270px;
+            vertical-align: middle;
+            text-align: left;
+
+            @include for-phone-only {
+              font-size: 18px;
+              min-width: 150px;
+              max-width: 150px;
+            }
+          }
+        }
+
+        &:nth-child(2) {}
+      }
+
+      tr {
+        td.vertical-data {
+
+          .info {
+            .heading {
+              @include for-phone-only {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+              }
+            }
+          }
+
+          .btn-secondary {
+            font-size: 16px;
+            padding: 16px 24px;
+            background: none;
+            text-transform: uppercase;
+            background-color: #ff563c;
+            color: #fff;
+            border-radius: 16px;
+            text-decoration: none;
+            margin-top: 10px;
+
+            @include for-phone-only {
+              font-size: 12px;
+            }
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+
+        }
+
+        .vertical-header {
+          text-align: left;
+          padding: 20px 15px;
+        }
+      }
+    }
+  }
+}
+
+.table-fixed {
+  th {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #f9f9f9;
+      border-right: 1px solid #ddd;
+      box-shadow: 10px 0 5px -5px #888;
+    }
+  }
+
+  td {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #f9f9f9;
+      border-right: 1px solid #ddd;
+      box-shadow: 10px 0 5px -5px #888;
+    }
+
+    &:first-child {
+      z-index: 1;
+    }
+  }
+
+  th.vertical-header {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    box-shadow: 10px 0 5px -5px #888;
+    z-index: 2;
+  }
+}
+
+
+.table-wrapper {
+  table {
+    tbody {
+      >tr {
+        &:first-child {
+          td {
+            border: none;
+          }
+        }
+      }
+    }
+
+    tr.table-distinctions {
+      background: #FFF6F5;
+
+      th {
+        border-right: 1px solid var(--YU-Tertiary, #EDEADA);
+        color: #FF563C;
+      }
+
+      td {
+        border-right: 1px solid var(--YU-Tertiary, #EDEADA);
+        color: #FF563C;
+      }
+    }
+
+    tr.table-convenience {
+      background: #F2F5FF;
+
+      th {
+        border-right: 1px solid var(--YU-Tertiary, #EDEADA);
+        color: #0047FC;
+      }
+
+      td {
+        border-right: 1px solid var(--YU-Tertiary, #EDEADA);
+        color: #0047FC;
+      }
+    }
+  }
+}
+
+.table-wrapper table tbody tr.table-distinctions .vertical-header {
+  background: inherit;
+
+}
+
+.table-wrapper table tbody tr.table-convenience .vertical-header {
+  background: inherit;
+
+}
+
+.table-wrapper table tbody>tr:first-child th {
+  background: #423b30;
+  z-index: 1;
+}
+
+.table-wrapper table tbody tr .vertical-header {
+  position: sticky;
+  left: -1px;
+  background: #fff;
+
+}

@@ -1,0 +1,461 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  
+    <section class="experience-block-banner detail-block-banner">
+        <div class="container">
+            {# <p>Islands and Protected Natural Reserves</p> #}
+            <h3>{{product.title}}</h3>
+           
+            {{(product.link_for_entity_comparison_add_product_comparison_shop_classic)}}
+            <div class="row">
+            <div class="col-12">
+                <div class="rating-with-resourses-wrapper ptb-40">
+                <div class="rating-block">
+                    <div class="star-icon">
+                        {{product.variation_field_ratings}}
+                    </div>
+                    <div class="rating-content">
+                    {# <p class="font16 m-0">4.5/5</p> #}
+                    {# <span class="orange-color font16">#FF563C</span> #}
+                    </div>
+                </div>
+            
+                    {% if product_entity.field_mood.0 is not empty %}
+                        <div class="package-detail">
+                            {% for key,items in product_entity.field_mood %}
+
+                            <div class="package-detail-items">
+                                {% if items.entity.field_moods_icon.entity.uri.value is not empty and items.entity.name.value is not empty %}
+                                    <img src="{{ file_url(items.entity.field_moods_icon.entity.uri.value) }}">
+                                {% endif %}
+                                {% if items.entity.name.value is not empty %}  
+                                    {{items.entity.name.value}}
+                                {% endif %}
+                            </div>
+                            {% endfor %} 
+                        </div>
+                    {% endif %}         
+            
+                </div>
+            </div>
+        </div>
+                  <div class="images-grid-wrapper">
+         <div class="left-side-block">
+
+        {% if product.field_product_image.0 is not empty %}
+        
+        <img class="img-fluid" src="{{ file_url(product.field_product_image.0['#item'].entity.uri.value) }}" class="img-fluid" alt="Best Snorkeling" style="width:100%" onclick="openModal();currentSlide(4)">     
+        {% endif %}      
+        </div>
+        
+             {% if product.field_product_image.1 is not empty %}
+          
+        <div class="right-side-block">
+            {% if product.field_product_image.1 is not empty %}
+            <Button  class="btn view-btn" onclick="openModal();currentSlide(1)">View all images</button>
+            <img class="img1" src= "{{ file_url(product.field_product_image.1['#item'].entity.uri.value) }}" class="img-fluid" alt="Best Snorkeling" style="width:100%" onclick="openModal();currentSlide(1)">
+            {% endif %}  
+            {% if product.field_product_image.2 is not empty %}
+            <img class="img2" src="{{ file_url(product.field_product_image.2['#item'].entity.uri.value) }}" class="img-fluid" alt="Best Snorkeling" style="width:100%" onclick="openModal();currentSlide(2)">
+            {% endif %}  
+            {% if product.field_product_image.3 is not empty %}
+            <img class="img3" src="{{ file_url(product.field_product_image.3['#item'].entity.uri.value) }}" alt="Best Snorkeling" style="width:100%" onclick="openModal();currentSlide(2)"> 
+            {% endif %}
+
+        </div>
+           {% endif %}   
+    </div>
+    
+
+              <div id="myModal" class="modal gallarymod" >
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+
+      {% for i,items in product.field_product_image %} 
+      
+      {% if  items is iterable and   items['#item'] in  items %}
+    {% set imageItem = attribute(product.field_product_image, i)['#item'].entity.uri.value %}
+    {% if imageItem is not null %}
+        <div class="mySlides">
+            <div class="numbertext">{{ i+1 }} / 4</div>
+            <img src="{{ file_url(imageItem) }}" style="width:100%">
+        </div>
+    {% endif %}
+      {% endif %}
+{% endfor %}
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+        <div class="lightbox-wrapper">
+        {% for i in 0..3 %}
+    {% set imageItem = attribute(product.field_product_image, i)['#item'].entity.uri.value %}
+    {% if imageItem is not null %}
+        <div class="column">
+            <img class="demo cursor" src="{{ file_url(imageItem) }}" style="width:100%" onclick="currentSlide({{ i+1 }})" alt="Image {{ i+1 }}">
+        </div>
+    {% endif %}
+{% endfor %}
+      </div>
+    </div>
+    </section>
+     <section class="ptb-80">
+        <div class="container product-overview-wrapper">
+            <div class="row justify-content-between">
+            <div class="col-12 col-lg-7 ooue">
+               
+                <div class ="overview-detail-wrapper">
+                {#  #}
+                    {%  if product.body is not empty %} 
+                               
+                        <div class="overview-detail">
+                            <h4>Overview</h4> 
+                             {% set bodyText = product.body|render|striptags %}
+                             {% set bodyLength = bodyText|length %}
+                             {{product.body|raw}}
+                            {% if bodyLength > 200 %}
+                             <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                             {% else %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-md-6">
+                        {% if product.field_distinction.0 is not empty %}
+                            <div class="overview-detail">
+                                <h5>Distinctions</h5>
+                                <ul class="detail-list">
+                                    {% for key,item in product.field_distinction %}
+                                        {% if key matches '/[0-9]/' %}
+                                        <li>
+                                        {{item['#title']}}
+                                        </li>
+                                        {% endif %}   
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                    {% if product.field_convenience.0 is not empty %}
+                    <div class="overview-detail">
+                        <h5>Convenience</h5>
+                            <ul class="detail-list">
+                                {% for key,item in product.field_convenience %}
+                                    {% if key matches '/[0-9]/' %}
+                                        <li>
+                                            {{item['#title']}}
+                                        </li>
+                                    {% endif %}   
+                                {% endfor %}
+                            </ul>
+                    </div>
+                    {% endif %} 
+                        </div>
+                        </div>
+                        <div class="row">
+                         <div class="col-md-6">
+                    {% if product.field_inclusions_list.0 is not empty %}
+                        <div class="overview-detail">
+                            <h5>Included Attributes</h5>
+                            <ul class="overview-detail-list">
+                                {% for key,item in product.field_inclusions_list %}
+                                    {% if key matches '/[0-9]/' %}
+                                        <li>
+                                            {{item['#context']['value']}}
+                                        </li>
+                                    {% endif %}   
+                                {% endfor %}
+                            </ul>
+                            {# {% if product.field_inclusions_list.2 is not empty %}
+                                <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                            {% endif %}  #}
+                            
+                        </div>
+                    {% endif %} 
+                    </div>
+                    <div class="col-md-6">
+                    {% if product.field_excluded_attributes.0 is not empty %}
+                        <div class="overview-detail">
+                            <h5>Excluded Attributes</h5>
+                            <ul class="overview-detail-list">
+                                {% for key,item in product.field_excluded_attributes %}
+                                    {% if key matches '/[0-9]/' %}
+                                        <li>
+                                            {{item['#context']['value']}}
+                                        </li>
+                                    {% endif %}   
+                                {% endfor %}
+                            </ul>
+                            {% if product.field_excluded_attributes.2 is not empty %}
+                             <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                            {% endif %} 
+                            
+                        </div>
+                    {% endif %} 
+                         </div>
+                        </div>
+                    {#  #}
+                    {% if product.field_no_id.0 is not empty %}
+                    {# <div class="overview-detail">
+                        {{product.field_no_id}}
+                    </div> #}
+                    {% endif %}
+                    
+                    {% if product.field_sub_type.0 is not empty %}
+                        <div class="overview-detail">
+                            <h5>Type/Sub-Type Fragments of Yucatan</h5>
+                            <ul class="overview-detail-list">
+                                {% for key,item in product.field_sub_type %}
+                                    {% if key matches '/[0-9]/' %}
+                                    <li>
+                                    {{item['#title']}}
+                                    </li>
+                                    {% endif %}   
+                                {% endfor %}
+                            </ul>
+                            {# {% if product.field_sub_type.2 is not empty %}
+                            <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                            {% endif %} #}
+                        </div>
+                    {% endif %}
+
+                    {% if product.field_duration.0 is not empty %}
+                        <div class="overview-detail">
+                            <h5>Duration</h5>
+                            <ul class="overview-detail-list">
+                            {% for key,item in product.field_duration %}
+                                {% if key matches '/[0-9]/' %}
+                                    <li>
+                                    {{item['#markup']}}
+                                    </li>
+                                {% endif %}   
+                            {% endfor %}
+                            </ul>
+                            {% if product.field_duration.2 is not empty %}
+                            <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                            {% endif %}
+                        
+                        </div>
+                    {% endif %}
+                   
+                    {% if product.field_relatively_closer_to.0 is not empty %}
+                        <div class="overview-detail">
+                            <h5>Relatively Closer to</h5>
+                            <ul class="overview-detail-list">
+                                {% for key,item in product.field_relatively_closer_to %}
+                                    {% if key matches '/[0-9]/' %}
+                                    <li>
+                                    {{item['#title']}}
+                                    </li>
+                                    {% endif %}   
+                                {% endfor %}
+                            </ul>
+                            {% if product.field_relatively_closer_to.2 is not empty %}
+                              <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                            {% endif %}
+                           
+                        </div>
+                    {% endif %}
+                    {% if product.field_restrictions.0 is not empty %}
+                    <div class="overview-detail">
+                        <h5>Restrictions</h5>
+                        <ul class="overview-detail-list">
+                            {% for key,item in product.field_restrictions %}
+                                {% if key matches '/[0-9]/' %}
+                                    <li>
+                                         {{item['#context']['value']}}
+                                    </li>
+                                {% endif %}   
+                            {% endfor %}
+                        </ul>
+                        {# {% if product.field_restrictions.2 is not empty %}
+                          <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                        {% endif %}  #}
+                       
+                    </div>
+                    {% endif %} 
+                    {% if product.field_fate.0 is not empty %}
+                    <div class="overview-detail">
+                        <h5>Fates</h5>
+                        <ul class="overview-detail-list">
+                            {% for key,item in product.field_fate %}
+                                {% if key matches '/[0-9]/' %}
+                                    <li>
+                                    {{item['#title']}}
+                                    </li>
+                                {% endif %}   
+                            {% endfor %}
+                        </ul>
+                        {# {% if product.field_fate.2 is not empty %}
+                         <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                        {% endif %} #}
+                       
+                    </div>
+                    {% endif %} 
+                    
+
+                    {% if product.field_privately_available.0 is not empty %}
+                    <div class="overview-detail">
+                        <h5>Privately Available</h5>
+                        <ul class="overview-detail-list">
+                            {% for key,item in product.field_privately_available %}
+                                {% if key matches '/[0-9]/' %}
+                                    <li>
+                                        {{item['#markup']}}
+                                    </li>
+                                {% endif %}   
+                            {% endfor %}
+                        </ul>
+                        {% if product.field_privately_available.2 is not empty %}
+                            <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                        {% endif %}
+                    </div>
+                    {% endif %} 
+                    
+                    {% if product.field_all_weather_activity.0 is not empty %}
+                    <div class="overview-detail">
+                        <h5>All weather Activity</h5>
+                        <ul class="overview-detail-list">
+                            {% for key,item in product.field_all_weather_activity %}
+                                {% if key matches '/[0-9]/' %}
+                                    <li>
+                                        {{item['#markup']}}
+                                    </li>
+                                {% endif %}   
+                            {% endfor %}
+                        </ul>
+                        {% if product.field_all_weather_activity.2 is not empty %}
+                         <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                        {% endif %}
+                    </div>
+                    {% endif %} 
+                    
+                    {% if product.field_available_add_ons.0 is not empty %}
+                        <div class="overview-detail">
+                            <h5>Available Add Ons</h5>
+                            <ul class="overview-detail-list">
+                                {% for key,item in product.field_available_add_ons %}
+                                    {% if key matches '/[0-9]/' %}
+                                        <li>
+                                            {{item['#title']}}
+                                        </li>
+                                    {% endif %}   
+                                {% endfor %}
+                            </ul>
+                            {% if product.field_available_add_ons.2 is not empty %}
+                               <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                            {% endif %}
+                           
+                        </div>
+                    {% endif %} 
+                    
+                    {% if product.field_yucatanis_recommend.0 is not empty %}
+                        <div class="overview-detail">
+                            <h5>Yucatanis Recommend</h5>
+                            <ul class="overview-detail-list">
+                                {% for key,item in product.field_yucatanis_recommend %}
+                                    {% if key matches '/[0-9]/' %}
+                                        <li>
+                                            {{item['#title']}}
+                                        </li>
+                                    {% endif %}   
+                                {% endfor %}
+                            </ul>
+                            {% if product.field_yucatanis_recommend.2 is not empty %}
+                               <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                            {% endif %} 
+                            
+                        </div>
+                    {% endif %} 
+                    
+                    {% if product.field_mandatorys.0 is not empty %}
+                        <div class="overview-detail">
+                            <h5>Mandatory</h5>
+                            <ul class="overview-detail-list">
+                                {% for key,item in product.field_mandatorys %}
+                                    {% if key matches '/[0-9]/' %}
+                                        <li>
+                                        {{item['#title']}}
+                                        </li>
+                                    {% endif %}   
+                                {% endfor %}
+                            </ul>
+                            {% if product.field_mandatorys.2 is not empty %}
+                             <a href="" class="btn show-more-btn overviewtext dark">Show More</a>
+                            {% endif %} 
+                           
+                        </div>
+                    {% endif %} 
+        
+                </div>
+                 {# <a href="" class="btn show-more-btn rental">Show More</a> #}
+            </div>
+            <div class="col-12 col-lg-4 card-gap">
+                <div class="booking-btn-wrap">
+                    <a href="?type=shared" class="btn btn-primary ">Shared Booking</a>
+                    <a href="?type=private" class="btn btn-primary ">Private Booking</a>
+                </div>
+                <div class="best-seller-booking-card">
+                    <div class="info-tag">
+                        <p>Highly Rated Natural Location</p>
+                    </div>
+                <div class="">
+                    {% if type == 'private' %}
+                    {% if product.variation_field_private_adult_price is not empty %}
+                        <h5 class="green-color">{{product.variation_field_private_adult_price}}<span>/ per adult </span></h5>
+                        <h6 class="green-color">{{product.variation_field_private_kids_tour_price}}<span>Kids 5 - 11 yrs</span></h6>
+                        {% endif %}
+                    {% else  %}
+               {% if product.variation_field_private_adult_price is not empty %}
+                    <h5 class="green-color">{{product.variation_price}}<span>/ per adult</span></h5>
+                    <h6 class="green-color">{{product.variation_field_kids_price}}<span>Kids 5 - 11 yrs</span></h6>
+                       {% endif %}
+                    {% endif %}
+                </div>
+
+                {{ drupal_entity('webform', 'booking') }}
+
+                </div>
+                {{ drupal_entity('block_content', '28') }}
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="tageline-block">
+        <div class="container">
+            <div class="title-with-detail">
+             <h6>{{ product_entity.field_tagline_block.entity.field_tagline_text.value }} </h6>
+            </div>
+        </div>
+    </section>
+</article>

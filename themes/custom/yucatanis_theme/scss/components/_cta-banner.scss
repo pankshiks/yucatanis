@@ -1,0 +1,96 @@
+.cta-banner {
+  position: relative;
+
+  .cta-banner-img {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  h2 {
+    text-align: left;
+
+    @include for-phone-only {
+      text-align: left;
+    }
+  }
+
+
+  .cta-wrapper {
+    width: 66%;
+    color: $white;
+    position: relative;
+
+    @include for-tablet {
+      width: 100%;
+    }
+
+    @include for-phone-only {
+      width: 100%;
+      text-align: left;
+    }
+
+    .small-title {
+      h6 {
+        color: $white;
+
+      }
+
+      span {
+        font-family: 'Reenie Beanie';
+        font-size: 45px;
+        font-weight: 500;
+
+      }
+    }
+
+    h3 {
+      font-family: "Montserrat";
+    }
+
+    h6 {
+      font-weight: 500;
+    }
+  }
+
+  &.nightview-banner {
+    .cta-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      h3 {
+        font-family: 'GT Super Display';
+      }
+
+      p {
+        color: $white;
+      }
+    }
+  }
+}
+
+@media(max-width:767px) {
+  .cta-banner {
+    h3 {
+      text-align: center;
+    }
+  }
+}
+
+.cta-banner {
+  &.primary {
+    .cta-wrapper {
+      width: 100%;
+      display: grid;
+      gap: 32px;
+
+      h6 {
+        font-weight: 400;
+      }
+    }
+
+  }
+}

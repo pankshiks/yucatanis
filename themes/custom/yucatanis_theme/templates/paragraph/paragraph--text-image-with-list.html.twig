@@ -1,0 +1,22 @@
+<section class="cta-banner primary">
+  <img class="cta-banner-img" src="{{ file_url(content.field_img.0['#item'].entity.uri.value) }}" alt="shark">
+  <div class="container ptb-200">
+    <div class="cta-wrapper">
+      {% if paragraph.field_distinct_heading.value %}
+        <h2 class="yellow-color">{{paragraph.field_distinct_heading.value|raw}}</h2>
+      {% endif %}
+      {% if paragraph.field_sub_heading_.value %}
+       {{ paragraph.field_sub_heading_.value|raw }}
+      {% endif %}
+
+      <ul class="primary-list two-col">
+        
+        {% for item in paragraph.field_text_list %}
+
+        <li>{{item.value}} </li>
+      
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

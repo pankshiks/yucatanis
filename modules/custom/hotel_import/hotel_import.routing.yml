@@ -1,0 +1,17 @@
+hotel_import.form_submit:
+  path: '/admin/config/hotel-import/submit'  
+  defaults:
+    _form: '\Drupal\hotel_import\Form\HotelImportForm'
+    _title: 'Submit Hotel Import Form'
+  requirements:
+    _permission: 'access content'  # Adjust the permission as needed.
+
+
+hotel_import_time.form_submit:
+  path: '/admin/config/hotel-import-time/submit'  
+  defaults:
+    _form: '\Drupal\hotel_import\Form\HotelImportFormTime'
+    _title: 'Submit Hotel Time Import Form Per Product'
+  requirements:
+    _permission: 'access content'  # Adjust the permission as needed.
+

@@ -1,0 +1,89 @@
+{%
+  set classes = [
+    'table',
+    'table-unique',
+    hover ? 'table-hover',
+    table_class,
+    'views-table',
+    'views-view-table',
+    'cols-' ~ header|length,
+    responsive ? 'responsive-enabled',
+    sticky ? 'sticky-enabled',
+    'vertical-header-table'
+  ]
+%}
+<section class="groups-wedding-page ptbunique ptb-50">
+  <div class="container-fluid table-block">
+    <div class="row">
+      <div class="col-12">
+        <div class="table-wrapper">
+          <table class="{{ classes|join(' ') }}">
+
+            <tbody>
+              {% for key, column in header %}
+               
+                {# <tr{{ column.attributes.id == 'view-field-max-passenger-capacity-table-column' ? ' class="table-boat-max"' : '' 
+                 ~ column.attributes.id == 'view-field-loa-ft-table-column' ? ' class="table-boat-loa"' : ''
+                  ~ column.attributes.id == 'view-field-4hrs-rental-table-column' ? ' class="table-boat-price"' : ''
+                  ~ column.attributes.id == ' view-field-6hrs-rental-table-column' ? ' class="table-boat-price"' : ''
+                  ~ column.attributes.id == 'view-field-8hrs-rental-table-column' ? ' class="table-boat-price"' : ''
+                  ~ column.attributes.id == ' view-field-dock-fee-table-column' ? ' class="table-boat-price"' : ''
+                  ~ column.attributes.id == 'view-field-extra-hour-table-column' ? ' class="table-boat-price"' : ''
+                  ~ column.attributes.id == ' view-field-transportation-cost-table-column' ? ' class="table-boat-price"' : ''}}> #}
+                  
+{#                   
+                  <tr{{ column.attributes.id == 'view-field-max-passenger-capacity-table-column' ? ' class="table-boat-max"' : 
+      column.attributes.id == 'view-field-loa-ft-table-column' ? ' class="table-boat-loa"' :
+      column.attributes.id == 'view-field-4hrs-rental-table-column' ? ' class="table-boat-price"' :
+      column.attributes.id == 'view-field-6hrs-rental-table-column' ? ' class="table-boat-price"' :
+      column.attributes.id == 'view-field-8hrs-rental-table-column' ? ' class="table-boat-price"' : ''
+      column.attributes.id == 'view-field-dock-fee-table-column' ? ' class="table-boat-price"' : ''
+      column.attributes.id == 'view-field-extra-hour-table-column' ? ' class="table-boat-price"' : ''
+      column.attributes.id == 'view-field-transportation-cost-table-column' ? ' class="table-boat-price"' : '' }}> #}
+
+      <tr{{ column.attributes.id == 'view-field-max-passenger-capacity-table-column' ? ' class="table-boat-max"' : 
+      column.attributes.id == 'view-field-loa-ft-table-column' ? ' class="table-boat-loa"' :
+      column.attributes.id == 'view-field-4hrs-rental-table-column' ? ' class="table-boat-price"' :
+      column.attributes.id == 'view-field-6hrs-rental-table-column' ? ' class="table-boat-price"' :
+      column.attributes.id == 'view-field-8hrs-rental-table-column' ? ' class="table-boat-price"' : '' ~
+      column.attributes.id == 'view-field-dock-fee-table-column' ? ' class="table-boat-price"' : '' ~
+      column.attributes.id == 'view-field-extra-hour-table-column' ? ' class="table-boat-price"' : '' ~
+      column.attributes.id == 'view-field-transportation-cost-table-column' ? ' class="table-boat-price"' : '' ~
+      column.attributes.id == 'view-field-available-for-sale-table-column' ? ' class="table-boat-available"' : '' ~
+       column.attributes.id == 'view-field-sale-price-table-column' ? ' class="table-boat-saleprice"' : '' }}>
+
+
+                 
+                  <th{{ column.attributes.addClass(['vertical-header']) }}>
+                          {% if key == 'title' %}
+                     
+                  {{ column.content }}
+            
+                    {% else %}
+                    
+                      {{ column.content }}
+                    {% endif %}
+                    </th>
+                  {% for  row in rows %}
+                         {% if key == 'title' %}
+                       
+                    <td{{ row.columns[key].attributes.addClass(['vertical-data']) }}>
+                   <div class="info">
+                      {{ row.columns[key].content|raw }}
+                      </div>
+                    </td>
+                    {% else %}
+                 <td{{ row.columns[key].attributes.addClass(['vertical-data']) }}>
+                      {{ row.columns[key].content|raw }}
+                    </td>
+                  {% endif %}
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

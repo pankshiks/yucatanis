@@ -1,0 +1,15 @@
+.rating-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .star-icon {
+    display: flex;
+  }
+
+  .rating-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}

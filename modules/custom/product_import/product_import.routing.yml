@@ -1,0 +1,8 @@
+product_import.form_submit:
+  path: '/admin/config/product-import/submit'  
+  defaults:
+    _form: '\Drupal\product_import\Form\ProductImportForm'
+    _title: 'Submit product Import Form'
+  requirements:
+    _permission: 'access content'  # Adjust the permission as needed.
+

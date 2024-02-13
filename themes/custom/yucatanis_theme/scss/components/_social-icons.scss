@@ -1,0 +1,30 @@
+.social-links {
+  position: fixed;
+  left: 5%;
+  top: 50%;
+
+  @include for-phone-only {
+    right: 50px;
+  }
+
+  a {
+    path {
+      fill: #4A403A;
+    }
+  }
+
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.social-links ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.social-links ul li {
+  list-style-type: none;
+  margin-bottom: 23px;
+}

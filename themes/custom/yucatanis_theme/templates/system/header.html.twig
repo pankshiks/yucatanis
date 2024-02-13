@@ -1,0 +1,73 @@
+<div class="topbar-wrap">
+  <div class="topbar">
+    {{page.header_top}}
+  </div>
+</div>
+  <header>
+    <div class="main-nav">
+      <div class="header-bar sticky-top">
+        <div class="header-logo">
+          <a href="/">
+          <img src="{{logopath}}">
+          </a>
+          <!-- <div class="divider"></div> -->
+        </div>
+
+        <div class="header-nav">
+          <div class="primary-nav">
+            <ul>
+              <li> {{page.main_navigations}}
+              {{page.account}}</li>
+            </ul>
+          </div>
+          <div class="toggle-menu">
+            <div class="hamburger" id="menuToggle">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+            <nav class="fullscreen">
+              <div class="hamberger-topbar">
+                <div class="header-logo">
+                  <a href="">
+                    <img src="{{logopath}}">
+                  </a>
+                  <div class="divider"></div>
+                  <p>{{page.header_bottom}}</p>
+                </div>
+                <div class="close">
+                  <div></div>
+                </div>
+              </div>
+              <ul>
+                 <li>{{page.toggle_menu}}</li>
+              </ul>
+
+            </nav>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="top-header-bar">
+      <div>
+          {#  #}
+          <div class="wrapper">
+            <p class="font14">
+                <span id="typewriter" class="animatedText" data-array=""> </span>
+                <span class="cursor"></span>
+          
+            </p>
+          </div>
+          {#  #}
+         {# {{ page.header_bottom }} #}
+        </div>
+        <div id="ityped">
+        </div>
+        
+             {{ page.bottom_sidebar }}
+
+
+      </div>
+    </div>
+  </header>
