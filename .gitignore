@@ -10,6 +10,7 @@ sites/default/files/
 sites/default/services.yml
 # Ignore sensitive information
 sites/*/settings.local.php
+config/sync/commerce_payment.commerce_payment_gateway.stripe_live_.yml
 
 # Ignore Drupal's file directory
 sites/*/files/
