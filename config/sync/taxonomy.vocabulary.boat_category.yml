@@ -1,0 +1,8 @@
+uuid: f0fb2a3f-0c18-4ba1-b822-460319700d4e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Boat category'
+vid: boat_category
+description: ''
+weight: 0

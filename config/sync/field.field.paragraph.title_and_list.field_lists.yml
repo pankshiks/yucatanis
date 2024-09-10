@@ -1,0 +1,19 @@
+uuid: d8493e2e-392c-40cd-8000-ea350bc65ebd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lists
+    - paragraphs.paragraphs_type.title_and_list
+id: paragraph.title_and_list.field_lists
+field_name: field_lists
+entity_type: paragraph
+bundle: title_and_list
+label: lists
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

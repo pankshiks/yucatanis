@@ -1,0 +1,33 @@
+<?php
+function order_confirmation_email_mail_alter(array &$message) {
+    // if ($message['key'] == 'order_receipt'){
+
+    //     $product_info_full= "Receipt BK No";
+    //     $ReceiptBKNo =  date("dmY");
+    //     $order = \Drupal::routeMatch()->getParameter('commerce_order');
+    //     $order_id = $order->get('order_id')->getValue()[0]["value"];
+    //     $html = $product_info_full . $ReceiptBKNo . '00000' . $order_id;
+    //     $mpdf = new \Mpdf\Mpdf(['tempDir' => 'sites/default/files/tmp']);
+    //     $mpdf->WriteHTML($html);
+    //     $pdf_content .= "<p>Thank You,</p>";
+    //     $content = $mpdf->Output('', 'S');
+    //     $params = [
+    //         'message' => $pdf_content,
+    //         '$title' => "test",
+    //         'subject' => "Booking receipt",
+    //         'attachments' => [
+    //             'filecontent' => $content,
+    //             'filename' => 'receipt.pdf',
+    //             'filemime' => 'application/pdf',
+    //         ],
+    //     ];
+    //     $module = 'order_confirmation_email';
+    //     $key = 'order_receipt';
+    //     $to = 'raveen.lnwebworks@gmail.com';
+    //     $langcode = \Drupal::currentUser()->getPreferredLangcode();
+    //     $send = true;
+    //     $mail_manager = \Drupal::service('plugin.manager.mail');
+    //     $result = $mail_manager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+    // }
+}
+?>

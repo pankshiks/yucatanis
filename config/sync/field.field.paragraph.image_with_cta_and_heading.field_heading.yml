@@ -1,0 +1,21 @@
+uuid: c3f87e74-bd93-4dde-9d0d-2c780692fff4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.image_with_cta_and_heading
+  module:
+    - text
+id: paragraph.image_with_cta_and_heading.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: image_with_cta_and_heading
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

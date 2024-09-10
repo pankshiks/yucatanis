@@ -1,0 +1,34 @@
+uuid: 0f62b0a5-0a3c-4d70-9623-83f593dc9c97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_items_image
+    - system.menu.sidebar-social-links
+  module:
+    - svg_image_field
+id: menu_link_content.sidebar-social-links.field_menu_items_image
+field_name: field_menu_items_image
+entity_type: menu_link_content
+bundle: sidebar-social-links
+label: 'Menu Items Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: svg
+  max_filesize: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+field_type: svg_image_field

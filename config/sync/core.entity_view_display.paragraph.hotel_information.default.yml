@@ -1,0 +1,32 @@
+uuid: 6b7aed4f-7837-4827-aef0-a0796ea1c433
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hotel_information.field_hotel_info
+    - field.field.paragraph.hotel_information.field_pick_up_time
+    - paragraphs.paragraphs_type.hotel_information
+  module:
+    - simple_time_field
+id: paragraph.hotel_information.default
+targetEntityType: paragraph
+bundle: hotel_information
+mode: default
+content:
+  field_hotel_info:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_pick_up_time:
+    type: simple_time_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

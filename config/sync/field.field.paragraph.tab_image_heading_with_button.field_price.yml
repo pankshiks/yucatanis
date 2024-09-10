@@ -1,0 +1,19 @@
+uuid: cd615ae8-19ad-4ec4-9561-015e4e7dac24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_price
+    - paragraphs.paragraphs_type.tab_image_heading_with_button
+id: paragraph.tab_image_heading_with_button.field_price
+field_name: field_price
+entity_type: paragraph
+bundle: tab_image_heading_with_button
+label: Price
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

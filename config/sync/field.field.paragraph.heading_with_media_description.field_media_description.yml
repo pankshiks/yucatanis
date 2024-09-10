@@ -1,0 +1,67 @@
+uuid: 16a8982b-8075-4bc9-b2b6-dcc56855abf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_description
+    - paragraphs.paragraphs_type.heading_with_media_description
+    - paragraphs.paragraphs_type.media_with_title_and_description
+  module:
+    - entity_reference_revisions
+id: paragraph.heading_with_media_description.field_media_description
+field_name: field_media_description
+entity_type: paragraph
+bundle: heading_with_media_description
+label: 'Media description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      media_with_title_and_description: media_with_title_and_description
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 14
+        enabled: false
+      basemap:
+        weight: 15
+        enabled: false
+      features_list:
+        weight: 16
+        enabled: false
+      heading_with_media_description:
+        weight: 18
+        enabled: false
+      heading_with_texts:
+        weight: 19
+        enabled: false
+      headings_with_images:
+        weight: 17
+        enabled: false
+      icons_with_links:
+        weight: 20
+        enabled: false
+      image_with_cta_and_heading:
+        weight: 22
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 23
+        enabled: false
+      images_with_list:
+        weight: 21
+        enabled: false
+      media_with_title_and_description:
+        weight: 24
+        enabled: true
+      text_with_cta_and_image:
+        weight: 25
+        enabled: false
+      view_reference:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

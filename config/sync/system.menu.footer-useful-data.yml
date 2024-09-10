@@ -1,0 +1,8 @@
+uuid: 72e76602-ab7e-4624-a4b4-e96ac4f87bcd
+langcode: en
+status: true
+dependencies: {  }
+id: footer-useful-data
+label: 'USEFUL DATA'
+description: ''
+locked: false

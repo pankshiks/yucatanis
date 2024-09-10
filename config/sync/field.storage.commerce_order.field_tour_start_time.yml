@@ -1,0 +1,20 @@
+uuid: 172de00e-65c7-400f-9a9f-51c969c1ccba
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - text
+id: commerce_order.field_tour_start_time
+field_name: field_tour_start_time
+entity_type: commerce_order
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

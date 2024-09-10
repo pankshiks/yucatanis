@@ -1,0 +1,19 @@
+uuid: bb39d6f9-39ad-4648-8b89-c26d74073aba
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_compare_button
+field_name: field_compare_button
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

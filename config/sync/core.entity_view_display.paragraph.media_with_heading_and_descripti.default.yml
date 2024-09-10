@@ -1,0 +1,49 @@
+uuid: 88822c76-a8be-4d53-adcf-2477cea5cf08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_with_heading_and_descripti.field_avdescription
+    - field.field.paragraph.media_with_heading_and_descripti.field_avheading
+    - field.field.paragraph.media_with_heading_and_descripti.field_avimg
+    - field.field.paragraph.media_with_heading_and_descripti.field_section_types
+    - paragraphs.paragraphs_type.media_with_heading_and_descripti
+  module:
+    - options
+    - text
+id: paragraph.media_with_heading_and_descripti.default
+targetEntityType: paragraph
+bundle: media_with_heading_and_descripti
+mode: default
+content:
+  field_avdescription:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_avheading:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_avimg:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_section_types:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

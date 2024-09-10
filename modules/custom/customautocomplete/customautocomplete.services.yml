@@ -1,0 +1,6 @@
+services:
+  customautocomplete.order_complete:
+    class: Drupal\customautocomplete\EventSubscriber\OrderCompleteSubscriber
+    tags:
+      - { name: event_subscriber }
+  

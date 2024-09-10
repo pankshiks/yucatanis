@@ -1,0 +1,21 @@
+uuid: b4aab184-4e35-496d-93ca-b614a37e538f
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+    - field.storage.commerce_product.field_restriction
+  module:
+    - text
+id: commerce_product.essential_rarities.field_restriction
+field_name: field_restriction
+entity_type: commerce_product
+bundle: essential_rarities
+label: Restrictions
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

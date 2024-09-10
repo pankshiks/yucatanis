@@ -1,0 +1,19 @@
+uuid: 4ad44085-0de2-41cc-b9c8-b38e0c45dbec
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+    - field.storage.commerce_product.field_excluded_attributes
+id: commerce_product.essential_rarities.field_excluded_attributes
+field_name: field_excluded_attributes
+entity_type: commerce_product
+bundle: essential_rarities
+label: 'Excluded Attributes'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

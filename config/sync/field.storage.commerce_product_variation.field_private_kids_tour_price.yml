@@ -1,0 +1,19 @@
+uuid: c2b409f4-bd99-46c1-9d7a-0ccbfe7facf7
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_price
+    - commerce_product
+id: commerce_product_variation.field_private_kids_tour_price
+field_name: field_private_kids_tour_price
+entity_type: commerce_product_variation
+type: commerce_price
+settings: {  }
+module: commerce_price
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,126 @@
+uuid: a727d35f-0d0b-443c-9871-baf22ffcbc8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.default
+    - field.field.commerce_product_variation.default.field_allowed_kids
+    - field.field.commerce_product_variation.default.field_dock_fee
+    - field.field.commerce_product_variation.default.field_item_type
+    - field.field.commerce_product_variation.default.field_kids_price
+    - field.field.commerce_product_variation.default.field_private_adult_price
+    - field.field.commerce_product_variation.default.field_private_kids_tour_price
+    - field.field.commerce_product_variation.default.field_product_heading
+    - field.field.commerce_product_variation.default.field_product_image
+    - field.field.commerce_product_variation.default.field_rating
+  module:
+    - commerce_price
+    - fivestar
+    - media_library
+    - text
+_core:
+  default_config_hash: dDLA40Axom_QFA79EWUpe_bWXWE8I_7MijzPkslbVfA
+id: commerce_product_variation.default.default
+targetEntityType: commerce_product_variation
+bundle: default
+mode: default
+content:
+  field_allowed_kids:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_dock_fee:
+    type: commerce_price_default
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_item_type:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_kids_price:
+    type: commerce_price_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_private_adult_price:
+    type: commerce_price_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_private_kids_tour_price:
+    type: commerce_price_default
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_product_heading:
+    type: text_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_product_image:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_rating:
+    type: fivestar_stars
+    weight: 7
+    region: content
+    settings:
+      text_format: none
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 5
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  list_price:
+    type: commerce_list_price
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  price:
+    type: commerce_price_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sku:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

@@ -72,14 +72,14 @@
   
   {% elseif  paragraph.field_view_type.value == 'Testimonials slider' %}
       <section class="testimonial-slider ptb-200 bg-pink">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h2>Latest <span class="orange-color">{{ paragraph.field_heading_list.value|raw }}</h2>
-            {{ paragraph.field_sub_heading.value |raw}}
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2>Latest <span class="orange-color">{{ paragraph.field_heading_list.value|raw }}</h2>
+              {{ paragraph.field_sub_heading.value |raw}}
+            </div>
           </div>
         </div>
-      </div>
         {{ paragraph.field_view|view }}
       </section>
 
@@ -91,7 +91,7 @@
       {{ paragraph.field_view|view }}
     </section>
 
-{% elseif  paragraph.field_view_type.value == 'Product categories' %}
+  {% elseif  paragraph.field_view_type.value == 'Product categories' %}
     <section class="top-rated-experiences">
       <div class="container">
       {% if paragraph.field_heading_list.value is not empty %}
@@ -112,8 +112,8 @@
       {{ paragraph.field_view|view }}
       </div>
     </section>
-
-{% else %}     
+    
+  {% else %}     
  
     <section class="top-rated-experiences">
     <div class="container">

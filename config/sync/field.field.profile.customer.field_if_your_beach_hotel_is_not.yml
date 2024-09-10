@@ -1,0 +1,21 @@
+uuid: 74fb369d-9074-4bbb-9f23-068472981cbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_if_your_beach_hotel_is_not
+    - profile.type.customer
+  module:
+    - options
+id: profile.customer.field_if_your_beach_hotel_is_not
+field_name: field_if_your_beach_hotel_is_not
+entity_type: profile
+bundle: customer
+label: 'If Your Beach Hotel is Not Listed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

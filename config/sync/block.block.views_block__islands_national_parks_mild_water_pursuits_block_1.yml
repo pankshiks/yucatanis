@@ -1,0 +1,24 @@
+uuid: 7599a5cd-f2e9-46c2-b500-610ccec8e842
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.islands_national_parks_mild_water_pursuits
+  module:
+    - views
+  theme:
+    - yucatanis_theme
+id: views_block__islands_national_parks_mild_water_pursuits_block_1
+theme: yucatanis_theme
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:islands_national_parks_mild_water_pursuits-block_1'
+settings:
+  id: 'views_block:islands_national_parks_mild_water_pursuits-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

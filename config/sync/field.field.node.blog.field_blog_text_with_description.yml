@@ -1,0 +1,109 @@
+uuid: df8a8609-586c-4803-af79-cc78f4f3845f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_text_with_description
+    - node.type.blog
+    - paragraphs.paragraphs_type.text_with_description_
+  module:
+    - entity_reference_revisions
+id: node.blog.field_blog_text_with_description
+field_name: field_blog_text_with_description
+entity_type: node
+bundle: blog
+label: 'Blog Text with Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text_with_description_: text_with_description_
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 28
+        enabled: false
+      basemap:
+        weight: 29
+        enabled: false
+      faq:
+        weight: 30
+        enabled: false
+      faq_title_with_description:
+        weight: 31
+        enabled: false
+      features_list:
+        weight: 32
+        enabled: false
+      heading_with_cta_and_media_text:
+        weight: 33
+        enabled: false
+      heading_with_media_description:
+        weight: 34
+        enabled: false
+      heading_with_texts:
+        weight: 35
+        enabled: false
+      headings_with_images:
+        weight: 36
+        enabled: false
+      icons_with_links:
+        weight: 37
+        enabled: false
+      image_with_cta_and_heading:
+        weight: 38
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 39
+        enabled: false
+      images_with_list:
+        weight: 40
+        enabled: false
+      media_with_title_and_description:
+        weight: 41
+        enabled: false
+      slider_services_tabs:
+        weight: 42
+        enabled: false
+      social_links:
+        weight: 43
+        enabled: false
+      tab_image_heading_with_button:
+        weight: 44
+        enabled: false
+      tab_services:
+        weight: 45
+        enabled: false
+      tab_slider_and_services:
+        weight: 46
+        enabled: false
+      tabs:
+        weight: 47
+        enabled: false
+      tabs_data:
+        weight: 48
+        enabled: false
+      tabs_datas:
+        weight: 49
+        enabled: false
+      text_image_with_list:
+        weight: 50
+        enabled: false
+      text_with_cta_and_image:
+        weight: 51
+        enabled: false
+      text_with_description_:
+        weight: 52
+        enabled: true
+      video_with_subtitle:
+        weight: 53
+        enabled: false
+      view_reference:
+        weight: 54
+        enabled: false
+field_type: entity_reference_revisions

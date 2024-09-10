@@ -1,0 +1,25 @@
+uuid: dc51650c-2887-4629-a1a3-706943cddd82
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.toggle-menu
+  module:
+    - system
+  theme:
+    - yucatanis_theme
+id: toggle_menu
+theme: yucatanis_theme
+region: toggle_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:toggle-menu'
+settings:
+  id: 'system_menu_block:toggle-menu'
+  label: toggle_menu
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

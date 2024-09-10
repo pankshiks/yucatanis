@@ -1,0 +1,14 @@
+uuid: 3207b7c0-66d4-4d22-8dfc-0fba61ff9872
+langcode: en
+status: true
+dependencies: {  }
+id: boat_rentals
+label: 'BOAT RENTALS'
+traits: {  }
+locked: false
+description: ''
+variationType: boat_rentals
+variationTypes:
+  - boat_rentals
+multipleVariations: true
+injectVariationFields: true

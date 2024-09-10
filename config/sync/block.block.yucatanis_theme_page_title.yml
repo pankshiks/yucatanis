@@ -1,0 +1,20 @@
+uuid: 3051c607-d77c-499b-827f-470f664f12f3
+langcode: en
+status: false
+dependencies:
+  theme:
+    - yucatanis_theme
+_core:
+  default_config_hash: ItFhhiUOoeR7oIq73ZaCV7PAYrOwXZ-9fazMzF5DJXM
+id: yucatanis_theme_page_title
+theme: yucatanis_theme
+region: content
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

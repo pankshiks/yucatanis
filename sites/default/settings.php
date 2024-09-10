@@ -766,32 +766,12 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  * Keep this code block at the end of this file to take full effect.
  */
 #
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
-// $databases['default']['default'] = array (
-//   'database' => 'Yucatanis',
-//   'username' => 'root',
-//   'password' => '',
-//   'prefix' => '',
-//   'host' => 'localhost',
-//   'port' => '3306',
-//   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-//   'driver' => 'mysql',
-// );
-$databases['default']['default'] = array (
-  'database' => 'yucatanis6nov',
-  'username' => 'root',
-  'password' => 'Admin@1234',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
- $settings['config_sync_directory'] = 'sites/default/files/config_iR3srgRuT9Hg_rO5D2xwOLqpc9YE5QQ71US_uNh2Jk1J9tzwrGzGvRh0o7pUV9POh7124hivuw/sync';
+ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+   include $app_root . '/' . $site_path . '/settings.local.php';
+ }
+
+$settings['config_sync_directory'] = 'config/sync';
 //  $config['system.logging']['error_level'] = 'verbose';
 
- $settings['cache']['bins']['render'] = 'cache.backend.memory';
-// $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
 $settings['file_private_path'] = 'sites/default/files/private/applepay';
+

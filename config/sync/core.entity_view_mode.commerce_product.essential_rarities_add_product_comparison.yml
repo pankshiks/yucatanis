@@ -1,0 +1,10 @@
+uuid: 8577bee2-e219-48e3-b6f7-b05518f4bf2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.essential_rarities_add_product_comparison
+label: 'Add product comparison'
+targetEntityType: commerce_product
+cache: true

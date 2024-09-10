@@ -1,0 +1,27 @@
+uuid: 340f04f8-4078-4200-83ec-6e08dde7717a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_section_class
+field_name: field_section_class
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Book with us'
+      label: 'Book with us'
+    -
+      value: 'Features card'
+      label: 'Features card'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

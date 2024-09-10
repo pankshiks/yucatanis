@@ -1,0 +1,88 @@
+uuid: 74a26f73-3cf8-4118-b958-ef7761badcd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_with_desc_and_svg_img.field_button_description
+    - field.field.paragraph.text_with_desc_and_svg_img.field_cl_button
+    - field.field.paragraph.text_with_desc_and_svg_img.field_lmdescription
+    - field.field.paragraph.text_with_desc_and_svg_img.field_lmsubtitle
+    - field.field.paragraph.text_with_desc_and_svg_img.field_lmtitle
+    - field.field.paragraph.text_with_desc_and_svg_img.field_sub_description
+    - field.field.paragraph.text_with_desc_and_svg_img.field_svg_img
+    - paragraphs.paragraphs_type.text_with_desc_and_svg_img
+  module:
+    - link
+    - svg_image_field
+    - text
+id: paragraph.text_with_desc_and_svg_img.default
+targetEntityType: paragraph
+bundle: text_with_desc_and_svg_img
+mode: default
+content:
+  field_button_description:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_cl_button:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_lmdescription:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_lmsubtitle:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_lmtitle:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_sub_description:
+    type: text_textarea_with_summary
+    weight: 5
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_svg_img:
+    type: svg_image_field_widget
+    weight: 6
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_max_width: 300
+      preview_image_max_height: 300
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

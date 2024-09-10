@@ -1,0 +1,10 @@
+uuid: a61440fa-0dbc-4e98-9d6c-b7c2b56fd5e3
+langcode: en
+status: true
+dependencies: {  }
+id: include_image_with_title
+label: 'Include image with title'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

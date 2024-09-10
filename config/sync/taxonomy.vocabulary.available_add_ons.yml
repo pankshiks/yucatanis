@@ -1,0 +1,8 @@
+uuid: 56b2881c-6515-4224-96e5-6c2db4f35d53
+langcode: en
+status: true
+dependencies: {  }
+name: 'Available Add Ons'
+vid: available_add_ons
+description: ''
+weight: 0

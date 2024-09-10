@@ -10,14 +10,18 @@ function Upload_time($firstValue,$rows,$key) {
       $hotel_name = $row[0];
 
       if ($time && $hotel_name) {
-  
-        $Total_hours =((float)($time))*24 ;
-        $Hours = (int)( $Total_hours) ;
-        $Total_Minutes = ($Total_hours - 7) * 60 ;
-        $Rounded_Minutes =ROUND(5);
-        $formattedTime = sprintf('%02d:%02d',$Hours,$Rounded_Minutes);
-       
-
+       // Calculate total minutes from fractional hours.
+       $totalMinutes = round((float) $time * 60 * 24);
+       // Extract hours and minutes from total minutes.
+       $hours = floor($totalMinutes / 60);
+       $minutes = $totalMinutes % 60;
+       // Format the time as HH:MM.
+       $formattedTime = sprintf('%02d:%02d', $hours, $minutes);
+       // $Total_hours =((float)($time))*24 ;
+       // $Hours = (int)( $Total_hours) ;
+       // $Total_Minutes = ($Total_hours - 7) * 60 ;
+       // $Rounded_Minutes =ROUND(5);
+       // $formattedTime = sprintf('%02d:%02d',$Hours,$Rounded_Minutes);
         // Query for the hotel node ID based on the title.
         $query = \Drupal::entityQuery('node')
           ->condition('type', 'hotel_information')
@@ -45,11 +49,11 @@ function Upload_time($firstValue,$rows,$key) {
         }
       }
     }
-    \Drupal::logger('hoteltimearray')->notice('<pre>'.print_r($fieldHotelInformation,true).'</pre>');
     // Update the commerce product with the new values.
     if (!empty($firstValue)) {
       $product = \Drupal\commerce_product\Entity\Product::load((int)$firstValue);
       $product->set('field_hotel_information',$fieldHotelInformation);
       $product->save();
+      \Drupal::messenger()->addMessage('Hotel information updated successfully');
     }
   }

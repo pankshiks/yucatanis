@@ -1,0 +1,10 @@
+uuid: 55a724f2-eb2b-4107-b065-fdc856b39f13
+langcode: en
+status: true
+dependencies: {  }
+id: text_field_with_basic_html
+label: 'Text field with basic html'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

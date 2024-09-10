@@ -1,0 +1,8 @@
+uuid: ab40d39c-e7c9-4f2f-b803-569568db0eb5
+langcode: en
+status: true
+dependencies: {  }
+id: typewriter_blocks
+label: 'Typewriter Blocks'
+revision: 0
+description: ''

@@ -1,0 +1,19 @@
+uuid: d267762f-7b9d-48a9-ab9f-4c6cccd26131
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_list
+    - paragraphs.paragraphs_type.images_with_list
+id: paragraph.images_with_list.field_list
+field_name: field_list
+entity_type: paragraph
+bundle: images_with_list
+label: List
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

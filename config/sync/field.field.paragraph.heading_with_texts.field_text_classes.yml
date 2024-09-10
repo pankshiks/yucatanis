@@ -1,0 +1,21 @@
+uuid: 28ca63f6-2e50-484c-a05c-c63c06581b50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_classes
+    - paragraphs.paragraphs_type.heading_with_texts
+  module:
+    - options
+id: paragraph.heading_with_texts.field_text_classes
+field_name: field_text_classes
+entity_type: paragraph
+bundle: heading_with_texts
+label: 'text classes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

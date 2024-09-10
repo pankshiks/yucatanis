@@ -1,0 +1,19 @@
+uuid: b199594e-7975-4abc-abb2-f0f50f4edc62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_in_detail
+    - paragraphs.paragraphs_type.text_description_with_list_
+id: paragraph.text_description_with_list_.field_title_in_detail
+field_name: field_title_in_detail
+entity_type: paragraph
+bundle: text_description_with_list_
+label: 'Title in detail'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

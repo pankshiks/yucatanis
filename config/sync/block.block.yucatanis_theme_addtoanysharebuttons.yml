@@ -1,0 +1,31 @@
+uuid: c4fdee71-f068-421b-8bd1-c06282275d38
+langcode: en
+status: false
+dependencies:
+  module:
+    - addtoany
+    - system
+  theme:
+    - yucatanis_theme
+id: yucatanis_theme_addtoanysharebuttons
+theme: yucatanis_theme
+region: footer_sixth
+weight: -22
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: 'AddToAny share buttons'
+  label_display: '0'
+  provider: addtoany
+  context_mapping:
+    node: '@node.node_route_context:node'
+  buttons_size: null
+  addtoany_html: ''
+  link_url: ''
+  link_title: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/product*'

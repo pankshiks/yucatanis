@@ -1,0 +1,27 @@
+uuid: 6645a6fe-72cd-4afa-b3e3-87a8bb472252
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_wave_class
+field_name: field_wave_class
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Red
+      label: Red
+    -
+      value: Yellow
+      label: Yellow
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,11 @@
+uuid: fafc4234-7f56-406b-bbf7-e6e84adb4e62
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.not_included
+id: taxonomy_term.not_included
+target_entity_type_id: taxonomy_term
+target_bundle: not_included
+default_langcode: site_default
+language_alterable: false

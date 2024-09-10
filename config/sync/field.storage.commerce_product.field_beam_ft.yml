@@ -1,0 +1,20 @@
+uuid: 5abe84af-4d85-4453-b5cd-85e845e0ec71
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_beam_ft
+field_name: field_beam_ft
+entity_type: commerce_product
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

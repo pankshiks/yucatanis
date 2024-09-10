@@ -1,0 +1,33 @@
+uuid: a45cbdfc-fddf-4e10-b07f-3750dc1138d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - options
+id: commerce_product.field_adults_kids
+field_name: field_adults_kids
+entity_type: commerce_product
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 2
+      label: '2 Travellers'
+    -
+      value: 4
+      label: '4 Travellers'
+    -
+      value: 6
+      label: '6 Travellers'
+    -
+      value: 8
+      label: '8 Travellers'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

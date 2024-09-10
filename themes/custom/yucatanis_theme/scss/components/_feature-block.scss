@@ -1,12 +1,12 @@
 .key-features {
-    padding-top: 200px;
+    padding-top: 100px;
     padding-bottom: 100px;
     margin-bottom: 100px;
     position: relative;
 
     @include for-phone-only {
-        padding-top: 100px;
-        padding-bottom: 50px;
+        padding-top: 45px;
+        padding-bottom: 45px;
         margin-bottom: 50px;
     }
 

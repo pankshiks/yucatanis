@@ -1,0 +1,50 @@
+uuid: 57ef6897-c6af-40f6-9981-ca5887cf1c2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.heading_with_texts.field_heading_texts
+    - field.field.paragraph.heading_with_texts.field_sub_heading_text
+    - field.field.paragraph.heading_with_texts.field_text_classes
+    - field.field.paragraph.heading_with_texts.field_text_de
+    - paragraphs.paragraphs_type.heading_with_texts
+  module:
+    - text
+id: paragraph.heading_with_texts.default
+targetEntityType: paragraph
+bundle: heading_with_texts
+mode: default
+content:
+  field_heading_texts:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_sub_heading_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_text_classes:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_text_de:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

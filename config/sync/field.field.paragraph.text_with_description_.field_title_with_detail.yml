@@ -1,0 +1,21 @@
+uuid: dc240cc8-4aaf-4fca-b737-0fd044edfb5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_with_detail
+    - paragraphs.paragraphs_type.text_with_description_
+  module:
+    - text
+id: paragraph.text_with_description_.field_title_with_detail
+field_name: field_title_with_detail
+entity_type: paragraph
+bundle: text_with_description_
+label: 'Title with detail'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

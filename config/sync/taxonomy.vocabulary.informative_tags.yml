@@ -1,0 +1,8 @@
+uuid: 01024935-d712-4154-a10f-236d1eda8950
+langcode: en
+status: true
+dependencies: {  }
+name: 'Informative Tags'
+vid: informative_tags
+description: ''
+weight: 0

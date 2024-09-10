@@ -1,0 +1,8 @@
+uuid: 3afef313-6faa-4366-b8f8-d9ef01544359
+langcode: en
+status: true
+dependencies: {  }
+id: custom_time
+label: 'Custom time'
+locked: false
+pattern: 'H:i'

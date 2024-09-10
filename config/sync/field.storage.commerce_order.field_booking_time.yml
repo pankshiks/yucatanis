@@ -1,0 +1,20 @@
+uuid: e3b33252-89e8-419b-bdeb-2ae4db2f5b0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - datetime
+id: commerce_order.field_booking_time
+field_name: field_booking_time
+entity_type: commerce_order
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

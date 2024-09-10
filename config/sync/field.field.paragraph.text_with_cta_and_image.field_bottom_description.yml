@@ -1,0 +1,19 @@
+uuid: 33d8f775-4aea-49c3-b5e4-fabd2cce9452
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bottom_description
+    - paragraphs.paragraphs_type.text_with_cta_and_image
+id: paragraph.text_with_cta_and_image.field_bottom_description
+field_name: field_bottom_description
+entity_type: paragraph
+bundle: text_with_cta_and_image
+label: 'bottom description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

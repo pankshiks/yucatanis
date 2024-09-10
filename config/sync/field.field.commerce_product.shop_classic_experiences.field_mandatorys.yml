@@ -1,0 +1,29 @@
+uuid: ccd6bf14-ef75-4ca2-a527-e4311b8f52c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.shop_classic_experiences
+    - field.storage.commerce_product.field_mandatorys
+    - taxonomy.vocabulary.mandatory
+id: commerce_product.shop_classic_experiences.field_mandatorys
+field_name: field_mandatorys
+entity_type: commerce_product
+bundle: shop_classic_experiences
+label: Mandatory
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      mandatory: mandatory
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

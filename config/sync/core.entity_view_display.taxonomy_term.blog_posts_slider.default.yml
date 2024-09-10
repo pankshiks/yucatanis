@@ -1,0 +1,41 @@
+uuid: cef67ea0-d7b5-495a-8ce1-26e474692778
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.blog_posts_slider.field_icons
+    - taxonomy.vocabulary.blog_posts_slider
+  module:
+    - svg_image_field
+    - text
+id: taxonomy_term.blog_posts_slider.default
+targetEntityType: taxonomy_term
+bundle: blog_posts_slider
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icons:
+    type: svg_image_field_formatter
+    label: above
+    settings:
+      inline: false
+      apply_dimensions: true
+      width: 25
+      height: 25
+      enable_alt: true
+      enable_title: true
+      link: ''
+      force_fill: false
+      sanitize: true
+      sanitize_remote: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

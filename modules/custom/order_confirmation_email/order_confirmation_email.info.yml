@@ -1,0 +1,5 @@
+name: Order Confirmation Email
+type: module
+description: The module provide the autocomplete functionality to send email with attachment after order completion.
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom

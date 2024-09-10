@@ -1,0 +1,34 @@
+uuid: a7dad114-b17b-4229-a390-c64320b03c8c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:typewriter_blocks:c22f7de7-5745-4985-b7b5-ab92b8886d13'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+third_party_settings:
+  block_class:
+    replaced_id: type-writer-block
+id: yucatanis_theme_leftheaderblock
+theme: yucatanis_theme
+region: header_bottom
+weight: -21
+provider: null
+plugin: 'block_content:c22f7de7-5745-4985-b7b5-ab92b8886d13'
+settings:
+  id: 'block_content:c22f7de7-5745-4985-b7b5-ab92b8886d13'
+  label: 'Left Header Block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/form/personal-details\r\n/checkout*"

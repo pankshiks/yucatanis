@@ -1,0 +1,20 @@
+uuid: 8b3882b1-524f-4618-b897-10841b823db9
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - fivestar
+id: commerce_product_variation.field_ratings
+field_name: field_ratings
+entity_type: commerce_product_variation
+type: fivestar
+settings:
+  vote_type: vote
+module: fivestar
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

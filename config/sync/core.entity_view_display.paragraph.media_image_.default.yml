@@ -1,0 +1,32 @@
+uuid: d9c9297c-c039-4d78-aecf-aac5cca248e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_image_.field_image_slides
+    - field.field.paragraph.media_image_.field_image_slides_1
+    - paragraphs.paragraphs_type.media_image_
+id: paragraph.media_image_.default
+targetEntityType: paragraph
+bundle: media_image_
+mode: default
+content:
+  field_image_slides:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image_slides_1:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: 5a09a479-8f62-4fbe-9194-b6ca8ec9624f
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.storage.commerce_product.field_overview
+  module:
+    - text
+id: commerce_product.default.field_overview
+field_name: field_overview
+entity_type: commerce_product
+bundle: default
+label: Overview
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

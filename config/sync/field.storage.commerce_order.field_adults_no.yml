@@ -1,0 +1,20 @@
+uuid: 3475aa16-2528-409a-ade5-be3d9c1bccac
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+id: commerce_order.field_adults_no
+field_name: field_adults_no
+entity_type: commerce_order
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,39 @@
+uuid: 1d2a4f63-f5b8-4a89-86f5-43c9e3d02efd
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_view_type
+field_name: field_view_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Categories
+      label: categories
+    -
+      value: 'Product categories'
+      label: product_categories
+    -
+      value: Blog
+      label: blog
+    -
+      value: 'Blog posts'
+      label: blog_posts
+    -
+      value: 'Testimonials slider'
+      label: testimonials_slider
+    -
+      value: 'Full Region Categorization'
+      label: full_region_categorization
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 7
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

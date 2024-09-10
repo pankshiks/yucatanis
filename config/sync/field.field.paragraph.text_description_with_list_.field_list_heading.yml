@@ -1,0 +1,21 @@
+uuid: 5dcbf091-2454-4bdb-afcb-c8108fc455ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_list_heading
+    - paragraphs.paragraphs_type.text_description_with_list_
+  module:
+    - text
+id: paragraph.text_description_with_list_.field_list_heading
+field_name: field_list_heading
+entity_type: paragraph
+bundle: text_description_with_list_
+label: 'List heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

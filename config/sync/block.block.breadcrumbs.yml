@@ -1,0 +1,24 @@
+uuid: 359ad8c6-4219-4bbe-bbc1-8f991bdf4688
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yucatanis_theme
+id: breadcrumbs
+theme: yucatanis_theme
+region: content
+weight: -26
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/code-ethics\r\n/accessibility-gear-rent\r\n/product*"

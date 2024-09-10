@@ -1,0 +1,31 @@
+uuid: cbfb6aab-9eb7-4ce3-bb54-03b99f07db3f
+langcode: en
+status: false
+dependencies:
+  config:
+    - webform.webform.enquire_by_option_
+  module:
+    - system
+    - webform
+  theme:
+    - yucatanis_theme
+id: webform_5
+theme: yucatanis_theme
+region: content
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  label_display: '0'
+  provider: webform
+  webform_id: enquire_by_option_
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /home

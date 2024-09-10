@@ -1,0 +1,31 @@
+uuid: 0b49d9c7-5533-4306-be03-dffc66731e71
+langcode: en
+status: false
+dependencies:
+  config:
+    - webform.webform.hiring
+  module:
+    - system
+    - webform
+  theme:
+    - yucatanis_theme
+id: webform_2
+theme: yucatanis_theme
+region: content
+weight: -5
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  label_display: '0'
+  provider: webform
+  webform_id: hiring
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/44

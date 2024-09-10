@@ -1,0 +1,14 @@
+uuid: b19f457c-f8df-41f8-bade-c11e85b2efa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.commerce_product.essential_rarities.essential_rarities_add_product_comparison
+    - core.entity_view_mode.commerce_product.essential_rarities_add_product_comparison
+id: add_product_comparison
+label: 'Add product comparison'
+add_link_text: 'Add product comparison'
+remove_link_text: 'Remove from the  product  comparison'
+limit: 0
+entity_type: commerce_product
+bundle_type: essential_rarities

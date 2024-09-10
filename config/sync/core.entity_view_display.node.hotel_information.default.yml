@@ -1,0 +1,51 @@
+uuid: ce5ddbdc-4abe-4dbe-950b-68383abbe472
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hotel_information.body
+    - field.field.node.hotel_information.field_location
+    - field.field.node.hotel_information.field_media
+    - field.field.node.hotel_information.field_pick_up_time
+    - node.type.hotel_information
+  module:
+    - text
+    - user
+id: node.hotel_information.default
+targetEntityType: node
+bundle: hotel_information
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_location:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_pick_up_time: true
+  langcode: true
+  node_read_time: true

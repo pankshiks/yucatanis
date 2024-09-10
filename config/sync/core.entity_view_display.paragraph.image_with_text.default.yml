@@ -1,0 +1,41 @@
+uuid: 46f274dc-d338-4a76-8ca2-7c1049bf91e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_with_text.field_icon
+    - field.field.paragraph.image_with_text.field_icon_title
+    - paragraphs.paragraphs_type.image_with_text
+  module:
+    - svg_image_field
+id: paragraph.image_with_text.default
+targetEntityType: paragraph
+bundle: image_with_text
+mode: default
+content:
+  field_icon:
+    type: svg_image_field_formatter
+    label: hidden
+    settings:
+      inline: false
+      apply_dimensions: true
+      width: 25
+      height: 25
+      enable_alt: true
+      enable_title: true
+      link: ''
+      force_fill: false
+      sanitize: true
+      sanitize_remote: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

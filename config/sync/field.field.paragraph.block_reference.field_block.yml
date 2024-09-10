@@ -1,0 +1,27 @@
+uuid: 0f6a9509-30e0-4a15-8830-9be9d19ea0ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_block
+    - paragraphs.paragraphs_type.block_reference
+  module:
+    - block_field
+id: paragraph.block_reference.field_block
+field_name: field_block
+entity_type: paragraph
+bundle: block_reference
+label: block
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      'views_exposed_filter_block:product_enquiry_listing_-page_1': 'views_exposed_filter_block:product_enquiry_listing_-page_1'
+      'views_exposed_filter_block:product_enquiry_listing_-page_2': 'views_exposed_filter_block:product_enquiry_listing_-page_2'
+      'views_exposed_filter_block:product_enquiry_listing_-page_3': 'views_exposed_filter_block:product_enquiry_listing_-page_3'
+field_type: block_field

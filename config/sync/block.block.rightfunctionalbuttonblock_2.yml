@@ -1,0 +1,25 @@
+uuid: f87ad394-ba56-42cd-ab82-85b64bca23f4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:3aee618c-3d13-4094-8296-0890b7f7ccc6'
+  module:
+    - block_content
+  theme:
+    - yucatanis_theme
+id: rightfunctionalbuttonblock_2
+theme: yucatanis_theme
+region: footer_seven
+weight: -22
+provider: null
+plugin: 'block_content:3aee618c-3d13-4094-8296-0890b7f7ccc6'
+settings:
+  id: 'block_content:3aee618c-3d13-4094-8296-0890b7f7ccc6'
+  label: 'Right functional button block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

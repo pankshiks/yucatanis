@@ -1,0 +1,19 @@
+uuid: 3e722f1b-290d-419a-9773-a604c9530cc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading_
+    - paragraphs.paragraphs_type.heading_with_cta_and_media_text
+id: paragraph.heading_with_cta_and_media_text.field_heading_
+field_name: field_heading_
+entity_type: paragraph
+bundle: heading_with_cta_and_media_text
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

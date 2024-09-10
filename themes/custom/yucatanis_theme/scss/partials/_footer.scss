@@ -87,6 +87,9 @@ footer {
     //   color: #F00;
     // }
   }
+  > img {
+      width: 194px;
+  }
 }
 
 footer {
@@ -127,6 +130,12 @@ footer {
 
   .logo-with-address-block {
     max-width: 487px;
+    > a{
+      img{
+        width: 220px;
+      }
+    }
+    
   }
 
   .footer-block1 {
@@ -183,14 +192,51 @@ footer {
 
       @include for-phone-only {
         width: 100%;
+      }      
+    }
+    > ul {
+        padding-left: 0;
+        margin-top: 20px;
+        @include for-phone-only{
+          padding-left: 15px;
+        }
+        li {
+            padding-top: 15px;
+            > ul {
+                padding-left: 10px;
+                margin-top:0;
+                li {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    ol {
+                        padding-left: 10px;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    ul{ 
+      li{
+        font-size: 14px;
+        &::marker {
+          font-size: 12px;
+          font-weight: 600;
+        }
+        
       }
+    }
+    p {
+        font-size: 14px;
+        margin-bottom: 0;
+        margin-top: 0;
     }
   }
 
   .footer-buttons {
     display: grid;
     gap: 16px;
-
+    margin-top: 16px;
     .btn-black {
       @include for-phone-only {
         padding: 20px 10px;
@@ -305,6 +351,10 @@ footer {
 #block-map {
   p {
     margin-bottom: 0;
+    width: 100%;
+  }
+  iframe{
+    width: 100%;
   }
 }
 

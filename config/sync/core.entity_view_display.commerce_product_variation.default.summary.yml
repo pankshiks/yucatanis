@@ -1,0 +1,54 @@
+uuid: 9402ecaf-f2b0-485e-a03f-391dd872e8cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.default
+    - core.entity_view_mode.commerce_product_variation.summary
+    - field.field.commerce_product_variation.default.field_allowed_kids
+    - field.field.commerce_product_variation.default.field_dock_fee
+    - field.field.commerce_product_variation.default.field_item_type
+    - field.field.commerce_product_variation.default.field_kids_price
+    - field.field.commerce_product_variation.default.field_private_adult_price
+    - field.field.commerce_product_variation.default.field_private_kids_tour_price
+    - field.field.commerce_product_variation.default.field_product_heading
+    - field.field.commerce_product_variation.default.field_product_image
+    - field.field.commerce_product_variation.default.field_rating
+  enforced:
+    module:
+      - commerce_checkout
+_core:
+  default_config_hash: jmDRQILFIWJUS3jS-qLF10aGc1IXnvFEBizwJl94FfU
+id: commerce_product_variation.default.summary
+targetEntityType: commerce_product_variation
+bundle: default
+mode: summary
+content:
+  rate_rating:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_allowed_kids: true
+  field_dock_fee: true
+  field_item_type: true
+  field_kids_price: true
+  field_private_adult_price: true
+  field_private_kids_tour_price: true
+  field_product_heading: true
+  field_product_image: true
+  field_rating: true
+  langcode: true
+  list_price: true
+  price: true
+  product_id: true
+  sku: true

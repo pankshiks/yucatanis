@@ -1,0 +1,21 @@
+uuid: 28f76d3e-7df3-48c4-9f80-5b52b170017c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2dAnRDI42d0569hapLXrbx4-7VPsjU0fozi-WQfzcYE
+name: 'Weekly content update'
+id: weekly_content_update
+description: 'Weekly content update newsletter.'
+format: plain
+priority: 0
+receipt: false
+from_name: Yucatanis
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: test.ckln@gmail.com
+hyperlinks: true
+allowed_handlers: {  }
+new_account: none
+access: default
+reason: ''
+weight: 0

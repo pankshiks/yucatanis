@@ -1,0 +1,10 @@
+uuid: 68d5d015-dfe6-4d75-9a7d-c08b49d52a2d
+langcode: en
+status: true
+dependencies: {  }
+id: headings_with_images
+label: 'Headings with Images'
+icon_uuid: null
+icon_default: null
+description: 'This paragraph type is used for add headings with images'
+behavior_plugins: {  }

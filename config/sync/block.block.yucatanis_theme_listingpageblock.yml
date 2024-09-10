@@ -1,0 +1,30 @@
+uuid: c08f90db-5fcb-4592-9eb2-1bf48cd97977
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:da45e051-cd92-42fb-9746-bf6bca26563c'
+  module:
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+id: yucatanis_theme_listingpageblock
+theme: yucatanis_theme
+region: content
+weight: -12
+provider: null
+plugin: 'block_content:da45e051-cd92-42fb-9746-bf6bca26563c'
+settings:
+  id: 'block_content:da45e051-cd92-42fb-9746-bf6bca26563c'
+  label: 'Listing Page Block '
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /listing

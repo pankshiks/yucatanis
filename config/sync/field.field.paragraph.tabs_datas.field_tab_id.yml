@@ -1,0 +1,19 @@
+uuid: 6d36b3eb-cc9d-4eb6-802f-dbead98f4eb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tab_id
+    - paragraphs.paragraphs_type.tabs_datas
+id: paragraph.tabs_datas.field_tab_id
+field_name: field_tab_id
+entity_type: paragraph
+bundle: tabs_datas
+label: Tab-ID
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

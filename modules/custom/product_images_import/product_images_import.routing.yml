@@ -1,0 +1,11 @@
+product_images_import.form_submit:
+  path: '/admin/config/product-images-import/submit'  
+  defaults:
+    _form: '\Drupal\product_images_import\Form\ImagesImportForm'
+    _title: 'Submit product Import Form'
+  requirements:
+    _role: 'administrator'  # Adjust the permission as needed.
+
+
+
+

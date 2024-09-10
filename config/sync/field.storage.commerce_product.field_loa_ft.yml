@@ -1,0 +1,20 @@
+uuid: f36f77ec-f58f-4382-8dd9-8a1bb73a3a65
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.field_loa_ft
+field_name: field_loa_ft
+entity_type: commerce_product
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

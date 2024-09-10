@@ -1,0 +1,11 @@
+uuid: e9f6a42d-6473-44d5-96c1-63699f0fae30
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.overall_feeling
+id: taxonomy_term.overall_feeling
+target_entity_type_id: taxonomy_term
+target_bundle: overall_feeling
+default_langcode: site_default
+language_alterable: false

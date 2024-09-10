@@ -66,6 +66,7 @@ function yucatanis_theme_preprocess_node(&$variables) {
     $field_infants_no = $order->get('field_infants_no')->getValue();
     $field_booking_time = $order->get('field_booking_time')->getValue();
     $field_hotel_name =  $order->get('field_hotel_name')->getValue();
+    $field_tour_start_time = $order->get('field_tour_start_time')->getValue();
 
     $field_kids_no  = $field_kids_no[0]['value'];
     $pick_up_time = $pick_up_time_field[0]['value'];
@@ -73,6 +74,7 @@ function yucatanis_theme_preprocess_node(&$variables) {
     $field_infants_no = $field_infants_no[0]['value'];
     $field_booking_time = $field_booking_time[0]['value'];
     $field_hotel_name = trim($field_hotel_name[0]['value']);
+    $field_tour_start_time = $field_tour_start_time[0]['value'];
   
     $variables['field_kids_no'] = $field_kids_no;
     $variables['pick_up_time'] = $pick_up_time;
@@ -80,6 +82,7 @@ function yucatanis_theme_preprocess_node(&$variables) {
     $variables['field_infants_no'] = $field_infants_no;
     $variables['field_booking_time'] = $field_booking_time;
     $variables['field_hotel_name'] = $field_hotel_name;
+    $variables['field_tour_start_time'] = $field_tour_start_time;
     $order_items = $order->getItems();
     $product_ids = [];
     foreach ($order_items as $order_item) {
@@ -272,98 +275,7 @@ function yucatanis_theme_theme_suggestions_table_alter(array &$suggestions, arra
         $form['actions']['next']['#submit'][] = 'custom_checkout_form_submit';
       }
       // 
-      if($form['#step_id']=='order_information'){
-       $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-       
-      if ($user->isAuthenticated()) {
-    
-        if ($user->hasField('customer_profiles') && !$user->customer_profiles->isEmpty()) {
-          $customer_profiles = $user->get('customer_profiles')->getValue();
-
-          //12-jan
-            $profile_id = isset($customer_profiles[1]['target_id']) ? $customer_profiles[1]['target_id'] : (isset($customer_profiles[0]['target_id']) ? $customer_profiles[0]['target_id'] : null);
-              
-              $profile_entity = \Drupal::entityTypeManager()->getStorage('profile')->load($profile_id);
-              if ($profile_entity) {
-               
-              $profile_type = $profile_entity->bundle(); // Get profile type.
-              $given_name =$profile_entity->get("address")->getValue()[0]['given_name'];
-              $additional_name =$profile_entity->get("address")->getValue()[0]['additional_name'];
-              $organization =$profile_entity->get("address")->getValue()[0]['organization'];
-              $family_name =$profile_entity->get("address")->getValue()[0]['family_name'];
-              $address_line1 =$profile_entity->get("address")->getValue()[0]['address_line1'];
-              $address_line2 =$profile_entity->get("address")->getValue()[0]['address_line2'];
-              $sorting_code =$profile_entity->get("address")->getValue()[0]['sorting_code'];
-              $postal_code =$profile_entity->get("address")->getValue()[0]['postal_code'];
-              $city = $profile_entity->get("address")->getValue()[0]['locality'];
-              $country = $profile_entity->get("address")->getValue()[0]['country_code'];
-            
-              $field_your_special_note =$profile_entity->get("field_your_special_note")->getValue()[0]['value'];
-              $field_we_totally_get_how_annoyin= $profile_entity->get("field_we_totally_get_how_annoyin")->getValue()[0]['value'];
-              $field_room_number_ = $profile_entity->get("field_room_number_")->getValue()[0]['value'];
-              $field_phone_number =  $profile_entity->get("field_phone_number")->getValue()[0]['value'];
-              $field_if_your_beach_hotel_is_not = $profile_entity->get("field_if_your_beach_hotel_is_not")->getValue()[0]['value'];
-              $field_hotel_information = $profile_entity->get("field_hotel_information")->getValue()[0]['value'];
-              $field_checkbox_label = $profile_entity->get("field_checkbox_label")->getValue()[0]['value'];
-              $field_checkbox_label2 =$profile_entity->get("field_checkbox_label2")->getValue()[0]['value'];
-              $field_checkbox_label4 =$profile_entity->get("field_checkbox_label4")->getValue()[0]['value'];
-              $field_favourite_email = $profile_entity->get("field_favourite_email")->getValue()[0]['value'];
-              
-              $last_profile_id =$customer_profiles[1]['target_id'];
-             //credit-card
-            //  $form['payment_information']["add_payment_method"]['billing_information']['select_address']['#default_value'] =  $last_profile_id;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['given_name'] =$given_name;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['additional_name'] =$additional_name;
-             
-            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['organization'] =$organization;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['family_name'] =$family_name;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['address_line1'] =$address_line1;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['address_line2'] =$address_line2;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['postal_code'] =  $postal_code;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['locality']= $city;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['country_code']=$country ;
- 
-            //  $form['payment_information']["add_payment_method"]['billing_information']['address']['widget'][0]['address']['#default_value']['sorting_code'] =$sorting_code;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['field_your_special_note']['widget'][0]['value']['#default_value'] = $field_your_special_note;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['field_we_totally_get_how_annoyin']['widget']['value']['#default_value']= $field_we_totally_get_how_annoyin;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['field_room_number_']['widget'][0]['value']['#default_value'] = $field_room_number_;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['field_phone_number']['widget'][0]['value']['#default_value'] = $field_phone_number;
-            //  $form['payment_information']["add_payment_method"]['billing_information']['field_if_your_beach_hotel_is_not']['widget']['#default_value'] = $field_if_your_beach_hotel_is_not;
-             // dd($form["payment_information"]["add_payment_method"]["billing_information"]);
- 
-             //credit-card end 
-
-              }
-            // }
-             
-            // $form['payment_information']['billing_information']['select_address']['#default_value'] =  $last_profile_id;
-            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['given_name'] =$given_name;
-            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['additional_name'] =$additional_name;
-            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['organization'] =$organization;
-            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['family_name'] =$family_name;
-            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['address_line1'] =$address_line1;
-            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['address_line2'] =$address_line2;
-            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['postal_code'] =  $postal_code;
-            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['locality']= $city;
-            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['country_code']=$country ;
-
-            // $form['payment_information']['billing_information']['address']['widget'][0]['address']['#default_value']['sorting_code'] =$sorting_code;
-            // $form['payment_information']['billing_information']['field_your_special_note']['widget'][0]['value']['#default_value'] = $field_your_special_note;
-            // $form['payment_information']['billing_information']['field_we_totally_get_how_annoyin']['widget']['value']['#default_value']= $field_we_totally_get_how_annoyin;
-            // $form['payment_information']['billing_information']['field_room_number_']['widget'][0]['value']['#default_value'] = $field_room_number_;
-            // $form['payment_information']['billing_information']['field_phone_number']['widget'][0]['value']['#default_value'] = $field_phone_number;
-            // $form['payment_information']['billing_information']['field_if_your_beach_hotel_is_not']['widget']['#default_value'] = $field_if_your_beach_hotel_is_not;
-            // $form['payment_information']['billing_information']['field_checkbox_label']['widget']['value']['#default_value']= $field_checkbox_label;
-            // $form['payment_information']['billing_information']['field_checkbox_label2']['widget']['value']['#default_value'] =$field_checkbox_label2;
-            // $form['payment_information']['billing_information']['field_checkbox_label']['widget']['value']['#default_value'] = $field_checkbox_label4;
-         
-            // $form['payment_information']['billing_information']['field_favourite_email']['widget'][0]['value']['#default_value'] = $field_favourite_email;
-       
-        }
       //
-    }
-
-      }
     }
     // 
 
@@ -558,36 +470,157 @@ function yucatanis_theme_theme_suggestions_table_alter(array &$suggestions, arra
         }
       }
     }
-        //
+        //14-02
+         //
+         $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+       
+         if ($user->isAuthenticated()) {
+         if ($user->hasField('customer_profiles') && !$user->customer_profiles->isEmpty()) {
+           $customer_profiles = $user->get('customer_profiles')->getValue();
+          // dd($customer_profiles);
+           $profile_id = isset($customer_profiles[1]['target_id']) ? $customer_profiles[1]['target_id'] : (isset($customer_profiles[0]['target_id']) ? $customer_profiles[0]['target_id'] : null);
+           //dd($profile_id);
+           $profile_entity = \Drupal::entityTypeManager()->getStorage('profile')->load($profile_id);
+           if ($profile_entity) {
+             //dd($profile_entity);
+             $profile_type = $profile_entity->bundle(); // Get profile type.
+             $given_name =$profile_entity->get("address")->getValue()[0]['given_name'];
+             $additional_name =$profile_entity->get("address")->getValue()[0]['additional_name'];
+             $organization =$profile_entity->get("address")->getValue()[0]['organization'];
+             $family_name =$profile_entity->get("address")->getValue()[0]['family_name'];
+             $address_line1 =$profile_entity->get("address")->getValue()[0]['address_line1'];
+             $address_line2 =$profile_entity->get("address")->getValue()[0]['address_line2'];
+             $sorting_code =$profile_entity->get("address")->getValue()[0]['sorting_code'];
+             $postal_code =$profile_entity->get("address")->getValue()[0]['postal_code'];
+             $city = $profile_entity->get("address")->getValue()[0]['locality'];
+             $country = $profile_entity->get("address")->getValue()[0]['country_code'];
+       
+             $field_your_special_note =$profile_entity->get("field_your_special_note")->getValue()[0]['value'];
+       
+             $field_room_number_ = $profile_entity->get("field_room_number_")->getValue()[0]['value'];
+             $field_phone_number =  $profile_entity->get("field_phone_number")->getValue()[0]['value'];
+             $field_if_your_beach_hotel_is_not = $profile_entity->get("field_if_your_beach_hotel_is_not")->getValue()[0]['value'];
+             $field_hotel_information = $profile_entity->get("field_hotel_information")->getValue()[0]['value'];
+             $field_we_totally_get_how_annoyin= $profile_entity->get("field_we_totally_get_how_annoyin")->getValue()[0]['value'];
+             $field_checkbox_label = $profile_entity->get("field_checkbox_label")->getValue()[0]['value'];
+             $field_checkbox_label2 =$profile_entity->get("field_checkbox_label2")->getValue()[0]['value'];
+              $field_we_totally_get_how_annoyin =$profile_entity->get("field_we_totally_get_how_annoyin")->getValue()[0]['value'];
+             $field_checkbox_label4 =$profile_entity->get("field_checkbox_label4")->getValue()[0]['value'];
+             $field_favourite_email = $profile_entity->get("field_favourite_email")->getValue()[0]['value'];
+       
+            $last_profile_id =$customer_profiles[1]['target_id'];
+            $form['elements']['passenger_name']['#default_value']= $given_name;
+            $form['elements']['command_name']['#default_value']= $family_name;
+            $form['elements']['address']['company']['#default_value']= $organization;
+            $form['elements']['address']['address_line_1']['#default_value']= $address_line1;
+            $form['elements']['address']['address_line_2']['#default_value']= $address_line2;
+            $form['elements']['address']['postal_code']['#default_value']= $postal_code;
+            $form['elements']['address']['sorting_code']['#default_value']= $sorting_code;
+            $form['elements']['address']['locality_e_g_city_']['#default_value']= $city;
+            $form['elements']['email']['#default_value']= $field_favourite_email;
+            $form['elements']['phone_number']['#default_value']= $field_phone_number;
+            $form['elements']['country']['#default_value']= $country;
+            $form['elements']['address']['sorting_code']['#default_value']= $sorting_code;
+            
+           //  $form['elements']['hotel_s_name_for_pick_up']['#empty_option']= $field_if_your_beach_hotel_is_not;
+           //  dd( $form['elements']['hotel_s_name_for_pick_up']['#default_value']);
+           $form['elements']['room_number']['#default_value']= $field_room_number_;
+           $form['elements']['note']['#default_value']= $field_your_special_note;
+           $form['elements']['checkbox_1']['#default_value']= $field_checkbox_label;
+           $form['elements']['checkbox_2']['#default_value']= $field_checkbox_label2;
+           $form['elements']['checkbox_3']['#default_value']= $field_we_totally_get_how_annoyin;
+           $form['elements']['checkbox_4']['#default_value']= $field_checkbox_label4;
+          
+           }
+         }
+       }
+
+        //14-02
+
+
     }
 
 
   
     if (strpos($form_id, 'simplenews_subscriptions_block') === 0) {
 
+         
+          if(isset($form['mail']['#access'])) {
+            $form['mail']['#access'] = true;
+          }
+         $form['mail']['widget']['0']['value']['#id'] = 'cta_newsletter_email';
+         $form['mail']['widget']['0']['value']['#title'] = '';
+         $form['mail']['widget']['0']['value']['#description'] = '';
+         //$form['subscriptions']['#access']= FALSE;
+        $form['subscriptions']['widget']['#title']='';
+        $form['subscriptions']['widget']['#description']='';
 
-      $form['mail']['widget']['0']['value']['#id'] = 'cta_newsletter_email';
-      $form['mail']['widget']['0']['value']['#title'] = '';
-      $form['mail']['widget']['0']['value']['#description'] = '';
-      $form['subscriptions']['#access']= FALSE;
-      $form['subscriptions']['widget']['#title']='';
-      $form['subscriptions']['widget']['#description']='';
+        $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+        if ($user->isAuthenticated()) {
+          // 20-02
+          $current_user = \Drupal::currentUser();
+          // Check if the user is authenticated.
+          if ($current_user->isAuthenticated()) {
+            // Check if the user is subscribed.
+            $uid = $current_user->id();
+            $query = \Drupal::entityQuery('simplenews_subscriber')->accessCheck(TRUE);
+            $query->condition('uid', $uid);
+              
+              // Execute the query.
+              $is_subscribed = $query->execute();
 
+            // If user is subscribed, generate the unsubscribe link.
+            if (!empty($is_subscribed)) {
+              $unsubscribe_url = \Drupal\Core\Url::fromRoute('unsubscribe.delete', ['uid' => $uid])->toString();
+              $variables['unsubscribe_link'] = $unsubscribe_url;
+            }
+          }
+            $markup = '<h6 class="m-subscribe1__title">' . $form['message']['#markup'];
 
-      if(is_string( $form['message']['#markup'])){
+            // Check if the unsubscribe link exists and add it to the markup.
+            if (isset($unsubscribe_url)) {
+              $markup .= ' <a href="' . $unsubscribe_url . '">Unsubscribe</a>';
+            }
 
-        $form['actions']['submit']['#attributes']['class'][] = 'btn email-btn';
-        $form['actions']['submit']['#value']='';
-    
+            // Close the <h6> tag.
+            $markup .= '</h6>';
+
+            // Update the 'message' element's markup.
+            $form['message']['#markup'] = $markup;
+
+          //20-02
+          // $form['message']['#markup'] = '<h6 class="m-subscribe1__title">' . $form['message']['#markup'] . '</h6>';
+          $form['actions']['submit']['#attributes']['class'][] = 'btn email-btn-subscribe';
+          $form['actions']['submit']['#value']='';
+          $form['actions']['manage']['#title']='Unsubscribe';
+          //$form['message']['#markup']='';
+        }
+        
+        if ($user->isAnonymous()) {
+        
+          $form['actions']['submit']['#value']='';
+          $form['actions']['submit']['#attributes']['class'][] = 'btn email-btn';
+          $form['actions']['manage']['#title']='';
+        }
+        else
+        {
+        if(is_string( $form['message']['#markup'])){
+
+          $form['actions']['submit']['#attributes']['class'][] = 'btn email-btn';
+          $form['actions']['submit']['#value']='';
+      
+        }
       }
     }
     if ($form_id == 'simplenews_subscriber_validate') {
     $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
     }
+    
     if ($form_id == 'simplenews_confirm_multi'||'simplenews-confirm-removal') {
       // $form['actions']['submit']['#attributes']['class'][] = 'btn btn-secondary';
       }
-  
+      
+      
     if (strpos($form_id, 'user_form') === 0) {
       unset($form['field_city']);
       unset($form['field_country']);
@@ -611,7 +644,7 @@ function yucatanis_theme_theme_suggestions_table_alter(array &$suggestions, arra
     if (strpos($form_id, 'user_pass') === 0) {
       
       $form['actions']['submit']['#value'] = t('Submit Email');
-      $form['actions']['submit']['#attributes']['class'][] = 'btn-secondary';
+      $form['actions']['submit']['#attributes']['class'][] = 'btn-secondary w-100';
     }
     if (strpos($form_id, 'commerce_order_item_add_to_cart_form') === 0) {
       // Add attributes to the "Add to Cart" button.
@@ -648,7 +681,10 @@ function yucatanis_theme_theme_suggestions_table_alter(array &$suggestions, arra
    if ($form_id == 'user_pass') {
      $form['#submit'][] = 'yucatanis_theme_user_pass_form_submit';
     }
-   
+
+    if ($form_id == 'user_pass_reset') {
+      $form['actions']['submit']['#value'] = t('Change password');
+     }
   }
   
   function AjaxCallback(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
@@ -1084,4 +1120,30 @@ function yucatanis_theme_preprocess_views_view(&$variables) {
 }
   }
  }
+
+ function yucatanis_theme_preprocess_commerce_order_total_summary(&$variables){
+
+  $order = \Drupal::routeMatch()->getParameter('commerce_order');
+  $order_items = $order->getItems();
+  $product_ids = [];
+  foreach ($order_items as $order_item) {
+   $purchased_entity = $order_item->getPurchasedEntity();
+      if ($purchased_entity && $purchased_entity->getEntityTypeId() === 'commerce_product_variation') {
+        $product_type = $purchased_entity->bundle();
+        $variables['product_type'] = $product_type;
+       
+      }
+  }
+}
+
+function yucatanis_theme_preprocess_commerce_checkout_form(&$variables) {
+  // Get the current order.
+  $order = \Drupal::routeMatch()->getParameter('commerce_order');
+  // Ensure that an order exists and is an instance of OrderInterface.
+  if ($order instanceof \Drupal\commerce_order\Entity\OrderInterface) {
+    // Pass the order ID to the template.
+    $variables['orderId'] = $order->id();
+  }
+}
+
 ?>

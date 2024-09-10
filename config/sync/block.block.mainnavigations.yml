@@ -1,0 +1,29 @@
+uuid: 2b61592a-7d30-4890-b37b-1f695e3f7387
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-menu
+  module:
+    - system
+  theme:
+    - yucatanis_theme
+id: mainnavigations
+theme: yucatanis_theme
+region: main_navigations
+weight: 0
+provider: null
+plugin: 'system_menu_block:header-menu'
+settings:
+  id: 'system_menu_block:header-menu'
+  label: 'Main navigations'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/form/personal-details\r\n/checkout*"

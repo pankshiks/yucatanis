@@ -1,0 +1,49 @@
+uuid: e9f984f8-53ce-4e14-9e09-95ac7f802d5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.title_and_list.field_class
+    - field.field.paragraph.title_and_list.field_list_text
+    - field.field.paragraph.title_and_list.field_listheading
+    - field.field.paragraph.title_and_list.field_lists
+    - paragraphs.paragraphs_type.title_and_list
+  module:
+    - options
+    - text
+id: paragraph.title_and_list.default
+targetEntityType: paragraph
+bundle: title_and_list
+mode: default
+content:
+  field_class:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_list_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_listheading:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_lists:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

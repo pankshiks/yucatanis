@@ -37,7 +37,11 @@ class HotelImportForm extends FormBase {
       '#upload_validators' => $validators,
       '#upload_location' => 'public://',
     ];
-    
+    $form['example_excel_file'] = [
+      '#type' => 'markup',
+      '#markup' => '<a href="/sites/default/files/hotel_information.xlsx" download>Download Excel</a>',
+      '#attributes' => ['class' => ['btn-primary']],
+    ];
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Import Hotels'),
@@ -52,22 +56,17 @@ class HotelImportForm extends FormBase {
       $form_state->setErrorByName('excel_file', $this->t('Please upload a file'));
     }
   }
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  public function submitForm(array &$form, FormStateInterface $form_state){
+
     $file = \Drupal::entityTypeManager()->getStorage('file')
     ->load($form_state->getValue('excel_file')[0]);
-    
     $full_path = $file->get('uri')->value;
     $file_name = basename($full_path);
-    
     $inputFileName = \Drupal::service('file_system')->realpath('public://'.$file_name);
-		
 		$spreadsheet = IOFactory::load($inputFileName);
-		
 		$sheetData = $spreadsheet->getActiveSheet();
-		
 		$rows = array();
 		foreach ($sheetData->getRowIterator() as $row) {
-
 			$cellIterator = $row->getCellIterator();
 			$cellIterator->setIterateOnlyExistingCells(FALSE); 
 			$cells = [];
@@ -77,26 +76,19 @@ class HotelImportForm extends FormBase {
       $rows[] = $cells;
     
     }
-
     foreach($rows as $row){
-     
-			$values = \Drupal::entityQuery('node')->condition('title',$row[0])->execute();
-  
+			$values = \Drupal::entityQuery('node')->condition('title',$row[0])->accessCheck(TRUE)->execute();
       $term_name =$row[1];
       $vid = 'location';
-      
       $vocabulary = \Drupal\taxonomy\Entity\Vocabulary::load($vid);
-   
       if ($vocabulary) {
-        
         $query = \Drupal::entityQuery('taxonomy_term');
         $query->condition('name', $row[1]);
         $query->condition('vid', $vocabulary->id());
+        $query->accessCheck(FALSE);
         $tids = $query->execute();
         $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
-
         }
-
         if( !empty($terms)){
         $term_val=array_values($terms);
         $term_value=$term_val[0]->id();
@@ -104,50 +96,39 @@ class HotelImportForm extends FormBase {
         $term_val=array_values($terms);
         $term_value=118;
       }
- 
 			$node_not_exists = empty($values);
 			if($node_not_exists && !empty($row[0])){
-
         $node = Node::create(array(
           'type' => 'hotel_information',
           'title' => $row[0],
           'field_location'=>[$term_value],
 
         ));
-        
 				$node->save();
-        \Drupal::messenger()->addMessage('Hotel information imported successfully');
-			}else{
+			}else
+      {
         $node = \Drupal\node\Entity\Node::load(66);
-
 	      $term_name =$row[1];
         $vid = 'location';
         $vocabulary = \Drupal\taxonomy\Entity\Vocabulary::load($vid);
- 
-      if ($vocabulary) {
-        
+        if ($vocabulary) {
         $query = \Drupal::entityQuery('taxonomy_term');
         $query->condition('name', $row[1]);
         $query->condition('vid', $vocabulary->id());
+        $query->accessCheck(FALSE);
         $tids = $query->execute();
         $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
-      
-      } 
-      
-      $term_val=array_values($terms);
-
-     if( !empty($term_val) && !empty($row[0]) ){
-    
-				$nid = reset($values);
-				$node = \Drupal\node\Entity\Node::load($nid);
-				$node->setTitle($row[0]);
-				$node->set('field_location',$term_val[0]->id());
-				$node->save();
-      
-     }
-     \Drupal::messenger()->addMessage('Hotel information updated successfully');
+        }   
+        $term_val=array_values($terms);
+        if( !empty($term_val) && !empty($row[0]) ){
+          $nid = reset($values);
+          $node = \Drupal\node\Entity\Node::load($nid);
+          $node->setTitle($row[0]);
+          $node->set('field_location',$term_val[0]->id());
+          $node->save();
+        }
+       \Drupal::messenger()->addMessage('Hotel information updated successfully');
 			}
 		}
-  
   }
 }

@@ -1,0 +1,23 @@
+uuid: fe65f19d-b870-40af-bbf4-7ba16fca7ad0
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.storage.commerce_order.field_kids_no
+id: commerce_order.default.field_kids_no
+field_name: field_kids_no
+entity_type: commerce_order
+bundle: default
+label: 'kids no'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

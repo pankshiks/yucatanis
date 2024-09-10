@@ -1,0 +1,57 @@
+uuid: 6f34bcee-c225-4d84-adb4-f5924dccc84c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_bg_class
+field_name: field_bg_class
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Gray
+      label: gray
+    -
+      value: White
+      label: white
+    -
+      value: 'Four image block'
+      label: four_image_block
+    -
+      value: 'Founder block'
+      label: founder_block
+    -
+      value: 'Img with text'
+      label: img_with_text
+    -
+      value: 'Nightview banner'
+      label: nightview_banner
+    -
+      value: 'Img description block'
+      label: img_description_block
+    -
+      value: 'Relative Info'
+      label: relative_info
+    -
+      value: 'Cta img speciality block'
+      label: cta_img_speciality_block
+    -
+      value: 'Enquire Details'
+      label: enquire_details
+    -
+      value: 'Why Us'
+      label: 'Why us'
+    -
+      value: 'Last Min Bookings'
+      label: 'Last Min Bookings'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

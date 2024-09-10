@@ -1,0 +1,10 @@
+uuid: f612b714-ad6c-4e63-aafa-904ef08e1572
+langcode: en
+status: true
+dependencies: {  }
+id: boat_rentals
+label: 'BOAT RENTALS'
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: true

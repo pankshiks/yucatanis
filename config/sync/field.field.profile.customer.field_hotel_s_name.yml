@@ -1,0 +1,21 @@
+uuid: 4a4b4d34-351a-4408-a73f-1d7986482259
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_hotel_s_name
+    - profile.type.customer
+  module:
+    - options
+id: profile.customer.field_hotel_s_name
+field_name: field_hotel_s_name
+entity_type: profile
+bundle: customer
+label: "Hotel's Name"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

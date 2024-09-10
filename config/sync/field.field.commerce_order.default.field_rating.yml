@@ -1,0 +1,29 @@
+uuid: 9dc286bf-9196-4a64-9686-873c071c33f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.storage.commerce_order.field_rating
+  module:
+    - fivestar
+id: commerce_order.default.field_rating
+field_name: field_rating
+entity_type: commerce_order
+bundle: default
+label: rating
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  stars: 5
+  allow_clear: false
+  allow_revote: true
+  allow_ownvote: true
+  rated_while: viewing
+  enable_voting_target: false
+  target_bridge_field: ''
+  target_fivestar_field: ''
+field_type: fivestar

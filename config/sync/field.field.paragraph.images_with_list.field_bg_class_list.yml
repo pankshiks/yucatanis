@@ -1,0 +1,21 @@
+uuid: 322dee05-7878-494f-a25f-26b4768ae5d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bg_class_list
+    - paragraphs.paragraphs_type.images_with_list
+  module:
+    - options
+id: paragraph.images_with_list.field_bg_class_list
+field_name: field_bg_class_list
+entity_type: paragraph
+bundle: images_with_list
+label: 'bg-class list'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

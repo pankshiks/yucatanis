@@ -1,0 +1,19 @@
+uuid: fa46718c-1662-41f2-b2f9-2100bb256853
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_price
+    - commerce_product
+id: commerce_product_variation.field_6hrs_rental
+field_name: field_6hrs_rental
+entity_type: commerce_product_variation
+type: commerce_price
+settings: {  }
+module: commerce_price
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

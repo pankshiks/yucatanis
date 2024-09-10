@@ -1,0 +1,47 @@
+uuid: 44121d58-ed39-4c7b-9c63-2a52c981b800
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.headings_with_images.field_compare_button
+    - field.field.paragraph.headings_with_images.field_heading_list
+    - field.field.paragraph.headings_with_images.field_images_with_list
+    - paragraphs.paragraphs_type.headings_with_images
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.headings_with_images.default
+targetEntityType: paragraph
+bundle: headings_with_images
+mode: default
+content:
+  field_compare_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_heading_list:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_images_with_list:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

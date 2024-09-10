@@ -1,0 +1,100 @@
+uuid: a0633da9-dfc8-437b-97e7-9f210a6e7871
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_with_description
+    - paragraphs.paragraphs_type.faq
+    - paragraphs.paragraphs_type.faq_title_with_description
+  module:
+    - entity_reference_revisions
+id: paragraph.faq.field_title_with_description
+field_name: field_title_with_description
+entity_type: paragraph
+bundle: faq
+label: 'Title with description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      faq_title_with_description: faq_title_with_description
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 25
+        enabled: false
+      basemap:
+        weight: 26
+        enabled: false
+      faq:
+        weight: 27
+        enabled: false
+      faq_title_with_description:
+        weight: 28
+        enabled: true
+      features_list:
+        weight: 29
+        enabled: false
+      heading_with_cta_and_media_text:
+        weight: 31
+        enabled: false
+      heading_with_media_description:
+        weight: 32
+        enabled: false
+      heading_with_texts:
+        weight: 33
+        enabled: false
+      headings_with_images:
+        weight: 30
+        enabled: false
+      icons_with_links:
+        weight: 34
+        enabled: false
+      image_with_cta_and_heading:
+        weight: 36
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 37
+        enabled: false
+      images_with_list:
+        weight: 35
+        enabled: false
+      media_with_title_and_description:
+        weight: 38
+        enabled: false
+      slider_services_tabs:
+        weight: 39
+        enabled: false
+      tab_image_heading_with_button:
+        weight: 43
+        enabled: false
+      tab_services:
+        weight: 44
+        enabled: false
+      tab_slider_and_services:
+        weight: 45
+        enabled: false
+      tabs:
+        weight: 40
+        enabled: false
+      tabs_data:
+        weight: 41
+        enabled: false
+      tabs_datas:
+        weight: 42
+        enabled: false
+      text_with_cta_and_image:
+        weight: 46
+        enabled: false
+      video_with_subtitle:
+        weight: 47
+        enabled: false
+      view_reference:
+        weight: 48
+        enabled: false
+field_type: entity_reference_revisions

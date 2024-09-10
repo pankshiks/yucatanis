@@ -1,0 +1,21 @@
+uuid: 4aeb7241-b667-47b3-a261-7015859c7a38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tagline_block.field_tagline_text
+    - paragraphs.paragraphs_type.tagline_block
+id: paragraph.tagline_block.default
+targetEntityType: paragraph
+bundle: tagline_block
+mode: default
+content:
+  field_tagline_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

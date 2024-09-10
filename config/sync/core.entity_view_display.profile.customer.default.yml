@@ -1,0 +1,111 @@
+uuid: 34b6c436-a1ee-4beb-a9a7-a192c0fa300e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.customer.address
+    - field.field.profile.customer.field_checkbox_label
+    - field.field.profile.customer.field_checkbox_label2
+    - field.field.profile.customer.field_checkbox_label4
+    - field.field.profile.customer.field_favourite_email
+    - field.field.profile.customer.field_hotel_information
+    - field.field.profile.customer.field_hotel_s_name
+    - field.field.profile.customer.field_hotel_s_name_for_pick_up_
+    - field.field.profile.customer.field_hotel_time
+    - field.field.profile.customer.field_if_your_beach_hotel_is_not
+    - field.field.profile.customer.field_phone_number
+    - field.field.profile.customer.field_room_number_
+    - field.field.profile.customer.field_we_totally_get_how_annoyin
+    - field.field.profile.customer.field_your_special_note
+    - field.field.profile.customer.tax_number
+    - profile.type.customer
+  module:
+    - address
+    - commerce_tax
+    - mobile_number
+    - options
+  enforced:
+    module:
+      - commerce_order
+_core:
+  default_config_hash: zA0MBGUGdWqnBBoC762uDcH92qRZHC8KllbkpOjNUcs
+id: profile.customer.default
+targetEntityType: profile
+bundle: customer
+mode: default
+content:
+  address:
+    type: address_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_favourite_email:
+    type: email_mailto
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_hotel_s_name:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_hotel_time:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_if_your_beach_hotel_is_not:
+    type: list_key
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_phone_number:
+    type: mobile_number_international
+    label: above
+    settings:
+      as_link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_room_number_:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_your_special_note:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  tax_number:
+    type: commerce_tax_number_default
+    label: above
+    settings:
+      show_verification: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_checkbox_label: true
+  field_checkbox_label2: true
+  field_checkbox_label4: true
+  field_hotel_information: true
+  field_hotel_s_name_for_pick_up_: true
+  field_we_totally_get_how_annoyin: true
+  search_api_excerpt: true

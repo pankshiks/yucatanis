@@ -1,0 +1,25 @@
+uuid: f0c9ead8-2ea5-41b2-b0fd-e57ca1b99b0d
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - yucatanis_theme
+id: userlogin
+theme: yucatanis_theme
+region: content
+weight: -8
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  label_display: '0'
+  provider: user
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /user/login

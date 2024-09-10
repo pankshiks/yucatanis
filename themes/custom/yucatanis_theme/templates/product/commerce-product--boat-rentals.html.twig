@@ -81,7 +81,7 @@
     {% set imageItem = attribute(product.field_product_image, i)['#item'].entity.uri.value %}
     {% if imageItem is not null %}
         <div class="mySlides">
-            <div class="numbertext">{{ i+1 }} / 4</div>
+            <div class="numbertext">{{ i+1 }} /<span id="slidecount-{{i}}"></span> </div>
             <img src="{{ file_url(imageItem) }}" style="width:100%">
         </div>
     {% endif %}
@@ -95,7 +95,7 @@
         <p id="caption"></p>
       </div>
         <div class="lightbox-wrapper">
-        {% for i in 0..3 %}
+        {% for i in 0..8 %}
     {% set imageItem = attribute(product.field_product_image, i)['#item'].entity.uri.value %}
     {% if imageItem is not null %}
         <div class="column">
@@ -205,7 +205,7 @@
 
                 {% if product.field_available_for_sale.0 is not empty %}
                 <div class="overview-detail">
-                    <p><strong>Available for Sale:</strong> <strong>{{product.field_available_for_sale}}</strong></p>
+                    <p><strong>Available for Sale:</strong> <strong>{{product.field_available_for_sale.0["#markup"]}}</strong></p>
                 {% endif %} 
                 {% if product.field_available_for_sale.1 is not empty %}
                   <a href="" class="btn show-more-btn overviewtext">Show More</a>
@@ -453,6 +453,7 @@
     {#  #}
      <div class="col-12 col-lg-4 card-gap">
             <div class="best-seller-booking-card">
+             <img src="/themes/custom/yucatanis_theme/images/Dark-Transparent.png"  alt= "Dark-Transparent.png">
               <div class="info-tag">
                 <p>One of Kind Vessel</p>
               </div>
@@ -500,7 +501,8 @@
               <div>
                 <p class="m-0">Share Us:</p>
               </div>
-           {{ drupal_entity('block_content', '21') }}
+           {# {{ drupal_entity('block_content', '21') }} #}
+            {{ drupal_block("social_sharing_buttons_block") }}
 
         </div>
     {#  #}

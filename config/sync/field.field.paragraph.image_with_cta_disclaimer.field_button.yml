@@ -1,0 +1,23 @@
+uuid: 392b5246-511e-4f2e-a956-89d4b9abbc5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button
+    - paragraphs.paragraphs_type.image_with_cta_disclaimer
+  module:
+    - link
+id: paragraph.image_with_cta_disclaimer.field_button
+field_name: field_button
+entity_type: paragraph
+bundle: image_with_cta_disclaimer
+label: Button
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

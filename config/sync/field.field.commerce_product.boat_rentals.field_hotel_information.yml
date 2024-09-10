@@ -1,0 +1,142 @@
+uuid: fe384279-9bac-41a4-8432-f6d57d7a900f
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.boat_rentals
+    - field.storage.commerce_product.field_hotel_information
+    - paragraphs.paragraphs_type.hotel_information
+  module:
+    - entity_reference_revisions
+id: commerce_product.boat_rentals.field_hotel_information
+field_name: field_hotel_information
+entity_type: commerce_product
+bundle: boat_rentals
+label: 'Hotel information'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      hotel_information: hotel_information
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 39
+        enabled: false
+      block_reference:
+        weight: 40
+        enabled: false
+      ethics_banner_with_text_and_img:
+        weight: 41
+        enabled: false
+      faq:
+        weight: 42
+        enabled: false
+      faq_title_with_description:
+        weight: 43
+        enabled: false
+      features_list:
+        weight: 44
+        enabled: false
+      greeting_text_with_image:
+        weight: 45
+        enabled: false
+      heading_list_with_cta:
+        weight: 47
+        enabled: false
+      heading_with_cta_and_media_text:
+        weight: 48
+        enabled: false
+      heading_with_media_description:
+        weight: 49
+        enabled: false
+      heading_with_texts:
+        weight: 50
+        enabled: false
+      headings_with_images:
+        weight: 46
+        enabled: false
+      hotel_information:
+        weight: 51
+        enabled: true
+      icons_with_links:
+        weight: 52
+        enabled: false
+      image_with_cta_and_heading:
+        weight: 54
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 55
+        enabled: false
+      image_with_text:
+        weight: 56
+        enabled: false
+      images_with_list:
+        weight: 53
+        enabled: false
+      include_image_with_title:
+        weight: 57
+        enabled: false
+      media_image_:
+        weight: 58
+        enabled: false
+      media_with_heading_and_descripti:
+        weight: 59
+        enabled: false
+      media_with_title_and_description:
+        weight: 60
+        enabled: false
+      social_links:
+        weight: 61
+        enabled: false
+      tab_image_heading_with_button:
+        weight: 65
+        enabled: false
+      tabs:
+        weight: 62
+        enabled: false
+      tabs_data:
+        weight: 63
+        enabled: false
+      tabs_datas:
+        weight: 64
+        enabled: false
+      tagline_block:
+        weight: 66
+        enabled: false
+      text_description_with_list_:
+        weight: 67
+        enabled: false
+      text_image_with_list:
+        weight: 68
+        enabled: false
+      text_with_cta_and_image:
+        weight: 69
+        enabled: false
+      text_with_desc_and_svg_img:
+        weight: 71
+        enabled: false
+      text_with_description_:
+        weight: 70
+        enabled: false
+      title_and_list:
+        weight: 72
+        enabled: false
+      title_with_list:
+        weight: 73
+        enabled: false
+      video_with_subtitle:
+        weight: 74
+        enabled: false
+      view_reference:
+        weight: 75
+        enabled: false
+      webform_reference:
+        weight: 76
+        enabled: false
+field_type: entity_reference_revisions

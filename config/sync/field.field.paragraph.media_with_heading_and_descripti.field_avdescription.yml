@@ -1,0 +1,21 @@
+uuid: 8eeeaeea-ffee-4a3b-9f58-8caca22d7407
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_avdescription
+    - paragraphs.paragraphs_type.media_with_heading_and_descripti
+  module:
+    - text
+id: paragraph.media_with_heading_and_descripti.field_avdescription
+field_name: field_avdescription
+entity_type: paragraph
+bundle: media_with_heading_and_descripti
+label: description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

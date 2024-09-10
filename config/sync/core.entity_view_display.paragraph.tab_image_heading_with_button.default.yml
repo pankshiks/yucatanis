@@ -1,0 +1,63 @@
+uuid: aae89d3f-a920-46a0-8c31-78c6c714d59d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tab_image_heading_with_button.field_heading
+    - field.field.paragraph.tab_image_heading_with_button.field_images
+    - field.field.paragraph.tab_image_heading_with_button.field_link
+    - field.field.paragraph.tab_image_heading_with_button.field_price
+    - field.field.paragraph.tab_image_heading_with_button.field_tab_classes
+    - paragraphs.paragraphs_type.tab_image_heading_with_button
+  module:
+    - link
+    - options
+    - text
+id: paragraph.tab_image_heading_with_button.default
+targetEntityType: paragraph
+bundle: tab_image_heading_with_button
+mode: default
+content:
+  field_heading:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_images:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_price:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tab_classes:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

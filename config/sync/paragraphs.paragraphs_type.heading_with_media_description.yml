@@ -1,0 +1,10 @@
+uuid: e072cbc9-9ad2-4d9d-8dde-9bba5d4ce1cf
+langcode: en
+status: true
+dependencies: {  }
+id: heading_with_media_description
+label: 'Heading with media description'
+icon_uuid: null
+icon_default: null
+description: 'It has one heading and media ,title and description'
+behavior_plugins: {  }

@@ -1,0 +1,21 @@
+uuid: 7d151c7e-b8a8-4ca5-b9aa-a02ba0226ffb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_detail_description
+    - paragraphs.paragraphs_type.video_with_subtitle
+  module:
+    - text
+id: paragraph.video_with_subtitle.field_detail_description
+field_name: field_detail_description
+entity_type: paragraph
+bundle: video_with_subtitle
+label: 'Detail description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

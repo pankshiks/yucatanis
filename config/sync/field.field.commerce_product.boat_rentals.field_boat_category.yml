@@ -1,0 +1,29 @@
+uuid: 602defef-7386-4a53-b215-8f7ec5fa06da
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.boat_rentals
+    - field.storage.commerce_product.field_boat_category
+    - taxonomy.vocabulary.boat_category
+id: commerce_product.boat_rentals.field_boat_category
+field_name: field_boat_category
+entity_type: commerce_product
+bundle: boat_rentals
+label: 'Boat Category'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      boat_category: boat_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: 9ef942bf-51d3-46fd-aa4d-dd5a87dca0bc
+name: Yucatanis
+mail: test.ckln@gmail.com
+slogan: "Mexico's east coast simplified."
+page:
+  403: ''
+  404: /node/62
+  front: /node/10
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

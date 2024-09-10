@@ -1,0 +1,21 @@
+uuid: d155706d-7ff5-4d42-af54-b034358ee4ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tab_class
+    - taxonomy.vocabulary.categorization_
+  module:
+    - text
+id: taxonomy_term.categorization_.field_tab_class
+field_name: field_tab_class
+entity_type: taxonomy_term
+bundle: categorization_
+label: 'tab class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

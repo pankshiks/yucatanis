@@ -12,10 +12,17 @@
             {{paragraph.field_subtitles.value|raw}}
             <div class="quard-btn-wrapper">
             {% for item in paragraph.field_features %}
-            
-                <a href="" class="btn btn-tertiary" href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
+           
+              {% if loop.index == 3  %}
+                    <a href="{{item.entity.field_features_link.0.value['uri']}}" class="btn btn-tertiary" id="copy-number" href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
+                    {{ item.entity.field_features_link.0.value['title']}}</a>
+              {% elseif loop.index == 4 %}
+                    <a href="{{item.entity.field_features_link.0.value['uri']}}" class="btn btn-tertiary" id="copy-nextnumber" href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
+                    {{ item.entity.field_features_link.0.value['title']}}</a>
+                {% else %}
+                <a href="{{item.entity.field_features_link.0.value['uri']}}" class="btn btn-tertiary" href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
                  {{ item.entity.field_features_link.0.value['title']}}</a>
-          
+              {% endif %}
             {% endfor %}
             </div>
           </div>
@@ -39,12 +46,19 @@
             </h3>
               {{paragraph.field_subtitles.value|raw}}
             <div class="quard-btn-wrapper">
-              {% for item in paragraph.field_features %}
-                
-                  {# {{dd(item.entity.field_features_link)}} #}
-                  <a href="" class="btn btn-tertiary" href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
-                  {{ item.entity.field_features_link.0.value['title']}}</a>    
-              {% endfor %}
+               {% for item in paragraph.field_features %}
+           
+              {% if loop.index == 3  %}
+                    <a href="{{item.entity.field_features_link.0.value['uri']}}" class="btn btn-tertiary" id="copy-number" href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
+                    {{ item.entity.field_features_link.0.value['title']}}</a>
+              {% elseif loop.index == 4 %}
+                    <a href="{{item.entity.field_features_link.0.value['uri']}}" class="btn btn-tertiary" id="copy-nextnumber" href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
+                    {{ item.entity.field_features_link.0.value['title']}}</a>
+                {% else %}
+                <a href="{{item.entity.field_features_link.0.value['uri']}}" class="btn btn-tertiary" href={{item.entity.field_features_link.0.value['uri']}}><img src="{{ file_url(item.entity.field_svg_image.entity.fileuri)}}" alt="">
+                 {{ item.entity.field_features_link.0.value['title']}}</a>
+              {% endif %}
+            {% endfor %}
             </div>
           </div>
           {{ drupal_entity('webform', 'contact_page') }}

@@ -1,0 +1,136 @@
+uuid: bd63b14b-deeb-442f-a1d6-f24fe20d4b77
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.storage.commerce_product.field_include_icon_with_title
+    - paragraphs.paragraphs_type.include_image_with_title
+  module:
+    - entity_reference_revisions
+id: commerce_product.default.field_include_icon_with_title
+field_name: field_include_icon_with_title
+entity_type: commerce_product
+bundle: default
+label: 'Include icon with title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      include_image_with_title: include_image_with_title
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 37
+        enabled: false
+      basemap:
+        weight: 38
+        enabled: false
+      faq:
+        weight: 39
+        enabled: false
+      faq_title_with_description:
+        weight: 40
+        enabled: false
+      features_list:
+        weight: 41
+        enabled: false
+      greeting_text_with_image:
+        weight: 42
+        enabled: false
+      heading_list_with_cta:
+        weight: 43
+        enabled: false
+      heading_with_cta_and_media_text:
+        weight: 44
+        enabled: false
+      heading_with_media_description:
+        weight: 45
+        enabled: false
+      heading_with_texts:
+        weight: 46
+        enabled: false
+      headings_with_images:
+        weight: 47
+        enabled: false
+      icons_with_links:
+        weight: 48
+        enabled: false
+      image_with_cta_and_heading:
+        weight: 49
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 50
+        enabled: false
+      image_with_text:
+        weight: 51
+        enabled: false
+      images_with_list:
+        weight: 52
+        enabled: false
+      include_image_with_title:
+        weight: 53
+        enabled: true
+      media_image_:
+        weight: 54
+        enabled: false
+      media_with_title_and_description:
+        weight: 55
+        enabled: false
+      slider_services_tabs:
+        weight: 56
+        enabled: false
+      social_links:
+        weight: 57
+        enabled: false
+      tab_image_heading_with_button:
+        weight: 58
+        enabled: false
+      tab_services:
+        weight: 59
+        enabled: false
+      tab_slider_and_services:
+        weight: 60
+        enabled: false
+      tabs:
+        weight: 61
+        enabled: false
+      tabs_data:
+        weight: 62
+        enabled: false
+      tabs_datas:
+        weight: 63
+        enabled: false
+      tagline_block:
+        weight: 64
+        enabled: false
+      text_description_with_list_:
+        weight: 65
+        enabled: false
+      text_image_with_list:
+        weight: 66
+        enabled: false
+      text_with_cta_and_image:
+        weight: 67
+        enabled: false
+      text_with_description_:
+        weight: 68
+        enabled: false
+      title_and_list:
+        weight: 69
+        enabled: false
+      title_with_list:
+        weight: 70
+        enabled: false
+      video_with_subtitle:
+        weight: 71
+        enabled: false
+      view_reference:
+        weight: 72
+        enabled: false
+field_type: entity_reference_revisions

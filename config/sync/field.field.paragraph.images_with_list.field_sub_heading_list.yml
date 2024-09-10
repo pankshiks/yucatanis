@@ -1,0 +1,19 @@
+uuid: c23a3f56-ee2e-421f-ba84-16417dc06b2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sub_heading_list
+    - paragraphs.paragraphs_type.images_with_list
+id: paragraph.images_with_list.field_sub_heading_list
+field_name: field_sub_heading_list
+entity_type: paragraph
+bundle: images_with_list
+label: 'Sub-Heading List'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

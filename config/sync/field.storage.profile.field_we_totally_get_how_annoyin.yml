@@ -1,0 +1,18 @@
+uuid: 73d63e5a-087d-46c9-a6a0-5713ede2cf62
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+id: profile.field_we_totally_get_how_annoyin
+field_name: field_we_totally_get_how_annoyin
+entity_type: profile
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

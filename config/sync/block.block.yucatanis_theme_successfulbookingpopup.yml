@@ -1,0 +1,30 @@
+uuid: ebb1ee64-d878-4016-992e-f0ff9798a052
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f8d735a8-9d9d-425e-9295-d14eda3c7ed9'
+  module:
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+id: yucatanis_theme_successfulbookingpopup
+theme: yucatanis_theme
+region: content
+weight: -20
+provider: null
+plugin: 'block_content:f8d735a8-9d9d-425e-9295-d14eda3c7ed9'
+settings:
+  id: 'block_content:f8d735a8-9d9d-425e-9295-d14eda3c7ed9'
+  label: 'Successful booking Pop-Up'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /success-message

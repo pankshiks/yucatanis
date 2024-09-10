@@ -1,0 +1,8 @@
+uuid: 07daebdc-6a2c-463c-826e-cdf91227d1bb
+langcode: en
+status: true
+dependencies: {  }
+name: Categories
+vid: fragments_of_yucatan
+description: ''
+weight: 2

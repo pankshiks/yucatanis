@@ -1,0 +1,21 @@
+uuid: 631cd1e9-1ce5-479e-b0ca-d2c87ed7533f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_listheading
+    - paragraphs.paragraphs_type.title_and_list
+  module:
+    - text
+id: paragraph.title_and_list.field_listheading
+field_name: field_listheading
+entity_type: paragraph
+bundle: title_and_list
+label: 'List Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

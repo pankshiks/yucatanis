@@ -1,0 +1,24 @@
+uuid: 760551e6-51bb-446e-b553-23af9cbd9790
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.shop_classic_experiences
+    - field.storage.commerce_product_variation.field_private_kids_tour_price
+  module:
+    - commerce_price
+id: commerce_product_variation.shop_classic_experiences.field_private_kids_tour_price
+field_name: field_private_kids_tour_price
+entity_type: commerce_product_variation
+bundle: shop_classic_experiences
+label: 'Private Kids tour price'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+  allow_negative: false
+field_type: commerce_price

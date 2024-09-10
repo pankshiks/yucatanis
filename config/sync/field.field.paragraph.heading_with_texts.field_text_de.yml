@@ -1,0 +1,21 @@
+uuid: 4426be2a-edb6-42bc-b406-6ec3a4d430d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_de
+    - paragraphs.paragraphs_type.heading_with_texts
+  module:
+    - text
+id: paragraph.heading_with_texts.field_text_de
+field_name: field_text_de
+entity_type: paragraph
+bundle: heading_with_texts
+label: 'Text description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

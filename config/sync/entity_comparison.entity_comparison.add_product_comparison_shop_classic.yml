@@ -1,0 +1,14 @@
+uuid: 11c51451-9ae4-4f74-8554-1e6b054e1f63
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.commerce_product.shop_classic_experiences.shop_classic_experiences_add_product_comparison_shop_classic
+    - core.entity_view_mode.commerce_product.shop_classic_experiences_add_product_comparison_shop_classic
+id: add_product_comparison_shop_classic
+label: 'Add product comparison shop classic'
+add_link_text: 'Add product comparison shop classic'
+remove_link_text: 'Remove from the product comparison'
+limit: 0
+entity_type: commerce_product
+bundle_type: shop_classic_experiences

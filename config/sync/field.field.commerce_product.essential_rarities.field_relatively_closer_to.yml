@@ -1,0 +1,29 @@
+uuid: d196ad00-ce76-4288-9adf-b3641f6a3275
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+    - field.storage.commerce_product.field_relatively_closer_to
+    - taxonomy.vocabulary.location
+id: commerce_product.essential_rarities.field_relatively_closer_to
+field_name: field_relatively_closer_to
+entity_type: commerce_product
+bundle: essential_rarities
+label: 'Relatively Closer to?'
+description: 'The desired experience is relatively closer to the following area'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      location: location
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

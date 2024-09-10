@@ -1,0 +1,20 @@
+uuid: 2d522038-9a4c-4e7b-9844-4eba2ebaa34f
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - taxonomy
+id: commerce_product.field_yucatanis_recommend
+field_name: field_yucatanis_recommend
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

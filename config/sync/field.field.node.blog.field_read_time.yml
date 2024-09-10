@@ -1,0 +1,23 @@
+uuid: 65d3133c-874b-4b2d-91ec-330f3f9860ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_read_time
+    - node.type.blog
+  module:
+    - estimated_read_time
+id: node.blog.field_read_time
+field_name: field_read_time
+entity_type: node
+bundle: blog
+label: 'Read time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  view_mode: default
+  words_per_minute: 50
+field_type: estimated_read_time

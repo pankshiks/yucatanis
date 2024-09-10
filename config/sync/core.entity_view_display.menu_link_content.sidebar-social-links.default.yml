@@ -1,0 +1,38 @@
+uuid: 73b50fa5-2a6e-456c-913d-ec6cb52f291f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.sidebar-social-links.field_menu_items_image
+    - system.menu.sidebar-social-links
+  module:
+    - svg_image_field
+id: menu_link_content.sidebar-social-links.default
+targetEntityType: menu_link_content
+bundle: sidebar-social-links
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_menu_items_image:
+    type: svg_image_field_formatter
+    label: above
+    settings:
+      inline: false
+      apply_dimensions: true
+      width: 25
+      height: 25
+      enable_alt: true
+      enable_title: true
+      link: ''
+      force_fill: false
+      sanitize: true
+      sanitize_remote: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true

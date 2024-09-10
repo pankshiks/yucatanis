@@ -1,0 +1,11 @@
+uuid: c29d49d3-36dc-4ef1-9bfd-bdbe7a2b9592
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.moods_list
+id: taxonomy_term.moods_list
+target_entity_type_id: taxonomy_term
+target_bundle: moods_list
+default_langcode: site_default
+language_alterable: false

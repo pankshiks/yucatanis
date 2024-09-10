@@ -1,0 +1,8 @@
+uuid: b1281543-d0fd-46d2-a4b2-c9c69929aa84
+langcode: en
+status: true
+dependencies: {  }
+id: right-navbar
+label: 'Right Navbar'
+description: ''
+locked: false

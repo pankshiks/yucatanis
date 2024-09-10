@@ -1,0 +1,20 @@
+uuid: 26aa2419-a544-42be-97c2-0d9923819071
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_hotel_info
+field_name: field_hotel_info
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

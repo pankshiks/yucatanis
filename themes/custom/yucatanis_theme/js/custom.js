@@ -1,6 +1,98 @@
+var elementId = jQuery("#typewriter1").attr("id");
+if (elementId === "typewriter1") {
+  var text = jQuery("#bannertext").text();
+  var sp = text.split(",");
+  var values = [];
+  jQuery.each(sp, function(index, value) {
+    values.push(value.replace(/\n/g, " "));
+  });
+
+  var trimmedArray = jQuery.map(values, function(value) {
+    return jQuery.trim(value);
+  });
+
+  let listText = trimmedArray;
+
+  const type = document.querySelector("#typewriter1");
+
+  // Function to create typing effect
+  function typeWriter(textArray, index) {
+    const type = document.querySelector("#typewriter1");
+    if (index < textArray.length) {
+      let currentText = textArray[index];
+      let typingIndex = 0;
+      let interval = setInterval(function() {
+        type.innerHTML += currentText.charAt(typingIndex);
+        typingIndex++;
+        if (typingIndex === currentText.length) {
+          clearInterval(interval);
+          setTimeout(function() {
+            type.innerHTML = ""; // Clear the current text after delay
+            if (index == textArray.length - 2) {
+              typeWriter(textArray, 0);
+            } else {
+              // Move to next item in array
+              typeWriter(textArray, index + 1);
+            }
+          }, 1000); // Adjust delay between texts (in milliseconds)
+        }
+      }, 150); // Adjust typing speed here (in milliseconds)
+    }
+  }
+
+  // Start typing effect
+  typeWriter(listText, 0);
+}
+//header js
+if (jQuery(".top-header-bar .animatedText").text() !== "") {
+    var text = jQuery("#animated").text();
+    var sp = text.split(",");
+    var values = [];
+    jQuery.each(sp, function (index, value) {
+        values.push(value.replace(/\n/g, " "));
+    });
+    var trimmedArray = jQuery.map(values, function (value) {
+        return jQuery.trim(value);
+    });
+
+
+    let listTexts = trimmedArray;
+    const type = document.querySelector(".top-header-bar .animatedText");
+  // Function to create typing effect
+  function typeWriter(textArray, index) {
+    const type = document.querySelector(".top-header-bar .animatedText");
+    if (index < textArray.length) {
+      let currentText = textArray[index];
+      let typingIndex = 0;
+      let interval = setInterval(function() {
+        type.innerHTML += currentText.charAt(typingIndex);
+        typingIndex++;
+        if (typingIndex === currentText.length) {
+          clearInterval(interval);
+          setTimeout(function() {
+            type.innerHTML = ""; // Clear the current text after delay
+            // console.log(index);
+            if (index == textArray.length - 2) {
+              // If it's the last item, start over from the beginning
+            //   console.log(textArray);
+              typeWriter(textArray, 0);
+            } else {
+              // Move to next item in array
+              typeWriter(textArray, index + 1);
+            }
+          }, 1000); // Adjust delay between texts (in milliseconds)
+        }
+      }, 150); // Adjust typing speed here (in milliseconds)
+    }
+  }
+
+  // Start typing effect
+  typeWriter(listTexts, 0);
+}
+
 jQuery(".marquee_text").marquee({
     direction: "left",
-    duration: 50000,
+    duration: 90000,
     gap: 50,
     delayBeforeStart: 0,
     duplicated: true,
@@ -301,11 +393,6 @@ jQuery(document).ready(function () {
     });
 });
 
-// jQuery(document).ready(function () {
-//     jQuery('.ui-group .button').on('click', function () {
-//         jQuery(".blog-fliter").addClass('all-items');
-//     });
-// });
 jQuery(document).ready(function () {
     jQuery(".blog-fliter .button-group .button:first-child").click(function () {
         jQuery(this).parent().parent().parent().addClass("all-items");
@@ -320,6 +407,52 @@ jQuery(document).ready(function () {
     jQuery(".filter-btn").click(function () {
         jQuery(".filter-listing").slideToggle();
     });
+    jQuery('#copy-number').click(function () {
+        // Get the text within the <a> tag
+        var linkText = jQuery(this).text().trim();
+
+        // Extract the number part (assuming the number follows the "COPY " text)
+        var number = linkText.replace('COPY ', '').trim();
+
+        // Create a temporary input element
+        var tempInput = jQuery('<input>');
+        jQuery('body').append(tempInput);
+
+        // Set the value of the temporary input to the extracted number
+        tempInput.val(number).select();
+
+        // Copy the text to the clipboard
+        document.execCommand('copy');
+
+        // Remove the temporary input
+        tempInput.remove();
+
+        // Optionally, provide some visual feedback to the user
+        alert('Number copied: ' + number);
+      });
+      jQuery('#copy-nextnumber').click(function () {
+        // Get the text within the <a> tag
+        var linkText = jQuery(this).text().trim();
+
+        // Extract the number part (assuming the number follows the "COPY " text)
+        var number = linkText.replace('COPY ', '').trim();
+
+        // Create a temporary input element
+        var tempInput = jQuery('<input>');
+        jQuery('body').append(tempInput);
+
+        // Set the value of the temporary input to the extracted number
+        tempInput.val(number).select();
+
+        // Copy the text to the clipboard
+        document.execCommand('copy');
+
+        // Remove the temporary input
+        tempInput.remove();
+
+        // Optionally, provide some visual feedback to the user
+        alert('Number copied: ' + number);
+      });
 });
 
 jQuery(function () {
@@ -339,240 +472,7 @@ jQuery(function () {
 });
 //
 ("use strict");
-//
-var elementId = jQuery("#typewriter1").attr("id");
-if (elementId === "typewriter1") {
-    // var text = jQuery(".top-header-bar,.animate").text();
-    var text = jQuery("#bannertext").text();
-    var sp = text.split(",");
-    var values = [];
-    jQuery.each(sp, function (index, value) {
-        values.push(value.replace(/\n/g, " "));
-    });
 
-    var trimmedArray = jQuery.map(values, function (value) {
-        return jQuery.trim(value);
-    });
-
-    let listText = trimmedArray;
-
-    const type = document.querySelector("#typewriter1");
-
-    let index = -1;
-    let current = 0;
-
-    function typeTextFunc() {
-        if (current === listText.length) {
-            current = 0;
-        }
-        let typeText = setInterval(() => {
-            if (index == listText[current].length - 1) {
-                clearInterval(typeText);
-                setTimeout(clearTextFunc, 500); // Delay clearing text after typing
-            } else {
-                index++;
-                type.textContent += listText[current][index];
-            }
-        }, 100);
-    }
-
-    function clearTextFunc() {
-        let clearText = setInterval(() => {
-            if (type.textContent.length == 0) {
-                clearInterval(clearText);
-                index = -1;
-                current++;
-                setTimeout(typeTextFunc, 500); // Delay typing next text
-            } else {
-                type.textContent = type.textContent.slice(0, -1);
-            }
-        }, 100);
-    }
-
-    // typeTextFunc();
-}
-
-// if (jQuery(".top-header-bar .animatedText").text() !== "") {
-//     // 13-02
-//     // The typewriter element
-//     var typeWriterElement = document.getElementById('typewriter');
-
-//     // The TextArray: 
-//     var textArray = ["Hey, I'm Tim.","I like JavaScript.","I Love to Develop.", "I like this Typewriter."];
-//     // function to generate the backspace effect 
-//     function delWriter(text, i, cb) {
-//     if (i >= 0 ) {
-//     typeWriterElement.innerHTML = text.substring(0, i--);
-//     // generate a random Number to emulate backspace hitting.
-//     var rndBack = 10 + Math.random() * 100;
-//     setTimeout(function() {
-//         delWriter(text, i, cb);
-//     },rndBack); 
-//     } else if (typeof cb == 'function') {
-//     setTimeout(cb,1000);
-//     }
-//     };
-
-//     // function to generate the keyhitting effect
-//     function typeWriter(text, i, cb) {
-//     if ( i < text.length+1 ) {
-//     typeWriterElement.innerHTML = text.substring(0, i++);
-//     // generate a random Number to emulate Typing on the Keyboard.
-//     var rndTyping = 250 - Math.random() * 100;
-//     setTimeout( function () { 
-//         typeWriter(text, i++, cb)
-//     },rndTyping);
-//     } else if (i === text.length+1) {
-//     setTimeout( function () {
-//         delWriter(text, i, cb)
-//     },1000);
-//     }
-//     };
-
-//     // the main writer function
-//     function StartWriter(i) {
-//     if (typeof textArray[i] == "undefined") {
-//     setTimeout( function () {
-//         StartWriter(0)
-//     },1000);
-//     } else if(i < textArray[i].length+1) {
-//     typeWriter(textArray[i], 0, function () {
-//         StartWriter(i+1);
-//     });
-//     }  
-//     };
-//     // wait one second then start the typewriter
-//     setTimeout( function () {
-//     StartWriter(0);
-//     },1000);
-
-//     //13-02 code end
-
-//     //var text = jQuery(".top-header-bar,#animated").text();
-//     var text = jQuery("#animated").text();
-//     var sp = text.split(",");
-//     var values = [];
-//     jQuery.each(sp, function (index, value) {
-//         values.push(value.replace(/\n/g, " "));
-//     });
-//     var trimmedArray = jQuery.map(values, function (value) {
-//         return jQuery.trim(value);
-//     });
-
-//     const type = document.querySelector(".top-header-bar .animatedText");
-//     let listTexts = trimmedArray;
-
-//     let index = -1;
-//     let current = 0;
-
-//     function typeTextFunc() {
-//         console.log(listTexts);
-//         if (listTexts !== 'undefined' && current === listTexts.length) {
-//             current = 0;
-//         }
-//         let typeText = setInterval(() => {
-//             if (index == listTexts[current].length - 1) {
-//                 clearInterval(typeText);
-//                 setTimeout(clearTextFunc, 500); // Delay clearing text after typing
-//             } else {
-//                 index++;
-//                 type.textContent += listTexts[current][index];
-//             }
-//         }, 100);
-//     }
-
-//     function clearTextFunc() {
-//         let clearText = setInterval(() => {
-//             if (type.textContent.length == 0) {
-//                 clearInterval(clearText);
-//                 index = -1;
-//                 current++;
-//                 setTimeout(typeTextFunc, 500); // Delay typing next text
-//             } else {
-//                 type.textContent = type.textContent.slice(0, -1);
-//             }
-//         }, 100);
-//     }
-
-//     // typeTextFunc();
-// }
-
-//
-if (jQuery(".top-header-bar .animatedText").text() !== "") {
-    //var text = jQuery(".top-header-bar,#animated").text();
-    var text = jQuery("#animated").text();
-    var sp = text.split(",");
-    var values = [];
-    jQuery.each(sp, function (index, value) {
-        values.push(value.replace(/\n/g, " "));
-    });
-    var trimmedArray = jQuery.map(values, function (value) {
-        return jQuery.trim(value);
-    });
-
-    const type = document.querySelector(".top-header-bar .animatedText");
-    let listTexts = trimmedArray;
-    // console.log(listTexts);
-      // The typewriter element
-      
-    var typeWriterElement = document.getElementById('typewriter');
-
-    // The TextArray: 
-    var textArray = listTexts;
-    // console.log(textArray);
-    // You can also do this by transfering it through a data-attribute
-    // var textArray = typeWriterElement.getAttribute('data-array');
-
-
-    // function to generate the backspace effect 
-    function delWriter(text, i, cb) {
-        if (i >= 0 ) {
-            typeWriterElement.innerHTML = text.substring(0, i--);
-            // generate a random Number to emulate backspace hitting.
-            var rndBack = 10 + Math.random() * 100;
-            setTimeout(function() {
-                delWriter(text, i, cb);
-            },rndBack); 
-        } else if (typeof cb == 'function') {
-            setTimeout(cb,1000);
-        }
-    };
-
-    // function to generate the keyhitting effect
-    function typeWriter(text, i, cb) {
-        if ( i < text.length+1 ) {
-            typeWriterElement.innerHTML = text.substring(0, i++);
-            // generate a random Number to emulate Typing on the Keyboard.
-            var rndTyping = 250 - Math.random() * 100;
-            setTimeout( function () { 
-                typeWriter(text, i++, cb)
-            },rndTyping);
-        } else if (i === text.length+1) {
-            setTimeout( function () {
-                delWriter(text, i, cb)
-            },1000);
-        }
-    };
-
-    // the main writer function
-    function StartWriter(i) {
-        if (typeof textArray[i] == "undefined") {
-            setTimeout( function () {
-                StartWriter(0)
-            },1000);
-        } else if(i < textArray[i].length+1) {
-            typeWriter(textArray[i], 0, function () {
-                StartWriter(i+1);
-            });
-        }  
-    };
-    // wait one second then start the typewriter
-    setTimeout( function () {
-        StartWriter(0);
-    },1000);
-
-
-}
 jQuery(document).ajaxComplete(function (event, request, settings) {
     if (
         settings.extraData &&
@@ -802,7 +702,7 @@ Drupal.behaviors.myBehavior = {
                     }
                 }
             ]
-            }); 
+            });
             jQuery('.ui-group .filters .form-radios').slick({
                 infinite: true,
                 slidesToShow: 6,
@@ -824,34 +724,7 @@ Drupal.behaviors.myBehavior = {
                 }
                 ]
                 });
-        //commerce product pages
-        // var highestBox = 0;
-        // jQuery(".product-overview-wrapper .best-seller-booking-card").each(
-        //     function () {
-        //         if (jQuery(this).height() > highestBox) {
-        //             highestBox = jQuery(this).height();
-        //         }
-        //     }
-        // );
-        // jQuery(".overview-detail-wrapper").height(highestBox);
 
-        // jQuery(".show-more-btn").on("click", function (event) {
-        //     event.preventDefault(); // Prevent the default behavior of the anchor element
-        //     jQuery(".overview-detail-wrapper").addClass("active");
-
-        // });
-
-        // jQuery(".show-more-btn.rental").on("click", function (event) {
-        //     event.preventDefault(); // Prevent the default behavior of the anchor element
-        //     jQuery(".overview-detail-wrapper").toggleClass("active");
-        //     var buttonText = jQuery(".overview-detail-wrapper").hasClass(
-        //         "active"
-        //     )
-        //         ? "Show Less"
-        //         : "Show More";
-        //     jQuery(".show-more-btn.rental").text(buttonText);
-        // });
-        //commerce product pages
     },
 };
 
@@ -867,15 +740,15 @@ Drupal.behaviors.myBehavior = {
 
     jQuery(".show-more-btn.overviewtext").on("click", function (event) {
         event.preventDefault();
-    
+
         var overviewDetail = jQuery(this).closest(".overview-detail");
         overviewDetail.toggleClass("active");
-    
+
         var buttonText = overviewDetail.hasClass("active") ? "Show Less" : "Show More";
         jQuery(this).text(buttonText);
     });
 
-    
+
 
     jQuery(".left-block-links li a").hover(
         function () {
@@ -892,10 +765,10 @@ jQuery(document).ready(function () {
     // 17-01-24
     jQuery(".show-more-btn.vesseltext").on("click", function (event) {
         event.preventDefault();
-    
+
         var overviewDetail = jQuery(this).closest(".overview-detail");
         overviewDetail.toggleClass("vessel-price");
-    
+
         var buttonText = overviewDetail.hasClass("vessel-price") ? "Show Less" : "Show Price";
         jQuery(this).text(buttonText);
     });
@@ -1110,7 +983,20 @@ function currentSlide(n) {
 
 function showSlides(n) {
     var i;
+
     var slides = document.getElementsByClassName("mySlides");
+
+    var slidesCount = jQuery(".mySlides").length;
+    for (var z = 0; z < slidesCount; z++) {
+    console.log(slidesCount);
+    jQuery("#slidecount-"+ z ).append(slidesCount);
+    var slidesCount = jQuery(".mySlides").length;
+    jQuery("#slidecount-"+ z ).empty();
+
+     // Append the slidesCount to .numbertext.
+    jQuery("#slidecount-" + z ).append(slidesCount);
+    }
+
     var dots = document.getElementsByClassName("demo");
     var captionText = document.getElementById("caption");
     if (n > slides.length) {
@@ -1143,10 +1029,10 @@ jQuery(document).ready(function() {
     function updateAverage() {
     // Calculate the average of both inputs and update the average-range paragraph
     var minValue = parseFloat((jQuery('#edit-price-number-min').val() || '').replace('$', '')) || 0;
-    var maxValue = parseFloat((jQuery('#edit-price-number-max').val() || '').replace('$', '')) || 0; 
+    var maxValue = parseFloat((jQuery('#edit-price-number-max').val() || '').replace('$', '')) || 0;
 
     var averageValue = (minValue + maxValue) / 2;
-   
+
    if (  jQuery('.average-range').length === 0) {
     var htmlContent = '<p class="average-range">Average price: $<span class="average-value">' + averageValue.toFixed(2) + '</span></p>';
 
@@ -1190,7 +1076,7 @@ jQuery('#price-range-form input').on('input', function() {
                     }
                 }
             ]
-            }); 
+            });
 
         jQuery('.ui-group .filters .form-radios').slick({
         infinite: true,
@@ -1216,14 +1102,40 @@ jQuery('#price-range-form input').on('input', function() {
 
         var urlParams = new URLSearchParams(window.location.search);
             var type = urlParams.get('type');
-        
+
             // Add 'btn-active' class based on the 'type' parameter
             if (type === 'shared') {
             jQuery('a[href="?type=shared"]').addClass('btn-active');
             } else if (type === 'private') {
             jQuery('a[href="?type=private"]').addClass('btn-active');
             }
+
+            // private modal popup
+            jQuery(document).ready(function () {
+                // Trigger modal popup when Private Booking button is clicked
+                jQuery('#private-booking').click(function (e) {
+                  e.preventDefault();
+                  // Show modal popup
+                  jQuery('#myModalproduct').modal('show');
+                });
+
+                //success page popup
+                jQuery('#mybookingpopup').modal('show');
+              });
+             // private modal popup end
+
 //     },
 // };
 
-       
+jQuery(document).ready(function() {
+  let currentUrl = window.location.href;
+
+  // Check if the URL contains 'checkout/' or 'form/personal-details'
+  if (currentUrl.indexOf('checkout/') !== -1 || currentUrl.indexOf('form/personal-details') !== -1) {
+    // Hide the .top-header-bar element
+    jQuery('.top-header-bar').css('display', 'none');
+  }
+});
+
+
+

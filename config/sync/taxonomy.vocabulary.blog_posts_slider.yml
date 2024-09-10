@@ -1,0 +1,8 @@
+uuid: ad1d7caf-7869-423f-ace7-57bd8b4d9b3c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blog posts slider'
+vid: blog_posts_slider
+description: ''
+weight: 0

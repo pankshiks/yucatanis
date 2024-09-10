@@ -1,0 +1,38 @@
+uuid: 78258d66-a457-4554-a3d4-62aede67a133
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.right-navbar.field_menu_items_image
+    - system.menu.right-navbar
+  module:
+    - svg_image_field
+id: menu_link_content.right-navbar.default
+targetEntityType: menu_link_content
+bundle: right-navbar
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_menu_items_image:
+    type: svg_image_field_formatter
+    label: hidden
+    settings:
+      inline: false
+      apply_dimensions: true
+      width: 25
+      height: 25
+      enable_alt: true
+      enable_title: true
+      link: ''
+      force_fill: false
+      sanitize: true
+      sanitize_remote: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  langcode: true

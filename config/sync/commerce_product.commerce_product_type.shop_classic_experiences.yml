@@ -1,0 +1,14 @@
+uuid: efab5c71-4256-4503-87e0-6516e85485c4
+langcode: en
+status: true
+dependencies: {  }
+id: shop_classic_experiences
+label: 'SHOP CLASSIC EXPERIENCES'
+traits: {  }
+locked: false
+description: ''
+variationType: shop_classic_experiences
+variationTypes:
+  - shop_classic_experiences
+multipleVariations: true
+injectVariationFields: true

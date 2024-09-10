@@ -1,0 +1,11 @@
+uuid: fe1f278d-eacf-4562-8f06-edce199437f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tab_slider_with_icons
+id: taxonomy_term.tab_slider_with_icons
+target_entity_type_id: taxonomy_term
+target_bundle: tab_slider_with_icons
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,145 @@
+uuid: 10c95bce-61cc-4885-ad76-2902ffa9bc5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_faq_childs
+    - paragraphs.paragraphs_type.faq
+    - paragraphs.paragraphs_type.faq_multi_level
+  module:
+    - entity_reference_revisions
+id: paragraph.faq.field_faq_childs
+field_name: field_faq_childs
+entity_type: paragraph
+bundle: faq
+label: 'FAQ Childs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      faq_multi_level: faq_multi_level
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 40
+        enabled: false
+      block_reference:
+        weight: 41
+        enabled: false
+      ethics_banner_with_text_and_img:
+        weight: 42
+        enabled: false
+      faq:
+        weight: 43
+        enabled: false
+      faq_multi_level:
+        weight: 44
+        enabled: true
+      faq_title_with_description:
+        weight: 45
+        enabled: false
+      features_list:
+        weight: 46
+        enabled: false
+      greeting_text_with_image:
+        weight: 47
+        enabled: false
+      heading_list_with_cta:
+        weight: 49
+        enabled: false
+      heading_with_cta_and_media_text:
+        weight: 50
+        enabled: false
+      heading_with_media_description:
+        weight: 51
+        enabled: false
+      heading_with_texts:
+        weight: 52
+        enabled: false
+      headings_with_images:
+        weight: 48
+        enabled: false
+      hotel_information:
+        weight: 53
+        enabled: false
+      icons_with_links:
+        weight: 54
+        enabled: false
+      image_with_cta_and_heading:
+        weight: 56
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 57
+        enabled: false
+      image_with_text:
+        weight: 58
+        enabled: false
+      images_with_list:
+        weight: 55
+        enabled: false
+      include_image_with_title:
+        weight: 59
+        enabled: false
+      media_image_:
+        weight: 60
+        enabled: false
+      media_with_heading_and_descripti:
+        weight: 61
+        enabled: false
+      media_with_title_and_description:
+        weight: 62
+        enabled: false
+      social_links:
+        weight: 63
+        enabled: false
+      tab_image_heading_with_button:
+        weight: 67
+        enabled: false
+      tabs:
+        weight: 64
+        enabled: false
+      tabs_data:
+        weight: 65
+        enabled: false
+      tabs_datas:
+        weight: 66
+        enabled: false
+      tagline_block:
+        weight: 68
+        enabled: false
+      text_description_with_list_:
+        weight: 69
+        enabled: false
+      text_image_with_list:
+        weight: 70
+        enabled: false
+      text_with_cta_and_image:
+        weight: 71
+        enabled: false
+      text_with_desc_and_svg_img:
+        weight: 73
+        enabled: false
+      text_with_description_:
+        weight: 72
+        enabled: false
+      title_and_list:
+        weight: 74
+        enabled: false
+      title_with_list:
+        weight: 75
+        enabled: false
+      video_with_subtitle:
+        weight: 76
+        enabled: false
+      view_reference:
+        weight: 77
+        enabled: false
+      webform_reference:
+        weight: 78
+        enabled: false
+field_type: entity_reference_revisions

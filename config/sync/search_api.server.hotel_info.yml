@@ -1,0 +1,15 @@
+uuid: 93f7bc2a-d377-45c5-ac1b-2db085189c35
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: hotel_info
+name: 'Hotel info'
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: words
+  phrase: bigram

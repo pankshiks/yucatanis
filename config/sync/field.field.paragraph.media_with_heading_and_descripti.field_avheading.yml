@@ -1,0 +1,21 @@
+uuid: 8475ae4d-df42-4804-adfd-cc4e6bfff603
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_avheading
+    - paragraphs.paragraphs_type.media_with_heading_and_descripti
+  module:
+    - text
+id: paragraph.media_with_heading_and_descripti.field_avheading
+field_name: field_avheading
+entity_type: paragraph
+bundle: media_with_heading_and_descripti
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

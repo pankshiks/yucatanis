@@ -1,0 +1,44 @@
+uuid: 19659fc2-0669-4e11-8392-6df9c1d95e9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.greeting
+    - field.field.block_content.greeting.body
+    - field.field.block_content.greeting.field_greeting_heading
+    - field.field.block_content.greeting.field_photo
+  module:
+    - image
+    - text
+id: block_content.greeting.default
+targetEntityType: block_content
+bundle: greeting
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_greeting_heading:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_photo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  langcode: true

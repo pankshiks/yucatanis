@@ -1,0 +1,24 @@
+uuid: c0954b01-9b52-47e0-a6cf-333eaf41e51c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.boat_rentals
+    - field.storage.commerce_product_variation.field_dock_fee
+  module:
+    - commerce_price
+id: commerce_product_variation.boat_rentals.field_dock_fee
+field_name: field_dock_fee
+entity_type: commerce_product_variation
+bundle: boat_rentals
+label: 'Dock Fee (per person, paid on site)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+  allow_negative: false
+field_type: commerce_price

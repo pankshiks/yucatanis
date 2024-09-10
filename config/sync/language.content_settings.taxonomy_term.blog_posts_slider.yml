@@ -1,0 +1,11 @@
+uuid: 63dc65f5-3abc-403a-b192-baf0ae258c25
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.blog_posts_slider
+id: taxonomy_term.blog_posts_slider
+target_entity_type_id: taxonomy_term
+target_bundle: blog_posts_slider
+default_langcode: site_default
+language_alterable: false

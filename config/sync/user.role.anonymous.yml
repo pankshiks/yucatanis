@@ -1,0 +1,47 @@
+uuid: 0f812cde-64fd-42bc-9ee4-c5e6c85f6dea
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - comment
+    - commerce_checkout
+    - commerce_product
+    - contact
+    - contextual_range_filter
+    - entity_comparison
+    - facets
+    - filter
+    - fivestar
+    - media
+    - search
+    - simplenews
+    - system
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access checkout'
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'administer facets'
+  - 'rate content'
+  - 'search content'
+  - 'send newsletter'
+  - 'subscribe to newsletters'
+  - 'use add_product_comparison entity comparison'
+  - 'use add_product_comparison_boat_rentals entity comparison'
+  - 'use add_product_comparison_shop_classic entity comparison'
+  - 'use php code for default contextual filter'
+  - 'use text format restricted_html'
+  - 'view boat_rentals commerce_product'
+  - 'view commerce_product'
+  - 'view essential_rarities commerce_product'
+  - 'view media'
+  - 'view shop_classic_experiences commerce_product'
+  - 'view simplenews subscriptions'

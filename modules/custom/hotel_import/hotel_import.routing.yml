@@ -4,7 +4,7 @@ hotel_import.form_submit:
     _form: '\Drupal\hotel_import\Form\HotelImportForm'
     _title: 'Submit Hotel Import Form'
   requirements:
-    _permission: 'access content'  # Adjust the permission as needed.
+    _role: 'administrator'  # Adjust the permission as needed.
 
 
 hotel_import_time.form_submit:
@@ -13,5 +13,5 @@ hotel_import_time.form_submit:
     _form: '\Drupal\hotel_import\Form\HotelImportFormTime'
     _title: 'Submit Hotel Time Import Form Per Product'
   requirements:
-    _permission: 'access content'  # Adjust the permission as needed.
+    _role: 'administrator'  # Adjust the permission as needed.
 

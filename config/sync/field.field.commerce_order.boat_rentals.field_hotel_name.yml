@@ -1,0 +1,21 @@
+uuid: 624ed10e-5e2b-42ac-a818-5e7e75a18614
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.boat_rentals
+    - field.storage.commerce_order.field_hotel_name
+  module:
+    - text
+id: commerce_order.boat_rentals.field_hotel_name
+field_name: field_hotel_name
+entity_type: commerce_order
+bundle: boat_rentals
+label: 'Hotel name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

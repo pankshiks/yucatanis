@@ -1,0 +1,54 @@
+uuid: 8b6807a0-108d-4c9b-8949-309979931629
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tabs.field_tab_heading
+    - field.field.paragraph.tabs.field_tab_id
+    - field.field.paragraph.tabs.field_tab_link
+    - field.field.paragraph.tabs.field_tab_svg_img
+    - paragraphs.paragraphs_type.tabs
+  module:
+    - link
+    - svg_image_field
+id: paragraph.tabs.default
+targetEntityType: paragraph
+bundle: tabs
+mode: default
+content:
+  field_tab_heading:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tab_id:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tab_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_tab_svg_img:
+    type: svg_image_field_widget
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_max_width: 300
+      preview_image_max_height: 300
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

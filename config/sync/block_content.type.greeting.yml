@@ -1,0 +1,8 @@
+uuid: 934f054a-db36-4561-9812-19cef1e3d87f
+langcode: en
+status: true
+dependencies: {  }
+id: greeting
+label: Greeting
+revision: 0
+description: ''

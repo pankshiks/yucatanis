@@ -1,0 +1,31 @@
+uuid: 2d7b992f-201c-480e-b313-4906f56c36fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.boat_rentals
+    - field.storage.commerce_product_variation.field_ratings
+  module:
+    - fivestar
+id: commerce_product_variation.boat_rentals.field_ratings
+field_name: field_ratings
+entity_type: commerce_product_variation
+bundle: boat_rentals
+label: Ratings
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    rating: 80
+default_value_callback: ''
+settings:
+  stars: 5
+  allow_clear: false
+  allow_revote: true
+  allow_ownvote: true
+  rated_while: viewing
+  enable_voting_target: false
+  target_bridge_field: ''
+  target_fivestar_field: ''
+field_type: fivestar

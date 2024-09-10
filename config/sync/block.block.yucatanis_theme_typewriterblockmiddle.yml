@@ -1,0 +1,35 @@
+uuid: 590a12a1-4ab9-48e7-88f7-ddc70b5538d7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:typewriter_blocks:77ca5281-2ba0-456d-b13e-995a57a7f2b1'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+third_party_settings:
+  block_class:
+    classes: animated
+    replaced_id: bannertext
+id: yucatanis_theme_typewriterblockmiddle
+theme: yucatanis_theme
+region: header_bottom
+weight: -19
+provider: null
+plugin: 'block_content:77ca5281-2ba0-456d-b13e-995a57a7f2b1'
+settings:
+  id: 'block_content:77ca5281-2ba0-456d-b13e-995a57a7f2b1'
+  label: 'Type writer Block middle'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

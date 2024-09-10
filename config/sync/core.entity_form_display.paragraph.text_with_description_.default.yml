@@ -1,0 +1,34 @@
+uuid: 4684c63d-b3c4-4237-ab7e-b7f9ece38332
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_with_description_.field_blog_title
+    - field.field.paragraph.text_with_description_.field_title_with_detail
+    - paragraphs.paragraphs_type.text_with_description_
+  module:
+    - text
+id: paragraph.text_with_description_.default
+targetEntityType: paragraph
+bundle: text_with_description_
+mode: default
+content:
+  field_blog_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title_with_detail:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

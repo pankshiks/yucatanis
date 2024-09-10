@@ -1,0 +1,82 @@
+uuid: 70a5f377-18c3-490a-ba15-f067fd2bcdb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_description_with_list_.field_description_
+    - field.field.paragraph.text_description_with_list_.field_detail
+    - field.field.paragraph.text_description_with_list_.field_heading_type
+    - field.field.paragraph.text_description_with_list_.field_list_
+    - field.field.paragraph.text_description_with_list_.field_list_heading
+    - field.field.paragraph.text_description_with_list_.field_main_heading
+    - field.field.paragraph.text_description_with_list_.field_short_de
+    - field.field.paragraph.text_description_with_list_.field_title_in_detail
+    - paragraphs.paragraphs_type.text_description_with_list_
+  module:
+    - options
+    - text
+id: paragraph.text_description_with_list_.default
+targetEntityType: paragraph
+bundle: text_description_with_list_
+mode: default
+content:
+  field_description_:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_detail:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_heading_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_list_:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_list_heading:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_main_heading:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_short_de:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title_in_detail:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }

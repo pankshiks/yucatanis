@@ -1,0 +1,23 @@
+uuid: efe0621a-4c6e-4c26-b48b-5f4be95672b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_features_link
+    - paragraphs.paragraphs_type.icons_with_links
+  module:
+    - link
+id: paragraph.icons_with_links.field_features_link
+field_name: field_features_link
+entity_type: paragraph
+bundle: icons_with_links
+label: 'Features Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

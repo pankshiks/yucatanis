@@ -1,0 +1,10 @@
+uuid: 14cd779d-c5c9-4350-9b4f-0201ac121b08
+langcode: en
+status: true
+dependencies: {  }
+id: heading_with_texts
+label: 'Heading with texts'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

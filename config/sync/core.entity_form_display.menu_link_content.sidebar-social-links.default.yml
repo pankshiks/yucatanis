@@ -1,0 +1,47 @@
+uuid: c26c03ef-9b2f-4286-841b-2631110d1e07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.sidebar-social-links.field_menu_items_image
+    - system.menu.sidebar-social-links
+  module:
+    - link
+    - menu_item_extras
+    - svg_image_field
+id: menu_link_content.sidebar-social-links.default
+targetEntityType: menu_link_content
+bundle: sidebar-social-links
+mode: default
+content:
+  field_menu_items_image:
+    type: svg_image_field_widget
+    weight: 21
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_max_width: 300
+      preview_image_max_height: 300
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  view_mode:
+    type: menu_item_extras_view_mode_selector_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

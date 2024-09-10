@@ -1,0 +1,21 @@
+uuid: 078f0a22-61be-4da0-848e-9f7d86edbd5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_checkbox_label4
+    - profile.type.customer
+id: profile.customer.field_checkbox_label4
+field_name: field_checkbox_label4
+entity_type: profile
+bundle: customer
+label: 'Do you prefer not to receive highlights from the region even if they are helpful? Check this box if you do!'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

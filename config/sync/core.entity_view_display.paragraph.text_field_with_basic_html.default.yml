@@ -1,0 +1,49 @@
+uuid: f3968201-ed90-4be1-b421-12f22e25463d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_field_with_basic_html.field_formatted_text
+    - field.field.paragraph.text_field_with_basic_html.field_sub_headingss
+    - field.field.paragraph.text_field_with_basic_html.field_text
+    - field.field.paragraph.text_field_with_basic_html.field_text_type
+    - paragraphs.paragraphs_type.text_field_with_basic_html
+  module:
+    - options
+    - text
+id: paragraph.text_field_with_basic_html.default
+targetEntityType: paragraph
+bundle: text_field_with_basic_html
+mode: default
+content:
+  field_formatted_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_sub_headingss:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

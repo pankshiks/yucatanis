@@ -20,18 +20,10 @@ function custom_order_event_cron() {
   $query->fields('cname',['value']);
   $query->condition('cname.value', 'in progress', '=');
   $query->condition('w.created', $start_time, '>=');
-  //$query->condition('w.created', 'w.created+ (15 * 60)', '=');
-  //  $query->condition('w.created', $end_time, '<=');
-  // $query->condition('w.created', $current_time, '>=');
-  //  $query->condition('w.created', $end_time, '>');
-  // $query->condition('w.created', $current_time, '<');
-  //  $results = $query->execute()->fetchAll();
-  //   //dd($results);
-  // \Drupal::logger('results')->notice('<pre>'.print_r($results,true).'</pre>');
 
   //START
   $submissions_to_remove = $query->execute()->fetchCol();
-  // \Drupal::logger('submissions_to_remove')->notice('<pre>'.print_r($submissions_to_remove,true).'</pre>');
+ 
   // Remove webform submissions.
   foreach ($submissions_to_remove as $submission_id) {
   $webform_submission_entity = \Drupal\webform\Entity\WebformSubmission::load($submission_id);

@@ -1,0 +1,21 @@
+uuid: 94eb8a5e-b239-4d79-8f64-660b90f684ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_wave_class
+    - paragraphs.paragraphs_type.greeting_text_with_image
+  module:
+    - options
+id: paragraph.greeting_text_with_image.field_wave_class
+field_name: field_wave_class
+entity_type: paragraph
+bundle: greeting_text_with_image
+label: 'Wave class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

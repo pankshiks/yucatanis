@@ -1,0 +1,38 @@
+uuid: 5b11672e-e51d-4088-8a7b-f9fbd62f6bbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hotel_information.body
+    - field.field.node.hotel_information.field_location
+    - field.field.node.hotel_information.field_media
+    - field.field.node.hotel_information.field_pick_up_time
+    - node.type.hotel_information
+  module:
+    - text
+    - user
+id: node.hotel_information.teaser
+targetEntityType: node
+bundle: hotel_information
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_location: true
+  field_media: true
+  field_pick_up_time: true
+  langcode: true
+  node_read_time: true

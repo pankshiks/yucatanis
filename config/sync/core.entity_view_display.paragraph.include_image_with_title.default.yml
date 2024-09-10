@@ -1,0 +1,35 @@
+uuid: 1de4e5da-3c16-4165-a245-28e4650e549c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.include_image_with_title.field_include_icon
+    - field.field.paragraph.include_image_with_title.field_include_title
+    - paragraphs.paragraphs_type.include_image_with_title
+  module:
+    - image
+id: paragraph.include_image_with_title.default
+targetEntityType: paragraph
+bundle: include_image_with_title
+mode: default
+content:
+  field_include_icon:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_include_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

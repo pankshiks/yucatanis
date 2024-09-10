@@ -1,0 +1,8 @@
+uuid: 3e7d1c49-dbb1-47a1-8e1d-780781cdea9e
+langcode: en
+status: true
+dependencies: {  }
+id: sidebar-social-links
+label: 'Sidebar Social links'
+description: ''
+locked: false

@@ -1,0 +1,29 @@
+uuid: 3ac76a2a-43e8-4039-914b-20ab3502d744
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+    - field.storage.commerce_product.field_fates
+    - taxonomy.vocabulary.fate
+id: commerce_product.essential_rarities.field_fates
+field_name: field_fates
+entity_type: commerce_product
+bundle: essential_rarities
+label: Fate
+description: 'Available on?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      fate: fate
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

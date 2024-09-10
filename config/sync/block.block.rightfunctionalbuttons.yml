@@ -1,0 +1,25 @@
+uuid: 3ea52006-1d10-4a34-9f71-b05be080087b
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.right-functional-buttons
+  module:
+    - system
+  theme:
+    - yucatanis_theme
+id: rightfunctionalbuttons
+theme: yucatanis_theme
+region: footer_sixth
+weight: -21
+provider: null
+plugin: 'system_menu_block:right-functional-buttons'
+settings:
+  id: 'system_menu_block:right-functional-buttons'
+  label: 'Right Functional buttons'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

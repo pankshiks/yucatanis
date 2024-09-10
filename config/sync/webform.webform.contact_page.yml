@@ -1,0 +1,358 @@
+uuid: 042740e1-9624-4417-9093-6cda24f5bfbf
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: contact_page
+title: 'Contact Page'
+description: ''
+categories: {  }
+elements: |-
+  select_options:
+    '#type': select
+    '#title': 'I Want an'
+    '#options':
+      'Book a tour (private or shared)': 'Book a tour (private or shared)'
+      'Boat rentals': 'Boat rentals'
+    '#required': true
+  choose_your_experience_or_boat:
+    '#type': webform_entity_select
+    '#title': 'Choose your Experience or Boat'
+    '#target_type': commerce_product
+    '#selection_handler': 'default:commerce_product'
+    '#selection_settings':
+      target_bundles:
+        boat_rentals: boat_rentals
+        essential_rarities: essential_rarities
+        shop_classic_experiences: shop_classic_experiences
+    '#required': true
+  your_name:
+    '#type': textfield
+    '#title': 'Your Name'
+    '#required': true
+  your_email:
+    '#type': email
+    '#title': 'Your Email'
+    '#required': true
+  mobile_number:
+    '#type': tel
+    '#title': 'Mobile Number'
+    '#required': true
+    '#international': true
+  select_guests:
+    '#type': select
+    '#title': Guests
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+      6: '6'
+      7: '7'
+      8: '8'
+      9: '9'
+      10: '10'
+      11: '11'
+      12: '12'
+      13: '13'
+      14: '14'
+      15: '15'
+      16: '16'
+      17: '17'
+      18: '18'
+      19: '19'
+      20: '20'
+      21: '21'
+      22: '22'
+      23: '23'
+      24: '24'
+      25: '25'
+      26: '26'
+      27: '27'
+      28: '28'
+      29: '29'
+      30: '30'
+      31: '31'
+      32: '32'
+      33: '33'
+      34: '34'
+      35: '35'
+      36: '36'
+      37: '37'
+      38: '38'
+      39: '39'
+      40: '40'
+      41: '41'
+      42: '42'
+      43: '43'
+      44: '44'
+      45: '45'
+      46: '46'
+      47: '47'
+      48: '48'
+      49: '49'
+      50: '50'
+      51: '51'
+      52: '52'
+      53: '53'
+      54: '54'
+      55: '55'
+      56: '56'
+      57: '57'
+      58: '58'
+      59: '59'
+      60: '60'
+      61: '61'
+      62: '62'
+      63: '63'
+      64: '64'
+      65: '65'
+      66: '66'
+      67: '67'
+      68: '68'
+      69: '69'
+      70: '70'
+      71: '71'
+      72: '72'
+      73: '73'
+      74: '74'
+      75: '75'
+      76: '76'
+      77: '77'
+      78: '78'
+      79: '79'
+      80: '80'
+      81: '81'
+      82: '82'
+      83: '83'
+      84: '84'
+      85: '85'
+      86: '86'
+      87: '87'
+      88: '88'
+      89: '89'
+      90: '90'
+      91: '91'
+      92: '92'
+      93: '93'
+      94: '94'
+      95: '95'
+      96: '96'
+      97: '97'
+      98: '98'
+      99: '99'
+    '#required': true
+  you_prefer:
+    '#type': date
+    '#title': 'You prefer'
+    '#required': true
+  range:
+    '#type': date
+    '#title': Range
+    '#required': true
+  your_special_note_here:
+    '#type': textfield
+    '#title': 'Your Special Note here'
+  agreement:
+    '#type': checkbox
+    '#title': 'By checking this, I agree to receive a simple proposal for my travel request.'
+    '#required': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Get a Free Quote'
+    '#submit__attributes':
+      class:
+        - btn
+        - btn-secondary
+css: ''
+javascript: "// Add click event on submit button\r\njQuery('#edit-actions-submit').click(function (e) {\r\n  // Store a flag in localStorage before form submission\r\n  localStorage.setItem('showPopup', true);\r\n});\r\n\r\n// After the page reloads, check if the flag exists in localStorage\r\njQuery(document).ready(function () {\r\n  if (localStorage.getItem('showPopup')) {\r\n    // Show the pop-up message\r\n    alert(\"Thank you! One of our customer support ninjas will contact you. Yucatanis Yours.\");\r\n\r\n    // Remove the flag from localStorage to prevent showing the message again\r\n    localStorage.removeItem('showPopup');\r\n  }\r\n});"
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: modal
+  confirmation_url: ''
+  confirmation_title: 'Thank You'
+  confirmation_message: '<p>Thank you! One of our customer support ninjas will contact you. <strong>Yucatanis Yours.</strong></p>'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

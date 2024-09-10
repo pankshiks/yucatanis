@@ -1,0 +1,23 @@
+uuid: 9e023667-a8be-4068-94a8-40d712d223e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_we_totally_get_how_annoyin
+    - profile.type.customer
+id: profile.customer.field_we_totally_get_how_annoyin
+field_name: field_we_totally_get_how_annoyin
+entity_type: profile
+bundle: customer
+label: "We totally get how annoying it is to get a lot of random emails, and we don't want to be that type. If you check this box, we'll send you one monthly email that's jam-packed with cool stuff to do around Cozumel, Cancun, and the Mayan Riviera nothing else."
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

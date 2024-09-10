@@ -1,0 +1,28 @@
+uuid: 3d033e0c-38b1-40a6-9f63-c0092d74be5a
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.categories_product_listing
+  module:
+    - system
+    - views
+  theme:
+    - yucatanis_theme
+id: exposedformcategories_product_listingpage_2
+theme: yucatanis_theme
+region: content
+weight: -7
+provider: null
+plugin: 'views_exposed_filter_block:categories_product_listing-page_2'
+settings:
+  id: 'views_exposed_filter_block:categories_product_listing-page_2'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/listing\r\n/search"

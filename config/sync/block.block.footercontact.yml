@@ -1,0 +1,25 @@
+uuid: 62a65bcb-5159-439d-a159-c4c3d261dee5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-contact
+  module:
+    - system
+  theme:
+    - yucatanis_theme
+id: footercontact
+theme: yucatanis_theme
+region: footer_second
+weight: -5
+provider: null
+plugin: 'system_menu_block:footer-contact'
+settings:
+  id: 'system_menu_block:footer-contact'
+  label: CONTACT
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

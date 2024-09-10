@@ -8,66 +8,20 @@ global-styles:
       css/owl.carousel.min.css: {}
       css/slick.css: {}
       css/daterangepicker.css: {} 
-      # css/components/_buttons.css: {}
-      # css/components/_colors.css: {}
-      # css/components/_masonary.css: {}
-      # css/components/_slick.css: {}
-      # css/components/_social-icons.css: {}
-      # css/components/_tabs.css: {}
-      # css/components/half-width-tab-banner.css: {}
       css/registerform.css: {}
 
   scss:
     theme:
       scss/main.scss: {} 
-      # scss/components/_banner.scss: {}
-      # scss/components/_blog-post-card.scss: {} 
-      # scss/components/_book-grid-cards.scss: {}
-      # scss/components/_buttons.scss: {} 
-      # scss/components/_categories-card.scss: {} 
-      # scss/components/_colors.scss: {}  
-      # scss/components/_comparisation-tabs-slider-block.scss: {}  
-      # scss/components/_comparision-block.scss: {}  
-      # scss/components/_cta-banner.scss: {}  
-      # scss/components/_cta-text-button.scss: {} 
-      # scss/components/_deatiled-card.scss: {} 
-      # scss/components/_email-us.scss: {} 
-      # scss/components/_feature-block.scss: {} 
-      # scss/components/_full-width-tab-banner.scss: {} 
-      # scss/components/_greeting-text.scss: {} 
-      # scss/components/_masonary.scss: {} 
-      # scss/components/_paragragh-block.scss: {} 
-      # scss/components/_quarter-width-tab-banner.scss: {}
-      # scss/components/_right-img-description.scss: {}
-      # scss/components/_select-boxes.scss: {}
-      # scss/components/_select-mood-box.scss: {}
-      # scss/components/_slick.scss: {}
-      # scss/components/_slider-button.scss: {}
-      # scss/components/_tabs.scss: {}
-      # scss/components/_testiminial-card.scss: {}
-      # scss/components/_text-with-image.scss: {}
-      # scss/components/half-width-tab-banner.scss: {}
-      # scss/modules/dist/_typography.css: {}
-      # scss/modules/dist/_variables.css: {}
-      # scss/modules/_mixins.scss: {}
-      # scss/modules/_typography.scss: {}
-      # scss/modules/_variables.scss: {}
-      # scss/pages/_disablitites-block.scss: {}
-      # scss/pages/_listing.scss: {}
-      # scss/partials/_footer.scss: {}
-      # scss/partials/_header.scss: {}
 
   js:
     js/bootstrap.min.js: {}
-    # js/jquery.carouselTicker.js: {}
-    
     //cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js: { type: external}
-    # https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js: { type: external}
     https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js: { type: external}
     https://cdn.jsdelivr.net/momentjs/latest/moment.min.js: { type: external}
     https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js: { type: external}
-    # https://code.jquery.com/jquery-3.6.0.js: { type: external}
     //cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js: {}
+    # //cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js: { type: external}
     js/jquery.carouselTicker.min.js: {}
     js/slick.min.js: {}
     js/custom.js: {}

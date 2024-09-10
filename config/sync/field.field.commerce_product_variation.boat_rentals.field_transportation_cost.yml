@@ -1,0 +1,24 @@
+uuid: a5ab083d-2b56-4c3a-949b-8a83c034edbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.boat_rentals
+    - field.storage.commerce_product_variation.field_transportation_cost
+  module:
+    - commerce_price
+id: commerce_product_variation.boat_rentals.field_transportation_cost
+field_name: field_transportation_cost
+entity_type: commerce_product_variation
+bundle: boat_rentals
+label: "Transportation cost per passenger (depends on hotel's location)"
+description: "This varies depending on your hotel's location, price per number of guests."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+  allow_negative: false
+field_type: commerce_price

@@ -1,0 +1,21 @@
+uuid: ab33f14c-8f69-44d6-8314-bf413b9023ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.boat_rentals
+    - field.storage.commerce_order.field_booking_time
+  module:
+    - datetime
+id: commerce_order.boat_rentals.field_booking_time
+field_name: field_booking_time
+entity_type: commerce_order
+bundle: boat_rentals
+label: 'Booking Time'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,11 @@
+uuid: 69da9d1d-ad7e-4dc5-b59a-98035cd735f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+id: commerce_product.essential_rarities
+target_entity_type_id: commerce_product
+target_bundle: essential_rarities
+default_langcode: site_default
+language_alterable: false

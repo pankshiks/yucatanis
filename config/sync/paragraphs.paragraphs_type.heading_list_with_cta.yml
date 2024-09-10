@@ -1,0 +1,10 @@
+uuid: b850100e-659b-483f-a398-f542c8ba8da5
+langcode: en
+status: true
+dependencies: {  }
+id: heading_list_with_cta
+label: 'Heading List with CTA'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

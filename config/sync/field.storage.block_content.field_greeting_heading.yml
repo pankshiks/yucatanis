@@ -1,0 +1,20 @@
+uuid: 51e891bf-0238-4b63-a807-3f99ceb8277b
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+id: block_content.field_greeting_heading
+field_name: field_greeting_heading
+entity_type: block_content
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

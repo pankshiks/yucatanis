@@ -1,0 +1,23 @@
+uuid: f7a84b63-9112-400d-8fb1-ce825fc8d2fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_checkbox_label
+    - profile.type.customer
+id: profile.customer.field_checkbox_label
+field_name: field_checkbox_label
+entity_type: profile
+bundle: customer
+label: 'I agree to receive my travel request and Yucatanis’s the Terms of Service.'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

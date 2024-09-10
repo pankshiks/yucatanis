@@ -1,0 +1,19 @@
+uuid: e52d0163-0e69-4c0b-ad39-a8c05ca7f7b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_list_text
+    - paragraphs.paragraphs_type.title_and_list
+id: paragraph.title_and_list.field_list_text
+field_name: field_list_text
+entity_type: paragraph
+bundle: title_and_list
+label: 'List text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

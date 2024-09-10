@@ -1,0 +1,10 @@
+unsubscribe.delete:
+  path: '/unsubscribe/{uid}'
+  defaults:
+    _controller: '\Drupal\unsubscribe\Controller\DeleteFormController::delete' 
+    _title: 'DeleteForm'
+  requirements:
+    _permission: 'access content' 
+
+
+    

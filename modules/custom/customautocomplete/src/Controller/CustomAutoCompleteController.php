@@ -49,8 +49,8 @@ class CustomAutoCompleteController extends ControllerBase implements ContainerIn
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    *   The JSON response containing autocomplete suggestions.
    */
-  public function autocompleteCallback(Request $request) {  
-    
+  public function autocompleteCallback(Request $request) {
+
     $results = [];
     $input = $request->query->get('q');
 
@@ -61,11 +61,11 @@ class CustomAutoCompleteController extends ControllerBase implements ContainerIn
           $query->fields('n', ['nid']);
           $query->fields('n', ['title']);
           $query->condition('n.type', 'hotel_information', '=');
-           
+
           $query->condition('n.title', '%' . $input . '%', 'LIKE');
           $result = $query->execute();
           $hotel = $result->fetchAll();
-        
+
               $titles = [];
 
               foreach ($hotel as $item) {

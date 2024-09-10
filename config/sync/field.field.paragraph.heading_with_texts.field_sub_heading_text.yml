@@ -1,0 +1,21 @@
+uuid: 1763726f-c2a1-4420-8a5d-c783cf32c321
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sub_heading_text
+    - paragraphs.paragraphs_type.heading_with_texts
+  module:
+    - text
+id: paragraph.heading_with_texts.field_sub_heading_text
+field_name: field_sub_heading_text
+entity_type: paragraph
+bundle: heading_with_texts
+label: 'Sub Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

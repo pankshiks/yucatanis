@@ -1,0 +1,11 @@
+uuid: 12ada166-00f9-4cd5-9821-14fab5c8fe97
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.optional_inclusions
+id: taxonomy_term.optional_inclusions
+target_entity_type_id: taxonomy_term
+target_bundle: optional_inclusions
+default_langcode: site_default
+language_alterable: false

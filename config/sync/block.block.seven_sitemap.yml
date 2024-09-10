@@ -1,0 +1,25 @@
+uuid: 58f1bfed-0343-42ac-ac74-8c3e21d1c928
+langcode: en
+status: false
+dependencies:
+  module:
+    - sitemap
+    - system
+  theme:
+    - seven
+id: seven_sitemap
+theme: seven
+region: content
+weight: 0
+provider: null
+plugin: sitemap
+settings:
+  id: sitemap
+  label: Sitemap
+  label_display: '0'
+  provider: sitemap
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /admin/config

@@ -1,0 +1,25 @@
+uuid: a6d742e8-d9f3-49f5-9537-3ed7d5703d19
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:14871dfd-68a0-4a80-99b8-860236e72c56'
+  module:
+    - block_content
+  theme:
+    - yucatanis_theme
+id: yucatanis
+theme: yucatanis_theme
+region: footer_second
+weight: -6
+provider: null
+plugin: 'block_content:14871dfd-68a0-4a80-99b8-860236e72c56'
+settings:
+  id: 'block_content:14871dfd-68a0-4a80-99b8-860236e72c56'
+  label: Yucatanis
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

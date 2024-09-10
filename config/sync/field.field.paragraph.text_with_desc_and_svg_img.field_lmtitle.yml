@@ -1,0 +1,21 @@
+uuid: dd19b16d-e78c-4937-af82-eb2aa9aa5ec9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lmtitle
+    - paragraphs.paragraphs_type.text_with_desc_and_svg_img
+  module:
+    - text
+id: paragraph.text_with_desc_and_svg_img.field_lmtitle
+field_name: field_lmtitle
+entity_type: paragraph
+bundle: text_with_desc_and_svg_img
+label: title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

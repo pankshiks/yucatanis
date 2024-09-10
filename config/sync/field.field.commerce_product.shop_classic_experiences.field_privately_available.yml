@@ -1,0 +1,21 @@
+uuid: b10e8acb-ae9a-4b99-9583-dc97f396b005
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.shop_classic_experiences
+    - field.storage.commerce_product.field_privately_available
+  module:
+    - options
+id: commerce_product.shop_classic_experiences.field_privately_available
+field_name: field_privately_available
+entity_type: commerce_product
+bundle: shop_classic_experiences
+label: 'Privately Available'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

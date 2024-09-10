@@ -1,0 +1,21 @@
+uuid: 2eaaed9a-891a-43d6-a368-b1311ed45668
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+    - field.storage.commerce_product.field_duration
+  module:
+    - options
+id: commerce_product.essential_rarities.field_duration
+field_name: field_duration
+entity_type: commerce_product
+bundle: essential_rarities
+label: Duration
+description: 'Estimated duration (excluding travel time)'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

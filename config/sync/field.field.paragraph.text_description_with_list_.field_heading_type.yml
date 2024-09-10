@@ -1,0 +1,21 @@
+uuid: c751d07d-ed63-4381-b001-089bc31bfa11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading_type
+    - paragraphs.paragraphs_type.text_description_with_list_
+  module:
+    - options
+id: paragraph.text_description_with_list_.field_heading_type
+field_name: field_heading_type
+entity_type: paragraph
+bundle: text_description_with_list_
+label: 'Heading Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

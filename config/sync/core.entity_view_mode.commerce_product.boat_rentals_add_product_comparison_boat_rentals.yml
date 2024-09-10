@@ -1,0 +1,10 @@
+uuid: 49421eef-6b7e-40a3-9d8e-7998d484d196
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.boat_rentals_add_product_comparison_boat_rentals
+label: 'Add product comparison boat rentals'
+targetEntityType: commerce_product
+cache: true

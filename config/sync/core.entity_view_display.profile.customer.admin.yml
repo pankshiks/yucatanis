@@ -1,0 +1,65 @@
+uuid: c3437e55-9060-4867-aed5-84588cd5c82f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.profile.admin
+    - field.field.profile.customer.address
+    - field.field.profile.customer.field_checkbox_label
+    - field.field.profile.customer.field_checkbox_label2
+    - field.field.profile.customer.field_checkbox_label4
+    - field.field.profile.customer.field_favourite_email
+    - field.field.profile.customer.field_hotel_information
+    - field.field.profile.customer.field_hotel_s_name
+    - field.field.profile.customer.field_hotel_s_name_for_pick_up_
+    - field.field.profile.customer.field_hotel_time
+    - field.field.profile.customer.field_if_your_beach_hotel_is_not
+    - field.field.profile.customer.field_phone_number
+    - field.field.profile.customer.field_room_number_
+    - field.field.profile.customer.field_we_totally_get_how_annoyin
+    - field.field.profile.customer.field_your_special_note
+    - field.field.profile.customer.tax_number
+    - profile.type.customer
+  module:
+    - address
+    - commerce_tax
+  enforced:
+    module:
+      - commerce_order
+_core:
+  default_config_hash: YIL4nZ3a2ByhSU7C9ITZYsmB6l3GSsvLyGlwNF1_hW4
+id: profile.customer.admin
+targetEntityType: profile
+bundle: customer
+mode: admin
+content:
+  address:
+    type: address_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  tax_number:
+    type: commerce_tax_number_default
+    label: above
+    settings:
+      show_verification: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_checkbox_label: true
+  field_checkbox_label2: true
+  field_checkbox_label4: true
+  field_favourite_email: true
+  field_hotel_information: true
+  field_hotel_s_name: true
+  field_hotel_s_name_for_pick_up_: true
+  field_hotel_time: true
+  field_if_your_beach_hotel_is_not: true
+  field_phone_number: true
+  field_room_number_: true
+  field_we_totally_get_how_annoyin: true
+  field_your_special_note: true
+  search_api_excerpt: true

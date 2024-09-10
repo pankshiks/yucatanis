@@ -1,0 +1,10 @@
+uuid: a8d58845-3730-4dda-8805-6b3f48bc790e
+langcode: en
+status: true
+dependencies: {  }
+id: hotel_information
+label: 'Hotel information'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

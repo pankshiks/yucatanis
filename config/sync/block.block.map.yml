@@ -1,0 +1,30 @@
+uuid: a35abe22-c5e3-4073-8fd9-c239ccbea6c1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4b2a3755-8833-4ea5-848d-75d450dcfc95'
+  module:
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+id: map
+theme: yucatanis_theme
+region: content
+weight: -11
+provider: null
+plugin: 'block_content:4b2a3755-8833-4ea5-848d-75d450dcfc95'
+settings:
+  id: 'block_content:4b2a3755-8833-4ea5-848d-75d450dcfc95'
+  label: Map
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/compare-experiences\r\n/compare/add-product-comparison\r\n/checkout/*\r\n/user/*\r\n/enquiry\r\n/success-message\r\n/master-inventories-birds-eye-view\r\n/boat-compare\r\n/tips-groups-and-weddings\r\n/who-we-are\r\n/compare/*\r\n/simplenews/validate\r\n"

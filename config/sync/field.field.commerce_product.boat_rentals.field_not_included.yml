@@ -1,0 +1,29 @@
+uuid: 36bbe602-578c-48bb-bd4d-a8f93d3e9f4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.boat_rentals
+    - field.storage.commerce_product.field_not_included
+    - taxonomy.vocabulary.not_included
+id: commerce_product.boat_rentals.field_not_included
+field_name: field_not_included
+entity_type: commerce_product
+bundle: boat_rentals
+label: 'Not Included'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      not_included: not_included
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

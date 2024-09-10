@@ -1,0 +1,19 @@
+uuid: 4fe64c60-be6d-4bf1-b894-c742069c7b03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_list_title
+    - paragraphs.paragraphs_type.text_with_cta_and_image
+id: paragraph.text_with_cta_and_image.field_list_title
+field_name: field_list_title
+entity_type: paragraph
+bundle: text_with_cta_and_image
+label: 'List title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

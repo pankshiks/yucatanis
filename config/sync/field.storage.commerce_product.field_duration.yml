@@ -1,0 +1,33 @@
+uuid: 85b024ad-8682-435f-bd03-e16e2b33c3ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - options
+id: commerce_product.field_duration
+field_name: field_duration
+entity_type: commerce_product
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: half_day
+      label: 'Half-Day (3 or 4hrs plus travel time)'
+    -
+      value: full_day
+      label: 'Full-Day (5 or 6hrs plus travel time)'
+    -
+      value: am_event
+      label: 'AM Event'
+    -
+      value: pm_event
+      label: 'PM Event'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

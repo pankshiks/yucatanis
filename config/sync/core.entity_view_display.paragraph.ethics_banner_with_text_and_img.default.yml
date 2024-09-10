@@ -1,0 +1,80 @@
+uuid: 50a22354-9aeb-4ce7-b8cc-15c4f20b0720
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_banner_image
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_content_with_left_border
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_eth_button
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_headings
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_long_description
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_page_type
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_subheading
+    - paragraphs.paragraphs_type.ethics_banner_with_text_and_img
+  module:
+    - link
+    - options
+    - text
+id: paragraph.ethics_banner_with_text_and_img.default
+targetEntityType: paragraph
+bundle: ethics_banner_with_text_and_img
+mode: default
+content:
+  field_banner_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_content_with_left_border:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_eth_button:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_headings:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_long_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_page_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_subheading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

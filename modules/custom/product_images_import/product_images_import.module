@@ -1,0 +1,9 @@
+<?php
+use Drupal\commerce_product\Entity\Product;
+function upload_product_images($pid,$files){
+   $product = Product::load($pid);
+        $product->set('field_product_image', $files);  
+        $product->save(); 
+        \Drupal::messenger()->addMessage('Product images updated successfully');
+  }
+  ?>  

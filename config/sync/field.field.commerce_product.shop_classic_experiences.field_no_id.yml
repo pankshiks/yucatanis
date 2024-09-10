@@ -1,0 +1,19 @@
+uuid: 63bf7531-934c-41c6-bf42-6bedaf5d292d
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.shop_classic_experiences
+    - field.storage.commerce_product.field_no_id
+id: commerce_product.shop_classic_experiences.field_no_id
+field_name: field_no_id
+entity_type: commerce_product
+bundle: shop_classic_experiences
+label: 'No. ID'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

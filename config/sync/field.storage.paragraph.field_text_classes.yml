@@ -1,0 +1,36 @@
+uuid: fec350cf-2992-46fb-b4e4-e7905e8ce2b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_text_classes
+field_name: field_text_classes
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: small
+      label: small
+    -
+      value: large
+      label: large
+    -
+      value: 'Join team text block'
+      label: 'Join team text block'
+    -
+      value: 'kudos block'
+      label: 'kudos block'
+    -
+      value: enquiry
+      label: Enquiry
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

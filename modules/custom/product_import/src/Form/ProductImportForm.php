@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Drupal\node\Entity\Node;
 
 
+
 class ProductImportForm extends FormBase {
 
   public function getFormId() {
@@ -33,14 +34,18 @@ class ProductImportForm extends FormBase {
       '#type' => 'managed_file',
       '#title' => t('File *'),
       '#size' => 20,
-      '#description' => t('Excel format only'),
+      '#description' => t('Excel format only .xlsx'),
       '#upload_validators' => $validators,
       '#upload_location' => 'public://',
     ];
-    
+    $form['example_excel_file'] = [
+      '#type' => 'markup',
+      '#markup' => '<a href="/sites/default/files/boat_rentals.xlsx" download>Download Excel</a>',
+      '#attributes' => ['class' => ['btn-primary']],
+    ];
     $form['submit'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Import Hotels'),
+      '#value' => $this->t('Import Rentals Products '),
       '#button_type' => 'primary',
     ];
 
@@ -75,87 +80,21 @@ class ProductImportForm extends FormBase {
 				$cells[] = $cell->getValue();
       }
       $rows[] = $cells;
-    
     }
 
-    foreach($rows as $row){
-     
-			$values = \Drupal::entityQuery('commerce_product')->execute();
-      $entity_manager = \Drupal::entityTypeManager();
-    $products = $entity_manager->getStorage('commerce_product')->loadMultiple($values);
-    foreach ($products as $product) {
-      
-      if($product->get('title')->value!=$row[0]){
-        \Drupal::logger('atollon_module')->notice('<pre>'.print_r($row[1],true).'</pre>');
+    // Get the header values from the first row.
+    $header_value = $rows[0];
+
+    foreach($rows as $key=>$value){
+      if($key>0 && !empty($value[0])){   
+        $operations[] = ['Upload_product',[$value]];          
       }
-  }
-
-      $term_name =$row[1];
-      $vid = 'location';
-      
-      $vocabulary = \Drupal\taxonomy\Entity\Vocabulary::load($vid);
-   
-      if ($vocabulary) {
-        
-        $query = \Drupal::entityQuery('taxonomy_term');
-        $query->condition('name', $row[1]);
-        $query->condition('vid', $vocabulary->id());
-        $tids = $query->execute();
-        $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
-
-        }
-
-        if( !empty($terms)){
-        $term_val=array_values($terms);
-        $term_value=$term_val[0]->id();
-      }else{
-        $term_val=array_values($terms);
-        $term_value=118;
-      }
- 
-			$node_not_exists = empty($values);
-			if($node_not_exists && !empty($row[0])){
-
-        $node = Node::create(array(
-          'type' => 'hotel_information',
-          'title' => $row[0],
-          'field_location'=>[$term_value],
-
-        ));
-        
-				$node->save();
-        \Drupal::messenger()->addMessage('Hotel information imported successfully');
-			}else{
-        $node = \Drupal\node\Entity\Node::load(66);
-
-	      $term_name =$row[1];
-        $vid = 'location';
-        $vocabulary = \Drupal\taxonomy\Entity\Vocabulary::load($vid);
- 
-      if ($vocabulary) {
-        
-        $query = \Drupal::entityQuery('taxonomy_term');
-        $query->condition('name', $row[1]);
-        $query->condition('vid', $vocabulary->id());
-        $tids = $query->execute();
-        $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
-      
-      } 
-      
-      $term_val=array_values($terms);
-
-     if( !empty($term_val) && !empty($row[0]) ){
-    
-				$nid = reset($values);
-				$node = \Drupal\node\Entity\Node::load($nid);
-				$node->setTitle($row[0]);
-				$node->set('field_location',$term_val[0]->id());
-				$node->save();
-      
-     }
-     \Drupal::messenger()->addMessage('Hotel information updated successfully');
-			}
 		}
-  
+    $batch = [
+      'title' => $this->t('Uploading product with batch processing...'),
+      'operations' => $operations,
+    ];
+    
+    batch_set($batch);
   }
 }

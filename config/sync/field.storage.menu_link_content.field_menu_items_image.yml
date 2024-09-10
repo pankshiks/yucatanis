@@ -1,0 +1,28 @@
+uuid: ee9a1846-1972-4e96-b40d-b6a16b6b47da
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - menu_link_content
+    - svg_image_field
+id: menu_link_content.field_menu_items_image
+field_name: field_menu_items_image
+entity_type: menu_link_content
+type: svg_image_field
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+module: svg_image_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

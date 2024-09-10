@@ -1,0 +1,31 @@
+uuid: dad877b7-80ca-4dd2-8ac3-fcc4213dabfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_with_description_.field_blog_title
+    - field.field.paragraph.text_with_description_.field_title_with_detail
+    - paragraphs.paragraphs_type.text_with_description_
+  module:
+    - text
+id: paragraph.text_with_description_.default
+targetEntityType: paragraph
+bundle: text_with_description_
+mode: default
+content:
+  field_blog_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title_with_detail:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

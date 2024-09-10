@@ -1,0 +1,19 @@
+uuid: 53bafbcc-e69f-48a0-9364-8ce893ba387a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_favourite_email
+    - profile.type.customer
+id: profile.customer.field_favourite_email
+field_name: field_favourite_email
+entity_type: profile
+bundle: customer
+label: 'Vacation email of choice'
+description: 'Please provide a regularly checked email address. We are committed to excellent customer service and do not engage in spam activities.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

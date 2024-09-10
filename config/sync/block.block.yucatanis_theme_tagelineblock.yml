@@ -1,0 +1,30 @@
+uuid: e382174a-8010-477a-886d-8d5053349996
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:fad0a3f3-8166-4759-b242-8a58cd639fe8'
+  module:
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+id: yucatanis_theme_tagelineblock
+theme: yucatanis_theme
+region: content
+weight: -14
+provider: null
+plugin: 'block_content:fad0a3f3-8166-4759-b242-8a58cd639fe8'
+settings:
+  id: 'block_content:fad0a3f3-8166-4759-b242-8a58cd639fe8'
+  label: 'Tageline block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/code-ethics\r\n/classic-experiences\r\n/essential-rarities\r\n/rent-leisure-boat"

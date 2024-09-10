@@ -1,0 +1,20 @@
+uuid: 9d4af9da-8bac-4c7b-87aa-f0a2f09fa9c2
+langcode: en
+status: false
+dependencies:
+  theme:
+    - yucatanis_theme
+_core:
+  default_config_hash: XRdb8LpbArVA6CpuuEZxzi50JIdjsJaCCZ5o3fH0Blk
+id: yucatanis_theme_local_actions
+theme: yucatanis_theme
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

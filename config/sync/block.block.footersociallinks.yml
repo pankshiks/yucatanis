@@ -1,0 +1,25 @@
+uuid: 7e6b5bea-1932-4fc1-adc8-36bfe7c6ae63
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f31b9664-350f-4247-a320-5881d08ded6a'
+  module:
+    - block_content
+  theme:
+    - yucatanis_theme
+id: footersociallinks
+theme: yucatanis_theme
+region: footer_third
+weight: 0
+provider: null
+plugin: 'block_content:f31b9664-350f-4247-a320-5881d08ded6a'
+settings:
+  id: 'block_content:f31b9664-350f-4247-a320-5881d08ded6a'
+  label: 'Footer social links'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

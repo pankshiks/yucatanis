@@ -1,0 +1,25 @@
+uuid: 41cc1b88-b67b-44a0-8e7a-810cc5827e4e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: wg5cCxB554rXZx4TIzUACcXRXe-VSodwqcq-_QS4Tv0
+name: 'Default newsletter'
+id: default
+description: 'This is an example newsletter. Change it.'
+format: html
+priority: 0
+receipt: true
+from_name: Yucatanis
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: test.ckln@gmail.com
+hyperlinks: false
+allowed_handlers:
+  simplenews_all: '0'
+  simplenews_subscribers_by_role: '0'
+  simplenews_site_mail: '0'
+  simplenews_new_users: '0'
+new_account: none
+access: default
+reason: ''
+weight: 0

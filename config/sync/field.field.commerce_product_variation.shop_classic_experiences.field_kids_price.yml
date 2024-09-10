@@ -1,0 +1,24 @@
+uuid: c041a163-f085-4c4a-8e58-a827f91c0eb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.shop_classic_experiences
+    - field.storage.commerce_product_variation.field_kids_price
+  module:
+    - commerce_price
+id: commerce_product_variation.shop_classic_experiences.field_kids_price
+field_name: field_kids_price
+entity_type: commerce_product_variation
+bundle: shop_classic_experiences
+label: 'Kids Price'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+  allow_negative: false
+field_type: commerce_price

@@ -1,0 +1,26 @@
+uuid: 59bff02b-89b9-4c1d-8359-82defff205ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplenews
+  theme:
+    - yucatanis_theme
+id: yucatanis_theme_simplenewssubscription
+theme: yucatanis_theme
+region: footer_first
+weight: 0
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simple News subscription'
+  label_display: '0'
+  provider: simplenews
+  newsletters: {  }
+  default_newsletters:
+    default: default
+  message: 'Stay informed subscribe to our newsletter'
+  show_manage: false
+  unique_id: ed222572-5f34-4c92-b2a7-b24d77ae8125
+visibility: {  }

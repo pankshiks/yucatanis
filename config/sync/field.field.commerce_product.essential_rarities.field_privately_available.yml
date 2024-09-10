@@ -1,0 +1,21 @@
+uuid: 024a1f58-65d2-4453-957d-a61fce96c9af
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+    - field.storage.commerce_product.field_privately_available
+  module:
+    - options
+id: commerce_product.essential_rarities.field_privately_available
+field_name: field_privately_available
+entity_type: commerce_product
+bundle: essential_rarities
+label: 'Privately Available'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

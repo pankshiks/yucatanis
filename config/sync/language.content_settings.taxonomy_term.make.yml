@@ -1,0 +1,11 @@
+uuid: fb75872b-2b02-4c66-8bc1-401912e9cbeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.make
+id: taxonomy_term.make
+target_entity_type_id: taxonomy_term
+target_bundle: make
+default_langcode: site_default
+language_alterable: false

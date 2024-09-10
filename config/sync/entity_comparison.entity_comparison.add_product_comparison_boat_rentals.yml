@@ -1,0 +1,14 @@
+uuid: 3ae15758-fd7e-4c7b-b454-1277a9bfb455
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.commerce_product.boat_rentals.boat_rentals_add_product_comparison_boat_rentals
+    - core.entity_view_mode.commerce_product.boat_rentals_add_product_comparison_boat_rentals
+id: add_product_comparison_boat_rentals
+label: 'Add product comparison boat rentals'
+add_link_text: 'Add to comparison  boat rentals'
+remove_link_text: 'Remove from the comparison boat rentals'
+limit: 0
+entity_type: commerce_product
+bundle_type: boat_rentals

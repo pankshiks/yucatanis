@@ -1,0 +1,21 @@
+uuid: 9bfc06f7-d9cb-4938-9398-a7d73fbd6977
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_page_type
+    - paragraphs.paragraphs_type.ethics_banner_with_text_and_img
+  module:
+    - options
+id: paragraph.ethics_banner_with_text_and_img.field_page_type
+field_name: field_page_type
+entity_type: paragraph
+bundle: ethics_banner_with_text_and_img
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

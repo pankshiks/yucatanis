@@ -1,0 +1,10 @@
+uuid: 5f7c4c27-25eb-42a6-8519-df60a8dc5957
+langcode: en
+status: true
+dependencies: {  }
+id: image_with_cta_and_heading
+label: 'Image with CTA and heading'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

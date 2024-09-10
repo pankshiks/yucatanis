@@ -1,0 +1,11 @@
+uuid: 404414dc-37b7-4759-9e5b-daaea5378f62
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.fate
+id: taxonomy_term.fate
+target_entity_type_id: taxonomy_term
+target_bundle: fate
+default_langcode: site_default
+language_alterable: false

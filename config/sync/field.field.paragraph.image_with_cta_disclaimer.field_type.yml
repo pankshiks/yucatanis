@@ -1,0 +1,21 @@
+uuid: 033ce81e-fa27-44f9-908b-444a1401d792
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type
+    - paragraphs.paragraphs_type.image_with_cta_disclaimer
+  module:
+    - options
+id: paragraph.image_with_cta_disclaimer.field_type
+field_name: field_type
+entity_type: paragraph
+bundle: image_with_cta_disclaimer
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

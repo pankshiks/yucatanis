@@ -1,0 +1,19 @@
+uuid: 1a33ea31-7155-48d0-a0fe-ea515c60fa09
+langcode: en
+status: true
+dependencies: {  }
+id: payment_method
+label: 'Payment method'
+weight: -7
+plugin: manual
+configuration:
+  display_label: Manual
+  mode: n/a
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  instructions:
+    value: ''
+    format: plain_text
+conditions: {  }
+conditionOperator: AND

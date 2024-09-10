@@ -1,0 +1,58 @@
+uuid: aa4055b0-f6eb-4ed7-a8ea-f73ed3109d0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.faq.field_faq_childs
+    - field.field.paragraph.faq.field_faq_heading
+    - field.field.paragraph.faq.field_faq_img
+    - field.field.paragraph.faq.field_sub_headingg
+    - field.field.paragraph.faq.field_title_with_description
+    - paragraphs.paragraphs_type.faq
+  module:
+    - entity_reference_revisions
+    - image
+    - text
+id: paragraph.faq.default
+targetEntityType: paragraph
+bundle: faq
+mode: default
+content:
+  field_faq_childs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_faq_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_faq_img:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_sub_headingg:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_title_with_description: true
+  search_api_excerpt: true

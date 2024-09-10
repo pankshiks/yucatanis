@@ -1,0 +1,29 @@
+uuid: 6967b896-38c8-4f0a-8653-3bc7750aca9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_slider_terms
+    - node.type.blog
+    - taxonomy.vocabulary.blog_posts_slider
+id: node.blog.field_blog_slider_terms
+field_name: field_blog_slider_terms
+entity_type: node
+bundle: blog
+label: 'Blog slider terms'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      blog_posts_slider: blog_posts_slider
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

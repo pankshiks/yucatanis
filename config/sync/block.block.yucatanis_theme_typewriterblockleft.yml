@@ -1,0 +1,34 @@
+uuid: ff534270-3185-4e76-937e-849f4f5dfb52
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:typewriter_blocks:46a366f9-cc8a-44ce-9512-13133c00e263'
+  module:
+    - block_class
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+third_party_settings:
+  block_class:
+    replaced_id: animated
+id: yucatanis_theme_typewriterblockleft
+theme: yucatanis_theme
+region: header_bottom
+weight: -20
+provider: null
+plugin: 'block_content:46a366f9-cc8a-44ce-9512-13133c00e263'
+settings:
+  id: 'block_content:46a366f9-cc8a-44ce-9512-13133c00e263'
+  label: 'Typewriter Block left'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/form/personal-details\r\n/checkout/*"

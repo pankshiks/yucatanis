@@ -1,0 +1,21 @@
+uuid: 7da324ab-3424-478b-bcaa-2a8e8f22b627
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pick_up_time
+    - paragraphs.paragraphs_type.hotel_information
+  module:
+    - simple_time_field
+id: paragraph.hotel_information.field_pick_up_time
+field_name: field_pick_up_time
+entity_type: paragraph
+bundle: hotel_information
+label: 'Pick Up TIME'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: simple_time_type

@@ -1,0 +1,36 @@
+uuid: df2c1881-7357-47b3-969d-03baa734515c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.typewriter_blocks
+    - field.field.block_content.typewriter_blocks.field_text
+id: block_content.typewriter_blocks.default
+targetEntityType: block_content
+bundle: typewriter_blocks
+mode: default
+content:
+  field_text:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

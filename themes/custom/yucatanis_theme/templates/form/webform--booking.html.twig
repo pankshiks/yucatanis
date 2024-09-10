@@ -16,8 +16,7 @@
                    
             </div>
             <div class="info">
-              <p>Just in case we are full we will contact you,<br>
-                this data is just informative.</p>
+              <p>This data is just informative (mandatory field).</p>
             </div>
             <div class="select-items">
               {{ element.elements.adult_count }}
@@ -27,15 +26,26 @@
 
               </select>
             </div>
+              {{element.elements.processed_text}}
             <div class="select-items">
               {{ element.elements.infants_no }}
             </div>
+            {{element.elements.processed_text_01}}
             <div class="checkbox-wrapper">
               <div class="checkbox-block">
                    {{ element.elements.booking_gift_check }}
               </div>
+              <span class ="green-label">Type beneficiary’s email here (email field box)
+          Message: Your friend (the lucky gift recipient) will receive a copy of the e-ticket to hop on their ride. And we'll make sure they know this awesome gift came from you!</span>
+              <div class="select-items">
+                {{element.elements.email}}
+                <span class ="green-label">The email field can appearing when ticking the checkbox or if you think it might be more work to make it appear when ticking the box, placing it a the bottom permanently is totally fine too!</span>
+              </div>
               <div class="checkbox-block">
-              {{ element.elements.update_me }}
+               {{ element.elements.update_me }}
+              </div>
+              <div class="checkbox-block">
+               {{ element.elements.checkbox }}
               </div>
                 {{ element.elements.actions }}
                  {{ element.form_token }}

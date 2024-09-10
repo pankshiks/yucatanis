@@ -1,0 +1,120 @@
+uuid: 3414cfde-a455-4705-a84c-ca7b34b69744
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.shop_classic_experiences
+    - field.field.commerce_product_variation.shop_classic_experiences.field_dock_fee
+    - field.field.commerce_product_variation.shop_classic_experiences.field_item_type
+    - field.field.commerce_product_variation.shop_classic_experiences.field_kids_price
+    - field.field.commerce_product_variation.shop_classic_experiences.field_private_adult_price
+    - field.field.commerce_product_variation.shop_classic_experiences.field_private_kids_tour_price
+    - field.field.commerce_product_variation.shop_classic_experiences.field_product_images
+    - field.field.commerce_product_variation.shop_classic_experiences.field_ratings
+    - field.field.commerce_product_variation.shop_classic_experiences.field_transportation_cost
+  module:
+    - commerce_price
+    - fivestar
+    - media_library
+id: commerce_product_variation.shop_classic_experiences.default
+targetEntityType: commerce_product_variation
+bundle: shop_classic_experiences
+mode: default
+content:
+  field_dock_fee:
+    type: commerce_price_default
+    weight: 93
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_item_type:
+    type: options_select
+    weight: 96
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_kids_price:
+    type: commerce_price_default
+    weight: 91
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_private_adult_price:
+    type: commerce_price_default
+    weight: 92
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_private_kids_tour_price:
+    type: commerce_price_default
+    weight: 95
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_product_images:
+    type: media_library_widget
+    weight: 98
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_ratings:
+    type: fivestar_stars
+    weight: 97
+    region: content
+    settings:
+      text_format: none
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+  field_transportation_cost:
+    type: commerce_price_default
+    weight: 94
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  list_price:
+    type: commerce_list_price
+    weight: -1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  price:
+    type: commerce_price_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sku:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 90
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

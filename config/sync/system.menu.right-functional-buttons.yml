@@ -1,0 +1,8 @@
+uuid: bff593f7-9eb5-485a-b589-11d1334ab630
+langcode: en
+status: true
+dependencies: {  }
+id: right-functional-buttons
+label: 'Right Functional buttons'
+description: ''
+locked: false

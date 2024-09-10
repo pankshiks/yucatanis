@@ -1,0 +1,24 @@
+uuid: ea554357-1daa-486d-bfd4-048f77ae9c14
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.boat_rentals
+    - field.storage.commerce_product_variation.field_extra_hour
+  module:
+    - commerce_price
+id: commerce_product_variation.boat_rentals.field_extra_hour
+field_name: field_extra_hour
+entity_type: commerce_product_variation
+bundle: boat_rentals
+label: 'Extra Hour'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+  allow_negative: false
+field_type: commerce_price

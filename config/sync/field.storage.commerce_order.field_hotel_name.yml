@@ -1,0 +1,20 @@
+uuid: 016f25bf-b3b2-49fa-b8a3-498dbc281d78
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - text
+id: commerce_order.field_hotel_name
+field_name: field_hotel_name
+entity_type: commerce_order
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

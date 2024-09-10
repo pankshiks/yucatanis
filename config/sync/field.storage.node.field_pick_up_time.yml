@@ -1,0 +1,93 @@
+uuid: 3e5e70a6-a32d-4e16-a138-ab6cc4143061
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_pick_up_time
+field_name: field_pick_up_time
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 12_am
+      label: '12 AM'
+    -
+      value: 1_am
+      label: '1 AM'
+    -
+      value: 2_am
+      label: '2 AM'
+    -
+      value: 3_am
+      label: '3 AM'
+    -
+      value: 4_am
+      label: '4 AM'
+    -
+      value: 5_am
+      label: '5 AM'
+    -
+      value: 6_am
+      label: '6 AM'
+    -
+      value: 7_am
+      label: '7 AM'
+    -
+      value: 8_am
+      label: '8 AM'
+    -
+      value: 9_am
+      label: '9 AM'
+    -
+      value: 10_am
+      label: '10 AM'
+    -
+      value: 11_am
+      label: '11 AM'
+    -
+      value: 12_pm
+      label: '12 PM'
+    -
+      value: 1_pm
+      label: '1 PM'
+    -
+      value: 2_pm
+      label: '2 PM'
+    -
+      value: 3_pm
+      label: '3 PM'
+    -
+      value: 4_pm
+      label: '4 PM'
+    -
+      value: 5_pm
+      label: '5 PM'
+    -
+      value: 6_pm
+      label: '6 PM'
+    -
+      value: 7_pm
+      label: '7 PM'
+    -
+      value: 8_pm
+      label: '8 PM'
+    -
+      value: 9_pm
+      label: '9 PM'
+    -
+      value: 10_pm
+      label: '10 PM'
+    -
+      value: 11_pm
+      label: '11 PM'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

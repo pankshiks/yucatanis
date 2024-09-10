@@ -1,0 +1,23 @@
+uuid: 624dd35d-7fd6-4709-90f4-29e987d20a10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_eth_button
+    - paragraphs.paragraphs_type.ethics_banner_with_text_and_img
+  module:
+    - link
+id: paragraph.ethics_banner_with_text_and_img.field_eth_button
+field_name: field_eth_button
+entity_type: paragraph
+bundle: ethics_banner_with_text_and_img
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

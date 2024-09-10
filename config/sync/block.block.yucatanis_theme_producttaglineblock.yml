@@ -1,0 +1,30 @@
+uuid: c1e5ee63-664b-457f-b1dd-c82a04232ea8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a60fbdd5-71a0-4815-a4a0-576527058343'
+  module:
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+id: yucatanis_theme_producttaglineblock
+theme: yucatanis_theme
+region: content
+weight: -13
+provider: null
+plugin: 'block_content:a60fbdd5-71a0-4815-a4a0-576527058343'
+settings:
+  id: 'block_content:a60fbdd5-71a0-4815-a4a0-576527058343'
+  label: 'Product tagline block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/product*'

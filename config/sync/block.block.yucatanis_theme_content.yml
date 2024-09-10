@@ -1,0 +1,22 @@
+uuid: 636b51ad-b71f-40cd-9f3a-441c0f122d23
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yucatanis_theme
+_core:
+  default_config_hash: kigu8pTxXt1qGR2NJ5HHdC4G2G1wsDrIjLPKBT5wUBc
+id: yucatanis_theme_content
+theme: yucatanis_theme
+region: content
+weight: -19
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

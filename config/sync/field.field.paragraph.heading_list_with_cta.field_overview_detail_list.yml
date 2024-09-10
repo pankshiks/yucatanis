@@ -1,0 +1,19 @@
+uuid: 7ba75dd7-7e88-4660-98f6-8e34c7c406b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_overview_detail_list
+    - paragraphs.paragraphs_type.heading_list_with_cta
+id: paragraph.heading_list_with_cta.field_overview_detail_list
+field_name: field_overview_detail_list
+entity_type: paragraph
+bundle: heading_list_with_cta
+label: 'Overview Detail list'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+_core:
+  default_config_hash: zmm-fQ8G89G2R7Se5kE4s6A5astPdyWlH_omoGrBkJs
+reading_time:
+  container:
+    article:
+      is_activated: 0
+    blog:
+      is_activated: 1
+    hotel_information:
+      is_activated: 0
+    landing_page:
+      is_activated: 0
+    page:
+      is_activated: 0
+    testimonials:
+      is_activated: 0
+    webform:
+      is_activated: 0
+  words_per_minute: 10
+  unit_of_time: minute

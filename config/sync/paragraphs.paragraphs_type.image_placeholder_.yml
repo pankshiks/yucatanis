@@ -1,0 +1,10 @@
+uuid: 6ee2a60a-5559-4a5a-afd6-a3533688073e
+langcode: en
+status: true
+dependencies: {  }
+id: image_placeholder_
+label: 'Image Placeholder '
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

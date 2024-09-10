@@ -95,14 +95,17 @@
               <div id="myModal" class="modal gallarymod" >
     <span class="close cursor" onclick="closeModal()">&times;</span>
     <div class="modal-content">
-
+        
       {% for i,items in product.field_product_image %} 
       
       {% if  items is iterable and   items['#item'] in  items %}
     {% set imageItem = attribute(product.field_product_image, i)['#item'].entity.uri.value %}
     {% if imageItem is not null %}
+    
+    {% set itemCount = imageItem| length  %}
+    
         <div class="mySlides">
-            <div class="numbertext">{{ i+1 }} / 4</div>
+            <div class="numbertext">{{ i+1 }} /<span id="slidecount-{{i}}"></span> </div>
             <img src="{{ file_url(imageItem) }}" style="width:100%">
         </div>
     {% endif %}
@@ -116,7 +119,7 @@
         <p id="caption"></p>
       </div>
         <div class="lightbox-wrapper">
-        {% for i in 0..3 %}
+        {% for i in 0..8 %}
     {% set imageItem = attribute(product.field_product_image, i)['#item'].entity.uri.value %}
     {% if imageItem is not null %}
         <div class="column">
@@ -422,30 +425,33 @@
             <div class="col-12 col-lg-4 card-gap">
                 <div class="booking-btn-wrap">
                     <a href="?type=shared" class="btn btn-primary ">Shared Booking</a>
-                    <a href="?type=private" class="btn btn-primary ">Private Booking</a>
+                    {# <a href="?type=private" class="btn btn-primary ">Private Booking</a> #}
+                    <a href="" class="btn btn-primary" id="private-booking">Private Booking</a>
                 </div>
                 <div class="best-seller-booking-card">
+                    <img src="/themes/custom/yucatanis_theme/images/Dark-Transparent.png"  alt= "Dark-Transparent.png">
                     <div class="info-tag">
                         <p>Highly Rated Natural Location</p>
                     </div>
-                <div class="">
-                    {% if type == 'private' %}
-                    {% if product.variation_field_private_adult_price is not empty %}
-                        <h5 class="green-color">{{product.variation_field_private_adult_price}}<span>/ per adult </span></h5>
-                        <h6 class="green-color">{{product.variation_field_private_kids_tour_price}}<span>Kids 5 - 11 yrs</span></h6>
+                    <div class="">
+                        {% if type == 'private' %}
+                        {% if product.variation_field_private_adult_price is not empty %}
+                            <h5 class="green-color">{{product.variation_field_private_adult_price}}<span>/ per adult </span></h5>
+                            <h6 class="green-color">{{product.variation_field_private_kids_tour_price}}</h6>
+                            {% endif %}
+                        {% else  %}
+                                {% if product.variation_price is not empty %}
+                        <h5 class="green-color">{{product.variation_price}}<span>/ per adult</span></h5>
+                        <h6 class="green-color">{{product.variation_field_kids_price}}</h6>
+                            {% endif %}
                         {% endif %}
-                    {% else  %}
-                               {% if product.variation_price is not empty %}
-                    <h5 class="green-color">{{product.variation_price}}<span>/ per adult</span></h5>
-                    <h6 class="green-color">{{product.variation_field_kids_price}}<span>Kids 5 - 11 yrs</span></h6>
-                        {% endif %}
-                    {% endif %}
-                </div>
+                    </div>
 
                 {{ drupal_entity('webform', 'booking') }}
 
                 </div>
-                {{ drupal_entity('block_content', '28') }}
+                {# {{ drupal_entity('block_content', '28') }} #}
+                {{ drupal_block("social_sharing_buttons_block") }}
             </div>
             </div>
         </div>

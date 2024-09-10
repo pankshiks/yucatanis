@@ -1,0 +1,8 @@
+uuid: 3b6f0921-47a2-4641-a995-c29dbf30f174
+langcode: en
+status: true
+dependencies: {  }
+name: Categorization
+vid: categorization_
+description: ''
+weight: 0

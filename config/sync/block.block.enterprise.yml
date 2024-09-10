@@ -1,0 +1,25 @@
+uuid: c5991e0c-7be7-4e7a-8130-54c7408ac0c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-enterprise
+  module:
+    - system
+  theme:
+    - yucatanis_theme
+id: enterprise
+theme: yucatanis_theme
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-enterprise'
+settings:
+  id: 'system_menu_block:footer-enterprise'
+  label: ENTERPRISE
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

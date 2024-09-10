@@ -1,0 +1,8 @@
+uuid: 6e34afd3-672c-44d3-bcdf-2c32c61630d2
+langcode: en
+status: true
+dependencies: {  }
+id: footer-contact
+label: Contact
+description: ''
+locked: false

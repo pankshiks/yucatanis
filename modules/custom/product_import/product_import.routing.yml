@@ -4,5 +4,26 @@ product_import.form_submit:
     _form: '\Drupal\product_import\Form\ProductImportForm'
     _title: 'Submit product Import Form'
   requirements:
-    _permission: 'access content'  # Adjust the permission as needed.
+    _role: 'administrator'  # Adjust the permission as needed.
+
+
+product_import.form_submit1:
+  path: '/admin/config/product-import/product1/submit'  
+  defaults:
+    _form: '\Drupal\product_import\Form\ProductImportForm1'
+    _title: 'Submit product Import Form'
+  requirements:
+    _role: 'administrator'  # Adjust the permission as needed.
+
+
+    
+product_import.form_submit2:
+  path: '/admin/config/product-import/product2/submit'  
+  defaults:
+    _form: '\Drupal\product_import\Form\ProductImportForm2'
+    _title: 'Submit product Import Form'
+  requirements:
+    _role: 'administrator'  # Adjust the permission as needed.
+
+
 

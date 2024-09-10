@@ -1,0 +1,21 @@
+uuid: 9fb9ef14-9f37-4c6d-9b0f-5b505763dd9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.shop_classic_experiences
+    - field.storage.commerce_product.field_tour_start_time
+  module:
+    - time_field
+id: commerce_product.shop_classic_experiences.field_tour_start_time
+field_name: field_tour_start_time
+entity_type: commerce_product
+bundle: shop_classic_experiences
+label: 'Tour start time'
+description: "Tour start time estimate (actual pick-up time depends on your hotel's location)"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: time

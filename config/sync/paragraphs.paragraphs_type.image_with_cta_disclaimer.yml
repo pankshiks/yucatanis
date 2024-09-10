@@ -1,0 +1,10 @@
+uuid: cf78ca31-eb27-4384-9990-272648291cc1
+langcode: en
+status: true
+dependencies: {  }
+id: image_with_cta_disclaimer
+label: 'Image with CTA Disclaimer'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,23 @@
+uuid: 807ccebd-e8fc-45f1-b2ac-f3b01247959c
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.storage.commerce_order.field_infants_no
+id: commerce_order.default.field_infants_no
+field_name: field_infants_no
+entity_type: commerce_order
+bundle: default
+label: 'Infants no'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

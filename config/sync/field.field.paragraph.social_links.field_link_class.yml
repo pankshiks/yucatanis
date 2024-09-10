@@ -1,0 +1,19 @@
+uuid: f0e8f764-9259-4b22-9f7b-955530491f2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_class
+    - paragraphs.paragraphs_type.social_links
+id: paragraph.social_links.field_link_class
+field_name: field_link_class
+entity_type: paragraph
+bundle: social_links
+label: 'Link class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

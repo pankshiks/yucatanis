@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: WP3ukM3po4EKUYTvtiCHy6-oaKFHWYA1ZuW-oXcMf2k
+iconset: social-icons--square
+services:
+  facebook: facebook
+  x: x
+  whatsapp: whatsapp
+  email: email
+  linkedin: linkedin
+width: 30px
+radius: 3px
+print_css: ''
+facebook_app_id: ''
+node_field: false

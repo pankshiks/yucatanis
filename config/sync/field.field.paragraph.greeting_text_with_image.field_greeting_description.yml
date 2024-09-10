@@ -1,0 +1,21 @@
+uuid: de494281-434f-42bf-8f93-f10102ec923e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_greeting_description
+    - paragraphs.paragraphs_type.greeting_text_with_image
+  module:
+    - text
+id: paragraph.greeting_text_with_image.field_greeting_description
+field_name: field_greeting_description
+entity_type: paragraph
+bundle: greeting_text_with_image
+label: 'Greeting Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

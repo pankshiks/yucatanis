@@ -77,13 +77,8 @@ class PersonaldetailsWebformHandler extends WebformHandlerBase {
       ->getStorage('profile')
       ->loadByProperties(['uid' => $webform_submission->getOwnerId(), 'type' => 'customer']);
   
-    // if (!empty($profile)) {
+     if (empty($profile)) {
       
-      // $profile = end($profiles);
-      // \Drupal::logger('profile_id')->notice('<pre>'.print_r($profile_id,true).'</pre>');
-      // $profile_id = $profile->id();
-    //  \Drupal::logger('profile_id')->notice('<pre>'.print_r($profile_id,true).'</pre>');
-
        $profile = Profile::create([
       'type' => 'customer', 
       'uid' => $webform_submission->getOwnerId(),
@@ -119,7 +114,7 @@ class PersonaldetailsWebformHandler extends WebformHandlerBase {
       
         $profile->save();
     
-      // }
+       }
       $node = \Drupal\node\Entity\Node::load($form_state->getValue('hotel_information'));
       if(!empty($node)){
       $hotel_name = $node->title->value;

@@ -1,0 +1,30 @@
+uuid: ab85af63-8ef1-4f83-af9c-4cd3cef59179
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:32300340-f796-45b4-a951-af3e81257acb'
+  module:
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+id: yucatanis_theme_productpagepopup
+theme: yucatanis_theme
+region: content
+weight: -21
+provider: null
+plugin: 'block_content:32300340-f796-45b4-a951-af3e81257acb'
+settings:
+  id: 'block_content:32300340-f796-45b4-a951-af3e81257acb'
+  label: 'Product Page Popup'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/product*\r\n"

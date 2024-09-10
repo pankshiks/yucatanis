@@ -1,0 +1,10 @@
+uuid: 21043fb6-df78-4f48-9953-d6a15a91090c
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product.shop_classic_experiences_add_product_comparison_shop_classic
+label: 'Add product comparison shop classic'
+targetEntityType: commerce_product
+cache: true

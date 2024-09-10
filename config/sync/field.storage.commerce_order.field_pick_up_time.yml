@@ -1,0 +1,20 @@
+uuid: 9c22efc2-6493-444b-9003-8214e4f493b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - text
+id: commerce_order.field_pick_up_time
+field_name: field_pick_up_time
+entity_type: commerce_order
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: b8b052e8-a035-4e09-a8c0-159f08336e70
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.right-navbar
+  module:
+    - system
+  theme:
+    - yucatanis_theme
+id: rightnavbar
+theme: yucatanis_theme
+region: bottom_sidebar
+weight: 0
+provider: null
+plugin: 'system_menu_block:right-navbar'
+settings:
+  id: 'system_menu_block:right-navbar'
+  label: 'Right Navbar'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: true
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/form/personal-details\r\n/checkout*"

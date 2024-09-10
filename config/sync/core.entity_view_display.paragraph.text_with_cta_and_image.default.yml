@@ -1,0 +1,100 @@
+uuid: f58d9e88-985a-4052-bf3f-9f896c8a7425
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_with_cta_and_image.field_bg_class
+    - field.field.paragraph.text_with_cta_and_image.field_bottom_description
+    - field.field.paragraph.text_with_cta_and_image.field_button
+    - field.field.paragraph.text_with_cta_and_image.field_description
+    - field.field.paragraph.text_with_cta_and_image.field_description_list
+    - field.field.paragraph.text_with_cta_and_image.field_heading
+    - field.field.paragraph.text_with_cta_and_image.field_image
+    - field.field.paragraph.text_with_cta_and_image.field_list_title
+    - field.field.paragraph.text_with_cta_and_image.field_sub_headings
+    - paragraphs.paragraphs_type.text_with_cta_and_image
+  module:
+    - image
+    - link
+    - options
+    - text
+id: paragraph.text_with_cta_and_image.default
+targetEntityType: paragraph
+bundle: text_with_cta_and_image
+mode: default
+content:
+  field_bg_class:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_bottom_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_description_list:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_heading:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_list_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_sub_headings:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

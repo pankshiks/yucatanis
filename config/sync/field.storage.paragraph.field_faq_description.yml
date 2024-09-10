@@ -1,0 +1,19 @@
+uuid: d1bbb3b3-46c2-46b6-b2d1-ea15c59c7e22
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_faq_description
+field_name: field_faq_description
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

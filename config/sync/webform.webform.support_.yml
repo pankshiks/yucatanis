@@ -1,0 +1,304 @@
+uuid: 75f2b9ab-cdc8-4966-bb37-b24257744bcb
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: support_
+title: 'Support '
+description: ''
+categories: {  }
+elements: |-
+  booking_number:
+    '#type': textfield
+    '#title': 'Booking Number (optional)'
+  you_prefer:
+    '#type': date
+    '#title': 'Booking Number'
+    '#required': true
+  range:
+    '#type': date
+    '#title': 'Experience Date (optional)'
+  your_name:
+    '#type': textfield
+    '#title': 'Name & Last Name'
+    '#required': true
+  your_email:
+    '#type': email
+    '#title': 'YOUR FAVORITE EMAIL '
+    '#required': true
+  mobile_number:
+    '#type': tel
+    '#title': 'Mobile Number '
+    '#required': true
+    '#international': true
+    '#telephone_validation_format': '0'
+  i_want_an:
+    '#type': select
+    '#title': 'Tour Or Service Taken'
+    '#options':
+      'Experience & Boat Rental': 'Experience & Boat Rental'
+    '#empty_option': 'Experience & Boat Rental'
+    '#required': true
+  guests:
+    '#type': select
+    '#title': Guests
+    '#options':
+      '2 Adults & 1 Kid': '2 Adults & 1 Kid'
+      '4 Adults & 1 Kid': '4 Adults & 1 Kid'
+      '2 Adults & 0 Kid': '2 Adults & 0 Kid'
+    '#empty_option': '2 Adults & 1 Kid'
+    '#required': true
+  by_checking_this_i_agree_to_receive_a_simple_proposal_for_my_tra:
+    '#type': checkbox
+    '#title': 'By checking this, I agree to receive a simple call/email for my request.'
+    '#required': true
+  tour_or_service_taken:
+    '#type': webform_term_select
+    '#title': 'TOUR OR SERVICE TAKEN'
+    '#vocabulary': fragments_of_yucatan
+    '#tree_delimiter': ''
+    '#depth': 1
+    '#required': true
+  adults_above_11_years_of_age:
+    '#type': select
+    '#title': 'ADULTS* above 11 years of age'
+    '#options':
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+      6: '6'
+      7: '7'
+      8: '8'
+      9: '9'
+      10: '10'
+      11: '11'
+    '#required': true
+  kids_5_to_11_years:
+    '#type': select
+    '#title': 'KIDS* 5 to 11 years'
+    '#options':
+      - '0'
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+      - '5'
+    '#required': true
+  tour_or_service_taken_:
+    '#type': webform_term_select
+    '#title': 'Tour Or Service Taken'
+    '#vocabulary': fragments_of_yucatan
+  hotel_name_where_you_are_staying_or_intended_pick_up_location_:
+    '#type': webform_entity_select
+    '#title': 'Hotel Name '
+    '#target_type': node
+    '#selection_handler': 'default:node'
+    '#selection_settings':
+      target_bundles:
+        hotel_information: hotel_information
+  room_number:
+    '#type': textfield
+    '#title': 'Room Number '
+  your_special_note:
+    '#type': textarea
+    '#title': 'YOUR SPECIAL NOTE  '
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Get Support'
+    '#submit__attributes':
+      class:
+        - btn
+        - btn-secondary
+css: ''
+javascript: "jQuery(document).ready(function() {\r\n    // Array of field IDs to add span tags\r\n     var label = jQuery('label[for=\"edit-your-email\"]');\r\n    \r\n    // Create a <span> element with the desired text\r\n    var span = jQuery('<span>(mandatory field and one that you DO check. We categorically reject spam practices)</span>');\r\n    \r\n    // Append the <span> element inside the label\r\n    label.append(span);\r\n    var label2 = jQuery('label[for=\"edit-mobile-number\"]');\r\n    \r\n    // Create a <span> element with the desired text\r\n    var span = jQuery('<span>(10 DIGITS PLUS COUNTRY CODE PLEASE MANDATORY FIELD)</span>');\r\n    \r\n    // Append the <span> element inside the label\r\n    label2.append(span);\r\n    var label3 = jQuery('label[for=\"edit-hotel-name-where-you-are-staying-or-intended-pick-up-location-\"]');\r\n    \r\n    // Create a <span> element with the desired text\r\n    var span = jQuery('<span>(WHERE YOU ARE STAYING OR INTENDED PICK UP LOCATION)</span>');\r\n    \r\n    // Append the <span> element inside the label\r\n    label3.append(span);\r\n    var label4 = jQuery('label[for=\"edit-room-number\"]');\r\n    \r\n    // Create a <span> element with the desired text\r\n    var span = jQuery('<span>(WE\\'LL LEAVE A REMINDER/MESSAGE THROUGH BELL BOYS IF WE DON’T GET A MOBILE RESPONSE FROM YOU)</span>');\r\n    \r\n    // Append the <span> element inside the label\r\n    label4.append(span);\r\n    var label5 = jQuery('label[for=\"edit-your-special-note\"]');\r\n    \r\n    // Create a <span> element with the desired text\r\n    var span = jQuery('<span>(Please be specific. If you need information avoid being too general. If you already went through one of our services, kindly include the name of the experience and the first name of the staff     involved providing concise details for us to take appropriate action and minimize the need for multiple data exchanges for your convenience.)</span>');\r\n    \r\n    // Append the <span> element inside the label\r\n    label5.append(span);\r\n    \r\n    var label6 = jQuery('label[for=\"edit-your-name\"]');\r\n    \r\n    // Create a <span> element with the desired text\r\n    var span = jQuery('<span>(mandatory field)</span>');\r\n    \r\n    // Append the <span> element inside the label\r\n    label6.append(span);\r\n    \r\n    var label7 = jQuery('label[for=\"edit-tour-or-service-taken-\"]');\r\n    \r\n    // Create a <span> element with the desired text\r\n    var span = jQuery('<span>(mandatory)</span>');\r\n    \r\n    // Append the <span> element inside the label\r\n    label7.append(span);\r\n  \r\n    var fieldIds = ['edit-booking-number', 'edit-range'];\r\n    \r\n    // Loop through each field ID\r\n    jQuery.each(fieldIds, function(index, fieldId) {\r\n      // Find the label element for the current field\r\n      var labelElement = jQuery('label[for=\"' + fieldId + '\"]');\r\n      \r\n      // Get the text content of the label\r\n      var labelText = labelElement.text();\r\n      \r\n      // Split the text at \" (optional)\" if it exists\r\n      var parts = labelText.split(' (optional)');\r\n      \r\n      // Create a new label text with the \"optional\" part wrapped in a <span> tag\r\n      var newLabelText = parts[0] + ' <span>optional</span>';\r\n      \r\n      // Set the new label text\r\n      labelElement.html(newLabelText);\r\n    });\r\n  });"
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

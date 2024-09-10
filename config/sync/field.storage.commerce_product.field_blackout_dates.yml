@@ -1,0 +1,20 @@
+uuid: f86a0fbe-1a38-46f8-ab94-4ab08a0c1379
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - datetime_range
+id: commerce_product.field_blackout_dates
+field_name: field_blackout_dates
+entity_type: commerce_product
+type: daterange
+settings:
+  datetime_type: datetime
+module: datetime_range
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

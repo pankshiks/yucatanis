@@ -1,0 +1,24 @@
+uuid: 6a8e3cbf-d4c7-4a33-b79a-a3a0fde3b824
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.boat_rentals
+    - field.storage.commerce_product_variation.field_sale_price
+  module:
+    - commerce_price
+id: commerce_product_variation.boat_rentals.field_sale_price
+field_name: field_sale_price
+entity_type: commerce_product_variation
+bundle: boat_rentals
+label: 'Selling Price (USD)'
+description: 'Total price in USD.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+  allow_negative: false
+field_type: commerce_price

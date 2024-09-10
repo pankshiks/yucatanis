@@ -1,0 +1,30 @@
+uuid: 29678604-891f-4f8b-bcb3-a0f9f55c84ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_bg_class_list
+field_name: field_bg_class_list
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Orange
+      label: orange
+    -
+      value: Yellow
+      label: yellow
+    -
+      value: Grey
+      label: grey
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,24 @@
+uuid: c584cc21-6247-496b-a1ac-1ded698bb497
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.boat_rentals
+    - field.storage.commerce_product_variation.field_4hrs_rental
+  module:
+    - commerce_price
+id: commerce_product_variation.boat_rentals.field_4hrs_rental
+field_name: field_4hrs_rental
+entity_type: commerce_product_variation
+bundle: boat_rentals
+label: '4hrs rental'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    - USD
+  allow_negative: false
+field_type: commerce_price

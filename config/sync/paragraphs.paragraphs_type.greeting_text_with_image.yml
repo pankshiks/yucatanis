@@ -1,0 +1,10 @@
+uuid: e079ea45-d744-4aa2-a233-cc11b0029ad3
+langcode: en
+status: true
+dependencies: {  }
+id: greeting_text_with_image
+label: 'Greeting text with image'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -105,6 +105,11 @@ header {
       align-items: flex-start;
       gap: 5px;
     }
+    a{
+      img{
+        width: 194px;
+      }
+    }
   }
 
 
@@ -168,6 +173,14 @@ header {
 
     @include for-phone-only {
       padding: 10px 20px;
+    }
+    nav.fullscreen{
+      background-image: url(../images/Y_with_sun_Icon.png);
+      background-size: 600px;
+      background-position: left;
+      @include for-phone-only{
+        background-position: center;
+      }
     }
   }
 
@@ -682,7 +695,7 @@ header {
 .animatedText {
   color: var(--White, #FFF);
   font-family: 'Work Sans';
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 110%;
@@ -696,4 +709,8 @@ header {
 
 .animated {
   display: none;
+}
+
+#block-yucatanis-theme-shoppingstepslogo img {
+  width: 194px;
 }

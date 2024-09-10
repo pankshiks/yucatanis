@@ -1,0 +1,25 @@
+uuid: 6add5869-b241-4c3f-bd87-dfb47c1661d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-useful-data
+  module:
+    - system
+  theme:
+    - yucatanis_theme
+id: usefuldata
+theme: yucatanis_theme
+region: footer_second
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-useful-data'
+settings:
+  id: 'system_menu_block:footer-useful-data'
+  label: 'USEFUL DATA'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

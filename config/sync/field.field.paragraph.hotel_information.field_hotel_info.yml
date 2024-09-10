@@ -1,0 +1,29 @@
+uuid: 746bbe8a-8586-49bd-b1d9-5fcecbdf9143
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hotel_info
+    - node.type.hotel_information
+    - paragraphs.paragraphs_type.hotel_information
+id: paragraph.hotel_information.field_hotel_info
+field_name: field_hotel_info
+entity_type: paragraph
+bundle: hotel_information
+label: 'hotel info'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      hotel_information: hotel_information
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

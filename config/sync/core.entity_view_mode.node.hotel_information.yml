@@ -1,0 +1,10 @@
+uuid: 49df897f-16b5-4f6f-988d-7e9ca6d0577b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.hotel_information
+label: 'Hotel information'
+targetEntityType: node
+cache: true

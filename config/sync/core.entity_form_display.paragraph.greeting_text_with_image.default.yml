@@ -1,0 +1,52 @@
+uuid: c983d350-13a4-4fb1-9783-797e2f6f89ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.greeting_text_with_image.field_greeting_description
+    - field.field.paragraph.greeting_text_with_image.field_greeting_text
+    - field.field.paragraph.greeting_text_with_image.field_photo
+    - field.field.paragraph.greeting_text_with_image.field_wave_class
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.greeting_text_with_image
+  module:
+    - image
+    - text
+id: paragraph.greeting_text_with_image.default
+targetEntityType: paragraph
+bundle: greeting_text_with_image
+mode: default
+content:
+  field_greeting_description:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_greeting_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_photo:
+    type: image_image
+    weight: 4
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_wave_class:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

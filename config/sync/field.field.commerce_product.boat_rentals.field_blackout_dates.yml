@@ -1,0 +1,21 @@
+uuid: 351a8d9f-c45c-4a3b-8cfa-bff8e8b25dc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.boat_rentals
+    - field.storage.commerce_product.field_blackout_dates
+  module:
+    - datetime_range
+id: commerce_product.boat_rentals.field_blackout_dates
+field_name: field_blackout_dates
+entity_type: commerce_product
+bundle: boat_rentals
+label: 'Blackout Dates'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

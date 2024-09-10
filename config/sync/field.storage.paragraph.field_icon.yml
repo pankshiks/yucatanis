@@ -1,0 +1,28 @@
+uuid: 08b60d9c-e9a6-45c8-b15f-78d3fc1b9b6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - paragraphs
+    - svg_image_field
+id: paragraph.field_icon
+field_name: field_icon
+entity_type: paragraph
+type: svg_image_field
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+module: svg_image_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

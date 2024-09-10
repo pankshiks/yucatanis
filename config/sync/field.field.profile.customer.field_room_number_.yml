@@ -1,0 +1,19 @@
+uuid: 51fd698e-0d8e-4454-b60c-2a0fd50f587f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_room_number_
+    - profile.type.customer
+id: profile.customer.field_room_number_
+field_name: field_room_number_
+entity_type: profile
+bundle: customer
+label: 'Room Number* '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

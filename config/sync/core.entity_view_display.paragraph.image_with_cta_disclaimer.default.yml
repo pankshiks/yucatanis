@@ -1,0 +1,66 @@
+uuid: 3b219e55-abc3-4ff5-b09b-f0b60da6e9ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_with_cta_disclaimer.field_button
+    - field.field.paragraph.image_with_cta_disclaimer.field_disclaimer
+    - field.field.paragraph.image_with_cta_disclaimer.field_image
+    - field.field.paragraph.image_with_cta_disclaimer.field_title
+    - field.field.paragraph.image_with_cta_disclaimer.field_type
+    - paragraphs.paragraphs_type.image_with_cta_disclaimer
+  module:
+    - image
+    - link
+    - options
+    - text
+id: paragraph.image_with_cta_disclaimer.default
+targetEntityType: paragraph
+bundle: image_with_cta_disclaimer
+mode: default
+content:
+  field_button:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_disclaimer:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

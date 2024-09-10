@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * Implements hook_entity_access().
+ */
+use Drupal\views\Views;
+
+function unsubscribe_entity_access(\Drupal\Core\Entity\EntityInterface $entity, $operation, \Drupal\Core\Session\AccountInterface $account) {
+    // Check if the entity being accessed is a paragraph.
+    if ($entity->getEntityTypeId() === 'paragraph') {
+
+      $is_front_page = \Drupal::service('path.matcher')->isFrontPage();
+      
+      // $paragraph_types_to_hide = ['heading_with_media_description','heading_with_texts','view_reference'];
+      $paragraph_types_to_hide = ['heading_with_texts','view_reference'];
+
+      if ($operation === 'view' && in_array($entity->bundle(), $paragraph_types_to_hide) && $is_front_page) {
+        if ($entity->bundle() === 'view_reference') {
+          
+          $view_reference = $entity->get('field_view')->getValue();
+          
+          
+          if (!empty($view_reference[0]['target_id'])) {
+            $heading = trim($entity->get('field_sub_heading')->value);
+              $headings_to_match = [
+              '<h3 class="d-brown">Yucatan<span class="orange-color">is Essential </span>Rarities</h3>',
+              '<h3 class="d-brown">Most Advisable<span class="orange-color"> Cultural Experiences</span></h3>',
+            ];
+          
+            if (!in_array($heading, $headings_to_match)) {
+              // dd($headings_to_match);
+              // Load the referenced view.
+              $view_id = $view_reference[0]['target_id'];
+          
+              // If the referenced view ID matches 'categories_product_sliders', deny access.
+              if ($view_id === 'categories_product_sliders') {
+                  return \Drupal\Core\Access\AccessResult::forbidden();
+              }
+            }
+          }
+        }
+        // elseif ($entity->bundle() === 'greeting_text_with_image') {
+        //   $greetingtext = trim($entity->get('field_greeting_text')->value);
+        //   $text_to_match = [
+        //     '<p>True to type and form of a kind of place like Yucatan.</p>',
+        //     // '<p>You are about to explore the highlights of Yucatan's east coast.</p>',
+        //   ];
+        //   \Drupal::logger('greetingtext')->notice('<pre>'.print_r($greetingtext,true).'</pre>');
+
+          
+        //   if (!in_array($greetingtext, $text_to_match)) {
+           
+        //    return \Drupal\Core\Access\AccessResult::forbidden();
+            
+        //   }
+        // }
+
+        else
+        {
+          return \Drupal\Core\Access\AccessResult::forbidden();
+        }
+      }
+      // 
+      // $current_url = \Drupal::request()->getRequestUri();
+      
+      // if (strpos($current_url, 'essential-rarities') !== false) {
+      //   // dd( $current_url);
+      //   if ($entity->bundle() === 'view_reference') {
+      //     $view_reference = $entity->get('field_view')->getValue();
+          
+       
+      //   }
+      // }
+
+    }
+
+  }
+  
+?>

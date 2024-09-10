@@ -1,0 +1,96 @@
+{% if paragraph.field_text_type.value == 'grey' %}
+<section class="bg-tertiary ptb-132 img-desc-block relevant-block-brand-box-three">
+    <div class="container">
+        <div class="row">
+         {{ paragraph.field_formatted_text.value|raw }} 
+                   
+        </div>
+    </div>
+</section>
+{% elseif paragraph.field_text_type.value == 'brown'%}
+
+<section class="booking-steps-block bg-dbrown-brand-box-four ">
+    <div class="container ptb-200">
+         {{ paragraph.field_formatted_text.value|raw }} 
+    </div>
+  </section>
+
+{% elseif paragraph.field_text_type.value == 'yellowfont'%}
+
+<section class="booking-steps-block bg-dbrown-brand-box-one ">
+    <div class="container ptb-200">
+         {{ paragraph.field_formatted_text.value|raw }} 
+    </div>
+  </section>
+
+{% elseif paragraph.field_text_type.value == 'yellow'%}
+<section class="booking-steps-block bg-dbrown-brand-box-two">
+    <div class="container ptb-200">
+         {{ paragraph.field_formatted_text.value|raw }} 
+    </div>
+  </section>
+
+{% elseif paragraph.field_text_type.value == 'red'%}
+<section class="brand-box-ten">
+  <div class ="container">
+    <div class="card-content">
+        <span> {{ paragraph.field_formatted_text.value|raw }}</span>
+        <h2> {{ paragraph.field_sub_headingss.value|raw }}</h2>
+    </div>  
+  </div>  
+</section>
+
+{% elseif paragraph.field_text_type.value == 'listContent'%} 
+<section class="brand-box-seven">
+    <div class ="container">
+      <div class="card-content">
+        {{ paragraph.field_formatted_text.value|raw }} 
+         {{ paragraph.field_sub_headingss.value|raw }}
+      </div>
+    </div>
+</section>
+
+{# {% elseif paragraph.field_text_type.value == 'skillset'%} 
+<section class="brand-box-eight">
+  <div class ="container"> 
+    <div class="card-content">
+        <span> {{ paragraph.field_formatted_text.value|raw }} </span>
+        <div class="">
+         {% for item in paragraph.field_text %}
+            <p>{{ item.value }}</p>
+          {% endfor %}
+               
+        </div>
+    </div> 
+  </div>   
+</section> #}
+ {% elseif paragraph.field_text_type.value == 'expertos'%} 
+<section class="brand-box-nine">
+  <div class ="container">
+    <div class="card-content">
+       {{ paragraph.field_formatted_text.value|raw }}
+        {{ paragraph.field_sub_headingss.value|raw }}
+    </div>    
+  </div>
+</section>
+ {% elseif paragraph.field_text_type.value == 'legally_bound'%} 
+<section class="brand-box-thirteen">
+ <div class ="container">
+  <div class="card-content">
+      {{ paragraph.field_formatted_text.value|raw }}
+    {{ paragraph.field_sub_headingss.value|raw }}
+  </div>   
+</div> 
+</section>
+
+{% else %}
+
+<section class="brand-box-eleven">
+    <div class ="container">
+      <div class="card-content">
+         {{ paragraph.field_formatted_text.value|raw }}
+         {{ paragraph.field_sub_headingss.value|raw }} 
+      </div>   
+    </div> 
+</section>
+{% endif %}

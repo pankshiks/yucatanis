@@ -1,0 +1,31 @@
+uuid: 1a4d224b-b831-43eb-bcf7-912dd033782a
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.enquiry
+  module:
+    - system
+    - webform
+  theme:
+    - yucatanis_theme
+id: webform_3
+theme: yucatanis_theme
+region: content
+weight: -15
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  label_display: '0'
+  provider: webform
+  webform_id: enquiry
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/49

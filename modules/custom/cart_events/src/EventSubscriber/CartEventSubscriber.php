@@ -65,16 +65,12 @@ class CartEventSubscriber implements EventSubscriberInterface {
         if ($webform_submission_entity) {
           \Drupal::messenger()->addMessage('webform submission deleted successfully');
           $webform_submission_entity->delete();
-          // \Drupal::logger('webform_delete1')->notice('<pre>'. print_r('Webform submission deleted successfully.', true) .'</pre>');
-        }
-        else {
-          \Drupal::logger('webform_delete2')->notice('<pre>'. print_r('Unable to load webform submission with ID.', true) .'</pre>');
-          
+       
         }
       }
     }
   }
-  //
+  
   protected function getWebformSubmissionIdsByOrder($order_no) {
     $submission_ids = [];
   

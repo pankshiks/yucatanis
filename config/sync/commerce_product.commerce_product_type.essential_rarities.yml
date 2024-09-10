@@ -1,0 +1,14 @@
+uuid: 1de17d1c-d1e8-4391-ba8e-78ee928bffaa
+langcode: en
+status: true
+dependencies: {  }
+id: essential_rarities
+label: 'ESSENTIAL RARITIES'
+traits: {  }
+locked: false
+description: ''
+variationType: essential_rarities
+variationTypes:
+  - essential_rarities
+multipleVariations: true
+injectVariationFields: true

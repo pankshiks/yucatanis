@@ -1,0 +1,23 @@
+uuid: d4e0d5be-2c45-4a61-a10a-1f720a8b6495
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_compare_button
+    - paragraphs.paragraphs_type.headings_with_images
+  module:
+    - link
+id: paragraph.headings_with_images.field_compare_button
+field_name: field_compare_button
+entity_type: paragraph
+bundle: headings_with_images
+label: 'Compare button'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

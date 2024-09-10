@@ -1,0 +1,102 @@
+uuid: 60aed592-d8cd-4d98-86e8-b8578a0d72f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tabs_datas.field_description
+    - field.field.paragraph.tabs_datas.field_heading
+    - field.field.paragraph.tabs_datas.field_image_heading_with_button
+    - field.field.paragraph.tabs_datas.field_images
+    - field.field.paragraph.tabs_datas.field_link
+    - field.field.paragraph.tabs_datas.field_price
+    - field.field.paragraph.tabs_datas.field_tab_id
+    - field.field.paragraph.tabs_datas.field_tab_titles
+    - paragraphs.paragraphs_type.tabs_datas
+  module:
+    - link
+    - media_library
+    - paragraphs
+    - text
+id: paragraph.tabs_datas.default
+targetEntityType: paragraph
+bundle: tabs_datas
+mode: default
+content:
+  field_description:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_heading:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_heading_with_button:
+    type: paragraphs
+    weight: 7
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_images:
+    type: media_library_widget
+    weight: 5
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_price:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tab_id:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tab_titles:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

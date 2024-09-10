@@ -1,0 +1,19 @@
+uuid: ddcdacc5-7933-4f5e-b06a-01c60c73997b
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_price
+    - commerce_product
+id: commerce_product_variation.field_dock_fee
+field_name: field_dock_fee
+entity_type: commerce_product_variation
+type: commerce_price
+settings: {  }
+module: commerce_price
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

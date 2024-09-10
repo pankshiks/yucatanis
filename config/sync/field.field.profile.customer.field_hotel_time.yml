@@ -1,0 +1,21 @@
+uuid: 1af657c0-a44e-4e86-8093-0c13bd202bb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_hotel_time
+    - profile.type.customer
+  module:
+    - options
+id: profile.customer.field_hotel_time
+field_name: field_hotel_time
+entity_type: profile
+bundle: customer
+label: 'Hotel Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

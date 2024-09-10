@@ -1,0 +1,23 @@
+uuid: 1505836b-b9c8-4515-8136-2a1dd3f3d5ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.boat_rentals
+    - field.storage.commerce_order.field_adults_no
+id: commerce_order.boat_rentals.field_adults_no
+field_name: field_adults_no
+entity_type: commerce_order
+bundle: boat_rentals
+label: 'Adults no'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

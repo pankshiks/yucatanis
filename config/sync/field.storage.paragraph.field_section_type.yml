@@ -1,0 +1,27 @@
+uuid: 8d929fb4-850f-45b0-8952-6c7475d02209
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_section_type
+field_name: field_section_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Travel plans mood'
+      label: travel-plans-mood
+    -
+      value: 'Join Team banner'
+      label: join-team-banner
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

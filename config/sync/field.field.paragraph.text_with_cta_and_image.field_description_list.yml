@@ -1,0 +1,19 @@
+uuid: 3b2c5588-3758-4350-a574-6848b71054d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description_list
+    - paragraphs.paragraphs_type.text_with_cta_and_image
+id: paragraph.text_with_cta_and_image.field_description_list
+field_name: field_description_list
+entity_type: paragraph
+bundle: text_with_cta_and_image
+label: 'Description list'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

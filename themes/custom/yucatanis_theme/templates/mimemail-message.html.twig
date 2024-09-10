@@ -92,7 +92,7 @@
   </head>
   <body id="mimemail-body"{{ attributes.addClass(classes) }}>
    <body
-      style="margin: 0; padding: 0; background-image: url(https://yucatanis.com/images/Coming-Soon.png); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+      style="margin: 0; padding: 0; background-image: url({{ url('<front>') }}sites/default/files/Coming-Soon.png); background-size: cover; background-repeat: no-repeat; background-position: center center;">
       <div style="max-width: 600px; margin: 30px auto; padding: 0 10px;">
         <table border="0" cellspacing="0" width="100%"
           style="width: 100%; border-collapse: collapse; table-layout: fixed; border-spacing: 0;">
@@ -100,36 +100,53 @@
             <tr>
               <td valign="center" style="text-align: center; padding: 0;">
                 <a href="#" title="" class="" target="_blank">
-                  <img alt="" src="http://112.196.0.228:3011/sites/default/files/2023-07/main-logo.png" width="258" style="margin-top:20px">
+                
+                  <img alt="" src="{{ url('<front>') }}sites/default/files/main-logo.png" width="258" style="margin-top:20px">
                 </a>
               </td>
             </tr>
           </tbody>
         </table>
+        
          {% if key == 'register-no-approval-required' %}
+          <table border="0" cellspacing="0" width="100%"
+            style="width: 100%; background-color: rgba(255, 255, 255); padding: 0 10px 20px 10px; border-collapse: collapse; border-spacing: 0;">
+            <tbody>
+              <tr>
+                <td valign="center" style="text-align: center; padding: 0 25px;">
+                  <h2 style="font-size: 40px; margin: 50px 0 30px 0; line-height: 40px; font-weight: 300;">User
+                    Registered
+                  </h2>
+                <p
+                        style="font-size: 20px; letter-spacing: 0.02em; margin-bottom: 0; padding-bottom: 25px; font-weight: 300; line-height: 22px;">
+                        {{ body|raw }}
+                      </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        {% elseif key == 'password-reset' %}
         <table border="0" cellspacing="0" width="100%"
-          style="width: 100%; background-color: rgba(255, 255, 255); padding: 0 10px 20px 10px; border-collapse: collapse; border-spacing: 0;">
-          <tbody>
-            <tr>
-              <td valign="center" style="text-align: center; padding: 0 25px;">
-                <h2 style="font-size: 40px; margin: 50px 0 30px 0; line-height: 40px; font-weight: 300;">User
-                  Registered
-                </h2>
-               <p
-                      style="font-size: 20px; letter-spacing: 0.02em; margin-bottom: 0; padding-bottom: 25px; font-weight: 300; line-height: 22px;">
-                      {{ body|raw }}
-                    </p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-         {% else %}
+				style="width: 100%; background-color: rgba(255, 255, 255); padding: 0 10px 20px 10px; border-collapse: collapse; border-spacing: 0; table-layout: fixed">
+				<tbody>
+					<tr>
+						<td valign="center" style="text-align: center; padding: 0 30px;">
+							  {{ body|raw }}
+						</td>
+
+					</tr>
+					
+				</tbody>
+			</table>
+
+        {% else %}
          <table border="0" cellspacing="0" width="100%" style="max-width:600px; margin:30px auto; width:100%; background-color:#fff; padding: 0px 10px 20px 10px; box-sizing: border-box; border-collapse: collapse; display: block; border-spacing: 0;">
           <tbody style="margin: 0px auto; display: block; width: 100%;">
             {{ body|raw }}
            </tbody>
          </table>
-          {% endif %}
+        {% endif %}
         <table border="0" cellspacing="0" width="100%"
           style="width: 100%; border-collapse: collapse; table-layout: fixed; text-align: center; margin: 20px auto 0 auto; border-spacing: 0;">
           <tbody>

@@ -1,0 +1,702 @@
+uuid: f1ceb65a-b11d-47f9-af4b-385996708c0a
+langcode: en
+status: open
+dependencies:
+  module:
+    - personaldetails_webform_handler
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: personal_details
+title: personal-details
+description: ''
+categories: {  }
+elements: |-
+  markup:
+    '#type': webform_markup
+    '#markup': '<section class=""><div class="container"><nav class="breadcrumb font16"><p><a class="current-page">1. Personal </a><span class="separator">&gt; </span><span>2. Payment</span></p></nav></div></section>'
+  form_heading:
+    '#type': webform_markup
+    '#wrapper_attributes':
+      class:
+        - select-items
+        - floating-input
+    '#markup': '<h5>Enter your personal details</h5>'
+  passenger_name:
+    '#type': textfield
+    '#title': 'LEAD PASSENGER NAME *'
+    '#title_display': invisible
+    '#prepopulate': true
+    '#required': true
+    '#attributes':
+      class:
+        - font18
+  lead_passender_name_:
+    '#type': label
+    '#title': 'LEAD PASSENDER NAME *'
+  command_name:
+    '#type': textfield
+    '#title': 'SECOND IN COMMAND NAME'
+    '#title_display': invisible
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - select-items
+        - floating-input
+    '#attributes':
+      class:
+        - font18
+  email:
+    '#type': email
+    '#title': 'FAVORITE EMAIL*'
+    '#title_display': invisible
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - select-items
+        - floating-input
+  phone_number:
+    '#type': tel
+    '#title': 'PHONE NUMBER'
+    '#title_display': invisible
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - select-items
+        - floating-input
+    '#attributes':
+      class:
+        - font18
+  country:
+    '#type': select
+    '#title': 'COUNTRY OF ORIGIN'
+    '#options':
+      AF: Afghanistan
+      AL: Albania
+      DZ: Algeria
+      AD: Andorra
+      AO: Angola
+      AG: 'Antigua and Barbuda'
+      AR: Argentina
+      AM: Armenia
+      AU: Australia
+      AT: Austria
+      AZ: Azerbaijan
+      BS: Bahamas
+      BH: Bahrain
+      BD: Bangladesh
+      BB: Barbados
+      BY: Belarus
+      BE: Belgium
+      BZ: Belize
+      BJ: Benin
+      BT: Bhutan
+      BO: Bolivia
+      BA: 'Bosnia and Herzegovina'
+      BW: Botswana
+      BR: Brazil
+      BN: Brunei
+      BG: Bulgaria
+      BF: 'Burkina Faso'
+      BI: Burundi
+      KH: Cambodia
+      CM: Cameroon
+      CA: Canada
+      CV: 'Cape Verde'
+      CF: 'Central African Republic'
+      TD: Chad
+      CL: Chile
+      CN: China
+      CO: Colombia
+      KM: Comoros
+      CG: Congo
+      CR: 'Costa Rica'
+      HR: Croatia
+      CU: Cuba
+      CY: Cyprus
+      CZ: 'Czech Republic'
+      DK: Denmark
+      DJ: Djibouti
+      DM: Dominica
+      DO: 'Dominican Republic'
+      EC: Ecuador
+      EG: Egypt
+      SV: 'El Salvador'
+      GQ: 'Equatorial Guinea'
+      ER: Eritrea
+      EE: Estonia
+      ET: Ethiopia
+      FJ: Fiji
+      FI: Finland
+      FR: France
+      GA: Gabon
+      GM: Gambia
+      GE: Georgia
+      DE: Germany
+      GH: Ghana
+      GR: Greece
+      GD: Grenada
+      GT: Guatemala
+      GN: Guinea
+      GW: Guinea-Bissau
+      GY: Guyana
+      HT: Haiti
+      HN: Honduras
+      HU: Hungary
+      IS: Iceland
+      IN: India
+      ID: Indonesia
+      IR: Iran
+      IQ: Iraq
+      IE: Ireland
+      IL: Israel
+      IT: Italy
+      CI: 'Ivory Coast'
+      JM: Jamaica
+      JP: Japan
+      JO: Jordan
+      KZ: Kazakhstan
+      KE: Kenya
+      KI: Kiribati
+      KP: 'North Korea'
+      KR: 'South Korea'
+      KW: Kuwait
+      KG: Kyrgyzstan
+      LA: Laos
+      LV: Latvia
+      LB: Lebanon
+      LS: Lesotho
+      LR: Liberia
+      LY: Libya
+      LI: Liechtenstein
+      LT: Lithuania
+      LU: Luxembourg
+      MK: 'North Macedonia'
+      MG: Madagascar
+      MW: Malawi
+      MY: Malaysia
+      MV: Maldives
+      ML: Mali
+      MT: Malta
+      MH: 'Marshall Islands'
+      MR: Mauritania
+      MU: Mauritius
+      MX: Mexico
+      FM: Micronesia
+      MD: Moldova
+      MC: Monaco
+      MN: Mongolia
+      ME: Montenegro
+      MA: Morocco
+      MZ: Mozambique
+      MM: Myanmar
+      NA: Namibia
+      NR: Nauru
+      NP: Nepal
+      NL: Netherlands
+      NZ: 'New Zealand'
+      NI: Nicaragua
+      NE: Niger
+      NG: Nigeria
+      'NO': Norway
+      OM: Oman
+      PK: Pakistan
+      PW: Palau
+      PA: Panama
+      PG: 'Papua New Guinea'
+      PY: Paraguay
+      PE: Peru
+      PH: Philippines
+      PL: Poland
+      PT: Portugal
+      QA: Qatar
+      RO: Romania
+      RU: Russia
+      RW: Rwanda
+      KN: 'Saint Kitts and Nevis'
+      LC: 'Saint Lucia'
+      VC: 'Saint Vincent and the Grenadines'
+      WS: Samoa
+      SM: 'San Marino'
+      ST: 'Sao Tome and Principe'
+      SA: 'Saudi Arabia'
+      SN: Senegal
+      RS: Serbia
+      SC: Seychelles
+      SL: 'Sierra Leone'
+      SG: Singapore
+      SK: Slovakia
+      SI: Slovenia
+      SB: 'Solomon Islands'
+      SO: Somalia
+      ZA: 'South Africa'
+      SS: 'South Sudan'
+      ES: Spain
+      LK: 'Sri Lanka'
+      SD: Sudan
+      SR: Suriname
+      SZ: Eswatini
+      SE: Sweden
+      CH: Switzerland
+      SY: Syria
+      TW: Taiwan
+      TJ: Tajikistan
+      TZ: Tanzania
+      TH: Thailand
+      TL: Timor-Leste
+      TG: Togo
+      TO: Tonga
+      TT: 'Trinidad and Tobago'
+      TN: Tunisia
+      TR: Turkey
+      TM: Turkmenistan
+      TV: Tuvalu
+      UG: Uganda
+      UA: Ukraine
+      AE: 'United Arab Emirates'
+      GB: 'United Kingdom'
+      US: 'United States'
+      UY: Uruguay
+      UZ: Uzbekistan
+      VU: Vanuatu
+      VA: 'Vatican City'
+      VE: Venezuela
+      VN: Vietnam
+      YE: Yemen
+      ZM: Zambia
+      ZW: Zimbabwe
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - select-items
+        - floating-input
+        - ''
+    '#attributes':
+      class:
+        - floating-input
+        - ''
+  hotel_name:
+    '#type': textfield
+    '#title': 'Hotel’s Name for Pick-Up*'
+    '#title_display': invisible
+    '#wrapper_attributes':
+      class:
+        - select-items
+        - floating-input
+  hotel_s_name_for_pick_up:
+    '#type': webform_entity_select
+    '#title': 'HOTEL’S FULL NAME FOR PICK-UP'
+    '#target_type': node
+    '#selection_handler': 'default:node'
+    '#selection_settings':
+      target_bundles:
+        hotel_information: hotel_information
+  if_your_beach_hotel_is_not_listed:
+    '#type': textfield
+    '#title': 'WHAT IS YOUR HOTEL’S NAME (IF NOT LISTED)'
+    '#required': true
+  room_number:
+    '#type': textfield
+    '#title': 'HOTEL ROOM NUMBER'
+    '#title_display': invisible
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - select-items
+        - floating-input
+    '#attributes':
+      class:
+        - floating-input
+  note:
+    '#type': textarea
+    '#title': 'YOUR SPECIAL NOTE'
+    '#required': true
+  checkbox_1:
+    '#type': checkbox
+    '#title': 'I agree to receive my travel request and Yucatanis’s the Terms of Service.'
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - checkbox-block
+  checkbox_2:
+    '#type': checkbox
+    '#title': 'By checking this, you acknowledge that you read the You Should Bring & Your Ought to Know sections and that you typed an email and mobile number that you do use and see. In case we need to contact you or if weather changes.'
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - checkbox-block
+  checkbox_3:
+    '#type': checkbox
+    '#title': "We totally get how annoying it is to get a lot of random emails, and we don't want to be that type. If you check this box, we'll send you one monthly email that's jam-packed with cool stuff to do around Cozumel, Cancun, and the Mayan Riviera nothing else. We're pretty sure you'll find it super helpful and interesting. No pressure though, it's totally up to you"
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - checkbox-block
+  checkbox_4:
+    '#type': checkbox
+    '#title': 'Do you prefer not to receive highlights from the region even if they are helpful? Check this box if you do!'
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - checkbox-block
+  address:
+    '#type': container
+    first_name:
+      '#type': textfield
+      '#title': 'First name'
+    middle_name:
+      '#type': textfield
+      '#title': 'Middle name'
+    last_name:
+      '#type': textfield
+      '#title': 'Last name'
+    company:
+      '#type': textfield
+      '#title': Company
+      '#title_display': invisible
+    address_line_1:
+      '#type': textfield
+      '#title': 'Address line 1'
+      '#title_display': invisible
+    address_line_2:
+      '#type': textfield
+      '#title': 'Address line 2'
+      '#title_display': invisible
+    postal_code:
+      '#type': textfield
+      '#title': 'Postal code'
+      '#title_display': invisible
+    sorting_code:
+      '#type': textfield
+      '#title': 'Sorting code'
+    dependent_locality_e_g_neighbourhood_:
+      '#type': textfield
+      '#title': 'Dependent locality (e.g. Neighbourhood)'
+    locality_e_g_city_:
+      '#type': textfield
+      '#title': City
+      '#title_display': invisible
+    administrative_area_e_g_state_or_province_:
+      '#type': textfield
+      '#title': 'Administrative area (e.g. State or Province)'
+    state:
+      '#type': select
+      '#title': State
+      '#options':
+        'Andaman & Nicobar': 'Andaman & Nicobar'
+  addres:
+    '#type': textfield
+    '#title': address
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': Continue
+css: ''
+javascript: "jQuery(document).ready(function () {\r\n    // Define the message to be added\r\n    var message = \"Please confirm a full name for insurance purposes and added security for hotel pick-up access. (mandatory field)\";\r\n\r\n    // Create a <span> element for the message\r\n    var messageSpan = jQuery('<span>').addClass('green-label').text(message);\r\n\r\n    // Append the message after the input field\r\n    jQuery('#floating-input').after(messageSpan);\r\n     var message2 = \"Stats for geeks 🤓\_(optional)\";\r\n\r\n    // Create a <span> element for the message\r\n    var messageSpan2 = jQuery('<span>').addClass('green-label').text(message2);\r\n\r\n    // Append the message after the input field\r\n    jQuery('#edit-company').after(messageSpan2);\r\n    var message3 = \"Ensure your hotel name is accurate. If your hotel is not listed and it's outside our service area, we'll provide pick-up alternatives or a full refund, PLEASE check your phone or email or simply contact us after booking (contact in the footer). Pick-up and drop-off will be at the same resort, specifically the main lobby. (this is an optional field)\";\r\n\r\n    // Create a <span> element for the message\r\n    var messageSpan3 = jQuery('<span>').addClass('green-label').text(message3);\r\n\r\n    // Append the message after the input field\r\n    jQuery('#edit-if-your-beach-hotel-is-not-listed').after(messageSpan3);\r\n     var message4 = \"For security, gate staff verifies last name and room number with drivers during pickups to confirm the booking's legitimacy. (optional field only if you already know it)\";\r\n\r\n    // Create a <span> element for the message\r\n    var messageSpan4 = jQuery('<span>').addClass('green-label').text(message4);\r\n\r\n    // Append the message after the input field\r\n    jQuery('#edit-room-number').after(messageSpan4);\r\n    //\r\n     var message5 = \"Please share ANY special question or details we need to know about you, your party, or booking. If there is nothing special to add, you may type: Viva Mexico! 🇲🇽 (This is a mandatory field to show acknowledgement, thank you       for your understanding).\";\r\n\r\n    // Create a <span> element for the message\r\n    var messageSpan5 = jQuery('<span>').addClass('green-label').text(message5);\r\n\r\n    // Append the message after the input field\r\n    jQuery('#edit-your-special-note').after(messageSpan5);\r\n\r\n    var message6 = \"For security, it's classic that some hotels may refuse pickup if the room's name differs. If possible, give a companion's full name. (optional but recommended).\";\r\n\r\n  // Create a span element with the message and class\r\n  var messageSpan6 = jQuery('<span>').addClass('green-label').text(message6);\r\n\r\n  // Append the message span below the input field\r\n  jQuery('input[name=\"command_name\"]').after(messageSpan6);\r\n   \r\n    var message7 = \"Please make sure to check THIS email for updates or changes in weather (mandatory field).\";\r\n\r\n  // Create a span element with the message and class\r\n  var messageSpan7 = jQuery('<span>').addClass('green-label').text(message7);\r\n\r\n  // Append the message span below the input field\r\n  jQuery('input[name=\"email\"]').after(messageSpan7);\r\n   \r\n  var message8 = \"Please check all digits and the country code to ensure accurate communication of possible updates\";\r\n\r\n  // Create a span element with the message and class\r\n  var messageSpan8 = jQuery('<span>').addClass('green-label').text(message8);\r\n\r\n  // Append the message span below the input field\r\n  jQuery('input[name=\"phone_number\"]').after(messageSpan8);\r\n  \r\n  // Define the message\r\n  var message9 = \"This field helps us identify where Mexico is most appreciated. Thank you for visiting our east coast! (optional stats for geeks 🤓)\";\r\n\r\n  // Create a span element with the message and class\r\n  var messageSpan9 = jQuery('<span>').addClass('green-label').text(message9);\r\n\r\n  // Find the label with the text \"COUNTRY OF ORIGIN\" and append the message span below it\r\n  jQuery('label[for=\"Country of Origin\"]').after(messageSpan9);\r\n  \r\n  var message10 = \"For logistics and insurance policies we mostly serve beach hotels in the region. Pick-up and drop-off should be at the same resort’s main LOBBY door. (mandatory field)\";\r\n\r\n  // Create a span element with the message and class\r\n  var messageSpan10 = jQuery('<span>').addClass('red-label').text(message10);\r\n\r\n  // Append the message span after the select element\r\n  jQuery('#floating-input[data-drupal-selector=\"edit-hotel-information\"]').after(messageSpan10);\r\n  \r\n  var message11 = \" We cater all 201 beach resorts in the region. As new hotels emerge and others change ownership, HOTEL NAMES and their pickup times fluctuate. If your pickup time doesn't update automatically, **PLEASE inform us. We will confirm   the exact pickup time IN ADVANCE through all available channels.**\";\r\n\r\n  // Create a legend element with the message and class\r\n  var messageLegend11 = jQuery('<legend>').addClass('green-label').html(message11);\r\n\r\n  // Append the message legend after the textarea element\r\n  jQuery('#edit-note[data-drupal-selector=\"edit-note\"]').after(messageLegend11);\r\n  \r\n\r\n  });"
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  personal_details_webform_handler:
+    id: personaldetails_webform_handler
+    handler_id: null
+    label: 'Personal webform handler'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: null
+    settings:
+      id: personaldetails_webform_handler
+      handler_id: null
+      label: 'Personal webform handler'
+      notes: ''
+      status: true
+      conditions: {  }
+      weight: null
+      settings:
+        id: personaldetails_webform_handler
+        handler_id: null
+        label: 'Personal webform handler'
+        notes: ''
+        status: true
+        conditions: {  }
+        weight: null
+        settings:
+          id: personaldetails_webform_handler
+          handler_id: null
+          label: 'Personal webform handler'
+          notes: ''
+          status: true
+          conditions: {  }
+          weight: null
+          settings:
+            id: personaldetails_webform_handler
+            handler_id: null
+            label: 'Personal webform handler'
+            notes: ''
+            status: true
+            conditions: {  }
+            weight: null
+            settings:
+              id: personaldetails_webform_handler
+              handler_id: null
+              label: 'Personal webform handler'
+              notes: ''
+              status: true
+              conditions: {  }
+              weight: null
+              settings:
+                id: personaldetails_webform_handler
+                handler_id: null
+                label: 'Personal webform handler'
+                notes: ''
+                status: true
+                conditions: {  }
+                weight: null
+                settings:
+                  id: personaldetails_webform_handler
+                  handler_id: null
+                  label: 'Personal webform handler'
+                  notes: ''
+                  status: true
+                  conditions: {  }
+                  weight: null
+                  settings:
+                    id: personaldetails_webform_handler
+                    handler_id: null
+                    label: 'Personal webform handler'
+                    notes: ''
+                    status: true
+                    conditions: {  }
+                    weight: null
+                    settings:
+                      id: personaldetails_webform_handler
+                      handler_id: null
+                      label: 'Personal webform handler'
+                      notes: ''
+                      status: true
+                      conditions: {  }
+                      weight: null
+                      settings:
+                        id: personaldetails_webform_handler
+                        handler_id: null
+                        label: 'Personal webform handler'
+                        notes: ''
+                        status: true
+                        conditions: {  }
+                        weight: null
+                        settings:
+                          id: personaldetails_webform_handler
+                          handler_id: null
+                          label: 'Personal webform handler'
+                          notes: ''
+                          status: true
+                          conditions: {  }
+                          weight: null
+                          settings:
+                            id: personaldetails_webform_handler
+                            handler_id: null
+                            label: 'Personal webform handler'
+                            notes: ''
+                            status: true
+                            conditions: {  }
+                            weight: null
+                            settings:
+                              id: personaldetails_webform_handler
+                              handler_id: null
+                              label: 'Personal webform handler'
+                              notes: ''
+                              status: true
+                              conditions: {  }
+                              weight: -50
+                              settings:
+                                id: personaldetails_webform_handler
+                                handler_id: personal_details_webform_handler
+                                label: 'Personal details webform handler'
+                                notes: ''
+                                status: true
+                                conditions: {  }
+                                weight: 0
+                                settings: {  }
+variants: {  }

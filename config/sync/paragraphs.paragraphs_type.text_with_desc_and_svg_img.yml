@@ -1,0 +1,10 @@
+uuid: ece4455c-f43d-48bc-af5b-6c0adfeffd31
+langcode: en
+status: true
+dependencies: {  }
+id: text_with_desc_and_svg_img
+label: 'Text with desc and svg img'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

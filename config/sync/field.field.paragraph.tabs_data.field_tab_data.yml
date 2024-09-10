@@ -1,0 +1,88 @@
+uuid: e27c526a-3837-4880-aada-f2f959232f8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tab_data
+    - paragraphs.paragraphs_type.tabs_data
+    - paragraphs.paragraphs_type.tabs_datas
+  module:
+    - entity_reference_revisions
+id: paragraph.tabs_data.field_tab_data
+field_name: field_tab_data
+entity_type: paragraph
+bundle: tabs_data
+label: 'Tab data'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      tabs_datas: tabs_datas
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 21
+        enabled: false
+      basemap:
+        weight: 22
+        enabled: false
+      features_list:
+        weight: 23
+        enabled: false
+      heading_with_cta_and_media_text:
+        weight: 25
+        enabled: false
+      heading_with_media_description:
+        weight: 26
+        enabled: false
+      heading_with_texts:
+        weight: 27
+        enabled: false
+      headings_with_images:
+        weight: 24
+        enabled: false
+      icons_with_links:
+        weight: 28
+        enabled: false
+      image_with_cta_and_heading:
+        weight: 30
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 31
+        enabled: false
+      images_with_list:
+        weight: 29
+        enabled: false
+      media_with_title_and_description:
+        weight: 32
+        enabled: false
+      slider_services_tabs:
+        weight: 33
+        enabled: false
+      tab_services:
+        weight: 37
+        enabled: false
+      tab_slider_and_services:
+        weight: 38
+        enabled: false
+      tabs:
+        weight: 34
+        enabled: false
+      tabs_data:
+        weight: 35
+        enabled: false
+      tabs_datas:
+        weight: 36
+        enabled: true
+      text_with_cta_and_image:
+        weight: 39
+        enabled: false
+      view_reference:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

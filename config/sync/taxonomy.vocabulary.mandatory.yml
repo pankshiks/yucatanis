@@ -1,0 +1,8 @@
+uuid: 7a4f9be5-429d-4521-87cc-fed20ce9beea
+langcode: en
+status: true
+dependencies: {  }
+name: Mandatory
+vid: mandatory
+description: ''
+weight: 0

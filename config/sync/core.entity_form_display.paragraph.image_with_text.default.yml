@@ -1,0 +1,35 @@
+uuid: 48206927-4416-4eed-985e-36db341aad59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_with_text.field_icon
+    - field.field.paragraph.image_with_text.field_icon_title
+    - paragraphs.paragraphs_type.image_with_text
+  module:
+    - svg_image_field
+id: paragraph.image_with_text.default
+targetEntityType: paragraph
+bundle: image_with_text
+mode: default
+content:
+  field_icon:
+    type: svg_image_field_widget
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_max_width: 300
+      preview_image_max_height: 300
+    third_party_settings: {  }
+  field_icon_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

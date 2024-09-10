@@ -1,0 +1,10 @@
+uuid: a6624ca2-8d3b-4591-b8f3-1a83d61f8a86
+langcode: en
+status: true
+dependencies: {  }
+id: ethics_banner_with_text_and_img
+label: 'Ethics banner with text and img'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

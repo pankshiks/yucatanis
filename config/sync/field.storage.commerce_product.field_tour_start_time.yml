@@ -1,0 +1,19 @@
+uuid: b210e9b1-3174-4c40-86e4-49404924e33b
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - time_field
+id: commerce_product.field_tour_start_time
+field_name: field_tour_start_time
+entity_type: commerce_product
+type: time
+settings: {  }
+module: time_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 97cd46d7-fbcd-4c3b-ac88-ec13130e2ed0
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.storage.commerce_product.field_tour_start_time
+  module:
+    - time_field
+id: commerce_product.default.field_tour_start_time
+field_name: field_tour_start_time
+entity_type: commerce_product
+bundle: default
+label: 'Tour start time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: time

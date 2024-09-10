@@ -1,0 +1,115 @@
+uuid: 6b04d14b-8ebe-49cb-b557-63dfc8b3e1ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+    - core.entity_view_mode.commerce_product.essential_rarities_add_product_comparison
+    - field.field.commerce_product.essential_rarities.body
+    - field.field.commerce_product.essential_rarities.field_all_weather_activity
+    - field.field.commerce_product.essential_rarities.field_available_add_ons
+    - field.field.commerce_product.essential_rarities.field_convenience
+    - field.field.commerce_product.essential_rarities.field_distinction
+    - field.field.commerce_product.essential_rarities.field_duration
+    - field.field.commerce_product.essential_rarities.field_excluded_attributes
+    - field.field.commerce_product.essential_rarities.field_fates
+    - field.field.commerce_product.essential_rarities.field_hotel_information
+    - field.field.commerce_product.essential_rarities.field_inclusions_list
+    - field.field.commerce_product.essential_rarities.field_informative_tags
+    - field.field.commerce_product.essential_rarities.field_mandatorys
+    - field.field.commerce_product.essential_rarities.field_mood
+    - field.field.commerce_product.essential_rarities.field_no_id
+    - field.field.commerce_product.essential_rarities.field_privately_available
+    - field.field.commerce_product.essential_rarities.field_product_image
+    - field.field.commerce_product.essential_rarities.field_relatively_closer_to
+    - field.field.commerce_product.essential_rarities.field_restriction
+    - field.field.commerce_product.essential_rarities.field_sub_type
+    - field.field.commerce_product.essential_rarities.field_tour_start_time
+    - field.field.commerce_product.essential_rarities.field_yucatanis_recommend
+  module:
+    - commerce_product
+    - entity_comparison
+    - options
+id: commerce_product.essential_rarities.essential_rarities_add_product_comparison
+targetEntityType: commerce_product
+bundle: essential_rarities
+mode: essential_rarities_add_product_comparison
+content:
+  field_all_weather_activity:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_convenience:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_mandatorys:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_product_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  link_for_entity_comparison_add_product_comparison:
+    type: entity_comparison_link
+    label: above
+    settings:
+      enitity_comparison: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    label: above
+    settings:
+      combine: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  created: true
+  field_available_add_ons: true
+  field_distinction: true
+  field_duration: true
+  field_excluded_attributes: true
+  field_fates: true
+  field_hotel_information: true
+  field_inclusions_list: true
+  field_informative_tags: true
+  field_mood: true
+  field_no_id: true
+  field_privately_available: true
+  field_relatively_closer_to: true
+  field_restriction: true
+  field_sub_type: true
+  field_tour_start_time: true
+  field_yucatanis_recommend: true
+  langcode: true
+  search_api_excerpt: true
+  stores: true
+  uid: true

@@ -1,0 +1,21 @@
+uuid: 1ad115a5-1781-4b76-b6dc-3ea9bc1a6fd8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Y2qE4TXTKonW7r-A1vHWIYHBjEKWAsjBE58T5AjwaAQ
+name: 'Press releases'
+id: press_releases
+description: 'This is the press release.'
+format: plain
+priority: 0
+receipt: false
+from_name: Yucatanis
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: test.ckln@gmail.com
+hyperlinks: true
+allowed_handlers: {  }
+new_account: none
+access: default
+reason: ''
+weight: 0

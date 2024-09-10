@@ -1,0 +1,21 @@
+uuid: 07e727c1-4cb9-4924-ac4d-5221405fce01
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.boat_rentals
+    - field.storage.commerce_order.field_submission_id
+  module:
+    - text
+id: commerce_order.boat_rentals.field_submission_id
+field_name: field_submission_id
+entity_type: commerce_order
+bundle: boat_rentals
+label: 'Submission Id'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

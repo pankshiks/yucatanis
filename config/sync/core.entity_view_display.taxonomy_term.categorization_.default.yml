@@ -1,0 +1,49 @@
+uuid: a3dcc034-3992-47fd-ac51-9b3cad715990
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.categorization_.field_category_image
+    - field.field.taxonomy_term.categorization_.field_tab_class
+    - taxonomy.vocabulary.categorization_
+  module:
+    - svg_image_field
+    - text
+id: taxonomy_term.categorization_.default
+targetEntityType: taxonomy_term
+bundle: categorization_
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_category_image:
+    type: svg_image_field_formatter
+    label: hidden
+    settings:
+      inline: false
+      apply_dimensions: true
+      width: 25
+      height: 25
+      enable_alt: true
+      enable_title: true
+      link: ''
+      force_fill: false
+      sanitize: true
+      sanitize_remote: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tab_class:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true

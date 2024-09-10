@@ -1,0 +1,26 @@
+uuid: c1f5a981-3c90-4270-8ac0-efadc5481662
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - commerce_checkout
+third_party_settings:
+  commerce_cart:
+    cart_block_view: commerce_cart_block
+    cart_form_view: commerce_cart_form
+    cart_expiration: {  }
+    enable_cart_message: true
+  commerce_checkout:
+    checkout_flow: default
+id: boat_rentals
+label: 'Boat Rentals'
+traits: {  }
+locked: false
+workflow: order_default
+numberPattern: null
+refresh_mode: customer
+refresh_frequency: 300
+sendReceipt: true
+receiptBcc: ''
+receiptSubject: ''

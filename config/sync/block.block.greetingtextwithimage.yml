@@ -1,0 +1,30 @@
+uuid: f4b6d698-d32f-492b-bf37-8abb67904c4b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:greeting:c941558f-f00d-4e36-b170-7b926c0d0575'
+  module:
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+id: greetingtextwithimage
+theme: yucatanis_theme
+region: content
+weight: -16
+provider: null
+plugin: 'block_content:c941558f-f00d-4e36-b170-7b926c0d0575'
+settings:
+  id: 'block_content:c941558f-f00d-4e36-b170-7b926c0d0575'
+  label: 'Greeting text with image  '
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /blog

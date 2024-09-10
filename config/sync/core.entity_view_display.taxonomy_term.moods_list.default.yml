@@ -1,0 +1,41 @@
+uuid: 355ea1c1-0537-4b46-adb7-263e6f0120d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.moods_list.field_moods_icon
+    - taxonomy.vocabulary.moods_list
+  module:
+    - svg_image_field
+    - text
+id: taxonomy_term.moods_list.default
+targetEntityType: taxonomy_term
+bundle: moods_list
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_moods_icon:
+    type: svg_image_field_formatter
+    label: hidden
+    settings:
+      inline: false
+      apply_dimensions: true
+      width: 25
+      height: 25
+      enable_alt: true
+      enable_title: true
+      link: ''
+      force_fill: false
+      sanitize: true
+      sanitize_remote: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

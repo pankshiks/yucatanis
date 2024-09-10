@@ -1,0 +1,20 @@
+uuid: e18a80a1-8c13-4d40-b4c1-e03ec1d19dc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_hotel_information
+  module:
+    - user
+id: user.user.field_hotel_information
+field_name: field_hotel_information
+entity_type: user
+bundle: user
+label: hotel_information
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,46 @@
+uuid: bb81a591-dacc-48d8-9ebb-b16071f5e78d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_images_with_list
+    - paragraphs.paragraphs_type.headings_with_images
+    - paragraphs.paragraphs_type.images_with_list
+  module:
+    - entity_reference_revisions
+id: paragraph.headings_with_images.field_images_with_list
+field_name: field_images_with_list
+entity_type: paragraph
+bundle: headings_with_images
+label: 'Images with list'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      images_with_list: images_with_list
+    negate: 0
+    target_bundles_drag_drop:
+      basemap:
+        weight: 7
+        enabled: false
+      headings_with_images:
+        weight: 8
+        enabled: false
+      image_with_cta_and_heading:
+        weight: 10
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 11
+        enabled: false
+      images_with_list:
+        weight: 9
+        enabled: true
+      text_with_cta_and_image:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

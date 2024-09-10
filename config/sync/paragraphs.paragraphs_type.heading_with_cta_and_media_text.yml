@@ -1,0 +1,10 @@
+uuid: e22832eb-9243-48a3-b493-bb19ee926f8d
+langcode: en
+status: true
+dependencies: {  }
+id: heading_with_cta_and_media_text
+label: 'Heading with CTA and media text'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,39 @@
+uuid: 5c66b4e3-2b6c-4166-a4bd-a3f8717269c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_with_title_and_description.field_descriptions
+    - field.field.paragraph.media_with_title_and_description.field_image_logo
+    - field.field.paragraph.media_with_title_and_description.field_title_
+    - paragraphs.paragraphs_type.media_with_title_and_description
+id: paragraph.media_with_title_and_description.default
+targetEntityType: paragraph
+bundle: media_with_title_and_description
+mode: default
+content:
+  field_descriptions:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image_logo:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title_:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

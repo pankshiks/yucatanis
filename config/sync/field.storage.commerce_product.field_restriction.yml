@@ -1,0 +1,20 @@
+uuid: 5d801be7-b035-429f-85b5-c40688e03365
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - text
+id: commerce_product.field_restriction
+field_name: field_restriction
+entity_type: commerce_product
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

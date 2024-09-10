@@ -1,0 +1,33 @@
+uuid: 6847c0d6-c679-4ba8-b231-85b8e31c94f1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_type_
+field_name: field_type_
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Features list'
+      label: features_list
+    -
+      value: 'Support Page'
+      label: support_page
+    -
+      value: 'Contact us page'
+      label: contact_us_page
+    -
+      value: three_col_cards
+      label: 'Three col cards'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 4
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

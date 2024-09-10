@@ -1,0 +1,29 @@
+uuid: 57e5bb08-c525-4d10-b6b9-17b2c1c33960
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.shop_classic_experiences
+    - field.storage.commerce_product.field_mood
+    - taxonomy.vocabulary.moods_list
+id: commerce_product.shop_classic_experiences.field_mood
+field_name: field_mood
+entity_type: commerce_product
+bundle: shop_classic_experiences
+label: Mood
+description: "What's your mood for such a day?"
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      moods_list: moods_list
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

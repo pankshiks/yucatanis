@@ -1,0 +1,21 @@
+uuid: d985c25c-8822-47fa-a302-023fe2b20197
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+    - field.storage.commerce_product.field_all_weather_activity
+  module:
+    - options
+id: commerce_product.essential_rarities.field_all_weather_activity
+field_name: field_all_weather_activity
+entity_type: commerce_product
+bundle: essential_rarities
+label: 'All Weather Activity '
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

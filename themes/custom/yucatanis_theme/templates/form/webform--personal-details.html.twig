@@ -19,32 +19,32 @@
                    {# <div class="select-items floating-input">
                   {{element.elements.container["last_name"] }}
                </div>#}
-                  <div class="select-items floating-input">
+                  {# <div class="select-items floating-input">
                   {{ element.elements.address["company"] }}
                   <label class="" for="Name1">{{ element.elements.address["company"]['#title'] }}</label>
-               </div> 
-                  <div class="select-items floating-input">
-                  {{ element.elements.address["address_line_1"] }}
+               </div>  #}
+                  {# <div class="select-items floating-input">
+                   {{ element.elements.address["address_line_1"] }}
                    <label class="" for="Name2">{{ element.elements.address["address_line_1"]['#title'] }}</label>
-               </div>
-                <div class="select-items floating-input">
+                  </div> #}
+                {# <div class="select-items floating-input">
                   {{ element.elements.address["address_line_2"] }}
                   <label class="" for="Name3">{{ element.elements.address["address_line_2"]['#title'] }}</label>
-               </div>
-                <div class="select-items floating-input">
+               </div> #}
+                {# <div class="select-items floating-input">
                   {{element.elements.address["postal_code"] }}
                   <label class="" for="Name4">{{ element.elements.address["postal_code"]['#title'] }}</label>
-               </div>
+               </div> #}
                 {# <div class="select-items floating-input">
                   {{ element.elements.address["sorting_code"] }}
                </div> #}
                 {# <div class="select-items floating-input">
                   {{ element.elements.address["dependent_locality_e_g_neighbourhood_"] }}
                </div> #}
-               <div class="select-items floating-input">
+               {# <div class="select-items floating-input">
                   {{ element.elements.address["locality_e_g_city_"] }}
                   <label class="" for="Name5">{{ element.elements.address["locality_e_g_city_"]['#title'] }}</label>
-               </div>
+               </div> #}
                {# <div class="select-items floating-input">
                   {{ element.elements.address["administrative_area_e_g_state_or_province_"] }}
                </div>  #}
@@ -67,36 +67,22 @@
               <label for="phone" class="">{{ element.elements.phone_number['#title'] }}</label>
             </div>
             <div class="select-items floating-input">
-             
-                     {{ element.elements.country }}
-                    <label class="" for="Country of Origin">{{ element.elements.country['#title'] }}</label>
+        
+                {{ element.elements.country }}
+              <label class="" for="Country of Origin">{{ element.elements.country['#title'] }}</label>
             </div>
 
             <div class="select-items floating-input">
-            
-                     {{ element.elements.hotel_s_name_for_pick_up }}
-                     <label class="" for=""> If Your Beach Hotel is Not Listed</label> 
-                   
+              
+              {{ element.elements.hotel_information }}
+                <label class="" for="text">{{ element.elements.hotel_s_name_for_pick_up['#title']  }}</label>
+                {# <label class="" for=""> {{ element.elements.hotel_information['#title'] }}</label>  #}
             </div>
-
             <div class="select-items floating-input">
-                        
-                        {{ element.elements.hotel_information }}
-                         <label class="" for="text">{{ element.elements.hotel_s_name_for_pick_up['#title']  }}</label>
-                          {# <label class="" for=""> {{ element.elements.hotel_information['#title'] }}</label>  #}
-            </div>
-                  <div class="select-items floating-input">
-                     <label class="" for="text">Approximate Pick Up Time</label>
-                        {{ element.elements.output }}
-            </div>
-            <div class="mb-2">
-              <h6 class="footnote">Write the Complete Accurate Name avoiding spelling mistakes, some hotel names are
-                very alike. For
-                logistics and insurance policies we only serve nautical resorts. Pick up and drop off must be at the
-                same
-                hotel’s lobby. If by some reason you don’t want the transport back to the hotel let us know in the note
-                below to find out.
-              </h6>
+        
+                {# {{ element.elements.hotel_s_name_for_pick_up }}
+                <label class="" for=""> if_your_beach_hotel_is_not_listed</label>  #}
+                {{ element.elements.if_your_beach_hotel_is_not_listed }}
             </div>
             <div class="select-items floating-input">
            
@@ -106,6 +92,12 @@
                   gate at the time we pick you up (for safety).</span>
               </label>
             </div>
+            <div class="select-items floating-input">
+              <label class="" for="text">EXACT PICK UP TIME</label>
+                {{ element.elements.output }}
+            </div>
+          
+         
             <div class="select-items floating-input">
             
                     {{ element.elements.note }}
@@ -146,10 +138,11 @@
       <div class="order-summary-block">
         <h5>Order Summary</h5>
         <div class="order-summary ">
+        <img src="/themes/custom/yucatanis_theme/images/Dark-Transparent.png" alt="Dark-Transparent.png">
           <div class="order-title">
           {# {{dump(element.elements)}} #}
             <p>{{ element.elements.order_summary.product_title['#default_value']}}</p>
-            <h5>Fontaine - Pajot <span>59ft</span></h5>
+            {# <h5>Fontaine - Pajot <span>59ft</span></h5> #}
           </div>
           <div class="order-summary-item w-100">
             <div class="rating-block">
@@ -173,12 +166,13 @@
             <img src="/sites/default/files/ion_time-outline.svg">
               <p><strong>{{element.elements.order_details['#default_value'].field_booking_time.value|date('D, F j, Y')}}</strong></p>
             </div>
-            <div class="package-detail-items">
-                <img src="/sites/default/files/ion_time-outline.svg">
-                {% if element.elements.order_summary.timeframe['#default_value'] is not empty %}
+              {% if element.elements.order_summary.timeframe['#default_value'] is not empty %}
+                <div class="package-detail-items">
+                 <img src="/sites/default/files/ion_time-outline.svg">
+              
                   <p>Time Frame: <strong>{{element.elements.order_summary.timeframe['#default_value']}} hours</strong></p>
-               {% endif %}
-            </div>
+              </div>
+             {% endif %}
                      {% if element.elements.order_summary.hotel_name is not empty %}
             <div class="package-detail-items">
                         <img src="/sites/default/files/ion_time-outline.svg">
@@ -189,7 +183,7 @@
             {% endif %}
             <div class="package-detail-items">
                          <img src="/sites/default/files/ion_time-outline.svg">
-              <p>Approximate Pick Up Time*: <strong>{{element.elements.order_summary.hotel_time['#default_value']}}HRS</strong></p>
+              <p>Pick Up Time*: <strong>{{element.elements.order_summary.hotel_time['#default_value']}}HRS</strong></p>
             </div>
             <div class="package-detail-items">
              <img src="/sites/default/files/ion_time-outline.svg">

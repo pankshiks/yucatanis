@@ -1,0 +1,23 @@
+uuid: a81748ae-9e97-42be-b8db-2b83b6c1bbff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cl_button
+    - paragraphs.paragraphs_type.text_with_desc_and_svg_img
+  module:
+    - link
+id: paragraph.text_with_desc_and_svg_img.field_cl_button
+field_name: field_cl_button
+entity_type: paragraph
+bundle: text_with_desc_and_svg_img
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -1,0 +1,19 @@
+uuid: 7751569c-b51a-41a1-a7d6-7836ff7ef150
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - simple_time_field
+id: paragraph.field_pick_up_time
+field_name: field_pick_up_time
+entity_type: paragraph
+type: simple_time_type
+settings: {  }
+module: simple_time_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,8 @@
+uuid: 6fac7e2e-f10a-46cc-af34-a2d849449d24
+langcode: en
+status: true
+dependencies: {  }
+name: 'Yucatanis Recommends'
+vid: yucatanis_recommends
+description: ''
+weight: 0

@@ -1,0 +1,21 @@
+uuid: f16fdba0-593e-43bd-a656-3657904cf817
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_bottom_highlight_text
+    - node.type.blog
+  module:
+    - text
+id: node.blog.field_blog_bottom_highlight_text
+field_name: field_blog_bottom_highlight_text
+entity_type: node
+bundle: blog
+label: 'Blog Bottom Highlighted text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

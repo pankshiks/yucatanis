@@ -1,0 +1,29 @@
+uuid: e7c8ce05-f3e8-405e-9c41-059b37c47306
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.default
+    - field.storage.commerce_product_variation.field_rating
+  module:
+    - fivestar
+id: commerce_product_variation.default.field_rating
+field_name: field_rating
+entity_type: commerce_product_variation
+bundle: default
+label: Rating
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  stars: 5
+  allow_clear: false
+  allow_revote: true
+  allow_ownvote: true
+  rated_while: editing
+  enable_voting_target: false
+  target_bridge_field: ''
+  target_fivestar_field: ''
+field_type: fivestar

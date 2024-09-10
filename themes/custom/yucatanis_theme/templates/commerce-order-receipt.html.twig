@@ -1,0 +1,323 @@
+{#
+/**
+ * @file
+ * Template for the order receipt.
+ *
+ * Available variables:
+ * - order_entity: The order entity.
+ * - billing_information: The billing information.
+ * - shipping_information: The shipping information.
+ * - payment_method: The payment method.
+ * - totals: An array of order totals values with the following keys:
+ *   - subtotal: The order subtotal price.
+ *   - adjustments: An array of adjustment totals:
+ *     - type: The adjustment type.
+ *     - label: The adjustment label.
+ *     - total: The adjustment total price.
+ *     - weight: The adjustment weight, taken from the adjustment type.
+ *   - total: The order total price.
+ *
+ * @ingroup themeable
+ */
+#}
+
+ 
+
+<table border="0" cellspacing="0" width="100%" style="max-width:600px; margin:30px auto; width:100%; background-color:#fff; padding: 0px 10px 50px 10px; box-sizing: border-box; border-collapse: collapse; display: block; border-spacing: 0;">
+		<tbody style="margin: 0px auto; display: block; width: 100%;">
+			<tr style="margin: 0px auto; display: block; width: 100%;">
+				<td valign="center" style="text-align: center; margin: 0px auto; display: block; width: 100%;">
+					<h2 style="font-size:40px; margin: 50px 0px 10px 0; line-height: 40px; font-weight: 300; font-family: 
+          'Open Sans', sans-serif; color:#35363A;">{{ 'Order Confirmation'|t }}</h2>
+					<p style="font-size:16px; letter-spacing: 0.02em; padding-bottom: 25px; font-weight: 300; line-height: 22px;
+           font-family: 'Open Sans', sans-serif; color:#35363A;">Hi,<span style="font-weight: bold;">{{given_name}}</span> 
+           thanks for your order. Hope you<br/>
+						enjoyed shopping with us!</p>
+					<h3 style="font-size:24px; margin:0px 0px 30px 0; line-height: 25px; font-weight: 500; font-family: 'Open Sans', 
+          sans-serif; color:#35363A;">Here’s what you have ordered</h3>
+				</td>
+			</tr>
+			<tr style="margin: 0px auto; float:left; width:100%; ">
+				<td style="width:220px; float:left;">
+					<p style="font-size:16px; padding:0px 10px; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; font-weight: 300; 
+          line-height: 22px; font-family: 'Open Sans', sans-serif; color:#35363A;"><span style="font-weight: 700;">
+          Order No.:</span> {{ 'Order #@number Details:'|t({'@number': order_entity.getOrderNumber}) }}</p>
+				</td>
+				<td style="width:220px; float:right;">
+					<p style="font-size:16px; padding:0px 10px; margin:0; letter-spacing: 0.02em; padding-bottom: 0px;
+           font-weight: 300; line-height: 22px; font-family: 'Open Sans', sans-serif; color:#35363A;">
+           <span style="font-weight: 700;">Order Date:</span> {{field_booking_time}}</p>
+				</td>
+			</tr>
+			<tr style="float: left; width:100%;">
+				<td style="float:left; width:100%; padding:0px 10px; box-sizing: border-box;">
+					<span style="border:1px solid #eaeaea; margin:20px 0; overflow:hidden; float: left; width:100%;"></span>
+				</td>
+			</tr>
+			<tr style="float: left; width:100%; float: left;">
+				<td style="float:left; width:100%; padding:0px 10px; box-sizing: border-box;">
+					<div style="height:250px;">
+            
+              <img alt="" src="{{image_url}}" width="100%" style="border: 0; height: 100%; object-fit:cover;">
+         
+					</div>
+				</td>
+			</tr>
+            <tr style="border-bottom:2px solid #eaeaea; margin:0px 10px; margin-bottom:15px; display:block; padding-bottom:15px; ">
+				<td style="margin-left: 10px; width:100%;">
+          {% if products_info %}
+
+            {% for product_info in products_info %}
+              <h4 style="font-size:22px; margin:20px 0px; display: block; line-height: 25px; text-decoration: none;
+              font-family: 'Open Sans', sans-serif; color:#000;">
+                {{ product_info.title }}</h4>
+            {% endfor %}
+    
+          {% endif %}</h4>
+					<span style="font-size:16px; margin:10px 0px; display: block; line-height: 25px; text-decoration: none; 
+          font-family: 'Open Sans', sans-serif; color:#35363A;"><span style="font-weight: bold;">-</span>
+           Pick Up Place: <span style="font-weight: bold;">{{field_hotel_name}}</span></span>
+
+					<span style="font-size:16px; margin:10px 0px; display: block; line-height: 25px; text-decoration: none;
+           font-family: 'Open Sans', sans-serif; color:#35363A;"><span style="font-weight: bold;">-</span> 
+           Approximate Pick Up Time: <span style="font-weight: bold;">{{pick_up_time }}</span></span>
+
+					<span style="font-size:16px; margin:10px 0px; display: block; line-height: 25px; text-decoration: none; 
+          font-family: 'Open Sans', sans-serif; color:#35363A;"><span style="font-weight: bold;">-</span> 
+          Tour Start Time:<span style="font-weight: bold;"> {{field_tour_start_time }}</span></span>
+          
+					<span style="font-size:16px; margin:10px 0px; display: block; line-height: 25px; text-decoration: none; 
+          font-family: 'Open Sans', sans-serif; color:#35363A;"><span style="font-weight: bold;">-</span>  {{ field_adults_no }} Adults </span>
+
+					<span style="font-size:16px; margin:10px 0px; display: block; line-height: 25px; text-decoration: none; 
+          font-family: 'Open Sans', sans-serif; color:#35363A;"><span style="font-weight: bold;">-</span> {{field_kids_no }} Kids </span>
+
+					<span style="font-size:16px; margin:10px 0px; display: block; line-height: 25px; text-decoration: none;
+           font-family: 'Open Sans', sans-serif; color:#35363A;"><span style="font-weight: bold;">-</span> {{ field_infants_no }} Infants</span>
+				</td>
+				
+			</tr>
+
+			{# <tr>
+				<td class="w-100" valign="top" style="width:330px; padding:0px 10px; float: left; margin-bottom: 15px; box-sizing: border-box;">
+					<h4 style="display: block; margin:0 0px 8px 0; padding:0 !important; padding: 18px; color: #35363A; 
+          font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: bold;">
+						{{ 'Payment Method'|t }}
+					</h4>
+					<p style="font-size:14px; padding:00; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; font-weight: 300;
+					 line-height: 22px; font-family: 'Open Sans', sans-serif; color:#35363A;">
+            {% block payment_method %}
+              {{ payment_method }}
+            {% endblock %}</p>
+				</td>
+				
+				<td class="w-100" valign="top" style="width:250px; padding:0px 10px; float: right; margin-bottom: 15px; box-sizing: border-box;">
+					<table>
+						<tr>
+							<td style="width: 150px;">
+								<span style="font-size:14px; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; font-weight: 500; 
+                line-height: 22px; font-family: 'Open Sans', sans-serif; color:#646464;">Subtotal:
+								</span>
+							</td>
+							<td style="width: 150px; text-align:right;">
+								<span style="font-size:14px; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; font-weight: 500; 
+                line-height: 22px; font-family: 'Open Sans', sans-serif; color:#646464;">
+                {{ 'Subtotal: @subtotal'|t({'@subtotal': totals.subtotal|commerce_price_format}) }}</span>
+							</td>
+						</tr>
+						
+						<tr>
+							<td style="width: 150px;">
+								<span style="font-size:14px; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; font-weight: bold; line-height: 22px; 
+                font-family: 'Open Sans', sans-serif; color:#35363A;">Total:
+								</span>
+							</td>
+							<td style="width: 200px; text-align:right;">
+								<span style="font-size:14px; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; font-weight: bold; line-height: 22px;
+                 font-family: 'Open Sans', sans-serif; color:#35363A;">  {{ 'Order Total: @total'|t({'@total': order_entity.getTotalPrice|commerce_price_format}) }}</span>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>	 #}
+      	<tr>
+				<td class="w-100" valign="top" style="width:330px; padding:0px 10px; margin-bottom: 15px; box-sizing: border-box;">
+					<h4 style="display: block; margin:0 0px 8px 0; padding:0 !important; padding: 18px; color: #35363A;
+					 font-family: 'Open Sans', sans-serif; font-size: 14px; font-weight: bold;">
+						{{ 'Payment Method'|t }}
+					</h4>
+					<p style="font-size:14px; padding:00; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; font-weight: 300;
+					 line-height: 22px; font-family: 'Open Sans', sans-serif; color:#35363A;">
+           {% block payment_method %}
+              {{ payment_method }}
+            {% endblock %}
+           </p>
+				</td>
+				
+				<td class="w-100" valign="top" style="width:250px; padding:0px 10px; float: right; margin-bottom: 15px;
+				 box-sizing: border-box;">
+					<table>
+						<tr>
+							<td style="width: 150px;">
+								<span style="font-size:14px; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; 
+								font-weight: 500; line-height: 22px; font-family: 'Open Sans', sans-serif; color:#646464;">Subtotal:
+								</span>
+							</td>
+							<td style="width: 150px; text-align:right;">
+								<span style="font-size:14px; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; font-weight: 500; 
+								line-height: 22px; font-family: 'Open Sans', sans-serif; color:#646464;"> 
+                {{ totals.subtotal|commerce_price_format }}</span>
+
+                {# {{ 'Subtotal: @subtotal'|t({'@subtotal': totals.subtotal|commerce_price_format}) }}</span> #}
+							</td>
+						</tr>
+						
+						<tr>
+							<td style="width: 150px;">
+								<span style="font-size:14px; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; font-weight: bold; 
+								line-height: 22px; font-family: 'Open Sans', sans-serif; color:#35363A;">Total:
+								</span>
+							</td>
+							<td style="width: 200px; text-align:right;">
+								<span style="font-size:14px; margin:0; letter-spacing: 0.02em; padding-bottom: 0px; font-weight: bold; line-height: 22px;
+                 font-family: 'Open Sans', sans-serif; color:#35363A;">
+                 {{ order_entity.getTotalPrice|commerce_price_format }}</span>
+
+                  {# {{ 'Order Total: @total'|t({'@total': order_entity.getTotalPrice|commerce_price_format}) }}</span> #}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>	
+      
+		</tbody>
+	</table>
+{# original template start #}
+{# <table style="margin: 15px auto 0 auto; max-width: 768px; font-family: arial,sans-serif">
+  <tbody>
+  <tr>
+    <td>
+      <table style="margin-left: auto; margin-right: auto; max-width: 768px; text-align: center;">
+        <tbody>
+        <tr>
+          <td>
+            <a href="{{ url('<front>') }}" style="color: #0e69be; text-decoration: none; font-weight: bold; margin-top: 15px;">
+            {{ order_entity.getStore.label }}</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table style="text-align: center; min-width: 450px; margin: 5px auto 0 auto; border: 1px solid #cccccc; border-radius: 5px;
+       padding: 40px 30px 30px 30px;">
+        <tbody>
+        <tr>
+          <td style="font-size: 30px; padding-bottom: 30px">{{ 'Order Confirmation'|t }}</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold; padding-top:15px; padding-bottom: 15px; text-align: left; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc">
+            {{ 'Order #@number details:'|t({'@number': order_entity.getOrderNumber}) }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {% block order_items %}
+            <table style="padding-top: 15px; padding-bottom:15px; width: 100%">
+              <tbody style="text-align: left;">
+              {% for order_item in order_entity.getItems %}
+              <tr>
+                <td>
+                  {{ order_item.getQuantity|number_format }} x
+                </td>
+                <td>
+                  <span>{{ order_item.label }}</span>
+                  <span style="float: right;">{{ order_item.getTotalPrice|commerce_price_format }}</span>
+                </td>
+              </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+            {% endblock %}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {% if (billing_information or shipping_information) %}
+            <table style="width: 100%; padding-top:15px; padding-bottom: 15px; text-align: left; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc">
+              <tbody>
+              <tr>
+                {% if shipping_information %}
+                  <td style="padding-top: 5px; font-weight: bold;">{{ 'Shipping Information'|t }}</td>
+                {% endif %}
+                {% if billing_information %}
+                  <td style="padding-top: 5px; font-weight: bold;">{{ 'Billing Information'|t }}</td>
+                {% endif %}
+              </tr>
+              <tr>
+                {% if shipping_information %}
+                  <td>
+                    {% block shipping_information %}
+                      {{ shipping_information }}
+                    {% endblock %}
+                  </td>
+                {% endif %}
+                {% if billing_information %}
+                  <td>
+                    {% block billing_information %}
+                      {{ billing_information }}
+                    {% endblock %}
+                  </td>
+                {% endif %}
+              </tr>
+              {% if payment_method %}
+                <tr>
+                  <td style="font-weight: bold; margin-top: 10px;">{{ 'Payment Method'|t }}</td>
+                </tr>
+                <tr>
+                  <td>
+                    {% block payment_method %}
+                      {{ payment_method }}
+                    {% endblock %}
+                  </td>
+                </tr>
+              {% endif %}
+              </tbody>
+            </table>
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p style="margin-bottom: 0;">
+              {{ 'Subtotal: @subtotal'|t({'@subtotal': totals.subtotal|commerce_price_format}) }}
+            </p>
+          </td>
+        </tr>
+        {% for adjustment in totals.adjustments %}
+        <tr>
+          <td>
+            <p style="margin-bottom: 0;">
+              {{ adjustment.label }}: {{ adjustment.total|commerce_price_format }}
+            </p>
+          </td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <td>
+            <p style="font-size: 24px; padding-top: 15px; padding-bottom: 5px;">
+              {{ 'Order Total: @total'|t({'@total': order_entity.getTotalPrice|commerce_price_format}) }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {% block additional_information %}
+              {{ 'Thank you for your order!'|t }}
+            {% endblock %}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  </tbody>
+</table> #}

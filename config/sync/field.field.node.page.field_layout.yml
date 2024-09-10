@@ -1,0 +1,199 @@
+uuid: b8ab6202-bfd3-465c-aa72-096045002ee9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_layout
+    - node.type.page
+    - paragraphs.paragraphs_type.banner
+    - paragraphs.paragraphs_type.block_reference
+    - paragraphs.paragraphs_type.ethics_banner_with_text_and_img
+    - paragraphs.paragraphs_type.faq
+    - paragraphs.paragraphs_type.features_list
+    - paragraphs.paragraphs_type.greeting_text_with_image
+    - paragraphs.paragraphs_type.heading_with_cta_and_media_text
+    - paragraphs.paragraphs_type.heading_with_media_description
+    - paragraphs.paragraphs_type.heading_with_texts
+    - paragraphs.paragraphs_type.headings_with_images
+    - paragraphs.paragraphs_type.image_placeholder_
+    - paragraphs.paragraphs_type.image_with_cta_and_heading
+    - paragraphs.paragraphs_type.image_with_cta_disclaimer
+    - paragraphs.paragraphs_type.media_image_
+    - paragraphs.paragraphs_type.media_with_heading_and_descripti
+    - paragraphs.paragraphs_type.tabs_data
+    - paragraphs.paragraphs_type.text_description_with_list_
+    - paragraphs.paragraphs_type.text_field_with_basic_html
+    - paragraphs.paragraphs_type.text_image_with_list
+    - paragraphs.paragraphs_type.text_with_cta_and_image
+    - paragraphs.paragraphs_type.text_with_desc_and_svg_img
+    - paragraphs.paragraphs_type.title_with_list
+    - paragraphs.paragraphs_type.video_with_subtitle
+    - paragraphs.paragraphs_type.view_reference
+    - paragraphs.paragraphs_type.webform_reference
+  module:
+    - entity_reference_revisions
+id: node.page.field_layout
+field_name: field_layout
+entity_type: node
+bundle: page
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text_with_cta_and_image: text_with_cta_and_image
+      image_with_cta_and_heading: image_with_cta_and_heading
+      image_with_cta_disclaimer: image_with_cta_disclaimer
+      headings_with_images: headings_with_images
+      heading_with_texts: heading_with_texts
+      features_list: features_list
+      banner: banner
+      heading_with_media_description: heading_with_media_description
+      heading_with_cta_and_media_text: heading_with_cta_and_media_text
+      view_reference: view_reference
+      faq: faq
+      greeting_text_with_image: greeting_text_with_image
+      tabs_data: tabs_data
+      ethics_banner_with_text_and_img: ethics_banner_with_text_and_img
+      block_reference: block_reference
+      image_placeholder_: image_placeholder_
+      video_with_subtitle: video_with_subtitle
+      text_image_with_list: text_image_with_list
+      media_image_: media_image_
+      media_with_heading_and_descripti: media_with_heading_and_descripti
+      text_description_with_list_: text_description_with_list_
+      title_with_list: title_with_list
+      text_with_desc_and_svg_img: text_with_desc_and_svg_img
+      webform_reference: webform_reference
+      text_field_with_basic_html: text_field_with_basic_html
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 12
+        enabled: true
+      block_reference:
+        weight: 39
+        enabled: true
+      ethics_banner_with_text_and_img:
+        weight: 37
+        enabled: true
+      faq:
+        weight: 27
+        enabled: true
+      faq_multi_level:
+        weight: 46
+        enabled: false
+      faq_title_with_description:
+        weight: 28
+        enabled: false
+      features_list:
+        weight: 11
+        enabled: true
+      greeting_text_with_image:
+        weight: 35
+        enabled: true
+      heading_list_with_cta:
+        weight: 40
+        enabled: false
+      heading_with_cta_and_media_text:
+        weight: 19
+        enabled: true
+      heading_with_media_description:
+        weight: 18
+        enabled: true
+      heading_with_texts:
+        weight: 10
+        enabled: true
+      headings_with_images:
+        weight: 8
+        enabled: true
+      hotel_information:
+        weight: 55
+        enabled: false
+      icons_with_links:
+        weight: 12
+        enabled: false
+      image_placeholder_:
+        weight: 41
+        enabled: true
+      image_with_cta_and_heading:
+        weight: 3
+        enabled: true
+      image_with_cta_disclaimer:
+        weight: 5
+        enabled: true
+      image_with_text:
+        weight: 48
+        enabled: false
+      images_with_list:
+        weight: 9
+        enabled: false
+      include_image_with_title:
+        weight: 54
+        enabled: false
+      media_image_:
+        weight: 50
+        enabled: true
+      media_with_heading_and_descripti:
+        weight: 52
+        enabled: true
+      media_with_title_and_description:
+        weight: 24
+        enabled: false
+      social_links:
+        weight: 46
+        enabled: false
+      tab_image_heading_with_button:
+        weight: 36
+        enabled: false
+      tabs:
+        weight: 34
+        enabled: false
+      tabs_data:
+        weight: 35
+        enabled: true
+      tabs_datas:
+        weight: 36
+        enabled: false
+      tagline_block:
+        weight: 60
+        enabled: false
+      text_description_with_list_:
+        weight: 53
+        enabled: true
+      text_field_with_basic_html:
+        weight: 73
+        enabled: true
+      text_image_with_list:
+        weight: 47
+        enabled: true
+      text_with_cta_and_image:
+        weight: 2
+        enabled: true
+      text_with_desc_and_svg_img:
+        weight: 69
+        enabled: true
+      text_with_description_:
+        weight: 56
+        enabled: false
+      title_and_list:
+        weight: 67
+        enabled: false
+      title_with_list:
+        weight: 68
+        enabled: true
+      video_with_subtitle:
+        weight: 43
+        enabled: true
+      view_reference:
+        weight: 20
+        enabled: true
+      webform_reference:
+        weight: 72
+        enabled: true
+field_type: entity_reference_revisions

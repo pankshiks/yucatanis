@@ -1,0 +1,32 @@
+uuid: bfe4721e-9285-4c9f-85a2-608cf274b777
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_image_.field_image_slides
+    - field.field.paragraph.media_image_.field_image_slides_1
+    - paragraphs.paragraphs_type.media_image_
+  module:
+    - media_library
+id: paragraph.media_image_.default
+targetEntityType: paragraph
+bundle: media_image_
+mode: default
+content:
+  field_image_slides:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_image_slides_1:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

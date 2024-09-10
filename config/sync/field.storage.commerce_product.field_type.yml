@@ -1,0 +1,27 @@
+uuid: d98e17b8-7d30-4343-becc-7427ff5bde4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - options
+id: commerce_product.field_type
+field_name: field_type
+entity_type: commerce_product
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: experience_detail
+      label: 'Experience Detail'
+    -
+      value: rental_detail
+      label: 'Rental Detail'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

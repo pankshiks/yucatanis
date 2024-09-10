@@ -1,0 +1,19 @@
+uuid: 2e877f34-597d-433b-b07b-8a62b7b7a183
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_blog_bottom_highlight_text
+field_name: field_blog_bottom_highlight_text
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

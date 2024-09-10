@@ -1,0 +1,21 @@
+uuid: 33d3029e-7ce7-41fa-87cf-897ad4c9b767
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_main_heading
+    - paragraphs.paragraphs_type.text_description_with_list_
+  module:
+    - text
+id: paragraph.text_description_with_list_.field_main_heading
+field_name: field_main_heading
+entity_type: paragraph
+bundle: text_description_with_list_
+label: 'Main heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

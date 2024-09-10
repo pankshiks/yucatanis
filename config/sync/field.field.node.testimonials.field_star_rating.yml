@@ -1,0 +1,29 @@
+uuid: 8f92c0fa-1202-4232-bfff-1bb1e6838fab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_star_rating
+    - node.type.testimonials
+  module:
+    - fivestar
+id: node.testimonials.field_star_rating
+field_name: field_star_rating
+entity_type: node
+bundle: testimonials
+label: 'Star rating'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  stars: 5
+  allow_clear: false
+  allow_revote: true
+  allow_ownvote: true
+  rated_while: editing
+  enable_voting_target: false
+  target_bridge_field: ''
+  target_fivestar_field: ''
+field_type: fivestar

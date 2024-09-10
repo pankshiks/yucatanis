@@ -1,0 +1,301 @@
+uuid: 923d345d-0080-42c1-aba2-af5adc13f479
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.field.commerce_product.default.body
+    - field.field.commerce_product.default.field_adults_kids
+    - field.field.commerce_product.default.field_all_weather_activity
+    - field.field.commerce_product.default.field_availability
+    - field.field.commerce_product.default.field_categories
+    - field.field.commerce_product.default.field_distinctions
+    - field.field.commerce_product.default.field_distinctionss
+    - field.field.commerce_product.default.field_duration
+    - field.field.commerce_product.default.field_heading_with_list_cta
+    - field.field.commerce_product.default.field_hotel_information
+    - field.field.commerce_product.default.field_im
+    - field.field.commerce_product.default.field_include_icon_with_title
+    - field.field.commerce_product.default.field_inclusions_list
+    - field.field.commerce_product.default.field_location
+    - field.field.commerce_product.default.field_mandatory
+    - field.field.commerce_product.default.field_moods_list
+    - field.field.commerce_product.default.field_optional_inclusions
+    - field.field.commerce_product.default.field_overview
+    - field.field.commerce_product.default.field_product_image
+    - field.field.commerce_product.default.field_restrictions
+    - field.field.commerce_product.default.field_tagline_block
+    - field.field.commerce_product.default.field_tour_start_time
+    - field.field.commerce_product.default.field_type
+    - field.field.commerce_product.default.field_un
+    - field.field.commerce_product.default.field_you_ought_to_consider
+    - field.field.commerce_product.default.field_you_should_bring_list
+    - field.field.commerce_product.default.field_yucatanis_recommends
+  module:
+    - commerce_product
+    - entity_reference_revisions
+    - media
+    - options
+    - text
+    - time_field
+_core:
+  default_config_hash: 10qgl6V_HwkrJufzsNCV75OpqOeMzzKDJb3BhaogmzQ
+id: commerce_product.default.default
+targetEntityType: commerce_product
+bundle: default
+mode: default
+content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_adults_kids:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_all_weather_activity:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_availability:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_categories:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_distinctionss:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_duration:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_heading_with_list_cta:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_hotel_information:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_im:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_include_icon_with_title:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_inclusions_list:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_location:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_mandatory:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_moods_list:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_optional_inclusions:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_product_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_restrictions:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_tagline_block:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_tour_start_time:
+    type: time_formatter
+    label: above
+    settings:
+      time_format: 'h:i a'
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_un:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_you_ought_to_consider:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_you_should_bring_list:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_yucatanis_recommends:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  link_for_entity_comparison_add_product_comparison:
+    type: entity_comparison_link
+    label: above
+    settings:
+      enitity_comparison: ''
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  link_for_entity_comparison_compare_product_list:
+    type: entity_comparison_link
+    label: above
+    settings:
+      enitity_comparison: ''
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  link_for_entity_comparison_product_comparision:
+    type: entity_comparison_link
+    label: above
+    settings:
+      enitity_comparison: ''
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    label: hidden
+    settings:
+      combine: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  created: true
+  field_distinctions: true
+  langcode: true
+  stores: true
+  uid: true

@@ -1,0 +1,11 @@
+uuid: 2d9d111e-732c-4784-923f-ee0684cd6d88
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.yucatanis_recommends
+id: taxonomy_term.yucatanis_recommends
+target_entity_type_id: taxonomy_term
+target_bundle: yucatanis_recommends
+default_langcode: site_default
+language_alterable: false

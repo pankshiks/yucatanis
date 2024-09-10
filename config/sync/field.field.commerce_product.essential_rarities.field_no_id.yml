@@ -1,0 +1,19 @@
+uuid: 22265436-ceda-40fe-b507-e7ecd249554e
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+    - field.storage.commerce_product.field_no_id
+id: commerce_product.essential_rarities.field_no_id
+field_name: field_no_id
+entity_type: commerce_product
+bundle: essential_rarities
+label: 'No. ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

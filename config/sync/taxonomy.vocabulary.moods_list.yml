@@ -1,0 +1,8 @@
+uuid: d23bfdf9-d494-4cd6-9bde-a87541511681
+langcode: en
+status: true
+dependencies: {  }
+name: 'Moods list'
+vid: moods_list
+description: ''
+weight: 0

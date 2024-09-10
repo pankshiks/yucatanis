@@ -1,0 +1,10 @@
+uuid: 39d72ece-786a-4aed-96f5-0ffccc4d6821
+langcode: en
+status: true
+dependencies: {  }
+id: text_with_description_
+label: 'Text with Description '
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

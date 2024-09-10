@@ -1,0 +1,24 @@
+uuid: 0bebe79d-7691-4561-bddf-053fe3f36843
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_heading
+    - system.menu.footer-contact
+  module:
+    - text
+id: menu_link_content.footer-contact.field_heading
+field_name: field_heading
+entity_type: menu_link_content
+bundle: footer-contact
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '   <h5>CONTACT</h5>'
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

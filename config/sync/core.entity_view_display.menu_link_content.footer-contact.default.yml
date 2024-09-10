@@ -1,0 +1,28 @@
+uuid: 16d25e52-b66f-4923-8a21-92f15878ef9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.footer-contact.field_heading
+    - system.menu.footer-contact
+  module:
+    - text
+id: menu_link_content.footer-contact.default
+targetEntityType: menu_link_content
+bundle: footer-contact
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_heading:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,29 @@
+uuid: be1a7863-89d0-48c8-b755-ad15bd9da3a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.storage.commerce_product.field_moods_list
+    - taxonomy.vocabulary.moods_list
+id: commerce_product.default.field_moods_list
+field_name: field_moods_list
+entity_type: commerce_product
+bundle: default
+label: 'Moods list'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      moods_list: moods_list
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

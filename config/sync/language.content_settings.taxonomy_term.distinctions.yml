@@ -1,0 +1,11 @@
+uuid: a9bb35b4-8b9e-446e-b866-745d2ad720f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.distinctions
+id: taxonomy_term.distinctions
+target_entity_type_id: taxonomy_term
+target_bundle: distinctions
+default_langcode: site_default
+language_alterable: false

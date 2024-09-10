@@ -1,0 +1,80 @@
+uuid: 56863c63-1a44-44be-9469-195273fb9911
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_banner_image
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_content_with_left_border
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_eth_button
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_headings
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_long_description
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_page_type
+    - field.field.paragraph.ethics_banner_with_text_and_img.field_subheading
+    - paragraphs.paragraphs_type.ethics_banner_with_text_and_img
+  module:
+    - link
+    - media_library
+    - text
+id: paragraph.ethics_banner_with_text_and_img.default
+targetEntityType: paragraph
+bundle: ethics_banner_with_text_and_img
+mode: default
+content:
+  field_banner_image:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_content_with_left_border:
+    type: string_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_eth_button:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_headings:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_long_description:
+    type: text_textarea_with_summary
+    weight: 4
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_page_type:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_subheading:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

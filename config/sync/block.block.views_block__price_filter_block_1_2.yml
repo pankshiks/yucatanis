@@ -1,0 +1,24 @@
+uuid: 813ac33b-2d1e-457f-83f4-d8b83ee5eb89
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.price_filter
+  module:
+    - views
+  theme:
+    - yucatanis_theme
+id: views_block__price_filter_block_1_2
+theme: yucatanis_theme
+region: content
+weight: -1
+provider: null
+plugin: 'views_block:price_filter-block_1'
+settings:
+  id: 'views_block:price_filter-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

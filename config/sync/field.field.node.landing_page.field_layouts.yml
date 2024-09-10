@@ -1,0 +1,137 @@
+uuid: 09107e24-06ed-40d4-aa28-19bac3096519
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_layouts
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.ethics_banner_with_text_and_img
+    - paragraphs.paragraphs_type.text_description_with_list_
+    - paragraphs.paragraphs_type.view_reference
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_layouts
+field_name: field_layouts
+entity_type: node
+bundle: landing_page
+label: Layouts
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      ethics_banner_with_text_and_img: ethics_banner_with_text_and_img
+      text_description_with_list_: text_description_with_list_
+      view_reference: view_reference
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 34
+        enabled: false
+      ethics_banner_with_text_and_img:
+        weight: 37
+        enabled: true
+      faq:
+        weight: 35
+        enabled: false
+      faq_title_with_description:
+        weight: 36
+        enabled: false
+      features_list:
+        weight: 37
+        enabled: false
+      greeting_text_with_image:
+        weight: 38
+        enabled: false
+      heading_list_with_cta:
+        weight: 40
+        enabled: false
+      heading_with_cta_and_media_text:
+        weight: 41
+        enabled: false
+      heading_with_media_description:
+        weight: 42
+        enabled: false
+      heading_with_texts:
+        weight: 43
+        enabled: false
+      headings_with_images:
+        weight: 39
+        enabled: false
+      icons_with_links:
+        weight: 44
+        enabled: false
+      image_with_cta_and_heading:
+        weight: 46
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 47
+        enabled: false
+      image_with_text:
+        weight: 48
+        enabled: false
+      images_with_list:
+        weight: 45
+        enabled: false
+      include_image_with_title:
+        weight: 49
+        enabled: false
+      media_image_:
+        weight: 50
+        enabled: false
+      media_with_heading_and_descripti:
+        weight: 54
+        enabled: false
+      media_with_title_and_description:
+        weight: 51
+        enabled: false
+      social_links:
+        weight: 52
+        enabled: false
+      tab_image_heading_with_button:
+        weight: 56
+        enabled: false
+      tabs:
+        weight: 53
+        enabled: false
+      tabs_data:
+        weight: 54
+        enabled: false
+      tabs_datas:
+        weight: 55
+        enabled: false
+      tagline_block:
+        weight: 57
+        enabled: false
+      text_description_with_list_:
+        weight: 58
+        enabled: true
+      text_image_with_list:
+        weight: 59
+        enabled: false
+      text_with_cta_and_image:
+        weight: 60
+        enabled: false
+      text_with_desc_and_svg_img:
+        weight: 62
+        enabled: false
+      text_with_description_:
+        weight: 61
+        enabled: false
+      title_and_list:
+        weight: 63
+        enabled: false
+      title_with_list:
+        weight: 64
+        enabled: false
+      video_with_subtitle:
+        weight: 65
+        enabled: false
+      view_reference:
+        weight: 66
+        enabled: true
+field_type: entity_reference_revisions

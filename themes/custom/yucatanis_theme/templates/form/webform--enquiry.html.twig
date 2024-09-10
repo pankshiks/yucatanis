@@ -12,12 +12,12 @@
             <div class="row">
               <div class="col-12 col-md-6">
                 <div class="select-items">
-                   {{ element.elements.select_service_type }}
+                   {{ element.elements.desired_product_type }}
                 </div>
               </div>
               <div class="col-12 col-md-6">
                 <div class="select-items">
-                  {{ element.elements.experience_per_person }}
+                  {{ element.elements.you_are_in_the_mood_for_something }}
                 </div>
               </div>
               <div class="col-12 col-md-6">
@@ -47,7 +47,21 @@
               </div>
               <div class="col-12 col-md-6">
                 <div class="select-items">
-                   {{ element.elements.product_type }}
+                
+                {# {% set desired_product_type_options = element.elements.desired_product_type['#options'] %}
+
+                  
+                  {% if 'BOAT RENTALS' in desired_product_type_options["boat_rentals"] %}
+                 
+                   {{element.elements.price_range_per_boat_rental}}
+                  
+                  
+                  {% else %}
+                  
+                   {{ element.elements.desired_price_range_per_person_ }}
+                  {% endif %} #}
+                   {{element.elements.price_range_per_boat_rental}}
+                   {{ element.elements.desired_price_range_per_person_ }}
                 </div>
               </div>
               <div class="col-12 col-md-6">
@@ -76,16 +90,18 @@
                    {{ element.elements.number_of_infants }}
                 </div>
               </div>
-              <div class="col-12">
-                {{ element.elements.markup }}
-              </div>
+            
               <div class="col-12 col-md-12">
                 <div class="select-items">
                   {{ element.elements.hotel_information }}
                 </div>
               </div>
+              
               <div class="col-12">
                 <div class="checkbox-wrapper">
+                  <div class="col-12">
+                    {{ element.elements.markup_1 }}
+                  </div>
                   <div class="checkbox-block">
                      {{ element.elements.agreement }}
                   </div>
@@ -95,9 +111,9 @@
                   <div class="checkbox-block">
                      {{ element.elements.agreement2 }}
                   </div>
-                  <div class="terms-conditions">
+                  {# <div class="terms-conditions">
                      {{ element.elements.text }}
-                  </div>
+                  </div> #}
                    {{ element.elements.actions }}
                    
                 </div>

@@ -1,0 +1,29 @@
+uuid: c6cdf025-d5da-426d-918d-bc18254cc6cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_order_event
+title: 'Default cron handler'
+id: custom_order_event_cron
+weight: 0
+module: custom_order_event
+callback: custom_order_event_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '* * * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

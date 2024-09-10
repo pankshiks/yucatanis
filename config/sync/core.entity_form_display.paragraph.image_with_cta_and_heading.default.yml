@@ -1,0 +1,84 @@
+uuid: 3cdaae32-359b-4814-a73a-7a43a9a5c0c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_with_cta_and_heading.field_button
+    - field.field.paragraph.image_with_cta_and_heading.field_description
+    - field.field.paragraph.image_with_cta_and_heading.field_heading
+    - field.field.paragraph.image_with_cta_and_heading.field_image
+    - field.field.paragraph.image_with_cta_and_heading.field_section_classs
+    - field.field.paragraph.image_with_cta_and_heading.field_slogan
+    - field.field.paragraph.image_with_cta_and_heading.field_sub_heading
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.image_with_cta_and_heading
+  module:
+    - image
+    - link
+    - text
+id: paragraph.image_with_cta_and_heading.default
+targetEntityType: paragraph
+bundle: image_with_cta_and_heading
+mode: default
+content:
+  field_button:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea_with_summary
+    weight: 4
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_heading:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_section_classs:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_slogan:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_sub_heading:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

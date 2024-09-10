@@ -1,0 +1,117 @@
+uuid: d7f66c48-09ec-424b-8f88-dd3c8df2ca1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.essential_rarities
+    - field.field.commerce_product_variation.essential_rarities.field_dock_fee
+    - field.field.commerce_product_variation.essential_rarities.field_infant_price
+    - field.field.commerce_product_variation.essential_rarities.field_item_type
+    - field.field.commerce_product_variation.essential_rarities.field_kids_price
+    - field.field.commerce_product_variation.essential_rarities.field_private_adult_price
+    - field.field.commerce_product_variation.essential_rarities.field_private_kids_tour_price
+    - field.field.commerce_product_variation.essential_rarities.field_ratings
+    - field.field.commerce_product_variation.essential_rarities.field_transportation_cost
+  module:
+    - commerce_price
+    - fivestar
+    - options
+id: commerce_product_variation.essential_rarities.default
+targetEntityType: commerce_product_variation
+bundle: essential_rarities
+mode: default
+content:
+  field_dock_fee:
+    type: commerce_price_default
+    label: hidden
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_infant_price:
+    type: commerce_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_item_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_kids_price:
+    type: commerce_price_default
+    label: hidden
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_private_adult_price:
+    type: commerce_price_default
+    label: hidden
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_private_kids_tour_price:
+    type: commerce_price_default
+    label: hidden
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_ratings:
+    type: fivestar_stars
+    label: hidden
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_transportation_cost:
+    type: commerce_price_default
+    label: hidden
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  list_price:
+    type: commerce_price_default
+    label: hidden
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  price:
+    type: commerce_price_default
+    label: hidden
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  product_id: true
+  sku: true
+  title: true

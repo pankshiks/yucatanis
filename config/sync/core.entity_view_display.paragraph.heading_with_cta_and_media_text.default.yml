@@ -1,0 +1,65 @@
+uuid: 24aeb55a-7c8f-4b17-a54a-4b0f0a602054
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.heading_with_cta_and_media_text.field_button
+    - field.field.paragraph.heading_with_cta_and_media_text.field_heading_
+    - field.field.paragraph.heading_with_cta_and_media_text.field_media_with_title
+    - field.field.paragraph.heading_with_cta_and_media_text.field_section_type
+    - field.field.paragraph.heading_with_cta_and_media_text.field_title_
+    - paragraphs.paragraphs_type.heading_with_cta_and_media_text
+  module:
+    - entity_reference_revisions
+    - link
+    - options
+id: paragraph.heading_with_cta_and_media_text.default
+targetEntityType: paragraph
+bundle: heading_with_cta_and_media_text
+mode: default
+content:
+  field_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_heading_:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_media_with_title:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_section_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_title_:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

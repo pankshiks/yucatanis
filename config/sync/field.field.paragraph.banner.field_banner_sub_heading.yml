@@ -1,0 +1,21 @@
+uuid: d1b23974-ede2-48ca-83fa-a01b16367141
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_banner_sub_heading
+    - paragraphs.paragraphs_type.banner
+  module:
+    - text
+id: paragraph.banner.field_banner_sub_heading
+field_name: field_banner_sub_heading
+entity_type: paragraph
+bundle: banner
+label: 'Banner Sub Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

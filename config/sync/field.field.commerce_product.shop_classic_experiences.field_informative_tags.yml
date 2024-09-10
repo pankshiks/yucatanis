@@ -1,0 +1,29 @@
+uuid: 77ac890c-328f-4e14-a6d1-928408feb267
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.shop_classic_experiences
+    - field.storage.commerce_product.field_informative_tags
+    - taxonomy.vocabulary.informative_tags
+id: commerce_product.shop_classic_experiences.field_informative_tags
+field_name: field_informative_tags
+entity_type: commerce_product
+bundle: shop_classic_experiences
+label: 'Informative Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      informative_tags: informative_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -76,3 +76,23 @@ form.form-inline.m-subscribe1__form {
     height: 26px;
   }
 }
+
+.email-btn-subscribe {
+  background: url("../images/carbon_send-alt-filled.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 7px;
+  right: 16px;
+}
+
+@media (max-width: 767px) {
+  .email-btn-subscribe {
+    top: 7px;
+    right: 15px;
+    width: 26px;
+    height: 26px;
+  }
+}

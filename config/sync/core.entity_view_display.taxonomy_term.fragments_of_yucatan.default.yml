@@ -1,0 +1,35 @@
+uuid: 5af78f73-cb90-4327-9442-12a863af01af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.fragments_of_yucatan.field_categories_image
+    - taxonomy.vocabulary.fragments_of_yucatan
+  module:
+    - media
+    - text
+id: taxonomy_term.fragments_of_yucatan.default
+targetEntityType: taxonomy_term
+bundle: fragments_of_yucatan
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_categories_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

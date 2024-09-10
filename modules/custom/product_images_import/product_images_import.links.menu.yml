@@ -1,0 +1,6 @@
+product_images_import.form_submit:
+  title: 'Product images import'  
+  route_name: product_images_import.form_submit  
+  description: 'Welcome product images import admin'  
+  parent: system.admin_config_system  
+  weight: 99  

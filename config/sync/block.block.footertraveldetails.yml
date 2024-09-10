@@ -1,0 +1,25 @@
+uuid: bc3765d9-626d-4046-8944-cbc9776a3517
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2bf4265a-94f4-47a0-b430-57014c62101c'
+  module:
+    - block_content
+  theme:
+    - yucatanis_theme
+id: footertraveldetails
+theme: yucatanis_theme
+region: footer_fourth
+weight: -7
+provider: null
+plugin: 'block_content:2bf4265a-94f4-47a0-b430-57014c62101c'
+settings:
+  id: 'block_content:2bf4265a-94f4-47a0-b430-57014c62101c'
+  label: 'Footer travel details'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

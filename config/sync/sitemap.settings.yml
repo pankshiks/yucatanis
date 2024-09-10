@@ -1,0 +1,434 @@
+_core:
+  default_config_hash: xu0yG13sSQJcXrOJJqsn44W_hUWAIFHVlphrzxT2ycU
+page_title: Sitemap
+message:
+  value: ''
+  format: plain_text
+plugins:
+  'menu:account':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'User account menu'
+      show_disabled: false
+    id: 'menu:account'
+    provider: sitemap
+  'menu:admin':
+    enabled: true
+    weight: 0
+    settings:
+      title: Administration
+      show_disabled: false
+    id: 'menu:admin'
+    provider: sitemap
+  'menu:footer':
+    enabled: true
+    weight: 0
+    settings:
+      title: Footer
+      show_disabled: false
+    id: 'menu:footer'
+    provider: sitemap
+  'menu:footer-contact':
+    enabled: true
+    weight: 0
+    settings:
+      title: Contact
+      show_disabled: false
+    id: 'menu:footer-contact'
+    provider: sitemap
+  'menu:footer-enterprise':
+    enabled: true
+    weight: 0
+    settings:
+      title: ENTERPRISE
+      show_disabled: false
+    id: 'menu:footer-enterprise'
+    provider: sitemap
+  'menu:footer-social-links':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Footer social links'
+      show_disabled: false
+    id: 'menu:footer-social-links'
+    provider: sitemap
+  'menu:footer-useful-data':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'USEFUL DATA'
+      show_disabled: false
+    id: 'menu:footer-useful-data'
+    provider: sitemap
+  'menu:header-menu':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Main navigations'
+      show_disabled: false
+    id: 'menu:header-menu'
+    provider: sitemap
+  'menu:main':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Main navigation'
+      show_disabled: false
+    id: 'menu:main'
+    provider: sitemap
+  'menu:right-functional-buttons':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Right Functional buttons'
+      show_disabled: false
+    id: 'menu:right-functional-buttons'
+    provider: sitemap
+  'menu:right-navbar':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Right Navbar'
+      show_disabled: false
+    id: 'menu:right-navbar'
+    provider: sitemap
+  'menu:sidebar-social-links':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Sidebar Social links'
+      show_disabled: false
+    id: 'menu:sidebar-social-links'
+    provider: sitemap
+  'menu:toggle-menu':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Toggle Menu'
+      show_disabled: false
+    id: 'menu:toggle-menu'
+    provider: sitemap
+  'menu:tools':
+    enabled: true
+    weight: 0
+    settings:
+      title: Tools
+      show_disabled: false
+    id: 'menu:tools'
+    provider: sitemap
+  frontpage:
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Front page'
+      rss: /rss.xml
+    id: frontpage
+    provider: sitemap
+  'vocabulary:available_add_ons':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Available Add Ons'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:available_add_ons'
+    provider: sitemap
+  'vocabulary:blog_categories':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Blog Categories'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:blog_categories'
+    provider: sitemap
+  'vocabulary:blog_posts_slider':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Blog posts slider'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:blog_posts_slider'
+    provider: sitemap
+  'vocabulary:boat_category':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Boat category'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:boat_category'
+    provider: sitemap
+  'vocabulary:categorization_':
+    enabled: true
+    weight: 0
+    settings:
+      title: Categorization
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:categorization_'
+    provider: sitemap
+  'vocabulary:convenience':
+    enabled: true
+    weight: 0
+    settings:
+      title: Convenience
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:convenience'
+    provider: sitemap
+  'vocabulary:distinctions':
+    enabled: true
+    weight: 0
+    settings:
+      title: Distinctions
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:distinctions'
+    provider: sitemap
+  'vocabulary:fate':
+    enabled: true
+    weight: 0
+    settings:
+      title: Fate
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:fate'
+    provider: sitemap
+  'vocabulary:fragments_of_yucatan':
+    enabled: true
+    weight: 0
+    settings:
+      title: Categories
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:fragments_of_yucatan'
+    provider: sitemap
+  'vocabulary:location':
+    enabled: true
+    weight: 0
+    settings:
+      title: Location
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:location'
+    provider: sitemap
+  'vocabulary:mandatory':
+    enabled: true
+    weight: 0
+    settings:
+      title: Mandatory
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:mandatory'
+    provider: sitemap
+  'vocabulary:moods_list':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Moods list'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:moods_list'
+    provider: sitemap
+  'vocabulary:not_included':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Not included'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:not_included'
+    provider: sitemap
+  'vocabulary:overall_feeling':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Overall Feeling'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:overall_feeling'
+    provider: sitemap
+  'vocabulary:restrictions':
+    enabled: true
+    weight: 0
+    settings:
+      title: Restrictions
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:restrictions'
+    provider: sitemap
+  'vocabulary:tab_slider_with_icons':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Tab Slider with icons'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:tab_slider_with_icons'
+    provider: sitemap
+  'vocabulary:yucatanis_recommends':
+    enabled: true
+    weight: 0
+    settings:
+      title: 'Yucatanis Recommends'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:yucatanis_recommends'
+    provider: sitemap
+include_css: true

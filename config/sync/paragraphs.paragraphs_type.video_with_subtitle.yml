@@ -1,0 +1,10 @@
+uuid: af17b2e6-09d4-4c0e-9f02-cced8b56329b
+langcode: en
+status: true
+dependencies: {  }
+id: video_with_subtitle
+label: 'Video with subtitle'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

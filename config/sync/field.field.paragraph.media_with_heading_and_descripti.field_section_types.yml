@@ -1,0 +1,21 @@
+uuid: 9a7435b0-f3c4-43d0-b3c6-f801c80876e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_types
+    - paragraphs.paragraphs_type.media_with_heading_and_descripti
+  module:
+    - options
+id: paragraph.media_with_heading_and_descripti.field_section_types
+field_name: field_section_types
+entity_type: paragraph
+bundle: media_with_heading_and_descripti
+label: 'Section Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

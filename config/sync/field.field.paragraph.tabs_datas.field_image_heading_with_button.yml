@@ -1,0 +1,91 @@
+uuid: 793ed13e-ab51-4827-8ca0-f460295edf0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_heading_with_button
+    - paragraphs.paragraphs_type.tab_image_heading_with_button
+    - paragraphs.paragraphs_type.tabs_datas
+  module:
+    - entity_reference_revisions
+id: paragraph.tabs_datas.field_image_heading_with_button
+field_name: field_image_heading_with_button
+entity_type: paragraph
+bundle: tabs_datas
+label: 'Image heading with button'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      tab_image_heading_with_button: tab_image_heading_with_button
+    negate: 0
+    target_bundles_drag_drop:
+      banner:
+        weight: 22
+        enabled: false
+      basemap:
+        weight: 23
+        enabled: false
+      features_list:
+        weight: 24
+        enabled: false
+      heading_with_cta_and_media_text:
+        weight: 26
+        enabled: false
+      heading_with_media_description:
+        weight: 27
+        enabled: false
+      heading_with_texts:
+        weight: 28
+        enabled: false
+      headings_with_images:
+        weight: 25
+        enabled: false
+      icons_with_links:
+        weight: 29
+        enabled: false
+      image_with_cta_and_heading:
+        weight: 31
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 32
+        enabled: false
+      images_with_list:
+        weight: 30
+        enabled: false
+      media_with_title_and_description:
+        weight: 33
+        enabled: false
+      slider_services_tabs:
+        weight: 34
+        enabled: false
+      tab_image_heading_with_button:
+        weight: 38
+        enabled: true
+      tab_services:
+        weight: 39
+        enabled: false
+      tab_slider_and_services:
+        weight: 40
+        enabled: false
+      tabs:
+        weight: 35
+        enabled: false
+      tabs_data:
+        weight: 36
+        enabled: false
+      tabs_datas:
+        weight: 37
+        enabled: false
+      text_with_cta_and_image:
+        weight: 41
+        enabled: false
+      view_reference:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

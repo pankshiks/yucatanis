@@ -1,0 +1,30 @@
+uuid: 023a0723-4584-4e4b-a9d9-cce0ef06f0ee
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:e7455d94-d4a4-4c60-926d-3e2aa7dd9ec4'
+  module:
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+id: yucatanis_theme_masterinventoriesbirdseyeview
+theme: yucatanis_theme
+region: content
+weight: -17
+provider: null
+plugin: 'block_content:e7455d94-d4a4-4c60-926d-3e2aa7dd9ec4'
+settings:
+  id: 'block_content:e7455d94-d4a4-4c60-926d-3e2aa7dd9ec4'
+  label: 'Master Inventories Birds Eye View '
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /master-inventories-birds-eye-view

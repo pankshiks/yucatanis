@@ -1,0 +1,29 @@
+uuid: 0ce483f9-e179-4476-aa1d-f52cfedf1be5
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.essential_rarities
+    - field.storage.commerce_product.field_sub_type
+    - taxonomy.vocabulary.fragments_of_yucatan
+id: commerce_product.essential_rarities.field_sub_type
+field_name: field_sub_type
+entity_type: commerce_product
+bundle: essential_rarities
+label: 'Type/Sub-Type Fragments of Yucatan'
+description: 'Explore different parts of Yucatan'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      fragments_of_yucatan: fragments_of_yucatan
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

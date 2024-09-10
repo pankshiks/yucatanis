@@ -1,0 +1,21 @@
+uuid: 5c7069d4-e4f1-428f-a638-e226e0158101
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bg_class
+    - paragraphs.paragraphs_type.text_with_cta_and_image
+  module:
+    - options
+id: paragraph.text_with_cta_and_image.field_bg_class
+field_name: field_bg_class
+entity_type: paragraph
+bundle: text_with_cta_and_image
+label: bg-class
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

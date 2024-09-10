@@ -1,0 +1,19 @@
+uuid: 8dd1ef97-78dd-486f-b0b9-891fa7f528eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_list
+    - paragraphs.paragraphs_type.text_image_with_list
+id: paragraph.text_image_with_list.field_text_list
+field_name: field_text_list
+entity_type: paragraph
+bundle: text_image_with_list
+label: 'Text list'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

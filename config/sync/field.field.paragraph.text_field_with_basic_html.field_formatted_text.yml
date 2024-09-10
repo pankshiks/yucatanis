@@ -1,0 +1,28 @@
+uuid: 2fd5810b-aa74-48d2-a61f-4b2217b0afb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_formatted_text
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.plain_text
+    - paragraphs.paragraphs_type.text_field_with_basic_html
+  module:
+    - text
+id: paragraph.text_field_with_basic_html.field_formatted_text
+field_name: field_formatted_text
+entity_type: paragraph
+bundle: text_field_with_basic_html
+label: 'Formatted text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+    - plain_text
+field_type: text_long

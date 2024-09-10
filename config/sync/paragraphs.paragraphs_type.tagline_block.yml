@@ -1,0 +1,10 @@
+uuid: 76f79452-9716-49bd-963c-0af269ac001f
+langcode: en
+status: true
+dependencies: {  }
+id: tagline_block
+label: 'Tagline block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

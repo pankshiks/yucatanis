@@ -885,7 +885,7 @@ a.btn.show-more-btn.dark {
 }
 
 header .header-bar {
-  z-index: 999999;
+  z-index: 999;
 }
 
 .best-seller-booking-card .info-tag {
@@ -1160,10 +1160,10 @@ header .header-bar {
   color: #fff;
   position: absolute;
   top: 12px;
-  left: 12px;
+  left: 0;
   padding: 3px 10px 4px 10px;
   line-height: 16px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -1172,10 +1172,10 @@ header .header-bar {
   color: #fff;
   position: absolute;
   top: 12px;
-  left: 12px;
+  left: 0px;
   padding: 3px 10px 4px 10px;
   line-height: 16px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -1184,10 +1184,10 @@ header .header-bar {
   color: #fff;
   position: absolute;
   top: 12px;
-  left: 12px;
+  left: 0px;
   padding: 3px 10px 4px 10px;
   line-height: 16px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -1196,10 +1196,10 @@ header .header-bar {
   color: #fff;
   position: absolute;
   top: 12px;
-  left: 12px;
+  left: 0px;
   padding: 3px 10px 4px 10px;
   line-height: 16px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -1208,23 +1208,24 @@ header .header-bar {
   color: #fff;
   position: absolute;
   top: 12px;
-  left: 12px;
+  left: 0px;
   padding: 3px 10px 4px 10px;
   line-height: 16px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
 }
 
 .twelve-spots-left {
   background: #FFCC01;
-  color: #fff;
+  color: #4A403A;
   position: absolute;
   top: 12px;
-  left: 12px;
+  left: 0;
   padding: 3px 10px 4px 10px;
   line-height: 16px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
+
 }
 
 .six-spots-left {
@@ -1232,10 +1233,10 @@ header .header-bar {
   color: #fff;
   position: absolute;
   top: 12px;
-  left: 12px;
+  left: 0px;
   padding: 3px 10px 4px 10px;
   line-height: 16px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -1303,6 +1304,7 @@ fieldset[data-drupal-selector="edit-price-number-wrapper"]:first-of-type {
   border-radius: 8px;
   padding: 24px;
   margin-bottom: 24px;
+  padding-bottom: 65px;
 }
 
 [data-drupal-selector="edit-price-number-wrapper"] .fieldset-wrapper {
@@ -1318,12 +1320,19 @@ fieldset[data-drupal-selector="edit-price-number-wrapper"]:first-of-type {
   font-weight: 500;
   line-height: 130%;
   position: absolute;
-  top: 0;
+  top: 50px;
   width: 150px;
 }
 
 [data-drupal-selector="edit-price-number-wrapper"] .fieldset-wrapper .js-form-item-price__number-max input {
   left: 60px;
+}
+
+[data-drupal-selector="edit-price-number-wrapper"] .fieldset-wrapper .description {
+  font-size: 14px;
+  font-style: italic;
+  color: #0FBB69;
+  line-height: 16px;
 }
 
 .filter-listing form [data-drupal-selector="edit-price-number-wrapper"] input {
@@ -1339,7 +1348,7 @@ fieldset[data-drupal-selector="edit-price-number-wrapper"]:first-of-type {
   border: none;
   height: 2px;
   background-color: rgba(255, 86, 60, 0.3);
-  top: 68px;
+  top: 120px;
 }
 
 [data-drupal-selector="edit-price-number-wrapper"] .bef-slider.ui-slider .ui-slider-range {
@@ -2093,4 +2102,1002 @@ a.btn.btn-primary.btn-active {
   width: 24px;
   height: 24px;
   top: -11px;
+}
+
+.login .login-form {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.login-form form input[type=text] {
+  color: var(--YU-Primary, #423B30);
+  font-family: 'Encode Sans Expanded';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  /*margin-bottom: 37px;*/
+}
+
+.footer-credits #block-footercopyright p a {
+  word-break: break-word;
+}
+
+.login-form form#user-pass p {
+  color: #000;
+  text-align: center;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  margin-bottom: 20px;
+}
+
+.login-form form#user-pass div#edit-actions input#edit-submit {
+  font-size: 16px;
+  padding: 16px 13px;
+}
+
+.login.reset-pass-block {
+  padding-bottom: 100px;
+}
+
+.login-form form .form-group .password-suggestions ul li {
+  font-size: 16px;
+}
+
+.login-form form .form-group .password-suggestions ul {
+  padding: 0;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.login-form form .form-group div.description {
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+/* .email-us form:first-child {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+} */
+
+.btn-subscribe.button {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 110%;
+  color: #fff;
+  background: #000;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  border-radius: 16px;
+  outline: none;
+  border: 0;
+  max-width: 350px;
+  width: 100%;
+
+}
+
+.btn-subscribe.button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-subscribe.button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-subscribe.button[disabled] {
+  color: #fff;
+  background: #000;
+}
+
+.cta-text-button .cta-text-wrapper {
+  justify-content: space-between;
+}
+
+.green-label {
+  font-style: italic;
+  font-size: 11px;
+  color: green;
+  display: block;
+  text-transform: lowercase;
+}
+
+.red-label {
+  color: red;
+  display: block;
+  font-size: 11px;
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+.green-label span {
+  display: inline-block;
+}
+
+
+
+
+.bg-dbrown-brand-box-two, .bg-dbrown-brand-box-one {
+  background: #FFCC01;
+}
+.bg-dbrown-brand-box-two{
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.bg-dbrown-brand-box-one{
+  padding: 159.5px;
+  padding-bottom: 159.5px;
+}
+.bg-dbrown-brand-box-one h2 {
+  font-family: GT Ultra Fine;
+  font-size: 144px;
+  font-weight: 900;
+  line-height: 158.4px;
+  text-align: center;
+  color: #4A403A;
+}
+.bg-dbrown-brand-box-two h2 {
+  font-family: GT Ultra Fine;
+  font-size: 83px;
+  font-weight: 900;
+  line-height: 91.3px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.bg-dbrown-brand-box-two h2 span.orange-color {
+  font-size: 0;
+  width: 18px;
+  height: 18px;
+  background: #FF563C;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  top: 25px;
+  left: 4px;
+  box-shadow: 0px 4px 4px 0px #00000040 inset;
+}
+
+.bg-dbrown-brand-box-four {
+  background: #423B30;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.bg-dbrown-brand-box-four h2 {
+  font-family: GT Ultra Fine;
+  font-size: 69px;
+  font-weight: 900;
+  line-height: 75.9px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.bg-dbrown-brand-box-four h6 {
+  font-family: 'Encode Sans Expanded';
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+}
+.ptb-200-brand-box-six h5 {
+  font-family: GT Super Display;
+  font-size: 69px;
+  font-weight: 500;
+  line-height: 79.83px;
+  text-align: center;
+  color: #4A403A;
+  margin-bottom: 40px;
+}
+.ptb-200-brand-box-six .title-with-detail {
+  gap: 0;
+}
+.ptb-200-brand-box-six h6 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 58.51px;
+  text-align: center;
+  color: #332D17;
+}
+.relevant-block-brand-box-three h6 {
+  font-family: Montserrat;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 78.02px;
+  text-align: center;
+}
+.relevant-block-brand-box-three {
+  text-align: center;
+}
+.relevant-block-brand-box-three .orange-color {
+  font-family: Montserrat;
+  font-size: 84px;
+  font-weight: 700;
+  line-height: 79px;
+  text-align: center;
+}
+.relevant-block-brand-box-three .orange-color span {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+}
+
+.relevant-block-brand-box-three {
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+.relevant-block-brand-box-three p {
+  font-family: Montserrat;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 79px;
+  text-align: center;
+  color: #332D17;
+}
+.ptb-200-brand-box-six {
+  padding: 200px 0;
+}
+.brand-box-seven {
+  background: #EDEADA;
+  padding: 180px 0 100px;
+}
+.brand-box-seven h2 {
+  font-family: 'Montserrat';
+  font-size: 75px;
+  font-weight: 900;
+  line-height: 91.43px;
+  text-align: center;
+  color: #FF563C;
+  margin-bottom: 0;
+}
+.brand-box-seven .card-content ol {
+  max-width: 1213px;
+  margin: auto;
+  margin-top: 128px;
+}
+.brand-box-seven .card-content ol li {
+  font-family: Montserrat;
+  font-size: 31px;
+  font-weight: 500;
+  line-height: 45px;
+  letter-spacing: 0.07em;
+  text-align: left;
+}
+.brand-box-eight {
+  background: #FF563C;
+  padding-top: 220px;
+  padding-bottom: 340px;
+  text-align: center;
+  position: relative;
+}
+.brand-box-eight .card-content {
+  max-width: 1699px;
+  margin: auto;
+}
+.brand-box-eight .card-content span {
+  font-family: GT Ultra Fine;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    background-clip: text;
+    margin-bottom: 48px;
+    display: block;
+}
+.brand-box-eight p {
+  font-family: Montserrat;
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 96px;
+  text-align: center;
+  color: #FFCC01;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  background-clip: text;
+  position: relative;
+}
+.brand-box-nine {
+  background: #4A403A;
+  padding: 200px 0;
+}
+.brand-box-nine .card-content {
+  max-width: 1216px;
+  margin: auto;
+}
+.brand-box-nine h2 {
+  font-family: Montserrat;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 121.9px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #FFCC01;
+  margin-bottom: 40px;
+}
+.brand-box-nine h2 span {
+  color: #FF563C;
+  font-style: italic;
+}
+.brand-box-nine h2 .orange-color {
+  float: right;
+  display: contents;
+}
+.brand-box-nine p {
+  font-family: Montserrat;
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 65.83px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0;
+}
+.brand-box-nine p span {
+  color: #FF563C;
+}
+.brand-box-nine .card-content h3 {
+  font-family: GT Ultra Fine;
+  font-size: 88px;
+  font-weight: 900;
+  line-height: 96.8px;
+  text-align: center;
+  color: #FFCC01;
+  margin-top: 80px;
+}
+.brand-box-nine .card-content h3 .orange-color {
+  display: contents;
+}
+.brand-box-ten {
+  background: #FF563C;
+  padding: 193px 0 305px 0;
+  text-align: center;
+}
+.brand-box-ten .card-content {
+  max-width: 1673px;
+  margin: auto;
+}
+.brand-box-ten span {
+  font-family: GT Super Display;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  color: #FFCC01;
+  margin-bottom: 15px;
+}
+.brand-box-ten h2 {
+  font-family: Montserrat;
+  font-size: 138px;
+  font-weight: 800;
+  line-height: 138px;
+  text-align: center;
+  color: #FFCC01;
+  margin-bottom: 0;
+}
+.brand-box-eleven .card-content h6 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 58.51px;
+  text-align: center;
+}
+.brand-box-eleven {
+  padding: 200px 0;
+  background: #FFCC01;
+}
+.brand-box-eleven .card-content {
+  max-width: 1217px;
+  margin: auto;
+  text-align: center;
+}
+.brand-box-eleven .card-content h5 {
+  font-family: GT Super Display;
+  font-size: 69px;
+  font-weight: 500;
+  line-height: 79.83px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.brand-box-eleven .card-content h6 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 58.51px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.brand-box-eleven .card-content h6 span {
+  font-family: GT Ultra Fine;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 52.8px;
+  text-align: center;
+  color: #FF563C;
+}
+.brand-box-twelve {
+  background: #4A403A;
+  padding: 200px 0;
+}
+.brand-box-twelve .card-content {
+  max-width: 1197px;
+  margin: auto;
+}
+.brand-box-twelve h2 {
+  font-family: GT Super Display;
+  font-size: 63px;
+  font-weight: 500;
+  line-height: 72.89px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+.brand-box-twelve h2 span {
+  color: #FFCC01;
+}
+.brand-box-twelve .card-content p {
+  font-family: Montserrat;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 52.5px;
+  text-align: center;
+  color: #fff;
+  padding: 0 80px;
+  margin-bottom: 0;
+}
+.brand-box-twelve .card-content p a {
+  color: #FF563C;
+  text-decoration: none;
+}
+.brand-box-twelve .card-content p span {
+  color: #FFCC01;
+  opacity: 0.5;
+}
+.brand-box-thirteen {
+  background: #EBEBEB;
+  padding: 200px 0;
+}
+.brand-box-thirteen .card-content {
+  max-width: 1217px;
+  margin: auto;
+}
+.brand-box-thirteen h2 {
+  font-family: Montserrat;
+  font-size: 75px;
+  font-weight: 600;
+  line-height: 75px;
+  text-align: center;
+  color: #FF563C;
+  margin-bottom: 75px;
+}
+.black-color {
+  color: #332D17;
+}
+.brand-box-thirteen h3 {
+  font-family: GT Ultra Fine;
+  font-size: 75px;
+  font-weight: 900;
+  line-height: 75px;
+  text-align: center;
+  color: #332D17;
+}
+.brand-box-thirteen h3 b {
+  font-family: Montserrat;
+  font-size: 73px;
+  font-weight: 900;
+  line-height: 73px;
+  text-align: center;
+  color: #FF563C;
+}
+.brand-box-fourteen {
+  background: #4A403A;
+  padding: 200px 0;
+  text-align: center;
+}
+.brand-box-fourteen .card-content {
+  max-width: 1491px;
+  margin: auto;
+}
+.brand-box-fourteen h2 {
+  font-size: 83px;
+  line-height: 100px;
+  font-family: 'Montserrat';
+  color: #FFCC01;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.brand-box-fourteen h2 span {
+  color: #FF563C;
+}
+.brand-box-fourteen p {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 66.57px;
+  text-align: center;
+  color: #EDEADA;
+  margin-bottom: 0;
+}
+.cta {
+  margin-top: 45px;
+}
+.cta b {
+  font-size: 24px;
+  font-family: 'GT Ultra Fine';
+  color: #FFCC01;
+}
+.cta p {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36.57px;
+  text-align: center;
+}
+.cta p .yellow-color {
+  display: block;
+}
+.cta p .yellow-color b {
+  color: #fff;
+}
+.brand-box-fifteen {
+  background: #FFCC01;
+  text-align: center;
+  padding: 133px 0 100px 0;
+}
+.brand-box-fifteen .card-content {
+  max-width: 1488px;
+  margin: auto;
+}
+.brand-box-fifteen .card-content h2 {
+  font-family: Montserrat;
+  font-size: 66px;
+  font-weight: 700;
+  line-height: 80.45px;
+  text-align: center;
+  color: #FF563C;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+.brand-box-fifteen .card-content p {
+  margin-bottom: 0;
+  font-family: Gantari;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+  text-align: center;
+  color: #332D17;
+}
+
+/* popup1 css start */
+.modal-dialog {
+  max-width: 600px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.modal-dialog .modal-header {
+  border: 0;
+}
+.modal-dialog .modal-header button.close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  margin-top: 0 !important;
+  border: 0;
+  background: transparent;
+  font-size: 25px;
+}
+#myModalproduct .modal-dialog .modal-body {
+  padding: 15px 35px;
+}
+#myModalproduct .modal-dialog .modal-body * {
+  font-size: 12px;
+  line-height: 18px;
+  color: #37352f;
+}
+#myModalproduct .modal-dialog .modal-body p {
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+#myModalproduct .modal-dialog .modal-body .icon-list {
+  margin-bottom: 8px;
+}
+#myModalproduct .modal-dialog .modal-body ul {
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#myModalproduct .modal-dialog .modal-body ul li {
+  margin-bottom: 10px;
+}
+#myModalproduct .modal-dialog .modal-body h6 {
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+#myModalproduct .modal-dialog .modal-body b {
+  font-weight: 500;
+}
+#myModalproduct .modal-dialog .modal-body .icon-list-wrap {
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#myModalproduct .modal-dialog .modal-body p b {
+  font-weight: 500;
+}
+.popup-logo {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.popup-logo img {
+  width: 192px;
+  height: 55px;
+}
+
+.popup2 * {
+  font-size: 13px;
+  font-family: system-ui;
+}
+.popup2 img {
+  width: 144px;
+  margin-bottom: 10px;
+}
+#mybookingpopup .modal-content {
+  background: #fbf3db;
+  border: 0;
+}
+/* popup1 css end */
+@media(min-width: 1400px){
+  .brand-box-seven .container {
+      max-width: 1699px !important;
+  }
+  .brand-box-eight .container {
+      min-width: 1699px;
+  }
+  .brand-box-fifteen .container {
+      min-width: 1488px;
+  }
+  .brand-box-fourteen .container{
+      min-width: 1499px;
+  }
+}
+@media(max-width: 991px){
+  .relevant-block-brand-box-three h6 {
+    font-size: 42px;
+    line-height: 56.02px;
+}
+.relevant-block-brand-box-three .orange-color {
+  font-size: 54px;
+  line-height: 49px;
+}
+.relevant-block-brand-box-three p {
+  font-size: 50px;
+  line-height: 49px;
+}
+.bg-dbrown-brand-box-four h2 {
+  font-size: 49px;
+  line-height: 55.9px;
+}
+.bg-dbrown-brand-box-four h6 {
+  font-size: 30px;
+  line-height: 40px;
+}
+.bg-dbrown-brand-box-one h2 {
+  font-size: 84px;
+  line-height: 98.4px;
+}
+.ptb-200-brand-box-six h5 {
+  font-size: 49px;
+  line-height: 59.83px;
+}
+.ptb-200-brand-box-six h6 {
+  font-size: 28px;
+  line-height: 38.51px;
+}
+.bg-dbrown-brand-box-two h2 {
+  font-size: 62px;
+  line-height: 70.3px;
+}
+.bg-dbrown-brand-box-two, .bg-dbrown-brand-box-one, .bg-dbrown-brand-box-four{
+  padding: 0;
+}
+.ptb-200-brand-box-six, .relevant-block-brand-box-three {
+  padding: 100px 0;
+}
+
+.brand-box-seven {
+  background: #EDEADA;
+  padding: 80px 0 80px;
+}
+.brand-box-seven h2 {
+  font-size: 52px;
+  line-height: 71.43px;
+}
+.brand-box-seven .card-content ol {
+  margin-top: 80px;
+}
+.brand-box-seven .card-content ol li {
+  font-size: 24px;
+  line-height: 35px;
+}
+.brand-box-eight {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.brand-box-eight .card-content span {
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 30px;
+}
+.brand-box-eight p {
+  font-size: 52px;
+  line-height: 52px;
+}
+.brand-box-nine {
+  background: #4A403A;
+  padding: 80px 0;
+}
+.brand-box-nine h2 {
+  font-size: 52px;
+  line-height: 80.9px;
+  margin-bottom: 30px;
+}
+.brand-box-nine p {
+  font-size: 42px;
+  line-height: 55.83px;
+}
+
+.brand-box-nine .card-content h3 {
+  font-size: 62px;
+  line-height: 80.8px;
+  margin-top: 40px;
+}
+
+.brand-box-ten {
+  padding: 80px 0 80px 0;
+}
+
+.brand-box-ten span {
+  font-size: 32px;
+  line-height: 32px;
+}
+.brand-box-ten h2 {
+  font-size: 82px;
+  line-height: 82px;
+}
+.brand-box-eleven .card-content h6 {
+  font-size: 36px;
+  line-height: 48.51px;
+}
+.brand-box-eleven {
+  padding: 80px 0;
+}
+.brand-box-eleven .card-content h5 {
+  font-size: 52px;
+  line-height: 60.83px;
+  margin-bottom: 30px;
+}
+.brand-box-eleven .card-content h6 {
+  font-size: 36px;
+  line-height: 48.51px;
+}
+.brand-box-eleven .card-content h6 span {
+  font-size: 36px;
+  line-height: 42.8px;
+}
+.brand-box-twelve {
+  padding: 80px 0;
+}
+.brand-box-twelve h2 {
+  font-size: 52px;
+  line-height: 62.89px;
+  margin-bottom: 30px;
+}
+.brand-box-twelve h2 span {
+  color: #FFCC01;
+}
+.brand-box-twelve .card-content p {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48.5px;
+  text-align: center;
+  color: #fff;
+  padding: 0 40px;
+}
+
+.brand-box-thirteen {
+  padding: 80px 0;
+}
+.brand-box-thirteen h2 {
+  font-size: 52px;
+  line-height: 52px;
+  margin-bottom: 40px;
+}
+
+.brand-box-thirteen h3 {
+  font-size: 52px;
+  line-height: 52px;
+}
+.brand-box-thirteen h3 b {
+  font-size: 52px;
+  line-height: 52px;
+}
+.brand-box-fourteen {
+  padding: 80px 0;
+}
+
+.brand-box-fourteen h2 {
+  font-size: 52px;
+  line-height: 70px;
+  margin-bottom: 30px;
+}
+.brand-box-fourteen p {
+  font-size: 36px;
+  line-height: 52.57px;
+}
+.cta {
+  margin-top: 25px;
+}
+.cta b {
+  font-size: 18px;
+}
+.cta p {
+  font-size: 24px;
+  line-height:30.57px;
+}
+
+.brand-box-fifteen {
+  padding: 80px 0 80px 0;
+}
+
+.brand-box-fifteen .card-content h2 {
+  font-size: 46px;
+  line-height: 60.45px;
+
+}
+.brand-box-fifteen .card-content p {
+  font-size: 22px;
+  line-height: 38px;
+}
+
+}
+@media(max-width: 767px){
+  .relevant-block-brand-box-three h6 {
+    font-size: 36px;
+    line-height: 42.02px;
+}
+.relevant-block-brand-box-three .orange-color {
+  font-size: 30px;
+  line-height: 39px;
+}
+.relevant-block-brand-box-three p {
+  font-size: 24px;
+  line-height: 38px;
+}
+.bg-dbrown-brand-box-four h2 {
+  font-size: 36px;
+  line-height: 42.9px;
+  margin-bottom: 10px;
+}
+.bg-dbrown-brand-box-four h6 {
+  font-size: 18px;
+  line-height: 22px;
+}
+.bg-dbrown-brand-box-one h2 {
+  font-size: 42px;
+  line-height: 58.4px;
+}
+.ptb-200-brand-box-six h5 {
+  font-size: 24px;
+  line-height: 38.83px;
+}
+.ptb-200-brand-box-six h6 {
+  font-size: 18px;
+  line-height: 24.51px;
+}
+.bg-dbrown-brand-box-two h2 {
+  font-size: 36px;
+  line-height: 42.3px;
+}
+.bg-dbrown-brand-box-two h2 span.orange-color {
+  width: 10px;
+  height: 10px;
+  top: 9px;
+  left: 4px;
+}
+.ptb-200-brand-box-six, .relevant-block-brand-box-three{
+  padding: 50px 0;
+}
+.brand-box-eleven .card-content h6 {
+  font-size: 24px;
+  line-height: 34.51px;
+}
+.brand-box-eleven .card-content h6 span {
+  font-size: 24px;
+  line-height: 32.8px;
+}
+.brand-box-eleven {
+  padding: 0px 0;
+}
+.brand-box-seven h2 {
+  font-size: 42px;
+  line-height: 60.43px;
+}
+.brand-box-seven {
+  padding: 50px 0 50px;
+}
+.brand-box-seven .card-content ol li {
+  font-size: 18px;
+  line-height: 28px;
+}
+.brand-box-seven .card-content ol {
+  margin-top: 40px;
+}
+.brand-box-eight p {
+  font-size: 36px;
+  line-height: 42px;
+}
+.brand-box-eight {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.brand-box-nine h2 {
+  font-size: 36px;
+  line-height: 42.9px;
+  margin-bottom: 10px;
+}
+.brand-box-nine p {
+  font-size: 24px;
+  line-height: 34.83px;
+}
+.brand-box-nine .card-content h3 {
+  font-size: 42px;
+  line-height: 54.8px;
+  margin-top: 30px;
+}
+.brand-box-nine {
+  padding: 50px 0;
+}
+.brand-box-twelve h2, .brand-box-fourteen h2, .brand-box-eleven .card-content h5, .brand-box-fifteen .card-content h2 {
+  font-size: 42px;
+  line-height: 54.89px;
+}
+.brand-box-twelve .card-content p, .brand-box-fourteen p {
+  font-size: 24px;
+  line-height: 38.5px;
+}
+.brand-box-twelve, .brand-box-fourteen, .brand-box-fifteen {
+  padding: 50px 0;
+}
+.brand-box-fifteen .card-content p{
+  line-height: 32px;
+}
+#myModalproduct .modal-dialog .modal-body {
+  padding: 15px 10px;
+}
+#myModalproduct .modal-dialog {
+  padding: 0 15px;
+  overflow: scroll;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  margin: 0;
+}
+#myModalproduct .modal-dialog .modal-content{
+  max-height: 750px;
+  overflow: scroll;
+}
 }

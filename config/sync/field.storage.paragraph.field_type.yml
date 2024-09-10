@@ -1,0 +1,33 @@
+uuid: 7c49b5a6-2ae7-41d3-ac65-cc53cef774cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_type
+field_name: field_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Booking Steps Block'
+      label: booking_steps_block
+    -
+      value: 'Inner Banner'
+      label: inner_banner
+    -
+      value: 'CTA Booking block'
+      label: cta_booking_block
+    -
+      value: 'Useful Data of Cancun'
+      label: 'Useful Data of Cancun'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 24678108-825e-46b2-be3a-c6dc3fc7a909
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tagline_block.field_tagline_text
+    - paragraphs.paragraphs_type.tagline_block
+id: paragraph.tagline_block.default
+targetEntityType: paragraph
+bundle: tagline_block
+mode: default
+content:
+  field_tagline_text:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

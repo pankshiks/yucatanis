@@ -1,0 +1,21 @@
+uuid: 57fab987-92dc-4a0c-bd62-7a938e89bc74
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - profile
+id: profile.field_hotel_time
+field_name: field_hotel_time
+entity_type: profile
+type: list_integer
+settings:
+  allowed_values: {  }
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

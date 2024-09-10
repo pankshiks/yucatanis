@@ -30,14 +30,17 @@
         <form{{ attributes }}>
        
      
-       {{ element.mail['#markup'] }}
-        {{ element.actions['#markup'] }}
+          {{ element.mail['#markup'] }}
+          {{ element.actions['#markup'] }}
           {{ element.subscriptions['#markup'] }}
           {{ element.message }}
           {{ element.form_token }}
           {{ element.form_build_id }}
           {{ element.form_id }}
           {# <button type="submit" class="btn email-btn"></button> #}
+            {% if unsubscribe_link %}
+              <a href='{{unsubscribe_link}}'>Unsubscribe</a>
+            {% endif %}
         </form>
          </div>
     </div>

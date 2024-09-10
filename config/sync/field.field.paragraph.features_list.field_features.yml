@@ -1,0 +1,55 @@
+uuid: 84984ec5-dd69-460e-a1db-81f65b6c4eb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_features
+    - paragraphs.paragraphs_type.features_list
+    - paragraphs.paragraphs_type.icons_with_links
+  module:
+    - entity_reference_revisions
+id: paragraph.features_list.field_features
+field_name: field_features
+entity_type: paragraph
+bundle: features_list
+label: Features
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      icons_with_links: icons_with_links
+    negate: 0
+    target_bundles_drag_drop:
+      basemap:
+        weight: 10
+        enabled: false
+      features_list:
+        weight: 11
+        enabled: false
+      heading_with_texts:
+        weight: 13
+        enabled: false
+      headings_with_images:
+        weight: 12
+        enabled: false
+      icons_with_links:
+        weight: 14
+        enabled: true
+      image_with_cta_and_heading:
+        weight: 16
+        enabled: false
+      image_with_cta_disclaimer:
+        weight: 17
+        enabled: false
+      images_with_list:
+        weight: 15
+        enabled: false
+      text_with_cta_and_image:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,21 @@
+uuid: c7f1f177-13e3-4d23-86de-ded86f282b8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.boat_rentals
+    - field.storage.commerce_product_variation.field_item_type
+  module:
+    - options
+id: commerce_product_variation.boat_rentals.field_item_type
+field_name: field_item_type
+entity_type: commerce_product_variation
+bundle: boat_rentals
+label: 'Item Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

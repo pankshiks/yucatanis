@@ -1,0 +1,19 @@
+uuid: 0b08e37d-9aa2-4174-a7a3-c85352725321
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - text
+id: commerce_product.field_overview
+field_name: field_overview
+entity_type: commerce_product
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

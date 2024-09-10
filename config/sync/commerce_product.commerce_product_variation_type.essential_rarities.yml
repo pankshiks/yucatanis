@@ -1,0 +1,10 @@
+uuid: 158994f7-70e3-438d-a6bc-66f1176dbac2
+langcode: en
+status: true
+dependencies: {  }
+id: essential_rarities
+label: 'ESSENTIAL RARITIES'
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: true

@@ -1,0 +1,22 @@
+uuid: 53f624e4-a260-4c4e-a54b-dfdb86521b3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.typewriter_blocks
+    - field.field.block_content.typewriter_blocks.field_text
+id: block_content.typewriter_blocks.default
+targetEntityType: block_content
+bundle: typewriter_blocks
+mode: default
+content:
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

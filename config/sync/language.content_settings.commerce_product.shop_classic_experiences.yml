@@ -1,0 +1,11 @@
+uuid: c018d2eb-1852-44ec-93e6-17115a7175e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.shop_classic_experiences
+id: commerce_product.shop_classic_experiences
+target_entity_type_id: commerce_product
+target_bundle: shop_classic_experiences
+default_langcode: site_default
+language_alterable: false

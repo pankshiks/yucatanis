@@ -1,0 +1,15 @@
+uuid: 5a5394b5-75a1-43e9-b271-16f938ed6b6a
+langcode: en
+status: true
+dependencies: {  }
+name: custom_image
+label: 'Custom image'
+effects:
+  b39ed856-d7e3-4235-822c-c8f30e5a94ab:
+    uuid: b39ed856-d7e3-4235-822c-c8f30e5a94ab
+    id: image_scale
+    weight: 1
+    data:
+      width: 380
+      height: 253
+      upscale: false

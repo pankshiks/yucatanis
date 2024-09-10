@@ -7,10 +7,9 @@ themes/contrib/
 profiles/contrib
 libraries/
 sites/default/files/
-sites/default/settings.local.dev.php
 sites/default/services.yml
 # Ignore sensitive information
-#sites/*/settings.local.php
+sites/*/settings.local.php
 
 # Ignore Drupal's file directory
 sites/*/files/

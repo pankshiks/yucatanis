@@ -1,0 +1,21 @@
+uuid: 38cb33fd-6d01-4a4c-814f-b6f4b130d4fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sub_heading
+    - paragraphs.paragraphs_type.view_reference
+  module:
+    - text
+id: paragraph.view_reference.field_sub_heading
+field_name: field_sub_heading
+entity_type: paragraph
+bundle: view_reference
+label: Sub-Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

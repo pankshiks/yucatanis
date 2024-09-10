@@ -1,0 +1,21 @@
+uuid: 59ea5766-14d8-485c-b252-0e0d3b990a48
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.boat_rentals
+    - field.storage.commerce_order.field_pick_up_time
+  module:
+    - text
+id: commerce_order.boat_rentals.field_pick_up_time
+field_name: field_pick_up_time
+entity_type: commerce_order
+bundle: boat_rentals
+label: 'Pick Up time'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

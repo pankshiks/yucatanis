@@ -1,0 +1,15 @@
+uuid: f1c6d2a6-ed0b-4aee-865c-7556d83dfe7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_tax
+third_party_settings:
+  commerce_tax:
+    taxable_type: physical_goods
+id: boat_rentals
+label: 'Boat Rentals'
+traits: {  }
+locked: false
+purchasableEntityType: commerce_product_variation
+orderType: boat_rentals

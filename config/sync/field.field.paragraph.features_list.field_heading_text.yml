@@ -1,0 +1,21 @@
+uuid: 14556016-ded4-45e9-be16-1ee08fd3f096
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading_text
+    - paragraphs.paragraphs_type.features_list
+  module:
+    - text
+id: paragraph.features_list.field_heading_text
+field_name: field_heading_text
+entity_type: paragraph
+bundle: features_list
+label: 'Heading text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

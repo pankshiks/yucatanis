@@ -1,0 +1,19 @@
+uuid: b515aca5-a8ce-41d2-bcc9-f9c677203b9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_with_left_border
+    - paragraphs.paragraphs_type.ethics_banner_with_text_and_img
+id: paragraph.ethics_banner_with_text_and_img.field_content_with_left_border
+field_name: field_content_with_left_border
+entity_type: paragraph
+bundle: ethics_banner_with_text_and_img
+label: 'Content with left border'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

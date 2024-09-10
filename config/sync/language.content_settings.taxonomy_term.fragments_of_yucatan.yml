@@ -1,0 +1,11 @@
+uuid: 4ee75b0d-457f-41c7-8866-00b2256dfb4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.fragments_of_yucatan
+id: taxonomy_term.fragments_of_yucatan
+target_entity_type_id: taxonomy_term
+target_bundle: fragments_of_yucatan
+default_langcode: site_default
+language_alterable: false

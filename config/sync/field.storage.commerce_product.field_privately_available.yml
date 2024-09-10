@@ -1,0 +1,27 @@
+uuid: 22b9b685-ecd2-4447-89e3-06eaffc3bfc8
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - options
+id: commerce_product.field_privately_available
+field_name: field_privately_available
+entity_type: commerce_product
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'yes'
+      label: 'yes'
+    -
+      value: 'No'
+      label: 'no'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

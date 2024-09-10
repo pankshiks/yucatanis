@@ -1,0 +1,30 @@
+uuid: 20c4ceee-8150-4603-bfaf-d8ddef2db0d4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:decc19eb-d01f-4947-8ba8-e2c041182631'
+  module:
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+id: yucatanis_theme_shoppingstepslogo
+theme: yucatanis_theme
+region: header_bottom
+weight: 0
+provider: null
+plugin: 'block_content:decc19eb-d01f-4947-8ba8-e2c041182631'
+settings:
+  id: 'block_content:decc19eb-d01f-4947-8ba8-e2c041182631'
+  label: 'Shopping steps logo '
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/form/personal-details\r\n/checkout*"

@@ -1,0 +1,246 @@
+uuid: 9f02116f-47e7-47c2-bf57-47040862fcc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.shop_classic_experiences
+    - field.field.commerce_product.shop_classic_experiences.body
+    - field.field.commerce_product.shop_classic_experiences.field_all_weather_activity
+    - field.field.commerce_product.shop_classic_experiences.field_available_add_ons
+    - field.field.commerce_product.shop_classic_experiences.field_convenience
+    - field.field.commerce_product.shop_classic_experiences.field_distinction
+    - field.field.commerce_product.shop_classic_experiences.field_duration
+    - field.field.commerce_product.shop_classic_experiences.field_excluded_attributes
+    - field.field.commerce_product.shop_classic_experiences.field_fate
+    - field.field.commerce_product.shop_classic_experiences.field_hotel_information
+    - field.field.commerce_product.shop_classic_experiences.field_inclusions_list
+    - field.field.commerce_product.shop_classic_experiences.field_informative_tags
+    - field.field.commerce_product.shop_classic_experiences.field_mandatorys
+    - field.field.commerce_product.shop_classic_experiences.field_mood
+    - field.field.commerce_product.shop_classic_experiences.field_no_id
+    - field.field.commerce_product.shop_classic_experiences.field_privately_available
+    - field.field.commerce_product.shop_classic_experiences.field_product_image
+    - field.field.commerce_product.shop_classic_experiences.field_relatively_closer_to
+    - field.field.commerce_product.shop_classic_experiences.field_restrictions
+    - field.field.commerce_product.shop_classic_experiences.field_sub_type
+    - field.field.commerce_product.shop_classic_experiences.field_tour_start_time
+    - field.field.commerce_product.shop_classic_experiences.field_type
+    - field.field.commerce_product.shop_classic_experiences.field_yucatanis_recommend
+  module:
+    - commerce_product
+    - entity_comparison
+    - entity_reference_revisions
+    - media
+    - options
+    - text
+    - time_field
+id: commerce_product.shop_classic_experiences.default
+targetEntityType: commerce_product
+bundle: shop_classic_experiences
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_all_weather_activity:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_available_add_ons:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_convenience:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_distinction:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_duration:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_excluded_attributes:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_fate:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_hotel_information:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_inclusions_list:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_informative_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_mandatorys:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_mood:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_no_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_privately_available:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_product_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_relatively_closer_to:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_restrictions:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_sub_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tour_start_time:
+    type: time_formatter
+    label: hidden
+    settings:
+      time_format: 'H:i A'
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_yucatanis_recommend:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  link_for_entity_comparison_add_product_comparison_shop_classic:
+    type: entity_comparison_link
+    label: above
+    settings:
+      enitity_comparison: ''
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    label: hidden
+    settings:
+      combine: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+hidden:
+  created: true
+  langcode: true
+  search_api_excerpt: true
+  stores: true
+  uid: true

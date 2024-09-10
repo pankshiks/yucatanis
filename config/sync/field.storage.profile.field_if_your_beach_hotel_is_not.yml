@@ -1,0 +1,24 @@
+uuid: 5c6db549-1bc9-46a4-b273-b63ff269b435
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - profile
+id: profile.field_if_your_beach_hotel_is_not
+field_name: field_if_your_beach_hotel_is_not
+entity_type: profile
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: hotel
+      label: Hotel
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

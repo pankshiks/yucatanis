@@ -1,0 +1,21 @@
+uuid: 650c48a9-0f94-45fb-aa6d-0eca36390bf7
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - profile
+id: profile.field_hotel_s_name
+field_name: field_hotel_s_name
+entity_type: profile
+type: list_integer
+settings:
+  allowed_values: {  }
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

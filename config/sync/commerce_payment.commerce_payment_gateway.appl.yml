@@ -1,0 +1,26 @@
+uuid: 1cd7d16f-795e-4403-9f00-32f3cfbfd263
+langcode: en
+status: false
+dependencies:
+  module:
+    - commerce_authnet
+id: appl
+label: 'Apple Pay'
+weight: -10
+plugin: authorizenet_acceptjs
+configuration:
+  display_label: Authorize.net
+  mode: test
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  api_login: 6Q66MgWqAed
+  transaction_key: 977qpt355xPC34HU
+  client_key: 638X6Xy9QG8hJLvgL5g4HN49B6p2DeCx2pu4gba7VBynX3EuVLHVH8NHGDPUkJd5
+  cca_status: false
+  cca_api_id: ''
+  cca_org_unit_id: ''
+  cca_api_key: ''
+  enable_credit_card_icons: true
+conditions: {  }
+conditionOperator: AND

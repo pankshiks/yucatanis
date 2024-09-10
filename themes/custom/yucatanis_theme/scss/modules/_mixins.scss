@@ -196,17 +196,12 @@
 }
 
 .ptb-200 {
-	padding-top: 200px;
-	padding-bottom: 200px;
-
-	@include for-big-desktop-up {
-		padding-top: 150px;
-		padding-bottom: 150px;
-	}
+	padding-top: 100px;
+	padding-bottom: 100px;
 
 	@include for-tablet {
-		padding-top: 125px;
-		padding-bottom: 125px;
+		padding-top: 75px;
+		padding-bottom: 75px;
 	}
 
 	@include for-phone-only {

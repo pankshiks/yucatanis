@@ -1,0 +1,20 @@
+uuid: 4c72479b-bdc2-4a2c-b5f1-370ba55edde8
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - text
+id: commerce_order.field_time_frame
+field_name: field_time_frame
+entity_type: commerce_order
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

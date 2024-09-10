@@ -1,0 +1,21 @@
+uuid: 28d915ab-2ead-4796-a138-308895700db7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_type
+    - paragraphs.paragraphs_type.view_reference
+  module:
+    - options
+id: paragraph.view_reference.field_view_type
+field_name: field_view_type
+entity_type: paragraph
+bundle: view_reference
+label: 'View Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,64 @@
+uuid: 194175a8-5b47-4ab0-ab3a-d9a2e3215e58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_with_cta_disclaimer.field_button
+    - field.field.paragraph.image_with_cta_disclaimer.field_disclaimer
+    - field.field.paragraph.image_with_cta_disclaimer.field_image
+    - field.field.paragraph.image_with_cta_disclaimer.field_title
+    - field.field.paragraph.image_with_cta_disclaimer.field_type
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.image_with_cta_disclaimer
+  module:
+    - image
+    - link
+    - text
+id: paragraph.image_with_cta_disclaimer.default
+targetEntityType: paragraph
+bundle: image_with_cta_disclaimer
+mode: default
+content:
+  field_button:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_disclaimer:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_title:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_type:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,10 @@
+uuid: dc174704-580c-4ca3-b7c4-fcc5171924fd
+langcode: en
+status: true
+dependencies: {  }
+id: shop_classic_experiences
+label: 'SHOP CLASSIC EXPERIENCES'
+traits: {  }
+locked: false
+orderItemType: default
+generateTitle: true

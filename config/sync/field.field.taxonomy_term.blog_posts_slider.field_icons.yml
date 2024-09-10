@@ -1,0 +1,34 @@
+uuid: 8ce3d0aa-9c43-417d-bbae-f09cdee5574a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icons
+    - taxonomy.vocabulary.blog_posts_slider
+  module:
+    - svg_image_field
+id: taxonomy_term.blog_posts_slider.field_icons
+field_name: field_icons
+entity_type: taxonomy_term
+bundle: blog_posts_slider
+label: Icons
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: svg
+  max_filesize: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+field_type: svg_image_field

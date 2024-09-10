@@ -1,0 +1,24 @@
+uuid: 649db66e-9270-4c1e-b540-d247f3f5408d
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_section_types
+field_name: field_section_types
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: one_image_block_with_text
+      label: 'One image block with text'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

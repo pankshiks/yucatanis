@@ -1,0 +1,21 @@
+uuid: 53390ac3-97fc-4b6c-abaa-3ac637d0b3dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pick_up_time
+    - node.type.hotel_information
+  module:
+    - options
+id: node.hotel_information.field_pick_up_time
+field_name: field_pick_up_time
+entity_type: node
+bundle: hotel_information
+label: pick_up_time
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

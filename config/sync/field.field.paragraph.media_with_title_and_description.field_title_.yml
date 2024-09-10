@@ -1,0 +1,19 @@
+uuid: c1e091e0-60d3-41a9-8718-0938e3eaa65a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_
+    - paragraphs.paragraphs_type.media_with_title_and_description
+id: paragraph.media_with_title_and_description.field_title_
+field_name: field_title_
+entity_type: paragraph
+bundle: media_with_title_and_description
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

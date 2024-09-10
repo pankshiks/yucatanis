@@ -1,0 +1,11 @@
+uuid: a291dc94-ca5d-4b89-89ab-90bc8488d6bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.boat_rentals
+id: commerce_product_variation.boat_rentals
+target_entity_type_id: commerce_product_variation
+target_bundle: boat_rentals
+default_langcode: site_default
+language_alterable: false

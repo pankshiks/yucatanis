@@ -1,0 +1,21 @@
+uuid: 59a39876-42f1-4bbb-9f6d-13123bde137f
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.boat_rentals
+    - field.storage.commerce_product.field_suggested_departure
+  module:
+    - time_field
+id: commerce_product.boat_rentals.field_suggested_departure
+field_name: field_suggested_departure
+entity_type: commerce_product
+bundle: boat_rentals
+label: 'Suggested Departure'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: time

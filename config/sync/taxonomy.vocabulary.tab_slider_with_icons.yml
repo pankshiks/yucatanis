@@ -1,0 +1,8 @@
+uuid: 3a51118b-b82e-4f96-86f9-73c2b1787490
+langcode: en
+status: true
+dependencies: {  }
+name: 'Tab Slider with icons'
+vid: tab_slider_with_icons
+description: 'Tab Slider with icons'
+weight: 0

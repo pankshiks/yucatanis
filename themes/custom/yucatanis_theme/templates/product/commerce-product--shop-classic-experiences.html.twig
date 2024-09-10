@@ -103,7 +103,7 @@
     {% set imageItem = attribute(product.field_product_image, i)['#item'].entity.uri.value %}
     {% if imageItem is not null %}
         <div class="mySlides">
-            <div class="numbertext">{{ i+1 }} / 4</div>
+             <div class="numbertext">{{ i+1 }} /<span id="slidecount-{{i}}"></span> </div>
             <img src="{{ file_url(imageItem) }}" style="width:100%">
         </div>
     {% endif %}
@@ -117,7 +117,7 @@
         <p id="caption"></p>
       </div>
         <div class="lightbox-wrapper">
-        {% for i in 0..3 %}
+        {% for i in 0..8 %}
     {% set imageItem = attribute(product.field_product_image, i)['#item'].entity.uri.value %}
     {% if imageItem is not null %}
         <div class="column">
@@ -420,12 +420,31 @@
                 </div>
                  {# <a href="" class="btn show-more-btn rental">Show More</a> #}
             </div>
+            {# modal private popup #}
+            {# <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="myModalproduct" role="dialog" tabindex="-1">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                 
+                        <button aria-label="Close" class="close" data-dismiss="modal" type="button" style="
+    margin-top: 50px;"><span aria-hidden="true">×</span></button></div>
+
+                        <div class="modal-body">
+                        🛎️ **I'd like to request a** *free quick quote* **potentially booking a private** or shared experience via 
+                        one of your customer service ninjas. 📆 ***Schedule* a 5 minute Video Meeting**** at a time that suits you *(Note to LNW: CTA link to schedule via Google Meet)* 📲 ***WhatsApp* a Human not a Bot** *Note to LNW: CTA link to text message Yucatanis’s WhatsApp Business* **☎️ *Talk* to a Human Now** *(Note to LNW: CTA link to make a normal direct phone call to +529981002248 no Skype call please)* *(LNW: Please display the following short messages below in a slightly smaller font size, respecting the bold, and same colors please)* - We kindly suggest familiarizing yourself with the desired experience *before calling* for a productive conversation! (Thank you) 🙏 - ***For Private Experiences:** Feel free to discuss any special requests during the call. We'll do our best to accommodate them! However, as experts in the region, it's better to explain and sometimes *reject* a few sales before actually booking. The location of your hotel is crucial **and we value quality and our reputation over profit.** *Thank you for your understanding.* - ***Due to high demand, a minimum of 3 hours short notice is required to schedule same-day quick video meetings.* **Thank you for spending time with us.** ![Black Mono.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/59e68c85-d8f3-4127-867d-b07dc3924fcb/5405d5c8-f55a-4b15-89ac-fd5d207cda04/Black_Mono.png) **Mexico’s east-coast** *simplified*. (centered below the logo)</div>
+                </div>
+                </div>
+            </div> #}
+
+            {# modal private popup end #}
             <div class="col-12 col-lg-4 card-gap">
                 <div class="booking-btn-wrap">
                     <a href="?type=shared" class="btn btn-primary ">Shared Booking</a>
-                    <a href="?type=private" class="btn btn-primary ">Private Booking</a>
+                    {# <a href="?type=private" class="btn btn-primary ">Private Booking</a> #}
+                    <a href="" class="btn btn-primary" id="private-booking">Private Booking</a>
                 </div>
                 <div class="best-seller-booking-card">
+                     <img src="/themes/custom/yucatanis_theme/images/Dark-Transparent.png"  alt= "Dark-Transparent.png">
                     <div class="info-tag">
                         <p>Highly Rated Natural Location</p>
                     </div>
@@ -433,12 +452,12 @@
                     {% if type == 'private' %}
                     {% if product.variation_field_private_adult_price is not empty %}
                         <h5 class="green-color">{{product.variation_field_private_adult_price}}<span>/ per adult </span></h5>
-                        <h6 class="green-color">{{product.variation_field_private_kids_tour_price}}<span>Kids 5 - 11 yrs</span></h6>
+                        <h6 class="green-color">{{product.variation_field_private_kids_tour_price}}</h6>
                         {% endif %}
                     {% else  %}
                {% if product.variation_field_private_adult_price is not empty %}
                     <h5 class="green-color">{{product.variation_price}}<span>/ per adult</span></h5>
-                    <h6 class="green-color">{{product.variation_field_kids_price}}<span>Kids 5 - 11 yrs</span></h6>
+                    <h6 class="green-color">{{product.variation_field_kids_price}}</h6>
                        {% endif %}
                     {% endif %}
                 </div>
@@ -446,7 +465,8 @@
                 {{ drupal_entity('webform', 'booking') }}
 
                 </div>
-                {{ drupal_entity('block_content', '28') }}
+                {# {{ drupal_entity('block_content', '28') }} #}
+                {{ drupal_block("social_sharing_buttons_block") }}
             </div>
             </div>
         </div>

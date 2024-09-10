@@ -137,6 +137,15 @@ function custom_webform_handler_custom_submit($form, \Drupal\Core\Form\FormState
       }
     }
   }
+
+  function custom_webform_handler_form_user_form_alter(&$form, &$form_state) {
+    $form['actions']['submit']['#submit'][] = 'custom_webform_handler_custom_password_redirect';
+   }
+   
+   function custom_webform_handler_custom_password_redirect(&$form, &$form_state) {
+     $form_state->setRedirect('<front>');
+    //  $form_state->setRedirect('user.login');
+   }
   
 
    

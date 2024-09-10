@@ -1,0 +1,21 @@
+uuid: 6e7553d0-81a6-44ce-8d9f-28988b556d3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.boat_rentals
+    - field.storage.commerce_product.field_available_for_rent
+  module:
+    - options
+id: commerce_product.boat_rentals.field_available_for_rent
+field_name: field_available_for_rent
+entity_type: commerce_product
+bundle: boat_rentals
+label: 'Available for Rent'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

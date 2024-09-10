@@ -1,0 +1,48 @@
+uuid: bcd2b9a5-6f13-4141-93e6-f4fc51eaf774
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_text_type
+field_name: field_text_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: grey
+      label: Grey
+    -
+      value: brown
+      label: Brown
+    -
+      value: yellow
+      label: Yellow
+    -
+      value: red
+      label: Red
+    -
+      value: yellowfont
+      label: yellowfont
+    -
+      value: listContent
+      label: ListContent
+    -
+      value: skillset
+      label: Skillset
+    -
+      value: expertos
+      label: Expertos
+    -
+      value: legally_bound
+      label: 'Legally Bound'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

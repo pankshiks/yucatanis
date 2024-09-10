@@ -1,0 +1,11 @@
+uuid: f09d0c0a-93bb-4275-8416-d3f626a82e9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.typewriter_blocks
+id: block_content.typewriter_blocks
+target_entity_type_id: block_content
+target_bundle: typewriter_blocks
+default_langcode: site_default
+language_alterable: false

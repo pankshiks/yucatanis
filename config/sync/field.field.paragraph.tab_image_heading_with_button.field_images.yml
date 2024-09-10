@@ -1,0 +1,29 @@
+uuid: 22b0a7ca-5fc3-4d92-970c-1b9ded361847
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_images
+    - media.type.image
+    - paragraphs.paragraphs_type.tab_image_heading_with_button
+id: paragraph.tab_image_heading_with_button.field_images
+field_name: field_images
+entity_type: paragraph
+bundle: tab_image_heading_with_button
+label: Images
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

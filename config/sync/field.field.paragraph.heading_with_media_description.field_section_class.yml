@@ -1,0 +1,21 @@
+uuid: 22ff2816-7fac-4033-9414-799eb35fe5e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_class
+    - paragraphs.paragraphs_type.heading_with_media_description
+  module:
+    - options
+id: paragraph.heading_with_media_description.field_section_class
+field_name: field_section_class
+entity_type: paragraph
+bundle: heading_with_media_description
+label: 'Section class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

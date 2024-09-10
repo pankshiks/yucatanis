@@ -1,13 +1,39 @@
 <?php
 use Drupal\Core\Form\FormStateInterface;
+  // Load the mPDF library.
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Render\RendererInterface;
+use Drupal\Core\Mail\MailManagerInterface;
 
   function customautocomplete_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     if ($form_id == 'views_exposed_form' && isset($form['#id']) && strpos($form['#id'], 'views-exposed-form-search-services-by-hotel-page-1') === 0) {
 
       if (isset($form['field_hotel_info_target_id'])) {
-      
+
         $form['field_hotel_info_target_id']['#autocomplete_route_name'] = 'customautocomplete.autocomplete';
         $form['field_hotel_info_target_id']['#autocomplete_route_parameters'] = ['field_hotel_info_target_id' => 'field_hotel_info_target_id'];
       }
-    }  
+    }
   }
+
+/**
+* Implements hook_mail().
+*/
+function customautocomplete_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+
+  switch ($key) {
+    case 'custom_order_receipt':
+      $message['headers']['Content-Type'] = 'text/html';
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['message'];
+      foreach ($params['attachments'] as $attachment) {
+        $message['params']['attachments'][] = $attachment;
+      }
+      break;
+  }
+ }
+

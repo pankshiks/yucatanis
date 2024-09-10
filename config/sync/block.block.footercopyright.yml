@@ -1,0 +1,25 @@
+uuid: 6b99e9dc-528d-440f-95f5-793a6fcb08f0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:93393396-f932-4a96-baae-2c978944a945'
+  module:
+    - block_content
+  theme:
+    - yucatanis_theme
+id: footercopyright
+theme: yucatanis_theme
+region: footer_fifth
+weight: -24
+provider: null
+plugin: 'block_content:93393396-f932-4a96-baae-2c978944a945'
+settings:
+  id: 'block_content:93393396-f932-4a96-baae-2c978944a945'
+  label: 'Footer copyright'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

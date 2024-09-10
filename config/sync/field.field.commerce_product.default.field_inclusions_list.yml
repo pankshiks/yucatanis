@@ -1,0 +1,19 @@
+uuid: c857aa0a-c2c3-401c-9725-ed940038591a
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.default
+    - field.storage.commerce_product.field_inclusions_list
+id: commerce_product.default.field_inclusions_list
+field_name: field_inclusions_list
+entity_type: commerce_product
+bundle: default
+label: 'Inclusions list'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

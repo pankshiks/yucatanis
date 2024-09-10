@@ -1,0 +1,10 @@
+uuid: 81bda2fe-397d-4074-ba37-ab70f76d5d26
+langcode: en
+status: true
+dependencies: {  }
+id: media_with_title_and_description
+label: 'Media with title and description'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

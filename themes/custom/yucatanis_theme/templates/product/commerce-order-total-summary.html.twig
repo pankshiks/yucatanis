@@ -67,74 +67,78 @@
 
 </div> #}
 
-      
-        
-         
-       
-          
+
+
+         {# {{dd(product_type)}} #}
+
+
   <div class="full-width-line"></div>
-  <div class="d-flex flex-column gap-2 order-details-wrapper">
+          <div class="d-flex flex-column gap-2 order-details-wrapper">
             <h6>Order details:</h6>
-                 {% if order_entity.field_booking_time.value  is not empty %}
-            <div class="package-detail-items">
-              <img src="/sites/default/files/ion_time-outline.svg">
-           
-         
+              {% if order_entity.field_booking_time.value  is not empty %}
+              <div class="package-detail-items">
+                <img src="/sites/default/files/ion_time-outline.svg">
 
-              <strong>{{(order_entity.field_booking_time.value|date('D, F j, Y'))}}</strong>
 
-     
-            </div>
-                     {% endif %}
-                         {% if order_entity.field_time_frame.value is not empty %}
-            <div class="package-detail-items">
-              <img src="/sites/default/files/ion_time-outline.svg">
-             <p> Time Frame: <strong>{{(order_entity.field_time_frame.value)}} hours</strong></p>
-          
-            </div>     {% endif %}
-                        {% if order_entity.field_hotel_name.value is not empty %}
-            <div class="package-detail-items">
-              <img src="/sites/default/files/ion_time-outline.svg">
-              <p>Pick up place: <strong>{{order_entity.field_hotel_name.value}}</strong></p>
-            </div>
-                     {% endif %}
-            {% if order_entity.field_pick_up_time is not empty %}
-         
-            <div class="package-detail-items">
-              <img src="/sites/default/files/ion_time-outline.svg">
-                {# {{dump('test')}} #}
-             <p> Approximate Pick Up Time*: <strong>{{order_entity.field_pick_up_time.value}}</strong></p>
-            </div>
 
-             {% endif %}
-            {% if order_entity.field_tour_start_time.value is not empty %}
+                <strong>{{(order_entity.field_booking_time.value|date('D, F j, Y'))}}</strong>
+
+
+              </div>
+              {% endif %}
+
+              {% if order_entity.field_time_frame.value is not empty %}
+                {% if product_type == 'boat_rentals' %}
+                  <div class="package-detail-items">
+                    <img src="/sites/default/files/ion_time-outline.svg">
+                  <p> Time Frame: <strong>{{(order_entity.field_time_frame.value)}} hours</strong></p>
+
+                  </div>
+                {% endif %}
+              {% endif %}
+              {% if order_entity.field_hotel_name.value is not empty %}
+                <div class="package-detail-items">
+                <img src="/sites/default/files/ion_time-outline.svg">
+                <p>Pick up place: <strong>{{order_entity.field_hotel_name.value}}</strong></p>
+                </div>
+              {% endif %}
+              {% if order_entity.field_pick_up_time is not empty %}
+
               <div class="package-detail-items">
               <img src="/sites/default/files/ion_time-outline.svg">
-                   {# {{dump(order_entity)}} #}
-             <p> Tour Start Time*: <strong>{{order_entity.field_tour_start_time.value}}</strong></p>
-            </div>
-            {% endif %}
-                  {% if order_entity.field_adults_no.value is not empty %}
-            <div class="package-detail-items">
-              <img src="/sites/default/files/ion_time-outline.svg">
-             <p> {{order_entity.field_adults_no.value}} Adults (Age 12+)</p>
-            </div>
+              {# {{dump('test')}} #}
+              <p> Pick Up Time*: <strong>{{order_entity.field_pick_up_time.value}}</strong></p>
+              </div>
+
               {% endif %}
-                      {% if order_entity.field_kids_no.value is not empty %}
-            <div class="package-detail-items">
+              {# {% if order_entity.field_tour_start_time.value is not empty %}
+              <div class="package-detail-items">
               <img src="/sites/default/files/ion_time-outline.svg">
-               <p>{{order_entity.field_kids_no.value}} Kids (Ages 5 to 11)</p>
-                  {% endif %}
-            </div>
-                       {% if order_entity.field_infants_no.value is not empty %}
-            <div class="package-detail-items">
-              <img src="/sites/default/files/ion_person-outline.png">
-               <p>{{order_entity.field_infants_no.value}} Infants (Ages 0 to 4)</p>
-            </div>
-             {% endif %}
+              <p> Tour Start Time*: <strong>{{order_entity.field_tour_start_time.value}}</strong></p>
+              </div>
+              {% endif %} #}
+              {% if order_entity.field_adults_no.value is not empty %}
+                <div class="package-detail-items">
+                <img src="/sites/default/files/ion_time-outline.svg">
+                  <p> {{order_entity.field_adults_no.value}} Adults (Age 12+)</p>
+                </div>
+              {% endif %}
+              {% if order_entity.field_kids_no.value is not empty %}
+                <div class="package-detail-items">
+                  <img src="/sites/default/files/ion_time-outline.svg">
+                  <p>{{order_entity.field_kids_no.value}} Kids (Ages 5 to 11)</p>
+                </div>
+              {% endif %}
+
+              {% if order_entity.field_infants_no.value is not empty %}
+                <div class="package-detail-items">
+                  <img src="/sites/default/files/ion_person-outline.png">
+                  <p>{{order_entity.field_infants_no.value}} Infants (Ages 0 to 4)</p>
+                </div>
+              {% endif %}
           </div>
           {# </div> #}
-         
+
     <div class="order-subtotal">
       {# <h6 class="Subtotal green-color">Total</h6> #}
       {# <div>
@@ -151,7 +155,7 @@
         <div class="terms-conditions">
             <p>*Every hotel has slight differences when measuring distance and obviously pick up times. The exact pick
               up for your booking will be confirmed on your mobile or email until we get a response from you.</p>
-            <p>Reminder: Dock fee is 15.00 usd per person and is to payed at boarding time..</p>
+            {# <p> Dock fee is 15.00 usd per person and is to payed at boarding time..</p> #}
           </div>
     </div>
 {# css class end #}

@@ -1,0 +1,29 @@
+uuid: 52310fed-189a-439e-9127-f706e2d6186a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_logo
+    - media.type.image
+    - paragraphs.paragraphs_type.images_with_list
+id: paragraph.images_with_list.field_logo
+field_name: field_logo
+entity_type: paragraph
+bundle: images_with_list
+label: Logo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

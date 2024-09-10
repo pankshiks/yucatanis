@@ -1,0 +1,124 @@
+uuid: e4b34d3c-ee6a-4640-a063-535371324b73
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.shop_classic_experiences
+    - core.entity_view_mode.commerce_product.shop_classic_experiences_add_product_comparison_shop_classic
+    - field.field.commerce_product.shop_classic_experiences.body
+    - field.field.commerce_product.shop_classic_experiences.field_all_weather_activity
+    - field.field.commerce_product.shop_classic_experiences.field_available_add_ons
+    - field.field.commerce_product.shop_classic_experiences.field_convenience
+    - field.field.commerce_product.shop_classic_experiences.field_distinction
+    - field.field.commerce_product.shop_classic_experiences.field_duration
+    - field.field.commerce_product.shop_classic_experiences.field_excluded_attributes
+    - field.field.commerce_product.shop_classic_experiences.field_fate
+    - field.field.commerce_product.shop_classic_experiences.field_hotel_information
+    - field.field.commerce_product.shop_classic_experiences.field_inclusions_list
+    - field.field.commerce_product.shop_classic_experiences.field_informative_tags
+    - field.field.commerce_product.shop_classic_experiences.field_mandatorys
+    - field.field.commerce_product.shop_classic_experiences.field_mood
+    - field.field.commerce_product.shop_classic_experiences.field_no_id
+    - field.field.commerce_product.shop_classic_experiences.field_privately_available
+    - field.field.commerce_product.shop_classic_experiences.field_product_image
+    - field.field.commerce_product.shop_classic_experiences.field_relatively_closer_to
+    - field.field.commerce_product.shop_classic_experiences.field_restrictions
+    - field.field.commerce_product.shop_classic_experiences.field_sub_type
+    - field.field.commerce_product.shop_classic_experiences.field_tour_start_time
+    - field.field.commerce_product.shop_classic_experiences.field_type
+    - field.field.commerce_product.shop_classic_experiences.field_yucatanis_recommend
+  module:
+    - commerce_product
+    - entity_comparison
+id: commerce_product.shop_classic_experiences.shop_classic_experiences_add_product_comparison_shop_classic
+targetEntityType: commerce_product
+bundle: shop_classic_experiences
+mode: shop_classic_experiences_add_product_comparison_shop_classic
+content:
+  field_excluded_attributes:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_inclusions_list:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_mood:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_product_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_yucatanis_recommend:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  link_for_entity_comparison_add_product_comparison_shop_classic:
+    type: entity_comparison_link
+    label: above
+    settings:
+      enitity_comparison: ''
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+  variations:
+    type: commerce_add_to_cart
+    label: above
+    settings:
+      combine: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  body: true
+  created: true
+  field_all_weather_activity: true
+  field_available_add_ons: true
+  field_convenience: true
+  field_distinction: true
+  field_duration: true
+  field_fate: true
+  field_hotel_information: true
+  field_informative_tags: true
+  field_mandatorys: true
+  field_no_id: true
+  field_privately_available: true
+  field_relatively_closer_to: true
+  field_restrictions: true
+  field_sub_type: true
+  field_tour_start_time: true
+  field_type: true
+  langcode: true
+  search_api_excerpt: true
+  stores: true
+  uid: true

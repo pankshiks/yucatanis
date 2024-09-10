@@ -217,14 +217,12 @@ final class CustomRentalWebformHandler extends WebformHandlerBase {
               foreach ($submission_ids as $submission_id) {
               $webform_submission_entity = \Drupal\webform\Entity\WebformSubmission::load($submission_id);
 
-              if ($webform_submission_entity) {
-              // \Drupal::logger('submit')->notice('<pre>' . print_r('Webform submission loaded successfully', true) . '</pre>');
-              \Drupal::messenger()->addMessage('webform submission deleted successfully');
-              $webform_submission_entity->delete();
-              // \Drupal::logger('webform_delete')->notice('<pre>' . print_r('Webform submission deleted successfully.', true) . '</pre>');
-              } else {
-              \Drupal::logger('webform_delete2')->notice('<pre>' . print_r('Unable to load webform submission with ID.', true) . '</pre>');
-              }
+                if ($webform_submission_entity) {
+          
+                  \Drupal::messenger()->addMessage('webform submission deleted successfully');
+                  $webform_submission_entity->delete();
+    
+                } 
               }
             //22-nov
             $custom_submission_value =$order->set('field_submission_id', $sid );

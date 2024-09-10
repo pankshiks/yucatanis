@@ -1,0 +1,21 @@
+uuid: dfa9b32c-5520-4779-af17-0c9855a4a5ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.greeting
+    - field.storage.block_content.field_greeting_heading
+  module:
+    - text
+id: block_content.greeting.field_greeting_heading
+field_name: field_greeting_heading
+entity_type: block_content
+bundle: greeting
+label: 'Greeting Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

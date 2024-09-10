@@ -1,0 +1,21 @@
+uuid: a6c76a03-376f-46a6-a0cd-46537eb06dd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_type
+    - paragraphs.paragraphs_type.heading_with_cta_and_media_text
+  module:
+    - options
+id: paragraph.heading_with_cta_and_media_text.field_section_type
+field_name: field_section_type
+entity_type: paragraph
+bundle: heading_with_cta_and_media_text
+label: 'Section type'
+description: "Travel plans mood|travel-plans-mood\r\nJoin Team banner |join-team-banner"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

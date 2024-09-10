@@ -1,0 +1,21 @@
+uuid: f0d8ea90-a308-42ed-882a-82000866ae95
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_type.default
+    - field.storage.commerce_order.field_booking_time
+  module:
+    - datetime
+id: commerce_order.default.field_booking_time
+field_name: field_booking_time
+entity_type: commerce_order
+bundle: default
+label: 'Booking Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

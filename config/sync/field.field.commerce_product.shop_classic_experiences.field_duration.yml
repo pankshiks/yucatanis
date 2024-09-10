@@ -1,0 +1,21 @@
+uuid: 27405492-4bca-444a-a329-0a049e639123
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.shop_classic_experiences
+    - field.storage.commerce_product.field_duration
+  module:
+    - options
+id: commerce_product.shop_classic_experiences.field_duration
+field_name: field_duration
+entity_type: commerce_product
+bundle: shop_classic_experiences
+label: Duration
+description: 'Estimated duration (excluding travel time)'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

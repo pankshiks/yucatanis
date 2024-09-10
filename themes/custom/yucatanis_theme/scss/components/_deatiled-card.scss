@@ -6,7 +6,7 @@
   }
 
   h3 {
-    padding-bottom: 80px;
+    padding-bottom: 64px;
     text-align: center;
     margin: auto;
     font-weight: 800;
@@ -17,10 +17,13 @@
       margin: auto;
       max-width: 100%;
     }
+    span.orange-color {
+        margin-right: 15px;
+    }
   }
 
   .main-title {
-    padding: 274px 0 254px;
+    padding: 25px 0 78px;
     margin: 0;
 
     @include for-phone-only {
@@ -37,6 +40,7 @@
 
   a {
     text-decoration: none;
+    position: relative;
   }
 
   .card-img-top {
@@ -69,7 +73,7 @@
     }
 
     p {
-      font-size: 20px;
+      font-size: 26px;
       font-style: normal;
       font-weight: 600;
       line-height: 123%;

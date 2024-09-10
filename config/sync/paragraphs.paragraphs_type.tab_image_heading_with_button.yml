@@ -1,0 +1,10 @@
+uuid: 8f92d3b6-3074-4293-ad4f-a40be72832b5
+langcode: en
+status: true
+dependencies: {  }
+id: tab_image_heading_with_button
+label: 'Tab image heading with button'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

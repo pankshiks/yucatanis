@@ -1,0 +1,20 @@
+uuid: e95ab9c2-f8e8-4e47-8f88-8ac94517cdb4
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - text
+id: commerce_order.field_submission_id
+field_name: field_submission_id
+entity_type: commerce_order
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

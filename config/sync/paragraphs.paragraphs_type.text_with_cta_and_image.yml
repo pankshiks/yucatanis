@@ -1,0 +1,10 @@
+uuid: 44b68f4c-0ae5-4b9e-b193-83c395e005c1
+langcode: en
+status: true
+dependencies: {  }
+id: text_with_cta_and_image
+label: 'Text with CTA and Image'
+icon_uuid: null
+icon_default: null
+description: 'This paragraph is used for adding text with CTA and Image'
+behavior_plugins: {  }

@@ -1,0 +1,30 @@
+uuid: af144a52-a852-4b35-a200-58e947ae570f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:8d3e2ec4-fd1d-41cf-892d-b2552863933e'
+  module:
+    - block_content
+    - system
+  theme:
+    - yucatanis_theme
+id: headermarqueetext
+theme: yucatanis_theme
+region: header_top
+weight: 0
+provider: null
+plugin: 'block_content:8d3e2ec4-fd1d-41cf-892d-b2552863933e'
+settings:
+  id: 'block_content:8d3e2ec4-fd1d-41cf-892d-b2552863933e'
+  label: 'Header Marquee Text'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/form/personal-details\r\n/checkout*"

@@ -1,7 +1,21 @@
 product_import.form_submit:
-  title: 'Hotel import'  
+  title: 'Product Boat rental import'  
   route_name: product_import.form_submit  
-  description: 'Welcome product import admin'  
+  description: 'Welcome product boat rental import admin'  
+  parent: system.admin_config_system  
+  weight: 99  
+
+product_import.form_submit1:
+  title: 'Product essential import '  
+  route_name: product_import.form_submit1  
+  description: 'Welcome product essential import admin'  
+  parent: system.admin_config_system  
+  weight: 99  
+
+product_import.form_submit2:
+  title: ' Product Classic import '  
+  route_name: product_import.form_submit2  
+  description: 'Welcome product classic import admin'  
   parent: system.admin_config_system  
   weight: 99  
 

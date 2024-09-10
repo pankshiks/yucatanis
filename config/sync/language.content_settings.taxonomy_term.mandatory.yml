@@ -1,0 +1,11 @@
+uuid: 55e7061d-089e-4c47-b2a3-f4885eff75b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.mandatory
+id: taxonomy_term.mandatory
+target_entity_type_id: taxonomy_term
+target_bundle: mandatory
+default_langcode: site_default
+language_alterable: false

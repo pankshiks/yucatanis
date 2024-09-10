@@ -1,0 +1,27 @@
+uuid: c64f66dd-9917-444a-b475-1d12bfd16ea0
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_tab_classes
+field_name: field_tab_classes
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Half-width
+      label: half-width
+    -
+      value: Quarter-width
+      label: quarter-width
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

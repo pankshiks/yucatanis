@@ -42,7 +42,11 @@ class HotelImportFormTime extends FormBase {
       '#upload_validators' => $validators,
       '#upload_location' => 'public://',
     ];
-
+    $form['example_excel_file'] = [
+      '#type' => 'markup',
+      '#markup' => '<a href="/sites/default/files/hotel-time.xlsx" download>Download Excel</a>',
+      '#attributes' => ['class' => ['btn-primary']],
+    ];
     // Add the submit button.
     $form['submit'] = [
       '#type' => 'submit',
@@ -107,7 +111,7 @@ class HotelImportFormTime extends FormBase {
     }
     // Setup and define batch informations.
 $batch = [
-  'title' => $this->t('Migrating Image to Media with batch processing...'),
+  'title' => $this->t('Moving hotel details along with product references using batch processing...'),
   'operations' => $operations,
 ];
 

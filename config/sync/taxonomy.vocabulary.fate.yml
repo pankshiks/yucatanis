@@ -1,0 +1,8 @@
+uuid: 334e19eb-ffd3-4c9e-aed1-825f5c19bdce
+langcode: en
+status: true
+dependencies: {  }
+name: Fate
+vid: fate
+description: 'Elements related to fate users should know to make an informed decision.'
+weight: 0

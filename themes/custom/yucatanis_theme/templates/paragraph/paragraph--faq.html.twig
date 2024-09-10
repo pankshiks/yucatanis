@@ -1,59 +1,112 @@
+{# <section class="faq">
+<img class="faq-img" src="/themes/custom/yucatanis_theme/images/FAQ_background_0.png" alt="">
+    <div class="container ptb-200">
+        <div class="row faq-wrapper">
+            <div class="col-12 title-with-detail">
+                <h2 class="yellow-color">{{ paragraph.field_faq_heading.value }}</h2>
+                <p>{{ paragraph.field_sub_headingg.value|raw }}</p>
+            </div>
+        </div>
+        <div class="accordion faq-accordion" id="accordionExample">
+           {% for key, item in paragraph.field_faq_childs %}
+            <div class="accordion-item">
+                <h6 class="accordion-header" id="parentheading{{ key }}">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#parentcollapse{{ key }}" aria-expanded="true" aria-controls="parentcollapse{{ key }}">
+                         {{ item.entity.field_faq_titles.value }}
+                        <div class="icon"></div>
+                    </button>
+                </h6>
+
+                <div  style="margin-left:50px;" id="parentcollapse{{ key }}" class="accordion-collapse collapse show" aria-labelledby="parentheading{{ key }}" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      {{ item.entity.field_descriptionss.value }}
+                       {% for multi_faq_key, multi_faq_data in item.entity.field_multi_faqs %}
+                        <div class="accordion-item">
+                            <h6 class="accordion-header" id="childheading{{ multi_faq_key }}">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#childcollapse{{ multi_faq_key }}" aria-expanded="true" aria-controls="childcollapse{{ multi_faq_key }}">
+                                  {{multi_faq_data.entity.field_faq_title.value }}
+                                    <div class="icon"></div>
+                                </button>
+                            </h6>
+                            <div id="childcollapse{{ multi_faq_key }}" class="accordion-collapse collapse show" aria-labelledby="childheading{{ multi_faq_key }}" data-bs-parent="#parentcollapse{{ multi_faq_key }}">
+                                <div class="accordion-body">
+                                   {{ multi_faq_data.entity.field_sub_faq_description.value|raw }}
+                                </div>
+                            </div>
+                        </div>
+                      {% endfor %}
+                       
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+
+        </div>
+    </div>
+</section> #}
+
 <section class="faq">
-  <img class="faq-img" src="{{ file_url(content.field_faq_img.0['#item'].entity.uri.value) }}" alt="">
-  <div class="container ptb-200">
-    <div class="row faq-wrapper">
-      <div class="col-12 title-with-detail">
-        <h2 class="yellow-color">{{ paragraph.field_faq_heading.value }}</h2>
-      </div>
-       {{ paragraph.field_sub_headingg.value|raw }}
-    </div>
-    <div class="accordion faq-accordion" id="accordionExample">
-      {% for key,item in paragraph.field_title_with_description %}
+    <img class="faq-img" src="/themes/custom/yucatanis_theme/images/FAQ_background_0.png" alt="">
+    <div class="container ptb-200">
+        <div class="row faq-wrapper">
+            <div class="col-12 title-with-detail">
+                <h2 class="yellow-color">{{ paragraph.field_faq_heading.value }}</h2>
+                {% if paragraph.field_sub_headingg.value is not empty %}
+                    {{ paragraph.field_sub_headingg.value|raw }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="accordion faq-accordion" id="accordionExample">
+            {% for key, item in paragraph.field_faq_childs %}
+            <div class="accordion-item">
+                <h6 class="accordion-header" id="parentheading{{ key }}">
+                 <button class="accordion-button {% if key != 0 %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#parentcollapse{{ key }}" aria-expanded="false" aria-controls="parentcollapse{{ key }}">
+              {{ item.entity.field_faq_titles.value }}
+              <div class="icon"></div>
+            </button>
+                    {# <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#parentcollapse{{ key }}" aria-expanded="true" aria-controls="parentcollapse{{ key }}">
+                        {{ item.entity.field_faq_titles.value }}
+                        <div class="icon"></div>
+                    </button> #}
+                </h6>
 
-          {% if key == 0%}
-           <div class="accordion-item">
-        <h6 class="accordion-header" id="heading{{key}}">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{key}}"
-            aria-expanded="true" aria-controls="collapse{{key}}">
-           {{item.entity.field_faq_title.value }}
-            <div class="icon"></div>
-          </button>
-        </h6>
-        <div id="collapse{{key}}" class="accordion-collapse collapse show" aria-labelledby="heading{{key}}"
-          data-bs-parent="#accordionExample">
-          
-          <div class="accordion-body">
-             {{item.entity.field_faq_description.value }}
-          </div>
+                <div style="margin-left:50px;" id="parentcollapse{{ key }}" class="accordion-collapse collapse {% if key == 0 %}show{% endif %}" aria-labelledby="parentheading{{ key }}" data-bs-parent="#accordionExample">
+                {# <div style="margin-left:50px;" id="parentcollapse{{ key }}" class="accordion-collapse collapse {% if key == 0 %}show{% endif %}" aria-labelledby="parentheading{{ key }}" data-bs-parent="#accordionExample"> #}
+                    <div class="accordion-body">
+                        {{ item.entity.field_descriptionss.value }}
+                        {% for multi_faq_key, multi_faq_data in item.entity.field_multi_faqs %}
+                        <div class="accordion-item">
+                            <h6 class="accordion-header" id="childheading{{ multi_faq_key }}">
+                            <button class="accordion-button {% if multi_faq_key != 0 %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#childcollapse{{ multi_faq_key }}" aria-expanded="false" aria-controls="childcollapse{{ multi_faq_key }}">
+                                {{multi_faq_data.entity.field_faq_title.value }}
+                     
+                                <div class="icon"></div>
+                            </button>
+
+                                {# <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#childcollapse{{ multi_faq_key }}" aria-expanded="true" aria-controls="childcollapse{{ multi_faq_key }}">
+                                    {{ multi_faq_data.entity.field_faq_title.value }}
+                                    <div class="icon"></div>
+                                </button> #}
+                            </h6>
+                            <div id="childcollapse{{ multi_faq_key }}" class="accordion-collapse collapse {% if key == 0 and multi_faq_key == 0 %}show{% endif %}" aria-labelledby="childheading{{ multi_faq_key }}" data-bs-parent="#parentcollapse{{ key }}">
+                                <div class="accordion-body">
+                                    {{ multi_faq_data.entity.field_sub_faq_description.value|raw }}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- Add more sub-accordions here if needed -->
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- Add more parent accordions here if needed -->
+
         </div>
-      </div>
-        {% else %}
-      <div class="accordion-item">
-        <h6 class="accordion-header" id="heading{{key}}">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapse{{key}}" aria-expanded="false" aria-controls="collapse{{key}}">
-           {{item.entity.field_faq_title.value }}
-            <div class="icon"></div>
-          </button>
-        </h6>
-        <div id="collapse{{key}}" class="accordion-collapse collapse" aria-labelledby="heading{{key}}"
-          data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            {{item.entity.field_faq_description.value }}
-          </div>
-        </div>
-      </div>
-      {% endif %}
-      {% endfor %}
-     
     </div>
-  </div>
 </section>
-
-
-
-
-
-
 
 

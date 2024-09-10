@@ -52,6 +52,25 @@
   </div>
 </section>
 
+{% elseif paragraph.field_type.value=='Booking Steps Block' %}
+  <section class="booking-steps-block bg-dbrown ">
+    <div class="container ptb-200">
+      <div>
+        {{ paragraph.field_title.value|raw}}
+        <div class="booking-steps">
+          <img class="img-fluid" src="{{ file_url(content.field_image.0['#item'].entity.uri.value)}}" alt="{{paragraph.field_image.alt}}" >        
+        </div>
+        <div class="booking-btn-wrapper">
+          {% for item in paragraph.field_button %}
+              <a class="btn btn-secondary">{{ item.title }}</a>
+          {% endfor %}  
+        </div>
+        {{ paragraph.field_disclaimer.value|raw}}
+      </div>
+    </div>
+  </section>
+
+
 {% else %}
   <section class="booking-steps-block bg-dbrown ">
     <div class="container ptb-200">

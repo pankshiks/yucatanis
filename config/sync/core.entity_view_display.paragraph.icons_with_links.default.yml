@@ -1,0 +1,65 @@
+uuid: e2e37e57-f1b0-4eb6-82d3-843e352b2378
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.icons_with_links.field_features_link
+    - field.field.paragraph.icons_with_links.field_features_logo
+    - field.field.paragraph.icons_with_links.field_label_text
+    - field.field.paragraph.icons_with_links.field_svg_image
+    - paragraphs.paragraphs_type.icons_with_links
+  module:
+    - link
+    - svg_image_field
+id: paragraph.icons_with_links.default
+targetEntityType: paragraph
+bundle: icons_with_links
+mode: default
+content:
+  field_features_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_features_logo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_label_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_svg_image:
+    type: svg_image_field_formatter
+    label: above
+    settings:
+      inline: false
+      apply_dimensions: true
+      width: 25
+      height: 25
+      enable_alt: true
+      enable_title: true
+      link: ''
+      force_fill: false
+      sanitize: true
+      sanitize_remote: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

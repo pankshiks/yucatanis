@@ -44,6 +44,9 @@
     background-color: rgba(255, 205, 0, 0.05);
     border: none;
   }
+  > img{
+    width: 194px;
+  }
 }
 
 .info-tag {
@@ -149,6 +152,7 @@
     background-size: cover;
     right: 0;
     pointer-events: none;
+    top: 15px;
   }
 
   input[type="date"]::-webkit-inner-spin-button,
@@ -157,6 +161,22 @@
   }
 }
 
+label[for="edit-booking-number"] span {
+  font-style: italic;
+  font-size: 11px;
+  color: green;
+  display: block;
+  text-transform: lowercase;
+}
+label[for="edit-range"] span, label[for="edit-your-email"] span, label[for="edit-mobile-number"] span,
+label[for="edit-hotel-name-where-you-are-staying-or-intended-pick-up-location-"] span, 
+label[for="edit-room-number"] span, label[for="edit-your-special-note"] span, label[for="edit-your-name"] span, label[for="edit-tour-or-service-taken-"] span {
+  color: red;
+  display: block;
+  font-size: 11px;
+  font-style: italic;
+  text-transform: lowercase;
+}
 .checkbox-wrapper {
   display: flex;
   flex-direction: column;

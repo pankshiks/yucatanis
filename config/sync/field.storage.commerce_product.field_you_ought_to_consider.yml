@@ -1,0 +1,20 @@
+uuid: c0f49d10-4832-4566-9689-f4104c062f2b
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - text
+id: commerce_product.field_you_ought_to_consider
+field_name: field_you_ought_to_consider
+entity_type: commerce_product
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
